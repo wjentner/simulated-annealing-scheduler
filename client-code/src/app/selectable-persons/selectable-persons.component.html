@@ -1,0 +1,33 @@
+<div>
+    <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload />
+
+    <div class="file-upload">
+        {{ fileName || 'No file uploaded yet.' }}
+
+        <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+            <mat-icon>attach_file</mat-icon>
+        </button>
+    </div>
+</div>
+
+<mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let p of selectablePersons$ | async">
+        {{ p.id }}, {{ p.name }} &nbsp;<app-really-delete (delete)="remove(p)"
+            >Remove</app-really-delete
+        >
+    </mat-list-item>
+</mat-list>
+
+<div>
+    <mat-form-field>
+        <mat-label>New Person ID</mat-label>
+        <input type="text" matInput [(ngModel)]="newPerson.id" />
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>New Person Name</mat-label>
+        <input type="text" matInput [(ngModel)]="newPerson.name" />
+    </mat-form-field>
+
+    <button mat-raised-button (click)="add()">Add Person</button>
+</div>

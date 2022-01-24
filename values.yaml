@@ -1,0 +1,36 @@
+app:
+  regcred: regcred-sa-scheduler
+  port: 80
+  health: "/api/health"
+
+  requests:
+    cpu: 100m
+    memory: 50Mi
+  limits:
+    cpu: 2000m
+    memory: 2Gi
+
+  hostVolumes:
+    - name: data
+      path: /home/k8s/sfg-singen/diensteinteilung
+      type: Directory
+      mountPath: /app/data
+
+
+  ingress:
+    auth:
+      enabled: true
+      prompt: This website is password protected. Please enter a username and password.
+      # A secret needs to be created and referred to here.
+      # Structure of the secret:
+      #
+      # kind: Secret
+      # apiVersion: v1
+      # metadata:
+      #   name: basic-auth
+      # stringData:
+      #   auth: dbvis:$apr1$nfk8tuw7$Um3.ixncy32b9j/q475RQ.
+      # type: Opaque
+      #
+      secret: sa-scheduler-basic-auth
+

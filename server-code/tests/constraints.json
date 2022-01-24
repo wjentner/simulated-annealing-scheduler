@@ -1,0 +1,155 @@
+{
+    "min_max_constraints": {
+        "PersonA": {
+            "TaskA": {
+                "min": 1,
+                "max": 2,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            },
+            "TaskB": {
+                "min": 1,
+                "max": 1,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            },
+            "TaskC": {
+                "min": 1,
+                "max": 2,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            }
+        },
+        "PersonB": {
+            "TaskA": {
+                "min": 1,
+                "max": 1,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            },
+            "TaskB": {
+                "min": 1,
+                "max": 2,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            }
+        },
+        "PersonC": {
+            "TaskA": {
+                "min": 1,
+                "max": 2,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            },
+            "TaskB": {
+                "min": 1,
+                "max": 2,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            },
+            "TaskC": {
+                "min": 1,
+                "max": 1,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            }
+        },
+        "PersonD": {
+            "TaskA": {
+                "min": 1,
+                "max": 2,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            },
+            "TaskB": {
+                "min": 1,
+                "max": 1,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            },
+            "TaskC": {
+                "min": 1,
+                "max": 1,
+                "min_penalty": 100000,
+                "max_penalty": 100000
+            }
+        }
+    },
+    "dates_and_tasks": {
+        "2022-01-01": {
+            "TaskA": true,
+            "TaskB": true,
+            "TaskC": true
+        },
+        "2022-01-02": {
+            "TaskA": true,
+            "TaskB": true,
+            "TaskC": true
+        },
+        "2022-01-06": {
+            "TaskA": true,
+            "TaskB": true,
+            "holiday": true
+        },
+        "2022-01-08": {
+            "TaskA": true,
+            "TaskB": true,
+            "TaskC": true
+        },
+        "2022-01-09": {
+            "TaskA": true,
+            "TaskB": true,
+            "TaskC": true
+        }
+    },
+    "time_constraints": [
+        {
+            "negated": true,
+            "person": "PersonA",
+            "task": null,
+            "min_date": "2022-01-01",
+            "max_date": "2022-01-01",
+            "penalty": 1000
+        },
+        {
+            "negated": false,
+            "person": "PersonA",
+            "task": null,
+            "min_date": "2022-01-06",
+            "max_date": "2022-01-06",
+            "penalty": 1000
+        },
+        {
+            "negated": false,
+            "person": "PersonB",
+            "task": null,
+            "min_date": "2022-01-06",
+            "max_date": "2022-01-06",
+            "penalty": 1000
+        },
+        {
+            "negated": true,
+            "person": "PersonC",
+            "task": "TaskA",
+            "min_date": "2022-01-08",
+            "max_date": "2022-01-09",
+            "penalty": 1000
+        },
+        {
+            "negated": false,
+            "person": "PersonD",
+            "task": "TaskA",
+            "min_date": "2022-01-08",
+            "max_date": "2022-01-08",
+            "penalty": 1000
+        },
+        {
+            "negated": false,
+            "person": "PersonD",
+            "task": "TaskC",
+            "min_date": "2022-01-09",
+            "max_date": "2022-01-09",
+            "penalty": 1000
+        }
+    ]
+}

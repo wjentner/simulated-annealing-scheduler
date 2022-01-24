@@ -1,0 +1,1 @@
+{"2022-01-01": {"TaskA": "PersonA", "TaskB": "PersonC", "TaskC": "PersonD"}, "2022-01-02": {"TaskA": "PersonC", "TaskB": "PersonB", "TaskC": "PersonA"}, "2022-01-06": {"TaskA": "PersonB", "TaskB": "PersonD"}, "2022-01-08": {"TaskA": "PersonA", "TaskB": "PersonB", "TaskC": "PersonD"}, "2022-01-09": {"TaskA": "PersonD", "TaskB": "PersonA", "TaskC": "PersonC"}}
