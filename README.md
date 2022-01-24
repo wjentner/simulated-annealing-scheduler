@@ -1,5 +1,10 @@
 # Simulated Annealing Scheduler
 
+
+![size-badge](https://img.shields.io/docker/image-size/wjentner/simulated-annealing-scheduler)
+![Docker Image Version (latest semver)](https://img.shields.io/docker/v/wjentner/simulated-annealing-scheduler)
+
+
 This client-server app creates and optimizes schedules based on defined constraints.
 It uses [Simulated Annealing](https://en.wikipedia.org/wiki/Simulated_annealing).
 
