@@ -5,8 +5,12 @@
     "gitLabAutomerge": true,
     "packageRules": [
       {
-        "packagePatterns": ["^@angular"],
+        "matchPackagePatterns": ["^@angular"],
         "groupName": "angular packages"
+      },
+      {
+        "matchPackagePatterns": ["eslint"],
+        "groupName": "eslint packages"
       },
       {
         "updateTypes": ["lockFileMaintenance"],
