@@ -178,6 +178,18 @@ app.add_middleware(
 logging.getLogger("uvicorn.access").addFilter(EndpointFilter())
 
 
+@app.on_event("shutdown")
+def shutdown_event():
+    # go through all tmp solutions that are running
+    sol_paths = glob.glob('./data/solutions/tmp/*')
+    for p in sol_paths:
+        if os.path.exists(f'{p}/.running'):
+            # a running solution found
+            os.remove(f'{p}/.running')
+            with open(f'{p}/.error', mode='w') as f:
+                f.write('app was shutdown - calculation stopped')
+    
+
 @app.get('/api/health')
 def health():
     return {'status': 'ok'}
