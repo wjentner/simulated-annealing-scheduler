@@ -1,5 +1,6 @@
 import csv
 import glob
+import io
 import json
 import logging
 import os.path
@@ -9,6 +10,7 @@ from os import path
 from typing import Dict, List
 
 from fastapi import BackgroundTasks, FastAPI, File, UploadFile
+from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -188,7 +190,7 @@ def shutdown_event():
             os.remove(f'{p}/.running')
             with open(f'{p}/.error', mode='w') as f:
                 f.write('app was shutdown - calculation stopped')
-    
+
 
 @app.get('/api/health')
 def health():
@@ -288,6 +290,25 @@ def solution_get(sol: str) -> SolutionStatus:
     s.schedule = actual_schedule
 
     return s
+
+
+@app.get('/api/solutions/{sol}/csv-vereinsflieger')
+async def solution_csv_vereinsflieger(sol: str):
+    s = solution_get(sol)
+    header = ['Dienstbezeichnung', 'Dienstbeginn', 'Dienstende', 'Max. Personen', 'Person', 'Person2']
+    output = io.StringIO()
+    writer = csv.writer(output, delimiter=';')
+    writer.writerow(header)
+
+    for [date, taskmap] in s.schedule.items():
+        d = datetime.fromisoformat(date)
+        begin = d.replace(hour=10, minute=0, second=0)
+        end = d.replace(hour=18, minute=0, second=0)
+        for [task, person] in taskmap.items():
+            p = ' '.join(list(map(lambda x: x.strip(), person.split(',')))[::-1])
+            writer.writerow([task, begin.isoformat(sep=' '), end.isoformat(sep=' '), 1, p, None])
+    output.seek(0)
+    return StreamingResponse(output, media_type='text/csv')
 
 
 @app.post('/api/optimize')

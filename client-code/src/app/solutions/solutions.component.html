@@ -11,11 +11,21 @@
     <button mat-raised-button (click)="reloadSolution()">Reload</button>
 </div>
 
-<div *ngIf="selectedSolution">
-    <p>Name: {{ selectedSolution.name }}</p>
-    <p>Status: {{ selectedSolution.status }}</p>
-    <p *ngIf="selectedSolution.error_msg">Error: {{ selectedSolution.error_msg }}</p>
-    <p *ngIf="selectedSolution.fitness">Fitness: {{ selectedSolution.fitness }}</p>
+<div class="overview" *ngIf="selectedSolution">
+    <div>
+        <p>Name: {{ selectedSolution.name }}</p>
+        <p>Status: {{ selectedSolution.status }}</p>
+        <p *ngIf="selectedSolution.error_msg">Error: {{ selectedSolution.error_msg }}</p>
+        <p *ngIf="selectedSolution.fitness">Fitness: {{ selectedSolution.fitness }}</p>
+    </div>
+
+    <div>
+        <a
+            mat-raised-button
+            [href]="downloadUrlPrefix + selectedSolution.name + '/csv-vereinsflieger'"
+            >Download Vereinsflieger CSV</a
+        >
+    </div>
 </div>
 
 <div *ngIf="selectedSolution && selectedSolution.schedule">

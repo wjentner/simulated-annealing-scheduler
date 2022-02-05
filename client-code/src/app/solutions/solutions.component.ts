@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { SolutionsService, SolutionStatus } from '../solutions.service';
 import { TasksService } from '../tasks.service';
 
@@ -15,6 +16,8 @@ export class SolutionsComponent implements OnInit {
     selectedSolution: SolutionStatus;
 
     personStats: Map<string, Map<string, number>>;
+
+    downloadUrlPrefix = `${environment.api}/solutions/`;
 
     constructor(private solutionsService: SolutionsService, private tasksService: TasksService) {}
 
