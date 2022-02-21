@@ -223,6 +223,7 @@ build:image:
   script:
     # load the var.env variables from the export-environment job
     - source ./var.env
+    - echo $CI_DEPENDENCY_PROXY_SERVER
     # Login
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
