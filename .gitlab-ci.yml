@@ -245,7 +245,7 @@ build:image-latest:
     - source ./var.env
     # Login
     - mkdir -p /kaniko/.docker
-    - echo "{\"auths\":{\"$DOCKER_REGISTRY\":{\"username\":\"$DOCKER_USER\",\"password\":\"$DOCKER_PASS\"}}}" > /kaniko/.docker/config.json
+    - echo "{\"auths\":{\"$DOCKER_REGISTRY\":{\"username\":\"$DOCKER_USER\",\"password\":\"$DOCKER_PASS\"}, \"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
     # define the image (version is either a git-tag or a short git-commit-sha
     - IMG="index.docker.io/wjentner/simulated-annealing-scheduler:latest"
     # build and push :)
