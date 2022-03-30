@@ -249,7 +249,7 @@ build:image-latest:
     # define the image (version is either a git-tag or a short git-commit-sha
     - IMG="index.docker.io/wjentner/simulated-annealing-scheduler:latest"
     # build and push :)
-    - /kaniko/executor --context $DOCKER_CONTEXT --dockerfile $DOCKERFILE_LOC --destination $IMG --cache=true --cache-repo=$CI_REGISTRY_IMAGE/cache --registry-mirror=mirror.gcr.io
+    - /kaniko/executor --context $DOCKER_CONTEXT --dockerfile $DOCKERFILE_LOC --destination $IMG --cache=true --cache-repo=$CI_REGISTRY_IMAGE/cache --registry-mirror=registry-mirror.dbvis.de --registry-mirror=mirror.gcr.io
   retry: 2
   only:
     - main
