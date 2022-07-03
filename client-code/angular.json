@@ -127,7 +127,6 @@
       }
     }
   },
-  "defaultProject": "sa-scheduler-client",
   "cli": {
     "schematicCollections": [
       "@angular-eslint/schematics"
