@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { getHolidays, Holiday, isHoliday } from 'feiertagejs';
 import { DateTime } from 'luxon';
 import { map, Observable } from 'rxjs';
