@@ -2902,10 +2902,10 @@ adjust-sourcemap-loader@^4.0.0:
     loader-utils "^2.0.0"
     regex-parser "^2.2.11"
 
-adm-zip@^0.4.9:
-  version "0.4.16"
-  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.4.16.tgz#cf4c508fdffab02c269cbc7f471a875f05570365"
-  integrity sha512-TFi4HBKSGfIKsK5YCkKaaFG2m4PEDyViZmEwof3MTIgzimHLto6muaHVpbrljdIvIrFZzEq/p4nafOeLcYegrg==
+adm-zip@^0.5.2:
+  version "0.5.10"
+  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.5.10.tgz#4a51d5ab544b1f5ce51e1b9043139b639afff45b"
+  integrity sha512-x0HvcHqVJNTPk/Bw8JbLWlWoo6Wwnsug0fnYYro1HBrjxZ3G7/AZk7Ahv8JwDe1uIcz8eBqvu86FuF1POiG7vQ==
 
 agent-base@6, agent-base@^6.0.2:
   version "6.0.2"
@@ -8594,11 +8594,11 @@ webdriver-js-extender@2.1.0:
     selenium-webdriver "^3.0.1"
 
 webdriver-manager@^12.1.7:
-  version "12.1.8"
-  resolved "https://registry.yarnpkg.com/webdriver-manager/-/webdriver-manager-12.1.8.tgz#5e70e73eaaf53a0767d5745270addafbc5905fd4"
-  integrity sha512-qJR36SXG2VwKugPcdwhaqcLQOD7r8P2Xiv9sfNbfZrKBnX243iAkOueX1yAmeNgIKhJ3YAT/F2gq6IiEZzahsg==
+  version "12.1.9"
+  resolved "https://registry.yarnpkg.com/webdriver-manager/-/webdriver-manager-12.1.9.tgz#8d83543b92711b7217b39fef4cda958a4703d2df"
+  integrity sha512-Yl113uKm8z4m/KMUVWHq1Sjtla2uxEBtx2Ue3AmIlnlPAKloDn/Lvmy6pqWCUersVISpdMeVpAaGbNnvMuT2LQ==
   dependencies:
-    adm-zip "^0.4.9"
+    adm-zip "^0.5.2"
     chalk "^1.1.1"
     del "^2.2.0"
     glob "^7.0.3"
