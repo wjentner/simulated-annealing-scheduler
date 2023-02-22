@@ -1,137 +1,170 @@
-<div>
-    <mat-form-field>
-        <mat-label>Solutions</mat-label>
-        <mat-select [(value)]="selectedSolution" (valueChange)="updateSol($event)">
-            <mat-option *ngFor="let sol of solutions$ | async" [value]="sol">
-                {{ sol.name }} / {{ sol.status }} / {{ sol.fitness }}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-
-    <button mat-raised-button (click)="reloadSolution()">Reload</button>
-</div>
-
-<div class="overview" *ngIf="selectedSolution">
+<mat-card class="mycard">
     <div>
-        <p>Name: {{ selectedSolution.name }}</p>
-        <p>Status: {{ selectedSolution.status }}</p>
-        <p *ngIf="selectedSolution.error_msg">Error: {{ selectedSolution.error_msg }}</p>
-        <p *ngIf="selectedSolution.fitness">Fitness: {{ selectedSolution.fitness }}</p>
+        <mat-form-field>
+            <mat-label>Solutions</mat-label>
+            <mat-select [(value)]="selectedSolution" (valueChange)="updateSol($event)">
+                <mat-option *ngFor="let sol of solutions$ | async" [value]="sol">
+                    {{ sol.name }} / {{ sol.status }} / {{ sol.fitness }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button (click)="reloadSolution()">Reload</button>
     </div>
 
-    <div>
-        <a
-            mat-raised-button
-            [href]="downloadUrlPrefix + selectedSolution.name + '/csv-vereinsflieger'"
-            >Download Vereinsflieger CSV</a
-        >
+    <div class="overview" *ngIf="selectedSolution">
+        <div>
+            <p>Name: {{ selectedSolution.name }}</p>
+            <p>Status: {{ selectedSolution.status }}</p>
+            <p *ngIf="selectedSolution.error_msg">Error: {{ selectedSolution.error_msg }}</p>
+            <p *ngIf="selectedSolution.fitness">Fitness: {{ selectedSolution.fitness }}</p>
+        </div>
+
+        <div>
+            <a
+                mat-raised-button
+                [href]="downloadUrlPrefix + selectedSolution.name + '/csv-vereinsflieger'"
+                >Download Vereinsflieger CSV</a
+            >
+        </div>
     </div>
-</div>
+</mat-card>
 
-<div *ngIf="selectedSolution && selectedSolution.schedule">
-    <h3>Solution</h3>
-    <table class="mat-table cdk-table" role="grid">
-        <thead role="rowgroup">
-            <tr class="mat-header-row cdk-header-row">
-                <th class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position">
-                    Date
-                </th>
-                <th
-                    *ngFor="let t of tasks$ | async"
-                    class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
+<mat-card class="mycard">
+    <div *ngIf="selectedSolution && selectedSolution.schedule">
+        <h3>Solution</h3>
+        <table class="mat-table cdk-table" role="grid">
+            <thead role="rowgroup">
+                <tr class="mat-header-row cdk-header-row">
+                    <th
+                        class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
+                    >
+                        Date
+                    </th>
+                    <th
+                        *ngFor="let t of tasks$ | async"
+                        class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
+                    >
+                        {{ t }}
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody role="rowgroup">
+                <tr
+                    *ngFor="let sItem of selectedSolution.schedule | keyvalue"
+                    class="mat-row cdk-row"
                 >
-                    {{ t }}
-                </th>
-            </tr>
-        </thead>
+                    <td
+                        class="mat-cell cdk-cell cdk-column-position mat-column-position"
+                        role="gridcell"
+                    >
+                        {{ sItem.key | date : 'fullDate' }}
+                    </td>
 
-        <tbody role="rowgroup">
-            <tr *ngFor="let sItem of selectedSolution.schedule | keyvalue" class="mat-row cdk-row">
-                <td
-                    class="mat-cell cdk-cell cdk-column-position mat-column-position"
-                    role="gridcell"
-                >
-                    {{ sItem.key | date: 'fullDate' }}
-                </td>
+                    <td
+                        *ngFor="let t of tasks$ | async"
+                        class="mat-cell cdk-cell cdk-column-position mat-column-position"
+                        role="gridcell"
+                    >
+                        <mat-icon
+                            fontIcon="star"
+                            *ngIf="selectedSolution?.dd[sItem.key][t] === true"
+                            matTooltip="Desired Date"
+                        ></mat-icon>
+                        {{ sItem.value[t] }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</mat-card>
 
-                <td
-                    *ngFor="let t of tasks$ | async"
-                    class="mat-cell cdk-cell cdk-column-position mat-column-position"
-                    role="gridcell"
-                >
-                    {{ sItem.value[t] }}
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<mat-card class="mycard">
+    <div style="margin-top: 2em" *ngIf="selectedSolution && selectedSolution.schedule">
+        <h3>Violations / Penalties</h3>
+        <table class="mat-table">
+            <thead>
+                <tr class="mat-header-row">
+                    <td class="mat-header-cell">Description</td>
+                    <td class="mat-header-cell">Penalty</td>
+                </tr>
+            </thead>
 
-<div style="margin-top: 2em" *ngIf="selectedSolution && selectedSolution.schedule">
-    <h3>Violations / Penalties</h3>
-    <table class="mat-table">
-        <thead>
-            <tr class="mat-header-row">
-                <td class="mat-header-cell">Description</td>
-                <td class="mat-header-cell">Penalty</td>
-            </tr>
-        </thead>
+            <tbody>
+                <tr class="mat-row" *ngFor="let v of selectedSolution.penalties">
+                    <td class="mat-cell">{{ v.desc }}</td>
+                    <td class="mat-cell">{{ v.penalty }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</mat-card>
 
-        <tbody>
-            <tr class="mat-row" *ngFor="let v of selectedSolution.penalties">
-                <td class="mat-cell">{{ v.desc }}</td>
-                <td class="mat-cell">{{ v.penalty }}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<mat-card class="mycard">
+    <div *ngIf="personStats" style="margin-top: 2em">
+        <h3>Statistics</h3>
+        <table class="mat-table cdk-table" role="grid">
+            <thead role="rowgroup">
+                <tr class="mat-header-row cdk-header-row">
+                    <th
+                        class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
+                    >
+                        Person
+                    </th>
+                    <th
+                        *ngFor="let t of tasks$ | async"
+                        class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
+                    >
+                        {{ t }}
+                    </th>
+                    <th class="mat-header-cell">Total</th>
+                    <th class="mat-header-cell">Desired Dates</th>
+                </tr>
+            </thead>
 
-<div *ngIf="personStats" style="margin-top: 2em">
-    <h3>Statistics</h3>
-    <table class="mat-table cdk-table" role="grid">
-        <thead role="rowgroup">
-            <tr class="mat-header-row cdk-header-row">
-                <th class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position">
-                    Person
-                </th>
-                <th
-                    *ngFor="let t of tasks$ | async"
-                    class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
-                >
-                    {{ t }}
-                </th>
-                <th class="mat-header-cell">Total</th>
-            </tr>
-        </thead>
+            <tbody role="rowgroup">
+                <tr *ngFor="let e of personStats.persMap | keyvalue" class="mat-row cdk-row">
+                    <td
+                        class="mat-cell cdk-cell cdk-column-position mat-column-position"
+                        role="gridcell"
+                    >
+                        {{ e.key }}
+                    </td>
 
-        <tbody role="rowgroup">
-            <tr *ngFor="let e of personStats | keyvalue" class="mat-row cdk-row">
-                <td
-                    class="mat-cell cdk-cell cdk-column-position mat-column-position"
-                    role="gridcell"
-                >
-                    {{ e.key }}
-                </td>
+                    <td
+                        *ngFor="let t of tasks$ | async"
+                        class="mat-cell cdk-cell cdk-column-position mat-column-position"
+                        role="gridcell"
+                    >
+                        <div *ngIf="e.value.get(t) > 0">
+                            <mat-progress-bar
+                                [value]="(e.value.get(t) / getMaxForTask(t)) * 100"
+                            ></mat-progress-bar>
+                            {{ e.value.get(t) }} / {{ getMaxForTask(t) }}
+                        </div>
+                    </td>
 
-                <td
-                    *ngFor="let t of tasks$ | async"
-                    class="mat-cell cdk-cell cdk-column-position mat-column-position"
-                    role="gridcell"
-                >
-                    <div *ngIf="e.value.get(t) > 0">
+                    <td class="mat-cell">
                         <mat-progress-bar
-                            [value]="(e.value.get(t) / getMaxForTask(t)) * 100"
+                            [value]="(e.value.get('total') / getMaxForTask('total')) * 100"
                         ></mat-progress-bar>
-                        {{ e.value.get(t) }} / {{ getMaxForTask(t) }}
-                    </div>
-                </td>
+                        {{ e.value.get('total') }} / {{ getMaxForTask('total') }}
+                    </td>
 
-                <td class="mat-cell">
-                    <mat-progress-bar
-                        [value]="(e.value.get('total') / getMaxForTask('total')) * 100"
-                    ></mat-progress-bar>
-                    {{ e.value.get('total') }} / {{ getMaxForTask('total') }}
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                    <td class="mat-cell">
+                        <mat-progress-bar
+                            [value]="
+                                ((personStats.hitDDs.get(e.key) || 0) /
+                                    personStats.totalDDs.get(e.key)) *
+                                100
+                            "
+                            color="accent"
+                        ></mat-progress-bar>
+                        {{ personStats.hitDDs.get(e.key) }} / {{ personStats.totalDDs.get(e.key) }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</mat-card>

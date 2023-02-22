@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { SolutionsService, SolutionStatus } from '../solutions.service';
+import { SolutionsService, SolutionStatus, Statistics } from '../solutions.service';
 import { TasksService } from '../tasks.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class SolutionsComponent implements OnInit {
 
     selectedSolution: SolutionStatus;
 
-    personStats: Map<string, Map<string, number>>;
+    personStats: Statistics;
 
     downloadUrlPrefix = `${environment.api}/solutions/`;
 
@@ -42,6 +42,6 @@ export class SolutionsComponent implements OnInit {
     }
 
     getMaxForTask(task: string): number {
-        return this.solutionsService.getMax(this.personStats, task);
+        return this.solutionsService.getMax(this.personStats.persMap, task);
     }
 }

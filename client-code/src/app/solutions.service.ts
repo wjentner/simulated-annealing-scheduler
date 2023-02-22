@@ -1,10 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, merge, mergeMap, Observable, of, switchMap, toArray } from 'rxjs';
+import { combineLatest } from 'rxjs/internal/observable/combineLatest';
+import { forkJoin } from 'rxjs/internal/observable/forkJoin';
 import { environment } from 'src/environments/environment';
+import { ScheduleConstraintsService, TimeConstraint } from './schedule-constraints.service';
 import { TasksService } from './tasks.service';
 
 export interface Schedule {
+    // date --> task --> person
     [key: string]: { [key: string]: string };
 }
 
@@ -20,6 +24,15 @@ export interface SolutionStatus {
     penalties?: Penalty[];
     schedule?: Schedule;
     error_msg?: string;
+    // date --> task --> desired date
+    dd?: { [key: string]: { [key: string]: boolean } };
+    desiredDates?: TimeConstraint[];
+}
+
+export interface Statistics {
+    persMap: Map<string, Map<string, number>>;
+    totalDDs: Map<string, number>;
+    hitDDs: Map<string, number>;
 }
 
 @Injectable({
@@ -28,28 +41,76 @@ export interface SolutionStatus {
 export class SolutionsService {
     public readonly solutions$: BehaviorSubject<SolutionStatus[]> = new BehaviorSubject([]);
 
-    constructor(private http: HttpClient, private tasksService: TasksService) {
+    constructor(
+        private http: HttpClient,
+        private tasksService: TasksService,
+        private scheduleConstraintsService: ScheduleConstraintsService,
+    ) {
         this.getSolutions();
     }
 
+    isDesiredDate(dds: TimeConstraint[], date: string, person: string, task?: string): boolean {
+        for (const dd of dds) {
+            if (dd.min_date === date && dd.person === person) {
+                if (task && task === dd.task) {
+                    return true;
+                }
+                if (task === null || task === undefined) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     getSolutions() {
-        this.http.get<SolutionStatus[]>(`${environment.api}/solutions`).subscribe(sol => {
-            this.solutions$.next(sol);
-        });
+        combineLatest([
+            this.http.get<SolutionStatus[]>(`${environment.api}/solutions`),
+            this.scheduleConstraintsService.getDesiredDates(),
+        ])
+            .pipe(
+                map(d1 => {
+                    console.log('test', d1);
+                    for (const d of d1[0]) {
+                        d.desiredDates = d1[1];
+                        d.dd = {};
+                        if (d.schedule) {
+                            for (const date of Object.keys(d.schedule)) {
+                                d.dd[date] = {};
+                                for (const task of Object.keys(d.schedule[date])) {
+                                    const person = d.schedule[date][task];
+                                    d.dd[date][task] = this.isDesiredDate(d1[1], date, person);
+                                }
+                            }
+                        }
+                    }
+                    return d1[0];
+                }),
+            )
+            .subscribe(sol => {
+                this.solutions$.next(sol);
+            });
     }
 
     getSolution(name: string): Observable<SolutionStatus> {
         return this.http.get<SolutionStatus>(`${environment.api}/solutions/${name}`);
     }
 
-    calcPersonStats(sol: SolutionStatus): Map<string, Map<string, number>> {
+    calcPersonStats(sol: SolutionStatus): Statistics {
         const persMap = new Map<string, Map<string, number>>();
+        const totalDDs = new Map<string, number>();
+        const hitDDs = new Map<string, number>();
 
         if (!sol || !sol.schedule) {
             return null;
         }
 
-        for (const [_, taskMap] of Object.entries(sol.schedule)) {
+        for (const dd of sol?.desiredDates) {
+            totalDDs.set(dd.person, (totalDDs.get(dd.person) || 0) + 1);
+        }
+
+        for (const [date, taskMap] of Object.entries(sol.schedule)) {
             for (const [task, person] of Object.entries(taskMap)) {
                 if (!persMap.has(person)) {
                     persMap.set(person, new Map<string, number>());
@@ -57,10 +118,14 @@ export class SolutionsService {
 
                 persMap.get(person).set(task, (persMap.get(person).get(task) || 0) + 1);
                 persMap.get(person).set('total', (persMap.get(person).get('total') || 0) + 1);
+
+                if (this.isDesiredDate(sol.desiredDates, date, person)) {
+                    hitDDs.set(person, (hitDDs.get(person) || 0) + 1);
+                }
             }
         }
 
-        return persMap;
+        return { persMap, totalDDs, hitDDs };
     }
 
     getMax(persMap: Map<string, Map<string, number>>, task: string): number | null {

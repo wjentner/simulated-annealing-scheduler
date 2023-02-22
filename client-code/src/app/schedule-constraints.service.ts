@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DateTime } from 'luxon';
-import { BehaviorSubject, map, Observable, take } from 'rxjs';
+import { BehaviorSubject, filter, map, mergeMap, Observable, take, toArray } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HasWarnings, Warnings } from './warning-interface';
 
@@ -60,6 +60,14 @@ export class ScheduleConstraintsService implements HasWarnings {
         this.http.get<ScheduleConstraints>(`${environment.api}/constraints`).subscribe(d => {
             this.constraints$.next(d);
         });
+    }
+
+    getDesiredDates(): Observable<TimeConstraint[]> {
+        return this.http.get<ScheduleConstraints>(`${environment.api}/constraints`).pipe(
+            mergeMap(d => d?.time_constraints || []),
+            filter(d => d && d.negated === false && d.min_date === d.max_date),
+            toArray(),
+        );
     }
 
     getWarnings(): Observable<Warnings[]> {

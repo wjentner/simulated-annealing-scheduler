@@ -29,6 +29,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
     declarations: [
@@ -64,6 +65,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
         MatSnackBarModule,
         MatTooltipModule,
         MatProgressBarModule,
+        MatCardModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
