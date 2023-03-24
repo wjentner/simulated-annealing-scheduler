@@ -181,9 +181,9 @@
     tslib "^2.3.0"
 
 "@angular/cdk@^15.0.1":
-  version "15.2.3"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-15.2.3.tgz#b2e0b9baede48852d2a93e88a1f3bfdf13e65ce0"
-  integrity sha512-zb9/7nVT7VdqJeQ2l10Ei2Uhm9Woc8msUUbE+VxNON3e7N2czbZeRpDdV/tyA46/9sgEvYcOXLCIB+8JkF5FwQ==
+  version "15.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-15.2.4.tgz#aa792010fb1073088d14446bc30894effb0e1fcb"
+  integrity sha512-E4ZjDG12NdXHhCtask/5qzlgDzQ72vEbDoDd4I4ueI1rSUxFVyzRBt2vJwsAHbblO9kQoi/BOCXkJunR/T7r6g==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -263,16 +263,16 @@
   integrity sha512-r389ztP69F9FXW0N3LjBq4cWBTuwjsnLjDUBUuSl16sjwBcjjtob5+dw36oDTDnchIrkkg0dR/gKW6vO9OPmKw==
 
 "@angular/material-luxon-adapter@^15.0.1":
-  version "15.2.3"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-15.2.3.tgz#71dd3826992858116a7010f7c167f98af36ed42b"
-  integrity sha512-ExeuZOhbpNbEYQazhyHA0U78VDTFEgegpVWhnaxkdPGXQXaRoxCQ1HjA+NYed0YTxOaXWn0udMUmMV3cRpf+TQ==
+  version "15.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-15.2.4.tgz#dae8862e69564165d74670786818875dba355ca3"
+  integrity sha512-Ub7WQlAKaArK2UB9He30206yupaNCOYNbShhkytdqj96LIKtA1JNOzG1eCMSbxPH0GccSEwKJoOcx3elQr9jcA==
   dependencies:
     tslib "^2.3.0"
 
 "@angular/material@^15.0.1":
-  version "15.2.3"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-15.2.3.tgz#5e23856e80c7d542a46e3115e173fdc0db593444"
-  integrity sha512-hM3oxalZa5D0pl3aiuRNaYhP4odKmQzQvJQx1lfZ8nWIeBfzS94lygRLa5M7V8eGsYa6v+iCT5Kc+V2L6imJfA==
+  version "15.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-15.2.4.tgz#f1435b3669b27065b42ea337e49347d95da36d08"
+  integrity sha512-sHEU+vygags4YZonUx55T7bExKV802YWQ+F5w6iBDpttx7Kf3wXUThVAnE408wA4GdZj3cgEU6eNDwxsrExHMg==
   dependencies:
     "@material/animation" "15.0.0-canary.684e33d25.0"
     "@material/auto-init" "15.0.0-canary.684e33d25.0"
@@ -1463,9 +1463,9 @@
     eslint-visitor-keys "^3.3.0"
 
 "@eslint-community/regexpp@^4.4.0":
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/@eslint-community/regexpp/-/regexpp-4.4.0.tgz#3e61c564fcd6b921cb789838631c5ee44df09403"
-  integrity sha512-A9983Q0LnDGdLPjxyXQ00sbV+K+O+ko2Dr+CZigbHWtX9pNfxlaBkMR8X1CztI73zuEyEBXTVjx7CE+/VSwDiQ==
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/@eslint-community/regexpp/-/regexpp-4.4.1.tgz#087cb8d9d757bb22e9c9946c9c0c2bf8806830f1"
+  integrity sha512-BISJ6ZE4xQsuL/FmsyRaiffpq977bMlsKfGHTQrOGFErfByxIe6iZTxPf/00Zon9b9a7iUykfQwejN3s2ZW/Bw==
 
 "@eslint/eslintrc@^2.0.1":
   version "2.0.1"
@@ -4211,9 +4211,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.284:
-  version "1.4.337"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.337.tgz#710168240b2dc5fe5eb5f8e4ef9c16d70aedc0ba"
-  integrity sha512-W8gdzXG86mVPoc56eM8YA+QiLxaAxJ8cmDjxZgfhLLWVvZQxyA918w5tX2JEWApZta45T1/sYcmFHTsTOUE3nw==
+  version "1.4.338"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.338.tgz#f2f7641e4cebccd98fc46fa39984761935f4e1ba"
+  integrity sha512-Kfq90LFsNtGOwCZJ77XQa2fSuGQVlEBIGqiccfXxkoYTe5o79dE/9GMXR2R9OWjKGFfRVX4GHYxeCUyA8mRJlw==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -7888,9 +7888,9 @@ signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
 sigstore@^1.0.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/sigstore/-/sigstore-1.1.1.tgz#751a709a7467ca54dcb2e81e36d67cfdcf5ca546"
-  integrity sha512-4hR3tPP1y59YWlaoAgAWFVZ7srTjNWOrrpkQXWu05qP0BvwFYyt3K3l848+IHo+mKhkOzGcNDf7ktASXLEPC+A==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/sigstore/-/sigstore-1.2.0.tgz#ae5b31dac75c2d31e7873897e2862f0d0b205bce"
+  integrity sha512-Fr9+W1nkBSIZCkJQR7jDn/zI0UXNsVpp+7mDQkCnZOIxG9p6yNXBx9xntHsfUyYHE55XDkkVV3+rYbrkzAeesA==
   dependencies:
     "@sigstore/protobuf-specs" "^0.1.0"
     make-fetch-happen "^11.0.1"
