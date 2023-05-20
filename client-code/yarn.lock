@@ -4270,9 +4270,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.284:
-  version "1.4.401"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.401.tgz#cbd2c332c4a833e9e8d2ec5b3a6cd85ec6920907"
-  integrity sha512-AswqHsYyEbfSn0x87n31Na/xttUqEAg7NUjpiyxC20MaWKLyadOYHMzyLdF78N1iw+FK8/2KHLpZxRdyRILgtA==
+  version "1.4.402"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.402.tgz#9aa7bbb63081513127870af6d22f829344c5ba57"
+  integrity sha512-gWYvJSkohOiBE6ecVYXkrDgNaUjo47QEKK0kQzmWyhkH+yoYiG44bwuicTGNSIQRG3WDMsWVZJLRnJnLNkbWvA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -4866,9 +4866,9 @@ faye-websocket@^0.11.3:
     websocket-driver ">=0.5.1"
 
 feiertagejs@^1.2.7:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/feiertagejs/-/feiertagejs-1.3.6.tgz#2a73c5b1a48830c83fdd2c5d5006008a8e511886"
-  integrity sha512-sbtLIbnHOW22KNszgRJhdvWZlohM2Ra/Fd1B1urMlz9KLn6Bc4KI/fIFfKfyxCh4KK83sFyrmWvbLPjN7z3Tow==
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/feiertagejs/-/feiertagejs-1.3.8.tgz#c61cce655bcf8e78d030bd8146533cc228544cfb"
+  integrity sha512-+xFSrCqC5QriR0yk8jJjCxDsM9p5LINyFCpiONDfagbLaKAu5e5/BRu+DEZ0vE1s/2m9rPmNyytDlqpxsE7i6w==
 
 figures@^3.0.0:
   version "3.2.0"
