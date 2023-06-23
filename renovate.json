@@ -5,8 +5,21 @@
     "gitLabAutomerge": true,
     "packageRules": [
       {
-        "matchPackagePatterns": ["^@angular"],
-        "groupName": "angular packages"
+        "packageNames": [
+          "@angular/core",
+          "@angular/cli",
+          "@angular/material",
+          "@angular/cdk"
+        ],
+        "postUpgradeTasks": {
+          "commands": [
+            "install-tool yarn 1.22.19 && yarn global add @angular/cli && cd client-code && yarn install && ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force"
+          ],
+          "fileFilters": [
+            "**/**"
+          ]
+        },
+        "updateTypes": ["major", "minor", "patch"]
       },
       {
         "matchPackagePatterns": ["eslint"],
