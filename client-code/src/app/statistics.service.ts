@@ -75,13 +75,16 @@ export class StatisticsService implements HasWarnings {
         }
         let sum = 0;
         for (const date in constraints.dates_and_tasks) {
-            if (!constraints.dates_and_tasks.hasOwnProperty(date)) {
+            if (!Object.prototype.hasOwnProperty.call(constraints.dates_and_tasks, date)) {
                 continue;
             }
             for (const pTask in constraints.dates_and_tasks[date]) {
                 //console.log(ctrl.data.dates[iDate]+": "+pTask);
                 if (
-                    constraints.dates_and_tasks[date].hasOwnProperty(pTask) &&
+                    Object.prototype.hasOwnProperty.call(
+                        constraints.dates_and_tasks[date],
+                        pTask,
+                    ) &&
                     pTask === task &&
                     constraints.dates_and_tasks[date][pTask] === true
                 ) {
@@ -97,7 +100,7 @@ export class StatisticsService implements HasWarnings {
             return 0;
         }
         let sum = 0;
-        for (const [person, taskMap] of Object.entries(constraints.min_max_constraints)) {
+        for (const [, taskMap] of Object.entries(constraints.min_max_constraints)) {
             for (const [pTask, constraint] of Object.entries(taskMap)) {
                 if (pTask === task) {
                     sum += constraint.min;
@@ -112,7 +115,7 @@ export class StatisticsService implements HasWarnings {
             return 0;
         }
         let sum = 0;
-        for (const [person, taskMap] of Object.entries(constraints.min_max_constraints)) {
+        for (const [, taskMap] of Object.entries(constraints.min_max_constraints)) {
             for (const [pTask, constraint] of Object.entries(taskMap)) {
                 if (pTask === task) {
                     sum += constraint.max;

@@ -21,6 +21,4 @@ export class ReallyDeleteComponent {
 
     @Output()
     delete = new EventEmitter<void>();
-
-    constructor() {}
 }

@@ -74,7 +74,7 @@ export class DatesComponent implements OnInit {
             if (mCur.weekday === 6 || mCur.weekday === 7 || isHoliday(mCur.toJSDate(), 'BW')) {
                 //saturday
                 const isAHoliday = isHoliday(mCur.toJSDate(), 'BW');
-                const isSunday = mCur.weekday === 7;
+                // const isSunday = mCur.weekday === 7;
                 const iso = mCur.toISODate();
                 d.dates_and_tasks[iso] = {};
                 d.dates_and_tasks[iso].holiday = isAHoliday;

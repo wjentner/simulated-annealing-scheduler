@@ -165,7 +165,7 @@ export class ScheduleConstraintsService implements HasWarnings {
                         `${environment.api}/constraints`,
                         scheduleConstraints,
                     )
-                    .subscribe(d => this.constraints$.next(scheduleConstraints));
+                    .subscribe(() => this.constraints$.next(scheduleConstraints));
             });
     }
 }

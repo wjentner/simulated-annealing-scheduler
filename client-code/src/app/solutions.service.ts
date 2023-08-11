@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, merge, mergeMap, Observable, of, switchMap, toArray } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { combineLatest } from 'rxjs/internal/observable/combineLatest';
-import { forkJoin } from 'rxjs/internal/observable/forkJoin';
 import { environment } from 'src/environments/environment';
 import { ScheduleConstraintsService, TimeConstraint } from './schedule-constraints.service';
 import { TasksService } from './tasks.service';
@@ -106,8 +105,10 @@ export class SolutionsService {
             return null;
         }
 
-        for (const dd of sol?.desiredDates) {
-            totalDDs.set(dd.person, (totalDDs.get(dd.person) || 0) + 1);
+        if (sol?.desiredDates) {
+            for (const dd of sol.desiredDates) {
+                totalDDs.set(dd.person, (totalDDs.get(dd.person) || 0) + 1);
+            }
         }
 
         for (const [date, taskMap] of Object.entries(sol.schedule)) {
@@ -135,7 +136,7 @@ export class SolutionsService {
 
         let max = 0;
 
-        for (const [person, taskMap] of persMap.entries()) {
+        for (const taskMap of persMap.values()) {
             if (taskMap.get(task) > max) {
                 max = taskMap.get(task);
             }
