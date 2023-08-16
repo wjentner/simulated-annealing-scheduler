@@ -235,9 +235,9 @@
     tslib "^2.3.0"
 
 "@angular/compiler-cli@^16.2.0":
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-16.2.0.tgz#b5d6c55141c3051b5aaae6e3a907c45d81206a5b"
-  integrity sha512-IGRpEJwbzOLFsLj2qgTHpZ6nNcRjKDYaaAnVx+B1CfK4DP31PIsZLgsWcEcYt7KbF/FUlrCNwdBxrqE7rDxZaw==
+  version "16.2.1"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-16.2.1.tgz#e55647004d23ff23a3cda547bfdfe01cdde17073"
+  integrity sha512-A5SyNZTZnXSCL5JVXHKbYj9p2dRYoeFnb6hGQFt2AuCcpUjVIIdwHtre3YzkKe5sFwepPctdoRe2fRXlTfTRjA==
   dependencies:
     "@babel/core" "7.22.5"
     "@jridgewell/sourcemap-codec" "^1.4.14"
@@ -3894,10 +3894,15 @@ camelcase@^5.0.0, camelcase@^5.3.1:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
-caniuse-lite@^1.0.30001464, caniuse-lite@^1.0.30001517:
+caniuse-lite@^1.0.30001464:
   version "1.0.30001520"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001520.tgz#62e2b7a1c7b35269594cf296a80bdf8cb9565006"
   integrity sha512-tahF5O9EiiTzwTUqAeFjIZbn4Dnqxzz7ktrgGlMYNLH43Ul26IgTMH/zvL3DG0lZxBYnlT04axvInszUsZULdA==
+
+caniuse-lite@^1.0.30001517:
+  version "1.0.30001521"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001521.tgz#e9930cf499f7c1e80334b6c1fbca52e00d889e56"
+  integrity sha512-fnx1grfpEOvDGH+V17eccmNjucGUnCbP6KL+l5KqBIerp26WK/+RQ7CIDE37KGJjaPyqWXXlFUyKiWmvdNNKmQ==
 
 caseless@~0.12.0:
   version "0.12.0"
