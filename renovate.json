@@ -1,5 +1,9 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      "config:base",
+      "local>kubernetes/renovate-bot"
+    ],  
     "assignees": ["@sisu4u"],
     "assigneesSampleSize": 1,
     "gitLabAutomerge": true,
