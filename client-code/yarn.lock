@@ -4960,9 +4960,9 @@ eslint-plugin-import@^2.25.4:
     tsconfig-paths "^3.14.2"
 
 eslint-plugin-jsdoc@^46.0.0:
-  version "46.4.6"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-46.4.6.tgz#5226461eda61b5920297cbe02c3b17bc9423cf0b"
-  integrity sha512-z4SWYnJfOqftZI+b3RM9AtWL1vF/sLWE/LlO9yOKDof9yN2+n3zOdOJTGX/pRE/xnPsooOLG2Rq6e4d+XW3lNw==
+  version "46.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-46.5.0.tgz#02e7945701a01fab76e7ced850d4d1eea63c23c0"
+  integrity sha512-aulXdA4I1dyWpzyS1Nh/GNoS6PavzeucxEapnMR4JUERowWvaEk2Y4A5irpHAcdXtBBHLVe8WIhdXNjoAlGQgA==
   dependencies:
     "@es-joy/jsdoccomment" "~0.40.1"
     are-docs-informative "^0.0.2"
@@ -5438,9 +5438,9 @@ forwarded@0.2.0:
   integrity sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==
 
 fraction.js@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
-  integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.1.tgz#14b4cc886575a5684f8d5fd5759c5db376bb7bb8"
+  integrity sha512-/KxoyCnPM0GwYI4NN0Iag38Tqt+od3/mLuguepLgCAKPn0ZhC544nssAW0tG2/00zXEYl9W+7hwAIpLHo6Oc7Q==
 
 fresh@0.5.2:
   version "0.5.2"
