@@ -2842,9 +2842,9 @@
   integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
 
 "@types/node@*", "@types/node@>=10.0.0", "@types/node@^20.0.0":
-  version "20.5.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.5.4.tgz#4666fb40f9974d60c53c4ff554315860ba4feab8"
-  integrity sha512-Y9vbIAoM31djQZrPYjpTLo0XlaSwOIsrlfE3LpulZeRblttsLQRFRlBAppW0LOxyT3ALj2M5vU1ucQQayQH3jA==
+  version "20.5.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.5.5.tgz#04461a93ca9f2ac8f76acd7e4c025bab70a1bfbd"
+  integrity sha512-c0Snqx/IpY+QHnCqEQzo9NjhBNth6gm6/4wDgWt1ML24ldNiStXmxuKJUKM7ob/iAhQWH/dUH1STRt5eTUixlw==
 
 "@types/q@^0.0.32":
   version "0.0.32"
@@ -2867,9 +2867,9 @@
   integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
 
 "@types/selenium-webdriver@^3.0.0":
-  version "3.0.22"
-  resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-3.0.22.tgz#6b8183c2432f917faff2fd2faf402c29d85bfbcf"
-  integrity sha512-Nh76NUqvfsZHG5ot5gMlHNNHQvbRvv5UpM4FH3K1HuUGeq4scNlRoKVKSOP/EGIYHhJ2IUXyQc+38jvZLxfB2Q==
+  version "3.0.23"
+  resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-3.0.23.tgz#59b96c11b63b74f88bdf7adfdf2018b6a844db8a"
+  integrity sha512-f4lAmp7rmGgsTkRPjgHOpQumgpqjQ0RxbEkOwCwLVSsa5gCnni4GMBfqmN0nObFeDRZj/DTTsx99SOjOXRW2bQ==
 
 "@types/semver@^7.3.12", "@types/semver@^7.5.0":
   version "7.5.0"
