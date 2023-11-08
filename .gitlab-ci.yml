@@ -33,10 +33,10 @@ variables:
   STAGING_BRANCH: main
   #
   # Helm chart (default dbvis-generic-chart)
-  HELM_CHART: registry.gitlab.topspawn.net/sisu4u/generic-helm-chart
+  HELM_CHART: oci://registry.gitlab.topspawn.net/kubernetes/generic-helm-chart/dbvis-generic
   #
   # Helm chart version
-  HELM_CHART_VERSION: v2.3.0
+  HELM_CHART_VERSION: 3.6.0
   #
   # Helm values.yaml
   HELM_VALUES_YAML: ./values.yaml
@@ -287,26 +287,17 @@ build:image-tagged:
     name: $HELM_IMAGE
     entrypoint: ["sh", "-c", "apk add bash sed && /bin/bash"]
   script:
-    - source var.env
-    # DEBUG
-    - cat var.env
-    # Flag to enable chart downloading via docker registry
-    - export HELM_EXPERIMENTAL_OCI=1
+    # set default namespace
+    - export HELM_NAMESPACE=${K8_NAMESPACE}
     # Login helm into docker registry
-    - echo ${CI_REGISTRY_PASSWORD} | helm registry login -u ${CI_REGISTRY_USER} --password-stdin ${HELM_CHART}
-    # list all available charts (locally)
-    - helm chart list
-    # pull the generic helm chart
-    - helm chart pull ${HELM_CHART}:${HELM_CHART_VERSION}
-    # export the generic helm chart to ./dbvis-generic
-    - helm chart export ${HELM_CHART}:${HELM_CHART_VERSION}
+    - echo ${CI_REGISTRY_PASSWORD} | helm registry login -u ${CI_REGISTRY_USER} --password-stdin ${CI_REGISTRY}
     # dry run to install chart
-    - helm upgrade --namespace=${K8_NAMESPACE} --dry-run --debug --install -f "${HELM_VALUES_YAML}" --set app.image.tag="${VERSION}" --set app.ingress.url=${URL_FULL} --set app.replicaCount=${REPLICA_COUNT} --set app.image.name=${CI_REGISTRY_IMAGE} ${RELEASE_NAME} ./dbvis-generic
+    - helm upgrade ${RELEASE_NAME} ${HELM_CHART} --version ${HELM_CHART_VERSION} --dry-run --debug --install -f "${HELM_VALUES_YAML}" --set app.image.tag="${VERSION}" --set app.ingress.url=${URL_FULL} --set app.replicaCount=${REPLICA_COUNT} --set app.image.repository=${CI_REGISTRY_IMAGE}
     # actually install chart
-    - helm upgrade --namespace=${K8_NAMESPACE} --install --wait --timeout "${HELM_TIMEOUT}" -f "${HELM_VALUES_YAML}" --set app.image.tag="${VERSION}" --set app.ingress.url=${URL_FULL} --set app.replicaCount=${REPLICA_COUNT} --set app.image.name=${CI_REGISTRY_IMAGE} ${RELEASE_NAME} ./dbvis-generic
-  retry: 2
+    - helm upgrade ${RELEASE_NAME} ${HELM_CHART} --version ${HELM_CHART_VERSION} --install --atomic --wait --timeout "${HELM_TIMEOUT}" -f "${HELM_VALUES_YAML}" --set app.image.tag="${VERSION}" --set app.ingress.url=${URL_FULL} --set app.replicaCount=${REPLICA_COUNT} --set app.image.repository=${CI_REGISTRY_IMAGE}
   tags:
     - docker
+
 
 .deploy:
   <<: *deploy-template
