@@ -14,7 +14,7 @@ variables:
   URL_SUFFIX: diensteinteilung.sfg-singen.de
   #
   # The namespace for kubernetes
-  K8_NAMESPACE: YOUR_NAMESPACE
+  K8_NAMESPACE: sfg-singen
   #
   # The release name is combined using this project name, the environment, 
   # as well as an optional suffix for the git branch name
