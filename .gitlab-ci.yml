@@ -53,7 +53,7 @@ variables:
   HELM_CHART: oci://registry.gitlab.topspawn.net/kubernetes/generic-helm-chart/dbvis-generic
   #
   # Helm chart version
-  HELM_CHART_VERSION: 3.5.0
+  HELM_CHART_VERSION: 3.6.0
   #
   # Helm values.yaml
   HELM_VALUES_YAML: ./values.yaml
