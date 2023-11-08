@@ -14,7 +14,7 @@ variables:
   URL_SUFFIX: diensteinteilung.sfg-singen.de
   #
   # The namespace for kubernetes
-  K8_NAMESPACE: sfg-singen
+  K8_NAMESPACE: YOUR_NAMESPACE
   #
   # The release name is combined using this project name, the environment, 
   # as well as an optional suffix for the git branch name
@@ -22,8 +22,25 @@ variables:
   # The default here is the GitLab project name. You may overwrite this here.
   RELEASE_NAME_PROJECT: ${CI_PROJECT_NAME}
   #
+  # This value is chosen carefully as a default and there should be no need to change this if you do not alter the
+  # release name with a prefix or suffix (i.e., change the length of the release name manually)
+  # An example would be that a second deployment is made, (e.g., redis) and the second deployment is named as
+  # $_RELEASE_NAME_PROJECT-redis. In this case, you should 
+  # reduce this value by the suffix including the dash (i.e., -redis => 6) to 47.
+  RELEASE_NAME_MAX_LENGTH: 53
+  #
+  # If you have old deployments, especially PVCs, they use the 
+  # naming format "$ENV-$PROJECT-$BRANCH", for example, "review-project-26-my-branch".
+  # In the new pipeline this format has been changed to "$PROJECT-$ENV-$BRANCH",
+  # for example, "project-review-26-my-branch".
+  # This new format is more useful as it will group all deployments, pods, etc. for
+  # one project together.
+  # You can turn on legacy mode by switching to "yes" to continue using the old name format.
+  # This is useful if you have old resources, such as PVCs and don't want to migrate them.
+  USE_LEGACY_RELEASE_NAME: "no"
+  #
   # Deploy production on tags (yes / no)
-  # If "no", the production deployment will be done when pushed to staging (e.g., main)
+  # If "no", the production deployment will be done when pushed to staging (e.g., master)
   DEPLOY_ON_TAGS: "no"
   #
   # Build and deploy feature branches (yes / no)
@@ -36,7 +53,7 @@ variables:
   HELM_CHART: oci://registry.gitlab.topspawn.net/kubernetes/generic-helm-chart/dbvis-generic
   #
   # Helm chart version
-  HELM_CHART_VERSION: 3.6.0
+  HELM_CHART_VERSION: 3.5.0
   #
   # Helm values.yaml
   HELM_VALUES_YAML: ./values.yaml
@@ -45,12 +62,12 @@ variables:
   DOCKERFILE_LOC: ./server-code/Dockerfile
   #
   # Docker context (default root)
-  DOCKER_CONTEXT: ./server-code
+  DOCKER_CONTEXT: ./
   #
   # Helm Timeout.
   # Helm will wait until all deployed resources (pods,ingress,etc) show ready state
   # Increase the timeout if you deploy things that have a long start up time.
-  HELM_TIMEOUT: 2m0s
+  HELM_TIMEOUT: 10m0s
   #
   # Helm image
   HELM_IMAGE: alpine/helm:3.13.1
@@ -66,6 +83,7 @@ variables:
   #
   #
   REPLICA_COUNT_FB: 1
+
 
 ###########################################
 # DEFINE BRANCH TRIGGER RULES
@@ -140,7 +158,13 @@ export-environment:
     - echo $CI_COMMIT_BRANCH
     - echo $STAGING_BRANCH
     # set the version either as a tag (v0.0.1) or as a commit sha (74bac331)
-    - if $(echo "$CI_COMMIT_TAG" | grep -q -E "^v[0-9]+(.[0-9]+)?(.[0-9]+)?"); then VERSION=${CI_COMMIT_TAG}; else VERSION=${CI_COMMIT_SHORT_SHA}; fi
+    - |
+      if $(echo "$CI_COMMIT_TAG" | grep -q -E "^v[0-9]+(.[0-9]+)?(.[0-9]+)?")
+      then
+        VERSION=${CI_COMMIT_TAG}
+      else 
+        VERSION=${CI_COMMIT_SHORT_SHA}
+      fi
     # the current URL suffix
     #- URL_SUFFIX="covis.dbvis.de" # defined in the variables section
     # The maximum url length for lets encrypt is 63.
@@ -153,20 +177,61 @@ export-environment:
     - ENV_TYPE="review"
     - REPLICA_COUNT="${REPLICA_COUNT_PRODUCTION}"
     # Determine what ENV_TYPE it is (production, staging or review)
-    - if [ "${DEPLOY_ON_TAGS}" == "yes" ] && $(echo "$CI_COMMIT_TAG" | grep -q -E "^v[0-9]+(.[0-9]+)?(.[0-9]+)?"); then ENV_TYPE="production"; fi
-    - if [ "${DEPLOY_ON_TAGS}" == "yes" ] && [ "${CI_COMMIT_BRANCH}" == "${STAGING_BRANCH}" ]; then ENV_TYPE="staging"; fi
-    - if [ "${DEPLOY_ON_TAGS}" == "no" ] && [ "${CI_COMMIT_BRANCH}" == "${STAGING_BRANCH}" ]; then ENV_TYPE="production"; fi
+    - |
+      if [ "${DEPLOY_ON_TAGS}" == "yes" ] && $(echo "$CI_COMMIT_TAG" | grep -q -E "^v[0-9]+(.[0-9]+)?(.[0-9]+)?")
+      then
+        ENV_TYPE="production"
+      fi
+    - |
+      if [ "${DEPLOY_ON_TAGS}" == "yes" ] && [ "${CI_COMMIT_BRANCH}" == "${STAGING_BRANCH}" ]
+      then
+        ENV_TYPE="staging"
+      elif [ "${DEPLOY_ON_TAGS}" == "no" ] && [ "${CI_COMMIT_BRANCH}" == "${STAGING_BRANCH}" ]
+      then
+        ENV_TYPE="production"
+      fi
     # default raw release name for production (only ENV_TYPE and GitLab Project name without branch)
-    - RELEASE_NAME_RAW="${RELEASE_NAME_PROJECT}/${ENV_TYPE}"
+    - |
+      if [ "${USE_LEGACY_RELEASE_NAME}" == "yes" ]
+      then
+        RELEASE_NAME_RAW="${ENV_TYPE}/${RELEASE_NAME_PROJECT}"
+      else
+        RELEASE_NAME_RAW="${RELEASE_NAME_PROJECT}/${ENV_TYPE}"
+      fi
     # Determine URL, ReplicaCount, and ReleaseName based on ENV_TYPE
-    - if [ "${ENV_TYPE}" == "staging" ]; then URL_PREFIX="staging."; REPLICA_COUNT="${REPLICA_COUNT_STAGING}"; RELEASE_NAME_RAW="${RELEASE_NAME_PROJECT}/${ENV_TYPE}/${CI_COMMIT_REF_SLUG}"; fi
-    - if [ "${ENV_TYPE}" == "review" ]; then URL_PREFIX="${SHORTENED_CI_COMMIT_REF_SLUG}."; REPLICA_COUNT="${REPLICA_COUNT_FB}"; RELEASE_NAME_RAW="${RELEASE_NAME_PROJECT}/${ENV_TYPE}/${CI_COMMIT_REF_SLUG}"; fi
+    - |
+      if [ "${ENV_TYPE}" == "staging" ]
+      then 
+        URL_PREFIX="staging."
+        REPLICA_COUNT="${REPLICA_COUNT_STAGING}"
+      fi
+    - |
+      if [ "${ENV_TYPE}" == "review" ]
+      then 
+        URL_PREFIX="${SHORTENED_CI_COMMIT_REF_SLUG}."
+        REPLICA_COUNT="${REPLICA_COUNT_FB}"
+      fi
+    - |
+      if [ "${ENV_TYPE}" == "review" ] || [ "${ENV_TYPE}" == "staging" ]
+      then
+        if [ "${USE_LEGACY_RELEASE_NAME}" == "yes" ]
+        then
+          RELEASE_NAME_RAW="${ENV_TYPE}/${RELEASE_NAME_PROJECT}/${CI_COMMIT_REF_SLUG}"
+        else
+          RELEASE_NAME_RAW="${RELEASE_NAME_PROJECT}/${ENV_TYPE}/${CI_COMMIT_REF_SLUG}"
+        fi
+      fi
     # Build the backend url: prefix.api.suffix
     - URL_FULL="${URL_PREFIX}${URL_SUFFIX}"
     - URL_LENGTH=$(echo "${URL_FULL}" | wc -m)
-    - if [ "${URL_LENGTH}" -gt "63" ]; then echo -e "\n\n!!!The URL ${URL_FULL} is too long (>63 characters) for lets encrypt certificates!!!\n\n"; exit 1; fi
+    - |
+      if [ "${URL_LENGTH}" -gt "63" ]
+      then 
+        echo -e "\n\n!!!The URL ${URL_FULL} is too long (>63 characters) for lets encrypt certificates!!!\n\n"
+        exit 1
+      fi
     # generating the release name from the environment name and remove invalid characters and shorten it
-    - RELEASE_NAME=$(echo "${RELEASE_NAME_RAW}" | tr / - | tr . - | tr _ - | tr '[:upper:]' '[:lower:]' | cut -c -53 | sed -E 's#-+$##')
+    - RELEASE_NAME=$(echo "${RELEASE_NAME_RAW}" | tr / - | tr . - | tr _ - | tr '[:upper:]' '[:lower:]' | cut -c -${RELEASE_NAME_MAX_LENGTH} | sed -E 's#-+$##')
     # The name of your helm release (e.g. name of deployment in kubernetes, e.g.: production-YOUR_GITLAB_PROJECT_NAME OR review-YOUR_GITLAB_PROJECT_NAME-BRANCH_NAME)
     - echo "RELEASE_NAME=${RELEASE_NAME}" >> var.env
     # all the stuff into the var.env (can be either "production", "staging", "review")
@@ -178,15 +243,18 @@ export-environment:
     - echo "URL_FULL=${URL_FULL}" >> var.env
     # the number of replicas as per settings above
     - echo "REPLICA_COUNT=${REPLICA_COUNT}" >> var.env
+    # setting container environment (kaniko bug)
+    - echo "container=kube" >> var.env
     # DEBUG
     - cat var.env
   artifacts:
-    paths:
-      - var.env
+    reports:
+      dotenv:
+        - var.env
     expire_in: 300 days
-  retry: 2
   tags:
     - docker
+
 
 ###########################################
 # BUILD
