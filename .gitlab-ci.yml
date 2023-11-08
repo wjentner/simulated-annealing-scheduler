@@ -289,8 +289,6 @@ build:image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
   script:
-    # load the var.env variables from the export-environment job
-    - source ./var.env
     - echo $CI_DEPENDENCY_PROXY_SERVER
     # Login
     - mkdir -p /kaniko/.docker
@@ -309,8 +307,6 @@ build:image-latest:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
   script:
-    # load the var.env variables from the export-environment job
-    - source ./var.env
     # Login
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$DOCKER_REGISTRY\":{\"username\":\"$DOCKER_USER\",\"password\":\"$DOCKER_PASS\"}, \"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
@@ -330,8 +326,6 @@ build:image-tagged:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
   script:
-    # load the var.env variables from the export-environment job
-    - source ./var.env
     # Login
     - mkdir -p /kaniko/.docker
     - echo "{\"auths\":{\"$DOCKER_REGISTRY\":{\"username\":\"$DOCKER_USER\",\"password\":\"$DOCKER_PASS\"}}}" > /kaniko/.docker/config.json
@@ -417,9 +411,6 @@ deploy-production:
   dependencies:
     - export-environment
   script:
-    - source var.env
-    # DEBUG
-    - cat var.env
     - curl -v --fail --connect-timeout 10 --max-time 10 --retry 20 --retry-delay 10 --retry-max-time 120 "${URL_FULL}"
   retry: 2
   tags:
@@ -450,9 +441,6 @@ debug k8 cluster state:
     name: $KUBECTL_IMAGE
     entrypoint: [""]
   script:
-    - source var.env
-    # DEBUG
-    - cat var.env
     - "kubectl describe node || :"
     - "kubectl -n ${K8_NAMESPACE} describe service \"${RELEASE_NAME}\" || :"
     - "kubectl -n ${K8_NAMESPACE} describe ingress \"${RELEASE_NAME}\" || :"
