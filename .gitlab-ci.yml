@@ -62,7 +62,7 @@ variables:
   DOCKERFILE_LOC: ./server-code/Dockerfile
   #
   # Docker context (default root)
-  DOCKER_CONTEXT: ./
+  DOCKER_CONTEXT: ./server-code
   #
   # Helm Timeout.
   # Helm will wait until all deployed resources (pods,ingress,etc) show ready state
