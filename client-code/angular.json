@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sa-scheduler-client:build"
+            "buildTarget": "sa-scheduler-client:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sa-scheduler-client:build:production"
+              "buildTarget": "sa-scheduler-client:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sa-scheduler-client:build"
+            "buildTarget": "sa-scheduler-client:build"
           }
         },
         "test": {
