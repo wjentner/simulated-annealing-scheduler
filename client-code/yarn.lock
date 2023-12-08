@@ -197,9 +197,9 @@
     tslib "^2.3.0"
 
 "@angular/cdk@^17.0.0":
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-17.0.2.tgz#84f4f52824ad5a2bed8e696983420deb916be0be"
-  integrity sha512-5d2LmlpvsrfLubfzWxzWa+pLW93m/GXVuFITETozPbwEeqOTDNZPbS4v89VF1SWUCxefb1tx5m4zaGpsTep7gQ==
+  version "17.0.3"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-17.0.3.tgz#aea1420b7938711f9534ad85c4b460de0ae15abb"
+  integrity sha512-Qd5uvC09B3+uk2uX1JxmiWrD7wueMHSxNBoCbDEmnrsdDVUta0wN/jj/CtATljxUM8ZqvEvkqgxJCig1od9oyQ==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -277,16 +277,16 @@
   integrity sha512-HTJmnZeXFZoAJD8wvMN7QHuGd9KHsEQTdA7DeEDxqDneGM63bPVdRN6gSaai6abU1/8gfBNtSTfiwhHnCRTh0Q==
 
 "@angular/material-luxon-adapter@^17.0.0":
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-17.0.2.tgz#f73033880aa097778537d8011ee4c446d6776218"
-  integrity sha512-L2Tb5+PuBAqcUfcRBdWwUB7bRYNO90ptKs2fIp1PDV8igWyAqLGbAOF+SYXuIvxnt6PPQgNNwultMdjk/y12Vg==
+  version "17.0.3"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-17.0.3.tgz#8fe2ce6d7787b820f07b9a22d22b69e71907ff87"
+  integrity sha512-KMYcAbFV8anw9qVw1ysSHuhm+HkpTKeoi8Ndi0LlqXx2SOrfc//iFcbMduDM/ZLFaefh2GdncipP/4iYeSsuyw==
   dependencies:
     tslib "^2.3.0"
 
 "@angular/material@^17.0.0":
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-17.0.2.tgz#5b1e22638db41bc5c981af47afe53f9b90655ec1"
-  integrity sha512-GKWUGHk7PZY6/hPA1nqRXOdofBX58mDGgSGltvtDIojb+GmKdYKUIR183hENHeCOHuFjcaF13gbLSl12WiH1cQ==
+  version "17.0.3"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-17.0.3.tgz#0c500761be3c047767cdc7fa4c85a26f81eca777"
+  integrity sha512-a7l5hMMCMobULAjwPK8HVQmOsbd3pOwju1QdBVhec0XwNGj2pK4ooKWdUmQcwsUA9DaZaOwAgEISHEADXJfKpQ==
   dependencies:
     "@material/animation" "15.0.0-canary.a246a4439.0"
     "@material/auto-init" "15.0.0-canary.a246a4439.0"
@@ -4654,9 +4654,9 @@ ejs@^3.1.7:
     jake "^10.8.5"
 
 electron-to-chromium@^1.4.601:
-  version "1.4.607"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.607.tgz#340cc229b504966413716c6eae67d0f3d3702ff0"
-  integrity sha512-YUlnPwE6eYxzwBnFmawA8LiLRfm70R2aJRIUv0n03uHt/cUzzYACOogmvk8M2+hVzt/kB80KJXx7d5f5JofPvQ==
+  version "1.4.608"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.608.tgz#ff567c51dde4892ae330860c7d9f19571e9e1d69"
+  integrity sha512-J2f/3iIIm3Mo0npneITZ2UPe4B1bg8fTNrFjD8715F/k1BvbviRuqYGkET1PgprrczXYTHFvotbBOmUp6KE0uA==
 
 emoji-regex@^10.3.0:
   version "10.3.0"
@@ -8234,9 +8234,9 @@ readdirp@~3.6.0:
     picomatch "^2.2.1"
 
 reflect-metadata@^0.1.2:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
-  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.14.tgz#24cf721fe60677146bb77eeb0e1f9dece3d65859"
+  integrity sha512-ZhYeb6nRaXCfhnndflDK8qI6ZQ/YcWZCISRAWICW9XYqMUwjZM9Z0DveWX/ABN01oxSHwVxKQmxeYZSsm0jh5A==
 
 regenerate-unicode-properties@^10.1.0:
   version "10.1.1"
@@ -9229,9 +9229,9 @@ terser@5.24.0:
     source-map-support "~0.5.20"
 
 terser@^5.16.8:
-  version "5.25.0"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-5.25.0.tgz#6579b4cca45b08bf0fdaa1a04605fd5860dfb2ac"
-  integrity sha512-we0I9SIsfvNUMP77zC9HG+MylwYYsGFSBG8qm+13oud2Yh+O104y614FRbyjpxys16jZwot72Fpi827YvGzuqg==
+  version "5.26.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-5.26.0.tgz#ee9f05d929f4189a9c28a0feb889d96d50126fe1"
+  integrity sha512-dytTGoE2oHgbNV9nTzgBEPaqAWvcJNl66VZ0BkJqlvp71IjO8CxdBx/ykCNb47cLnCmCvRZ6ZR0tLkqvZCdVBQ==
   dependencies:
     "@jridgewell/source-map" "^0.3.3"
     acorn "^8.8.2"
