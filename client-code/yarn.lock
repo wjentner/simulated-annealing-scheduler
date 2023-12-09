@@ -4404,7 +4404,7 @@ debug@4.3.2:
   dependencies:
     ms "2.1.2"
 
-debug@^3.1.0, debug@^3.2.6, debug@^3.2.7:
+debug@^3.1.0, debug@^3.2.7:
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.7.tgz#72580b7e9145fb39b6676f9c5e5fb100b934179a"
   integrity sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==
@@ -4654,9 +4654,9 @@ ejs@^3.1.7:
     jake "^10.8.5"
 
 electron-to-chromium@^1.4.601:
-  version "1.4.608"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.608.tgz#ff567c51dde4892ae330860c7d9f19571e9e1d69"
-  integrity sha512-J2f/3iIIm3Mo0npneITZ2UPe4B1bg8fTNrFjD8715F/k1BvbviRuqYGkET1PgprrczXYTHFvotbBOmUp6KE0uA==
+  version "1.4.609"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.609.tgz#5790a70aaa96de232501b56e14b64d17aff93988"
+  integrity sha512-ihiCP7PJmjoGNuLpl7TjNA8pCQWu09vGyjlPYw1Rqww4gvNuCcmvl+44G+2QyJ6S2K4o+wbTS++Xz0YN8Q9ERw==
 
 emoji-regex@^10.3.0:
   version "10.3.0"
@@ -7304,11 +7304,10 @@ natural-compare@^1.4.0:
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
 needle@^3.1.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/needle/-/needle-3.2.0.tgz#07d240ebcabfd65c76c03afae7f6defe6469df44"
-  integrity sha512-oUvzXnyLiVyVGoianLijF9O/RecZUf7TkBfimjGrLM4eQhXyeJwM6GeAWccwfQ9aa4gMCZKqhAOuLaMIcQxajQ==
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/needle/-/needle-3.3.0.tgz#042253ee5c5d7dc1cfd8114dcc3682f11eab06cc"
+  integrity sha512-Kaq820952NOrLY/LVbIhPZeXtCGDBAPVgT0BYnoT3p/Nr3nkGXdvWXXA3zgy7wpAgqRULu9p/NvKiFo6f/12fw==
   dependencies:
-    debug "^3.2.6"
     iconv-lite "^0.6.3"
     sax "^1.2.4"
 
