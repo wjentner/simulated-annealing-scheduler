@@ -261,7 +261,7 @@ export-environment:
 ###########################################
 
 build-angular:
-  image: node:lts-alpine
+  image: node:20.9-alpine
   stage: build
   script:
     - cd ./client-code
