@@ -7,7 +7,7 @@ import os.path
 import traceback
 from datetime import datetime
 from os import path
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from fastapi import BackgroundTasks, FastAPI, File, UploadFile
 from fastapi.responses import StreamingResponse
@@ -39,14 +39,14 @@ class SelectablePerson(BaseModel):
 class SolutionStatus(BaseModel):
     name: str
     status: str
-    fitness: float | None
-    penalties: List[PartialPenalty] | None
-    schedule: Dict[str, Dict[str, str]] | None
-    error_msg: str | None
+    fitness: Optional[float] = None
+    penalties: Optional[List[PartialPenalty]] = None
+    schedule: Optional[Dict[str, Dict[str, str]]] = None
+    error_msg: Optional[str] = None
 
 
 class AlgorithmSettings(BaseModel):
-    initial_state: str | None
+    initial_state: Optional[str] = None
     start_temp: float = 10000
     alpha: float = 0.999
     k: int = 1000
