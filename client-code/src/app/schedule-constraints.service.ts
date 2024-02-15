@@ -14,6 +14,10 @@ export interface TimeConstraint {
     penalty: number;
 }
 
+export interface FulfilledTimeConstraint extends TimeConstraint {
+    is_fulfilled: boolean;
+}
+
 export interface BuddyConstraint {
     negated: boolean;
     person_a: string;
@@ -66,6 +70,14 @@ export class ScheduleConstraintsService implements HasWarnings {
         return this.http.get<ScheduleConstraints>(`${environment.api}/constraints`).pipe(
             mergeMap(d => d?.time_constraints || []),
             filter(d => d && d.negated === false && d.min_date === d.max_date),
+            toArray(),
+        );
+    }
+
+    getUnDesiredDates(): Observable<TimeConstraint[]> {
+        return this.http.get<ScheduleConstraints>(`${environment.api}/constraints`).pipe(
+            mergeMap(d => d?.time_constraints || []),
+            filter(d => d && d.negated === true),
             toArray(),
         );
     }

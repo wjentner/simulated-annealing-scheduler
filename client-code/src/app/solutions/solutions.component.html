@@ -33,6 +33,13 @@
 <mat-card class="mycard">
     <div *ngIf="selectedSolution && selectedSolution.schedule">
         <h3>Solution</h3>
+        <p>
+            Legend:
+            <mat-icon fontIcon="star"></mat-icon> Desired Date (fulfilled)
+            <mat-icon fontIcon="star_outline"></mat-icon> Desired Date (not fulfilled)
+            <mat-icon fontIcon="sentiment_very_dissatisfied"></mat-icon> Does not want to be
+            scheduled that day
+        </p>
         <table class="mat-table cdk-table" role="grid">
             <thead role="rowgroup">
                 <tr class="mat-header-row cdk-header-row">
@@ -59,7 +66,18 @@
                         class="mat-cell cdk-cell cdk-column-position mat-column-position"
                         role="gridcell"
                     >
-                        {{ sItem.key | date : 'fullDate' }}
+                        {{ sItem.key | date: 'fullDate' }}<br />
+                        <span *ngFor="let dd of selectedSolution?.desiredDatesOfDay[sItem.key]">
+                            <mat-icon
+                                [fontIcon]="dd.is_fulfilled ? 'star' : 'star_outline'"
+                                [matTooltip]="
+                                    'Desired Date: ' +
+                                    dd.person +
+                                    '' +
+                                    (dd.task ? ' (' + dd.task + ')' : '')
+                                "
+                            ></mat-icon>
+                        </span>
                     </td>
 
                     <td
@@ -71,6 +89,24 @@
                             fontIcon="star"
                             *ngIf="selectedSolution?.dd[sItem.key][t] === true"
                             matTooltip="Desired Date"
+                        ></mat-icon>
+
+                        <mat-icon
+                            fontIcon="sentiment_very_dissatisfied"
+                            *ngIf="
+                                getUndesired(
+                                    selectedSolution.undesiredDatesOfDay[sItem.key],
+                                    sItem.value[t],
+                                    t
+                                )
+                            "
+                            [matTooltip]="
+                                getUndesiredText(
+                                    selectedSolution.undesiredDatesOfDay[sItem.key],
+                                    sItem.value[t],
+                                    t
+                                )
+                            "
                         ></mat-icon>
                         {{ sItem.value[t] }}
                     </td>
