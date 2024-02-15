@@ -13,7 +13,7 @@ class SchedulingOffspringGenerator(OffspringGenerator, ABC):
     @staticmethod
     def initial_schedule(constraints: ScheduleConstraints) -> Schedule:
         """
-        Uses round robin to create a valid schedule
+        Uses round-robin to create a valid schedule
         :return: a valid schedule
         """
         persons_for_task = constraints.get_persons_per_task()
@@ -41,7 +41,7 @@ class SchedulingOffspringGenerator(OffspringGenerator, ABC):
                     random_person: Optional[str] = None
                     tries = 0
                     while random_person is None and tries < 100:
-                        random_person = random.sample(persons_for_task[task], 1)[0]
+                        random_person = random.sample(list(persons_for_task[task]), 1)[0]
                         if random_person in persons_already_scheduled:
                             random_person = None
                         tries += 1
