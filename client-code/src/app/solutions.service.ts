@@ -40,6 +40,8 @@ export interface Statistics {
     persMap: Map<string, Map<string, number>>;
     totalDDs: Map<string, number>;
     hitDDs: Map<string, number>;
+    persDesiredDatesMap: Map<string, FulfilledTimeConstraint[]>;
+    persUnDesiredDatesMap: Map<string, FulfilledTimeConstraint[]>;
 }
 
 @Injectable({
@@ -173,6 +175,8 @@ export class SolutionsService {
         const persMap = new Map<string, Map<string, number>>();
         const totalDDs = new Map<string, number>();
         const hitDDs = new Map<string, number>();
+        const persDesiredDatesMap = new Map<string, FulfilledTimeConstraint[]>();
+        const persUnDesiredDatesMap = new Map<string, FulfilledTimeConstraint[]>();
 
         if (!sol || !sol.schedule) {
             return null;
@@ -199,7 +203,35 @@ export class SolutionsService {
             }
         }
 
-        return { persMap, totalDDs, hitDDs };
+        for (const byDay of Object.values(sol.desiredDatesOfDay)) {
+            for (const ftc of byDay) {
+                if (!persDesiredDatesMap.has(ftc.person)) {
+                    persDesiredDatesMap.set(ftc.person, []);
+                }
+                persDesiredDatesMap.get(ftc.person).push(ftc);
+            }
+        }
+
+        for (const ftc of persDesiredDatesMap.values()) {
+            ftc.sort((a, b) => {
+                const av = a.is_fulfilled ? 1 : 0;
+                const bv = b.is_fulfilled ? 1 : 0;
+                return bv - av;
+            });
+        }
+
+        for (const byDay of Object.values(sol.undesiredDatesOfDay)) {
+            for (const ftc of byDay) {
+                if (!ftc.is_fulfilled) {
+                    if (!persUnDesiredDatesMap.has(ftc.person)) {
+                        persUnDesiredDatesMap.set(ftc.person, []);
+                    }
+                    persUnDesiredDatesMap.get(ftc.person).push(ftc);
+                }
+            }
+        }
+
+        return { persMap, totalDDs, hitDDs, persDesiredDatesMap, persUnDesiredDatesMap };
     }
 
     getMax(persMap: Map<string, Map<string, number>>, task: string): number | null {

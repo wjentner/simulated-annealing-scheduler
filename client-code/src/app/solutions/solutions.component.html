@@ -35,10 +35,16 @@
         <h3>Solution</h3>
         <p>
             Legend:
-            <mat-icon fontIcon="star"></mat-icon> Desired Date (fulfilled)
-            <mat-icon fontIcon="star_outline"></mat-icon> Desired Date (not fulfilled)
-            <mat-icon fontIcon="sentiment_very_dissatisfied"></mat-icon> Does not want to be
-            scheduled that day
+            <mat-icon fontIcon="star"></mat-icon>
+            <span style="color: green">{{ getFulfilledDesiredDateCount(selectedSolution) }}</span>
+            Desired Date (fulfilled) <mat-icon fontIcon="star_outline"></mat-icon>
+            <span style="color: orange">{{
+                getUnfulfilledDesiredDateCount(selectedSolution)
+            }}</span>
+            Desired Date (not fulfilled)
+            <mat-icon fontIcon="sentiment_very_dissatisfied"></mat-icon>
+            <span style="color: red">{{ getUnfulfilledUndesiredDateCount(selectedSolution) }}</span>
+            Does not want to be scheduled that day
         </p>
         <table class="mat-table cdk-table" role="grid">
             <thead role="rowgroup">
@@ -166,6 +172,22 @@
                         role="gridcell"
                     >
                         {{ e.key }}
+
+                        <div *ngIf="personStats.persDesiredDatesMap.has(e.key)">
+                            <mat-icon
+                                *ngFor="let ftc of personStats.persDesiredDatesMap.get(e.key)"
+                                [fontIcon]="ftc.is_fulfilled ? 'star' : 'star_outline'"
+                            >
+                            </mat-icon>
+                        </div>
+
+                        <div *ngIf="personStats.persUnDesiredDatesMap.has(e.key)">
+                            <mat-icon
+                                *ngFor="let ftc of personStats.persUnDesiredDatesMap.get(e.key)"
+                                [fontIcon]="'sentiment_very_dissatisfied'"
+                            >
+                            </mat-icon>
+                        </div>
                     </td>
 
                     <td

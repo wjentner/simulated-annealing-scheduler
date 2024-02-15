@@ -69,4 +69,40 @@ export class SolutionsComponent implements OnInit {
         }
         return `Does not want to be scheduled from ${tc.min_date} to ${tc.max_date}`;
     }
+
+    getFulfilledDesiredDateCount(sol: SolutionStatus): number {
+        let sum = 0;
+        for (const perDay of Object.values(sol.desiredDatesOfDay)) {
+            for (const tc of perDay) {
+                if (tc.is_fulfilled) {
+                    sum += 1;
+                }
+            }
+        }
+        return sum;
+    }
+
+    getUnfulfilledDesiredDateCount(sol: SolutionStatus): number {
+        let sum = 0;
+        for (const perDay of Object.values(sol.desiredDatesOfDay)) {
+            for (const tc of perDay) {
+                if (!tc.is_fulfilled) {
+                    sum += 1;
+                }
+            }
+        }
+        return sum;
+    }
+
+    getUnfulfilledUndesiredDateCount(sol: SolutionStatus): number {
+        let sum = 0;
+        for (const perDay of Object.values(sol.undesiredDatesOfDay)) {
+            for (const tc of perDay) {
+                if (!tc.is_fulfilled) {
+                    sum += 1;
+                }
+            }
+        }
+        return sum;
+    }
 }
