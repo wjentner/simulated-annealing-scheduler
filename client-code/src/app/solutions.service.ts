@@ -94,7 +94,11 @@ export class SolutionsService {
                 });
             }
         }
-        filtered.sort((a, b) => (b.negated ? 1 : 0) - (a.negated ? 1 : 0));
+        filtered.sort((a, b) => {
+            const av = a.is_fulfilled ? 1 : 0;
+            const bv = b.is_fulfilled ? 1 : 0;
+            return bv - av;
+        });
         return filtered;
     }
 
