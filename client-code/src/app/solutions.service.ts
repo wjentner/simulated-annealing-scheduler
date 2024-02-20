@@ -28,6 +28,7 @@ export interface SolutionStatus {
     penalties?: Penalty[];
     schedule?: Schedule;
     error_msg?: string;
+    fitness_history: { fitness: number; time: string }[];
     // date --> task --> desired date
     dd?: { [key: string]: { [key: string]: boolean } };
     desiredDates?: TimeConstraint[];

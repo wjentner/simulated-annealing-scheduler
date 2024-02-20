@@ -30,6 +30,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 @NgModule({
     declarations: [
@@ -66,6 +67,7 @@ import { MatCardModule } from '@angular/material/card';
         MatTooltipModule,
         MatProgressBarModule,
         MatCardModule,
+        CanvasJSAngularChartsModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

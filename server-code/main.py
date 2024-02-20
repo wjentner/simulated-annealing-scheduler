@@ -4,6 +4,7 @@ import io
 import json
 import logging
 import os.path
+import pathlib
 import traceback
 from datetime import datetime
 from os import path
@@ -36,6 +37,11 @@ class SelectablePerson(BaseModel):
     name: str
 
 
+class FitnessAtTime(BaseModel):
+    fitness: float
+    time: str
+
+
 class SolutionStatus(BaseModel):
     name: str
     status: str
@@ -43,6 +49,7 @@ class SolutionStatus(BaseModel):
     penalties: Optional[List[PartialPenalty]] = None
     schedule: Optional[Dict[str, Dict[str, str]]] = None
     error_msg: Optional[str] = None
+    fitness_history: Optional[List[FitnessAtTime]] = None
 
 
 class AlgorithmSettings(BaseModel):
@@ -51,6 +58,8 @@ class AlgorithmSettings(BaseModel):
     alpha: float = 0.999
     k: int = 1000
     num_offsprings: int = 1000
+
+
 
 
 class TmpSolWriter(SAObserver):
@@ -160,6 +169,20 @@ def __get_status_of_solution(name: str) -> SolutionStatus:
         status=status,
         error_msg=error_msg
     )
+
+
+def __get_fitness_history_of_solution(name: str) -> List[FitnessAtTime]:
+    files = f'./data/solutions/tmp/{name}/*.json'
+    fitness_list: List[FitnessAtTime] = []
+    for f in glob.glob(files):
+        p = pathlib.Path(f)
+        fit = FitnessAtTime(
+            fitness=float(p.name[0:-5]),
+            time=datetime.fromtimestamp(p.stat().st_mtime).isoformat()
+        )
+        fitness_list.append(fit)
+    fitness_list.sort(key=lambda x: x.time, reverse=False)
+    return fitness_list
 
 
 class EndpointFilter(logging.Filter):
@@ -288,6 +311,7 @@ def solution_get(sol: str) -> SolutionStatus:
     s.fitness = fitness
     s.penalties = penalties
     s.schedule = actual_schedule
+    s.fitness_history = __get_fitness_history_of_solution(sol)
 
     return s
 
