@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^17.0.1",
     "@angular/router": "^17.0.1",
     "@canvasjs/angular-charts": "^1.1.1",
+    "@canvasjs/charts": "^3.7.39",
     "feiertagejs": "^1.2.7",
     "luxon": "^3.0.0",
     "rxjs": "~7.8.0",
