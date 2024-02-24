@@ -1,10 +1,12 @@
 <mat-card class="mycard">
     <div>
-        <mat-form-field>
+        <mat-form-field style="width: 50%">
             <mat-label>Solutions</mat-label>
             <mat-select [(value)]="selectedSolution" (valueChange)="updateSol($event)">
                 <mat-option *ngFor="let sol of solutions$ | async" [value]="sol">
-                    {{ sol.name }} / {{ sol.status }} / {{ sol.fitness }}
+                    <span style="font-weight: bold">{{ sol.name }}</span> |
+                    <span [ngClass]="['solution', sol.status]">{{ sol.status }}</span> |
+                    {{ sol.fitness }}
                 </mat-option>
             </mat-select>
         </mat-form-field>
@@ -15,7 +17,12 @@
     <div class="overview" *ngIf="selectedSolution">
         <div>
             <p>Name: {{ selectedSolution.name }}</p>
-            <p>Status: {{ selectedSolution.status }}</p>
+            <p>
+                Status:
+                <span [ngClass]="['solution', selectedSolution.status]">{{
+                    selectedSolution.status
+                }}</span>
+            </p>
             <p *ngIf="selectedSolution.error_msg">Error: {{ selectedSolution.error_msg }}</p>
             <p *ngIf="selectedSolution.fitness">Fitness: {{ selectedSolution.fitness }}</p>
         </div>
