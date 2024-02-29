@@ -1301,9 +1301,9 @@
     to-fast-properties "^2.0.0"
 
 "@canvasjs/angular-charts@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@canvasjs/angular-charts/-/angular-charts-1.1.1.tgz#4b5714f2c70970b711f59fe627b45f1ad997758e"
-  integrity sha512-PwT7jDMlg3jgmFMkwj7TILF7uy2pkQvKLLZQg+AiEK5pG6O/SSeBXfAQfii34Agu4Oe/cuEtaJibfw7T4pZxZQ==
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@canvasjs/angular-charts/-/angular-charts-1.1.5.tgz#81deb15b59dff5033afe2e85402a552dd5604920"
+  integrity sha512-sep50NJ/fdeODdoT8fD8c1sAU4wB0i6/0czqUWKpVOpsf2UP0X6NoWdxQ/fXxY0MKHMpsDUpfTuZBeie5hBe5Q==
   dependencies:
     tslib "^2.3.0"
 
