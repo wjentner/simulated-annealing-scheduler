@@ -23,6 +23,14 @@
     "@angular-devkit/core" "17.3.1"
     rxjs "7.8.1"
 
+"@angular-devkit/architect@0.1703.2":
+  version "0.1703.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.1703.2.tgz#42cf1f1de946d9d9530030e35bd53a8f3b9249d8"
+  integrity sha512-fT5gSzwDHOyGv8zF97t8rjeoYSGSxXjWWstl3rN1nXdO0qgJ5m6Sv0fupON+HltdXDCBLRH+2khNpqx/Fh0Qww==
+  dependencies:
+    "@angular-devkit/core" "17.3.2"
+    rxjs "7.8.1"
+
 "@angular-devkit/build-angular@17.3.1":
   version "17.3.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-17.3.1.tgz#98e5fff11cbb48eeceee745cc36fafc45eba0f31"
@@ -114,12 +122,24 @@
     rxjs "7.8.1"
     source-map "0.7.4"
 
-"@angular-devkit/schematics@17.3.1":
-  version "17.3.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-17.3.1.tgz#93e4558a60c00d947240e01c043868f7bb462e55"
-  integrity sha512-c3tp5zC5zp6XpK9w8wJf3d4Dyw9BNbmg/VEoXtePGivp4hzks6zuMAFknNRwdK7roOlH0HyM5No4WUZHBFpOmw==
+"@angular-devkit/core@17.3.2":
+  version "17.3.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-17.3.2.tgz#877c9443a4042c794a84857f4193b309459e3bea"
+  integrity sha512-1vxKo9+pdSwTOwqPDSYQh84gZYmCJo6OgR5+AZoGLGMZSeqvi9RG5RiUcOMLQYOnuYv0arlhlWxz0ZjyR8ApKw==
   dependencies:
-    "@angular-devkit/core" "17.3.1"
+    ajv "8.12.0"
+    ajv-formats "2.1.1"
+    jsonc-parser "3.2.1"
+    picomatch "4.0.1"
+    rxjs "7.8.1"
+    source-map "0.7.4"
+
+"@angular-devkit/schematics@17.3.2":
+  version "17.3.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-17.3.2.tgz#52250e936034f5292e3da85a9eb5304edf716fb8"
+  integrity sha512-AYO6oc6QpFGigc1KiDzEVT1CeLnwvnIedU5Q/U3JDZ/Yqmvgc09D64g9XXER2kg6tV7iEgLxiYnonIAQOHq7eA==
+  dependencies:
+    "@angular-devkit/core" "17.3.2"
     jsonc-parser "3.2.1"
     magic-string "0.30.8"
     ora "5.4.1"
@@ -204,14 +224,14 @@
     parse5 "^7.1.2"
 
 "@angular/cli@^17.0.0":
-  version "17.3.1"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-17.3.1.tgz#22e0f3b9c3d5b509e65597152e52db1e496cac5d"
-  integrity sha512-IVnnbRi53BZvZ3LE0PCfFefoB2uHlO1sHtilZf/xCpdV4E1Mkz0/hHln5CRHwAXErdSiY57VoMsF5tffxAfaBQ==
+  version "17.3.2"
+  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-17.3.2.tgz#7ee53207284607b478182c94cb8a523b8d622006"
+  integrity sha512-g6r4XZyGnh9P6GmWgaFh8RmR4L6UdQ408e3SpG3rjncuPRD57Ur8806GfCLPt6HIA9TARiKmaJ0EJ3RsIjag0g==
   dependencies:
-    "@angular-devkit/architect" "0.1703.1"
-    "@angular-devkit/core" "17.3.1"
-    "@angular-devkit/schematics" "17.3.1"
-    "@schematics/angular" "17.3.1"
+    "@angular-devkit/architect" "0.1703.2"
+    "@angular-devkit/core" "17.3.2"
+    "@angular-devkit/schematics" "17.3.2"
+    "@schematics/angular" "17.3.2"
     "@yarnpkg/lockfile" "1.1.0"
     ansi-colors "4.1.3"
     ini "4.1.2"
@@ -2737,13 +2757,13 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.13.0.tgz#6abd79db7ff8d01a58865ba20a63cfd23d9e2a10"
   integrity sha512-UKXUQNbO3DOhzLRwHSpa0HnhhCgNODvfoPWv2FCXme8N/ANFfhIPMGuOT+QuKd16+B5yxZ0HdpNlqPvTMS1qfw==
 
-"@schematics/angular@17.3.1":
-  version "17.3.1"
-  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-17.3.1.tgz#526eb43214bb27357d56fabc114cb8b149ef1507"
-  integrity sha512-B3TkpjDjZhxX+tUc2ySEHU33x82Da0sssq/EMqQ1PQBHeRMa0ecyCeExjFEs2y57ZuC+QeVTaUt+TW45lLSjQw==
+"@schematics/angular@17.3.2":
+  version "17.3.2"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-17.3.2.tgz#7e8227ef7c04bbc7b876c22a6f7d0146c0de2d2d"
+  integrity sha512-zPINvow0Qo6ionnDl25ZzSSLDyDxBjqRPEJWGHU70expbjXK4A2caQT9P/8ImhapbJAXJCfxg4GF9z1d/sWe4w==
   dependencies:
-    "@angular-devkit/core" "17.3.1"
-    "@angular-devkit/schematics" "17.3.1"
+    "@angular-devkit/core" "17.3.2"
+    "@angular-devkit/schematics" "17.3.2"
     jsonc-parser "3.2.1"
 
 "@sigstore/bundle@^2.2.0":
@@ -2753,10 +2773,10 @@
   dependencies:
     "@sigstore/protobuf-specs" "^0.3.0"
 
-"@sigstore/core@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@sigstore/core/-/core-1.0.0.tgz#0fcdb32d191d4145a70cb837061185353b3b08e3"
-  integrity sha512-dW2qjbWLRKGu6MIDUTBuJwXCnR8zivcSpf5inUzk7y84zqy/dji0/uahppoIgMoKeR+6pUZucrwHfkQQtiG9Rw==
+"@sigstore/core@^1.0.0", "@sigstore/core@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@sigstore/core/-/core-1.1.0.tgz#5583d8f7ffe599fa0a89f2bf289301a5af262380"
+  integrity sha512-JzBqdVIyqm2FRQCulY6nbQzMpJJpSiJ8XXWMhtOX9eKgaXXpfNOF53lzQEjIydlStnd/eFtuC1dW4VYdD93oRg==
 
 "@sigstore/protobuf-specs@^0.3.0":
   version "0.3.0"
@@ -2774,20 +2794,20 @@
     make-fetch-happen "^13.0.0"
 
 "@sigstore/tuf@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@sigstore/tuf/-/tuf-2.3.1.tgz#86ff3c3c907e271696c88de0108d9063a8cbcc45"
-  integrity sha512-9Iv40z652td/QbV0o5n/x25H9w6IYRt2pIGbTX55yFDYlApDQn/6YZomjz6+KBx69rXHLzHcbtTS586mDdFD+Q==
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@sigstore/tuf/-/tuf-2.3.2.tgz#e9c5bffc2a5f3434f87195902d7f9cd7f48c70fa"
+  integrity sha512-mwbY1VrEGU4CO55t+Kl6I7WZzIl+ysSzEYdA1Nv/FTrl2bkeaPXo5PnWZAVfcY2zSdhOpsUTJW67/M2zHXGn5w==
   dependencies:
     "@sigstore/protobuf-specs" "^0.3.0"
     tuf-js "^2.2.0"
 
 "@sigstore/verify@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@sigstore/verify/-/verify-1.1.0.tgz#ab617c5dc0bc09ead7f101a848f4870af2d84374"
-  integrity sha512-1fTqnqyTBWvV7cftUUFtDcHPdSox0N3Ub7C0lRyReYx4zZUlNTZjCV+HPy4Lre+r45dV7Qx5JLKvqqsgxuyYfg==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@sigstore/verify/-/verify-1.1.1.tgz#f90f66e6d738434e687e00590c3619a15934ac69"
+  integrity sha512-BNANJms49rw9Q5J+fJjrDqOQSzjXDcOq/pgKDaVdDoIvQwqIfaoUriy+fQfh8sBX04hr4bkkrwu3EbhQqoQH7A==
   dependencies:
     "@sigstore/bundle" "^2.2.0"
-    "@sigstore/core" "^1.0.0"
+    "@sigstore/core" "^1.1.0"
     "@sigstore/protobuf-specs" "^0.3.0"
 
 "@sinclair/typebox@^0.27.8":
@@ -7314,9 +7334,9 @@ node-gyp-build@^4.2.2:
   integrity sha512-u6fs2AEUljNho3EYTJNBfImO5QTo/J/1Etd+NVdCj7qWKUSN/bSLkZwhDv7I+w/MSC6qJ4cknepkAYykDdK8og==
 
 node-gyp@^10.0.0:
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-10.0.1.tgz#205514fc19e5830fa991e4a689f9e81af377a966"
-  integrity sha512-gg3/bHehQfZivQVfqIyy8wTdSymF9yTyP4CJifK73imyNMU8AIGQE2pUa7dNWfmMeG9cDVF2eehiRMv0LC1iAg==
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-10.1.0.tgz#75e6f223f2acb4026866c26a2ead6aab75a8ca7e"
+  integrity sha512-B4J5M1cABxPc5PwfjhbV5hoy2DP9p8lFXASnEN6hugXOa61416tnTZ29x9sSwAd0o99XNIcpvDDy1swAExsVKA==
   dependencies:
     env-paths "^2.2.0"
     exponential-backoff "^3.1.1"
@@ -9119,9 +9139,9 @@ tar-stream@~2.2.0:
     readable-stream "^3.1.1"
 
 tar@^6.1.11, tar@^6.1.2:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-6.2.0.tgz#b14ce49a79cb1cd23bc9b016302dea5474493f73"
-  integrity sha512-/Wo7DcT0u5HUV486xg675HtjNd3BXZ6xDbzsCUZPt5iw8bTQ63bP0Raut3mvro9u+CUyq7YQd8Cx55fsZXxqLQ==
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-6.2.1.tgz#717549c541bc3c2af15751bea94b1dd068d4b03a"
+  integrity sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==
   dependencies:
     chownr "^2.0.0"
     fs-minipass "^2.0.0"
