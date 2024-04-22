@@ -59,10 +59,10 @@ variables:
   HELM_VALUES_YAML: ./values.yaml
   #
   # Dockerfile location (default in root)
-  DOCKERFILE_LOC: ./server-code/Dockerfile
+  DOCKERFILE_LOC: ./Dockerfile
   #
   # Docker context (default root)
-  DOCKER_CONTEXT: ./server-code
+  DOCKER_CONTEXT: .
   #
   # Helm Timeout.
   # Helm will wait until all deployed resources (pods,ingress,etc) show ready state
@@ -260,23 +260,23 @@ export-environment:
 # BUILD
 ###########################################
 
-build-angular:
-  image: node:20.12-alpine
-  stage: build
-  script:
-    - cd ./client-code
-    - yarn
-    - yarn build -c production --no-progress
-  artifacts:
-    paths:
-      - server-code/static/
-    expire_in: 1 hour
-  cache:
-    paths:
-      - "node_modules"
-  retry: 2
-  tags:
-    - docker
+# build-angular:
+#   image: node:20.12-alpine
+#   stage: build
+#   script:
+#     - cd ./client-code
+#     - yarn
+#     - yarn build -c production --no-progress
+#   artifacts:
+#     paths:
+#       - server-code/static/
+#     expire_in: 1 hour
+#   cache:
+#     paths:
+#       - "node_modules"
+#   retry: 2
+#   tags:
+#     - docker
 
 
 ###########################################
