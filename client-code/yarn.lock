@@ -190,9 +190,9 @@
     tslib "^2.3.0"
 
 "@angular/cdk@^17.0.0":
-  version "17.3.6"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-17.3.6.tgz#965c1212442ecdc734e3009e0a26aa5b13b0993d"
-  integrity sha512-7eKrC61/6pmMAxllU/vYKadZRF7x7GxUYpA5G70fNaQsIUUiZvxx/SJN9AuZEoPGAtF6atKlJD8QVmFoDzv/Lw==
+  version "17.3.7"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-17.3.7.tgz#1d613214405ab61bba6ac2db715759e3a2c59951"
+  integrity sha512-aFEh8tzKFOwini6aNEp57S54Ocp9T7YIJfBVMESptu2TCPdMTlJ1HJTg5XS8NcQO+vwi9cFPGVwGF1frOx4LXA==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -270,16 +270,16 @@
   integrity sha512-mWWLGcW4SikbaTvo5+LiYS859nlQddutukZYhGymdvqsXUseitXVydJygqoLNIIbRGW6R1Q0WBdjUaJvyQQb9Q==
 
 "@angular/material-luxon-adapter@^17.0.0":
-  version "17.3.6"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-17.3.6.tgz#ff057a4a9d3a19a65e4600e194aef3f0b958d2fa"
-  integrity sha512-9rztygRWaEHL15fKtOLOV/Rvk+fg4nro5tBLxj77zxWoNXtS6W7nmxxZqYBOXdkZTUs+LuccXFczfuY3Ifr+Rg==
+  version "17.3.7"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-17.3.7.tgz#87e003a6521e143586d5389d37d74df90247b0f5"
+  integrity sha512-6WFNDUONuCHr7FlQ1BSyedDL6/0aAAw/4TPI550dg8monJPMq15NSSbGD3L1UNOMURkOCMQAG8LklVS+vgeqpg==
   dependencies:
     tslib "^2.3.0"
 
 "@angular/material@^17.0.0":
-  version "17.3.6"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-17.3.6.tgz#9c04bd29da08f7caf4152198b9b64799c4c059b4"
-  integrity sha512-sttN0JNvd2QvCCFIsxb5noiy7tgQdWrwvmrkJ+3KguHh5X84jDliA/d8N7Xgy2IBLnS/q/Hl9DdRCOiItWG1bw==
+  version "17.3.7"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-17.3.7.tgz#9ace801dfff33ce0bc004727736781ba7e5643ca"
+  integrity sha512-wjSKkk9KZE8QiBPkMd5axh5u/3pUSxoLKNO7OasFhEagMmSv5oYTLm40cErhtb4UdkSmbC19WuuluS6P3leoPA==
   dependencies:
     "@material/animation" "15.0.0-canary.7f224ddd4.0"
     "@material/auto-init" "15.0.0-canary.7f224ddd4.0"
