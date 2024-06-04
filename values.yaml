@@ -10,11 +10,19 @@ app:
     cpu: 2000m
     memory: 2Gi
 
-  hostVolumes:
-    - name: data
-      path: /home/k8s/sfg-singen/diensteinteilung
-      type: Directory
-      mountPath: /app/data
+  pvc:
+    enabled: true
+    mountPath: /app/data
+    storageClassName: local-storage
+    volumeName: v2-simulated-annealing-scheduler
+    accessMode: ReadWriteMany
+    storage: 1Gi
+
+  # hostVolumes:
+  #   - name: data
+  #     path: /home/k8s/sfg-singen/diensteinteilung
+  #     type: Directory
+  #     mountPath: /app/data
 
 
   ingress:

@@ -50,10 +50,10 @@ variables:
   STAGING_BRANCH: main
   #
   # Helm chart (default dbvis-generic-chart)
-  HELM_CHART: oci://registry.gitlab.topspawn.net/kubernetes/generic-helm-chart/dbvis-generic
+  HELM_CHART: https://ou-disc.github.io/helmcharts
   #
   # Helm chart version
-  HELM_CHART_VERSION: 3.6.0
+  HELM_CHART_VERSION: 3.11.0
   #
   # Helm values.yaml
   HELM_VALUES_YAML: ./values.yaml
@@ -352,11 +352,12 @@ build:image-tagged:
     # set default namespace
     - export HELM_NAMESPACE=${K8_NAMESPACE}
     # Login helm into docker registry
-    - echo ${CI_REGISTRY_PASSWORD} | helm registry login -u ${CI_REGISTRY_USER} --password-stdin ${CI_REGISTRY}
+    # - echo ${CI_REGISTRY_PASSWORD} | helm registry login -u ${CI_REGISTRY_USER} --password-stdin ${CI_REGISTRY}
+    - helm repo add ou-disc-charts ${HELM_CHART}
     # dry run to install chart
-    - helm upgrade ${RELEASE_NAME} ${HELM_CHART} --version ${HELM_CHART_VERSION} --dry-run --debug --install -f "${HELM_VALUES_YAML}" --set app.image.tag="${VERSION}" --set app.ingress.url=${URL_FULL} --set app.replicaCount=${REPLICA_COUNT} --set app.image.repository=${CI_REGISTRY_IMAGE}
+    - helm upgrade ${RELEASE_NAME} ou-disc-charts/disc-generic --version ${HELM_CHART_VERSION} --dry-run --debug --install -f "${HELM_VALUES_YAML}" --set app.image.tag="${VERSION}" --set app.ingress.url=${URL_FULL} --set app.replicaCount=${REPLICA_COUNT} --set app.image.repository=${CI_REGISTRY_IMAGE}
     # actually install chart
-    - helm upgrade ${RELEASE_NAME} ${HELM_CHART} --version ${HELM_CHART_VERSION} --install --atomic --wait --timeout "${HELM_TIMEOUT}" -f "${HELM_VALUES_YAML}" --set app.image.tag="${VERSION}" --set app.ingress.url=${URL_FULL} --set app.replicaCount=${REPLICA_COUNT} --set app.image.repository=${CI_REGISTRY_IMAGE}
+    - helm upgrade ${RELEASE_NAME} ou-disc-charts/disc-generic --version ${HELM_CHART_VERSION} --install --atomic --wait --timeout "${HELM_TIMEOUT}" -f "${HELM_VALUES_YAML}" --set app.image.tag="${VERSION}" --set app.ingress.url=${URL_FULL} --set app.replicaCount=${REPLICA_COUNT} --set app.image.repository=${CI_REGISTRY_IMAGE}
   tags:
     - docker
 
