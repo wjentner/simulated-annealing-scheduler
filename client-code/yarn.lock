@@ -6411,9 +6411,9 @@ istanbul-reports@^3.0.2:
     istanbul-lib-report "^3.0.0"
 
 jackspeak@^3.1.2:
-  version "3.2.6"
-  resolved "https://registry.yarnpkg.com/jackspeak/-/jackspeak-3.2.6.tgz#086f37b42a1281c432ac1609b6d849c3174655bc"
-  integrity sha512-nju3dTQS0DCXeVI0/yPc2ulqvTikbBG9V68ARmX56uLdz+8XlhIAD3ndoZGybsKKgigf07ggYnKz/46zgzQS2g==
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/jackspeak/-/jackspeak-3.3.0.tgz#65dc7cd87522494fcb2648ec6ca684170e9e1727"
+  integrity sha512-glPiBfKguqA7v8JsXO3iLjJWZ9FV1vNpoI0I9hI9Mnk5yetO9uPLSpiCEmiVijAssv2f54HpvtzvAHfhPieiDQ==
   dependencies:
     "@isaacs/cliui" "^8.0.2"
   optionalDependencies:
@@ -6490,9 +6490,9 @@ jest-worker@^27.4.5:
     supports-color "^8.0.0"
 
 jiti@^1.20.0:
-  version "1.21.0"
-  resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.21.0.tgz#7c97f8fe045724e136a397f7340475244156105d"
-  integrity sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==
+  version "1.21.1"
+  resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.21.1.tgz#84639a2debaececa42fcb2a313b5b80716c894ab"
+  integrity sha512-KMXpzEJMsOFyRj6ZpDTnnlJrdr9umUY+eut5vlRvjVixohitnRFIRTFw9MEu9zPlBxTHZo6xD5ftKYiQZuJYQw==
 
 js-tokens@^4.0.0:
   version "4.0.0"
