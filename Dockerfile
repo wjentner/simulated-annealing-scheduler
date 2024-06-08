@@ -9,7 +9,7 @@ RUN yarn
 RUN yarn build -c production --no-progress
 
 
-FROM python:3.12.3-slim
+FROM python:3.12.4-slim
 
 WORKDIR /app
 
