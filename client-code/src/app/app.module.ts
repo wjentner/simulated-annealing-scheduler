@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatLuxonDateModule } from '@angular/material-luxon-adapter';
@@ -32,8 +32,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AppComponent,
         DatesComponent,
         MinMaxConstraintsComponent,
@@ -46,11 +45,9 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
         SelectablePersonsComponent,
         ReallyDeleteComponent,
     ],
-    imports: [
-        BrowserModule,
+    bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        HttpClientModule,
         FormsModule,
         MatIconModule,
         MatListModule,
@@ -67,9 +64,5 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
         MatTooltipModule,
         MatProgressBarModule,
         MatCardModule,
-        CanvasJSAngularChartsModule,
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
-})
+        CanvasJSAngularChartsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
