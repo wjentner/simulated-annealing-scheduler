@@ -5410,9 +5410,9 @@ faye-websocket@^0.11.3:
     websocket-driver ">=0.5.1"
 
 feiertagejs@^1.2.7:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/feiertagejs/-/feiertagejs-1.4.0.tgz#1f77a014c0efb203cde71a4efa1f9cf52d4cc19e"
-  integrity sha512-04oxk2oksavDs1eYewhqrJlnocWvI8a2i3S2oBZybjwRPTZv1A08sFnUnqExbp1JiVgukVaPZ3aqyVqmCJX7mw==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/feiertagejs/-/feiertagejs-1.4.1.tgz#4fa145be43c83cfa7b1f9b314e314cf6cf9c28c0"
+  integrity sha512-+tXhTi6KG9rEw9iDR0TZGA5/lChAjwXuVYXiuHbzAOlfdmCo3MUMPYeL7GW4qjxS5KwsWqfi877JmzXZyhiimA==
 
 figures@3.2.0:
   version "3.2.0"
