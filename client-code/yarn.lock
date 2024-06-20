@@ -219,9 +219,9 @@
     watchpack "2.4.1"
 
 "@angular/cdk@^18.0.2":
-  version "18.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-18.0.3.tgz#498dfd79bc6e846bc6cfb348d967a3a1b7354fc0"
-  integrity sha512-F6kXAoIWUbvhvbSGnMxrKJZsI7rhGKDXVFFf9m+ZQAbqboSyDbbszux7Em4CEh27LaXYNFltUcKdCQ3hdp7Kig==
+  version "18.0.4"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-18.0.4.tgz#8dc5f2d05dd88b11de722bba634e604b7b800d6e"
+  integrity sha512-OCG1EGv/nyZYGcSu7y6IAuarC5gZcZYhhvEQsgMUDrf1TGRSa+0dBN5W2HxRWKs6NsGgDjW1VcK+AC85PYLXPA==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -298,16 +298,16 @@
   integrity sha512-urENnMjhSO4Jia7CnbchqN236dOIU6TC3CazwsQoj1Odch9x+iSFkx9Y0jXsiR5r/suK4uqKpK5N8MJ1PxDG1g==
 
 "@angular/material-luxon-adapter@^18.0.2":
-  version "18.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-18.0.3.tgz#697cf174783669976a2d79eeced9905825d93114"
-  integrity sha512-tAZ6rc23LZt6wpDqaSRE12oQjJc18Z3qvQoix6IPvAmbjhTCGUpeGtIihWS2nLi0z6c9nI5sFqV8Qm4zHYQPGg==
+  version "18.0.4"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-18.0.4.tgz#d307a40868dd19802a47e263001a7670acb30792"
+  integrity sha512-K4mvjLgVSm3Tlq8xeRo8RVUHCXwDE0ENAG7WgGJrWq4f4//J+HsGQ8toif/nlbX4VFR6x0OlBrVJMsIlknY21g==
   dependencies:
     tslib "^2.3.0"
 
 "@angular/material@^18.0.2":
-  version "18.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-18.0.3.tgz#9760a332badd9140464278822825f12b396f8a52"
-  integrity sha512-VIlK+0CxreAkDmr05TKelTr11I7yUtGPwRTFaWfQtXNkYEwGE1iuZGz3Iz8otxvHsTLC74Er4vMSYndwJvMyjQ==
+  version "18.0.4"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-18.0.4.tgz#2de32e2fec8f99c0e465eee97b14ebb51ad597f7"
+  integrity sha512-ES4peq3+tMEPKe9RgdQ3pp3CcjM0Cr+vi4f+0ruH2wu1NTBk522/1/ABHncg3A/eCurKS96JJdihqOAjMek4Ow==
   dependencies:
     "@material/animation" "15.0.0-canary.7f224ddd4.0"
     "@material/auto-init" "15.0.0-canary.7f224ddd4.0"
