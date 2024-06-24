@@ -1419,9 +1419,9 @@
     tslib "^2.3.0"
 
 "@canvasjs/charts@^3.7.39":
-  version "3.8.11"
-  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.8.11.tgz#58f12ed60fb4690b4f284ed55b9b6e384e56077f"
-  integrity sha512-HPwL+F+ftr831nllmKfjVwVNXRbinCLdh42PQixMMcGBrh87XP+9CRIkA/JlCDi9E1qPO9OdXHR9+ipURPsKhQ==
+  version "3.8.12"
+  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.8.12.tgz#0076581d9a3e1ad81bbe51ec71bac24e7c39e684"
+  integrity sha512-vBXQlX4zTIArzb2aV2khXB0HnC+dzOsK37cbSYlfBNgurF5VUPblMpUPMupTMtQqkU4Tc4C+noHl3fqbeQdHtw==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
@@ -4923,12 +4923,7 @@ es-errors@^1.2.1, es-errors@^1.3.0:
   resolved "https://registry.yarnpkg.com/es-errors/-/es-errors-1.3.0.tgz#05f75a25dab98e4fb1dcd5e1472c0546d5057c8f"
   integrity sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==
 
-es-module-lexer@^1.2.1:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-1.5.3.tgz#25969419de9c0b1fbe54279789023e8a9a788412"
-  integrity sha512-i1gCgmR9dCl6Vil6UKPI/trA69s08g/syhiDK9TG0Nf1RJjjFI+AzoWW7sPufzkgYAn861skuCwJa0pIIHYxvg==
-
-es-module-lexer@^1.5.3:
+es-module-lexer@^1.2.1, es-module-lexer@^1.5.3:
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-1.5.4.tgz#a8efec3a3da991e60efa6b633a7cad6ab8d26b78"
   integrity sha512-MVNK56NiMrOwitFB7cqDwq0CQutbw+0BvLshJSse0MUNU+y1FC3bUS/AQg7oUng+/wKrrki7JfmwtVHkVfPLlw==
