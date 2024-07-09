@@ -7044,9 +7044,9 @@ log4js@^6.4.1:
     streamroller "^3.1.5"
 
 lru-cache@^10.0.1, lru-cache@^10.2.0:
-  version "10.4.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.4.1.tgz#da9a9cb51aec89fda9b485f5a12b2fdb8f6dbe88"
-  integrity sha512-8h/JsUc/2+Dm9RPJnBAmObGnUqTMmsIKThxixMLOkrebSihRhTV0wLD/8BSk6OU6Pbj8hiDTbsI3fLjBJSlhDg==
+  version "10.4.2"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.4.2.tgz#78c38f194b747174cff90e60afabcae40c3619f2"
+  integrity sha512-voV4dDrdVZVNz84n39LFKDaRzfwhdzJ7akpyXfTMxCgRUp07U3lcJUXRlhTKP17rgt09sUzLi5iCitpEAr+6ug==
 
 lru-cache@^5.1.1:
   version "5.1.1"
