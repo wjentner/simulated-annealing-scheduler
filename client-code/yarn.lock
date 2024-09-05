@@ -212,9 +212,9 @@
     watchpack "2.4.1"
 
 "@angular/cdk@^18.0.2":
-  version "18.2.2"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-18.2.2.tgz#ffc22bb60304099ad7962993ead24789ee90884b"
-  integrity sha512-+u7ZcMA24WO03vDzlBJJWq+okZLFDeW9JrtHzrdiT09FDt4sdUp+7PddXaZcRHIXjJL+CaCLQ6slaqPNEufqgg==
+  version "18.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-18.2.3.tgz#b259269efa361df5879289ca14baeae10087e400"
+  integrity sha512-lUcpYTxPZuntJ1FK7V2ugapCGMIhT6TUDjIGgXfS9AxGSSKgwr8HNs6Ze9pcjYC44UhP40sYAZuiaFwmE60A2A==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -291,16 +291,16 @@
   integrity sha512-bTZ1O7s0uJqKdd9ImCleRS9Wg6yVy2ZXchnS5ap2gYJx51MJgwOM/fL6is0OsovtZG/UJaKK5FeEqUUxNqZJVA==
 
 "@angular/material-luxon-adapter@^18.0.2":
-  version "18.2.2"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-18.2.2.tgz#7b94ecb2b710297cde30e013578d382e24900af5"
-  integrity sha512-Qpc5UBuefDK1mjbEd4mZGzwQ0KBi/uKLQpEp0aSSxRKO9lKSdCejZGboQFDpxiIJlagEB1XY+ZqpNVwcjUc7qA==
+  version "18.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-18.2.3.tgz#09e579f2ed92eabb23ca5e305710821d94d28ea3"
+  integrity sha512-9oIeHWxqjyXszNqD2tH+A7p1pOLdGBWYZqB8Db+CokfZSL3bHmEE9+bYhq+yX92K8RZNByaf70QIJkhIb9TRuA==
   dependencies:
     tslib "^2.3.0"
 
 "@angular/material@^18.0.2":
-  version "18.2.2"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-18.2.2.tgz#d79b6c62925f0502c68a49f12220cc8053701919"
-  integrity sha512-c+EQo1GEvM2w3qasgV/BGxB0bpJeSGs2WcMVTXCYVMcqEk8nwpALwfZiCAYl8JoKoiC5k993zz19xP2Eu14qkQ==
+  version "18.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-18.2.3.tgz#69b6b5528081be70e0a6be2db22e61f5b4f1b870"
+  integrity sha512-JFfvXaMHMhskncaxxus4sDvie9VYdMkfYgfinkLXpZlPFyn1IzjDw0c1BcrcsuD7UxQVZ/v5tucCgq1FQfGRpA==
   dependencies:
     tslib "^2.3.0"
 
@@ -2448,9 +2448,9 @@
     "@types/node" "*"
 
 "@types/node@*", "@types/node@>=10.0.0", "@types/node@^22.5.2":
-  version "22.5.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.5.3.tgz#91a374e42c6e7ccb5893a87f1775f36ce1671d65"
-  integrity sha512-njripolh85IA9SQGTAqbmnNZTdxv7X/4OYGPz8tgy5JDr8MP+uDBa921GpYEoDDnwm0Hmn5ZPeJgiiSTPoOzkQ==
+  version "22.5.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.5.4.tgz#83f7d1f65bc2ed223bdbf57c7884f1d5a4fa84e8"
+  integrity sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==
   dependencies:
     undici-types "~6.19.2"
 
