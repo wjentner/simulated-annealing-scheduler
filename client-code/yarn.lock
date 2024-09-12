@@ -212,9 +212,9 @@
     watchpack "2.4.1"
 
 "@angular/cdk@^18.0.2":
-  version "18.2.3"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-18.2.3.tgz#b259269efa361df5879289ca14baeae10087e400"
-  integrity sha512-lUcpYTxPZuntJ1FK7V2ugapCGMIhT6TUDjIGgXfS9AxGSSKgwr8HNs6Ze9pcjYC44UhP40sYAZuiaFwmE60A2A==
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-18.2.4.tgz#a9f75a5ef4a8c0bfcc2ee4afba5b5e2c04a0371d"
+  integrity sha512-o+TuxZDqStfkviEkCR05pVyP6R2RIruEs/45Cms76hlsIheMoxRaxir/yrHdh4tZESJJhcO/EVE+aymNIRWAfg==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -291,16 +291,16 @@
   integrity sha512-Keg6n8u8xHLhRDTmx4hUqh1AtVFUt8hDxPMYSUu64czjOT5Dnh8XsgKagu563NEjxbDaCzttPuO+y3DlcaDZoQ==
 
 "@angular/material-luxon-adapter@^18.0.2":
-  version "18.2.3"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-18.2.3.tgz#09e579f2ed92eabb23ca5e305710821d94d28ea3"
-  integrity sha512-9oIeHWxqjyXszNqD2tH+A7p1pOLdGBWYZqB8Db+CokfZSL3bHmEE9+bYhq+yX92K8RZNByaf70QIJkhIb9TRuA==
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-18.2.4.tgz#07385dda0f786e7663bf91aab0ec795b463d5559"
+  integrity sha512-cK7u+zWJ2Gro31y0An4qDp5QB0HOObxCUq4V9IhV/ZqQTqOLHSt3v/rMfKVpAIkFFd7RBro55+yhZx9taC1nNg==
   dependencies:
     tslib "^2.3.0"
 
 "@angular/material@^18.0.2":
-  version "18.2.3"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-18.2.3.tgz#69b6b5528081be70e0a6be2db22e61f5b4f1b870"
-  integrity sha512-JFfvXaMHMhskncaxxus4sDvie9VYdMkfYgfinkLXpZlPFyn1IzjDw0c1BcrcsuD7UxQVZ/v5tucCgq1FQfGRpA==
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-18.2.4.tgz#5a25a0a2b5ea15b0ff92747b869c58847272da1b"
+  integrity sha512-F09145mI/EAHY9ngdnQTo3pFRmUoU/50i6cmddtL4cse0WidatoodQr0gZCksxhmpJgRy5mTcjh/LU2hShOgcA==
   dependencies:
     tslib "^2.3.0"
 
