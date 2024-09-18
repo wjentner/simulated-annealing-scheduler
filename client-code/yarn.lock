@@ -2026,9 +2026,9 @@
   integrity sha512-gp8pRXC2oOxu0DUE1/M3bYtb1b3/DbJ5aM113+XJBgfXdussRAsX0YOrOhdd8WvnAR6auDBvJomGAkLKA5ydxA==
 
 "@npmcli/package-json@^5.0.0", "@npmcli/package-json@^5.1.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@npmcli/package-json/-/package-json-5.2.0.tgz#a1429d3111c10044c7efbfb0fce9f2c501f4cfad"
-  integrity sha512-qe/kiqqkW0AGtvBjL8TJKZk/eBBSpnJkUWvHdQ9jM2lKHXRYYJuyNpJPlJw3c8QjC2ow6NZYiLExhUaeJelbxQ==
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/@npmcli/package-json/-/package-json-5.2.1.tgz#df69477b1023b81ff8503f2b9db4db4faea567ed"
+  integrity sha512-f7zYC6kQautXHvNbLEWgD/uGu1+xCn9izgqBfgItWSx22U0ZDekxN08A1vM8cTxj/cRVe0Q94Ode+tdoYmIOOQ==
   dependencies:
     "@npmcli/git" "^5.0.0"
     glob "^10.2.2"
@@ -6208,9 +6208,9 @@ media-typer@0.3.0:
   integrity sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==
 
 memfs@^4.6.0:
-  version "4.11.1"
-  resolved "https://registry.yarnpkg.com/memfs/-/memfs-4.11.1.tgz#9c9c8e65bf8ac72c0db8d0fbbbe29248cf51d56a"
-  integrity sha512-LZcMTBAgqUUKNXZagcZxvXXfgF1bHX7Y7nQ0QyEiNbRJgE29GhgPd8Yna1VQcLlPiHt/5RFJMWYN9Uv/VPNvjQ==
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/memfs/-/memfs-4.11.2.tgz#7b036eb53374f6b7bc79920c2ae2033adb1feb9e"
+  integrity sha512-VcR7lEtgQgv7AxGkrNNeUAimFLT+Ov8uGu1LuOfbe/iF/dKoh/QgpoaMZlhfejvLtMxtXYyeoT7Ar1jEbWdbPA==
   dependencies:
     "@jsonjoy.com/json-pack" "^1.0.3"
     "@jsonjoy.com/util" "^1.3.0"
@@ -8275,9 +8275,9 @@ terser@5.31.6:
     source-map-support "~0.5.20"
 
 terser@^5.26.0:
-  version "5.32.0"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-5.32.0.tgz#ee811c0d2d6b741c1cc34a2bc5bcbfc1b5b1f96c"
-  integrity sha512-v3Gtw3IzpBJ0ugkxEX8U0W6+TnPKRRCWGh1jC/iM/e3Ki5+qvO1L1EAZ56bZasc64aXHwRHNIQEzm6//i5cemQ==
+  version "5.33.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-5.33.0.tgz#8f9149538c7468ffcb1246cfec603c16720d2db1"
+  integrity sha512-JuPVaB7s1gdFKPKTelwUyRq5Sid2A3Gko2S0PncwdBq7kN9Ti9HPWDQ06MPsEDGsZeVESjKEnyGy68quBk1w6g==
   dependencies:
     "@jridgewell/source-map" "^0.3.3"
     acorn "^8.8.2"
