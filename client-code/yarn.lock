@@ -1315,9 +1315,9 @@
     tslib "^2.3.0"
 
 "@canvasjs/charts@^3.7.39":
-  version "3.10.9"
-  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.10.9.tgz#c029cb18257313fec7b5f1bcf038fee344575bd2"
-  integrity sha512-OGk5EgonnCuix9ofuQhrH0rTG/brlUlCzQ03dBqk7dKsEMhMZDa1OjNc7odMXHrqgMIsLNfcK3bmlcsmts1ZUg==
+  version "3.10.10"
+  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.10.10.tgz#987410bfe1aebb3e58dd97230863ad9857ae72b8"
+  integrity sha512-IPXdwqrxd1lEycw7FKYF72VPZxD1kie7U6wwZ1R9Pff60qzC9DddzVPEQ7GBfsd5mIXBHeiZ8YsFsVoSCu7rgQ==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
@@ -4027,9 +4027,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.28:
-  version "1.5.29"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.29.tgz#aa592a3caa95d07cc26a66563accf99fa573a1ee"
-  integrity sha512-PF8n2AlIhCKXQ+gTpiJi0VhcHDb69kYX4MtCiivctc2QD3XuNZ/XIOlbGzt7WAjjEev0TtaH6Cu3arZExm5DOw==
+  version "1.5.30"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.30.tgz#5b264b489cfe0c3dd71097c164d795444834e7c7"
+  integrity sha512-sXI35EBN4lYxzc/pIGorlymYNzDBOqkSlVRe6MkgBsW/hW1tpC/HDJ2fjG7XnjakzfLEuvdmux0Mjs6jHq4UOA==
 
 emoji-regex@^10.3.0:
   version "10.4.0"
