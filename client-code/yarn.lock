@@ -212,9 +212,9 @@
     watchpack "2.4.1"
 
 "@angular/cdk@^18.0.2":
-  version "18.2.6"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-18.2.6.tgz#159bd04ffabbe970eaa5dcd758163ed382c04975"
-  integrity sha512-Gfq/iv4zhlKYpdQkDaBRwxI71NHNUHM1Cs1XhnZ0/oFct5HXvSv1RHRGTKqBJLLACaAPzZKXJ/UglLoyO5CNiQ==
+  version "18.2.7"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-18.2.7.tgz#ef623b7ef19ac9ac055b7cac9d5bd0f8d8b78e22"
+  integrity sha512-Dfl37WBLeEUURQrDeuMcOgX2bkQJ+BGMOlr1qsFXzUWHH+qgYW2YwO1rbna/rjxyeFzc2Sy569dYRzNPqMewzg==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -291,16 +291,16 @@
   integrity sha512-gFsme3y5uC/dQGBBX05VnmT2KAEAZ6gsNk8m1b226LYvh8Oc+JQ4sXv7THGq1x5VnrTzRcCIELbkNHCiFdvL1Q==
 
 "@angular/material-luxon-adapter@^18.0.2":
-  version "18.2.6"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-18.2.6.tgz#4c8ae2421a10a7da1adff8e524e394403239e380"
-  integrity sha512-01+bk1M06de76enxvReRC1PdEotuQzrKmLyCm88SMpR9LzusiRjnbAk91n0vsoimfeom2XtzOv7J8DkXZDSSaw==
+  version "18.2.7"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-18.2.7.tgz#e572ce389c684bda35cd9f6b9ca3b38cb992a939"
+  integrity sha512-kEBwmy2KAig4qNgvEd4EGCUpaOMFdBvzbB0jFBBsnIpmHkjaS6TDOgOvDxF6kUiIJSOX+PwG3LA5AISJiWb7Sw==
   dependencies:
     tslib "^2.3.0"
 
 "@angular/material@^18.0.2":
-  version "18.2.6"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-18.2.6.tgz#bbecf3e6f08af7acc35ab78986c49b2e875ecbab"
-  integrity sha512-ObxC/vomSb9QF3vIztuiInQzws+D6u09Dhfx6uNFjtyICqxEFpF7+Qx7QVDWrsuXOgxZTKgacK8f46iV8hWUfg==
+  version "18.2.7"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-18.2.7.tgz#0b0abc6179f7a4565e781b2b4a7e4a7dd39788f4"
+  integrity sha512-mgPj2TCIrsngmu3iNnoaPc6su7uPv+NPCv9HaiKhTx4QGae8EW+RvUxEZJvh4Qaym1fJTi3hjnVeWvQDLQt4CA==
   dependencies:
     tslib "^2.3.0"
 
@@ -4059,9 +4059,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.28:
-  version "1.5.31"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.31.tgz#b1478418769dec72ea70d9fdf147a81491857f10"
-  integrity sha512-QcDoBbQeYt0+3CWcK/rEbuHvwpbT/8SV9T3OSgs6cX1FlcUAkgrkqbg9zLnDrMM/rLamzQwal4LYFCiWk861Tg==
+  version "1.5.32"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.32.tgz#4a05ee78e29e240aabaf73a67ce9fe73f52e1bc7"
+  integrity sha512-M+7ph0VGBQqqpTT2YrabjNKSQ2fEl9PVx6AK3N558gDH9NO8O6XN9SXXFWRo9u9PbEg/bWq+tjXQr+eXmxubCw==
 
 emoji-regex@^10.3.0:
   version "10.4.0"
@@ -6091,10 +6091,22 @@ lint-staged@^15.0.0:
     string-argv "~0.3.2"
     yaml "~2.5.0"
 
-listr2@8.2.4, listr2@~8.2.4:
+listr2@8.2.4:
   version "8.2.4"
   resolved "https://registry.yarnpkg.com/listr2/-/listr2-8.2.4.tgz#486b51cbdb41889108cb7e2c90eeb44519f5a77f"
   integrity sha512-opevsywziHd3zHCVQGAj8zu+Z3yHNkkoYhWIGnq54RrCVwLz0MozotJEDnKsIBLvkfLGN6BLOyAeRrYI0pKA4g==
+  dependencies:
+    cli-truncate "^4.0.0"
+    colorette "^2.0.20"
+    eventemitter3 "^5.0.1"
+    log-update "^6.1.0"
+    rfdc "^1.4.1"
+    wrap-ansi "^9.0.0"
+
+listr2@~8.2.4:
+  version "8.2.5"
+  resolved "https://registry.yarnpkg.com/listr2/-/listr2-8.2.5.tgz#5c9db996e1afeb05db0448196d3d5f64fec2593d"
+  integrity sha512-iyAZCeyD+c1gPyE9qpFu8af0Y+MRtmKOncdGoA2S5EY8iFq99dmmvkNnHiWo+pj0s7yH7l3KPIgee77tKpXPWQ==
   dependencies:
     cli-truncate "^4.0.0"
     colorette "^2.0.20"
