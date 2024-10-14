@@ -1335,9 +1335,9 @@
     tslib "^2.3.0"
 
 "@canvasjs/charts@^3.7.39":
-  version "3.10.11"
-  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.10.11.tgz#2d3e22511af9929b010642e3a35b9c0361594c9b"
-  integrity sha512-oFm816LGq6e7MLZdAhBX/sU/sKqGks0VddT2kPGnY0G/vHh69nRayJIQWHonEuVelZrywx0xiD5rwU5TZOC+dg==
+  version "3.10.12"
+  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.10.12.tgz#2aeb3559e1830cdd5b3f354491b8adeb59dc3aff"
+  integrity sha512-kN3yYPihsFo6bVeTXiZ4fgU/qKSIwRj1quy/FmZSXpXh/GbbQO82AMROi2obiEgIPNLU8MRGoYi15fuqyD3VSg==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
