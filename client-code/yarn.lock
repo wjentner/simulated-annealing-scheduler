@@ -1672,9 +1672,9 @@
   integrity sha512-JBxkERygn7Bv/GbN5Rv8Ul6LVknS+5Bp6RgDC/O8gEBU/yeH5Ui5C/OlWrTb6qct7LjjfT6Re2NxB0ln0yYybA==
 
 "@humanwhocodes/retry@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.0.tgz#b57438cab2a2381b4b597b0ab17339be381bd755"
-  integrity sha512-xnRgu9DxZbkWak/te3fcytNyp8MTbuiZIaueg2rgEvBuN55n04nwLYLU9TX/VVlusc9L2ZNXi99nUFNkHXtr5g==
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.1.tgz#9a96ce501bc62df46c4031fbd970e3cc6b10f07b"
+  integrity sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==
 
 "@inquirer/checkbox@^2.4.7":
   version "2.5.0"
@@ -2548,9 +2548,9 @@
   integrity sha512-qYi3YV9inU/REEfxwVcGZzbS3KG/Xs90lv0Pr+lDtuVjBPGd1A+eciXzVSaRvLify132BfcvhvEjeVahrUl0Ug==
 
 "@types/qs@*":
-  version "6.9.16"
-  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.16.tgz#52bba125a07c0482d26747d5d4947a64daf8f794"
-  integrity sha512-7i+zxXdPD0T4cKDuxCUXJ4wHcsJLwENa6Z3dCu8cfCK743OGy5Nu1RmAGqDPsoTDINVEcdXKRvR/zre+P2Ku1A==
+  version "6.9.17"
+  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.17.tgz#fc560f60946d0aeff2f914eb41679659d3310e1a"
+  integrity sha512-rX4/bPcfmvxHDv0XjfJELTTr+iB+tn032nPILqHm5wbthUUUuVtNGGqzhya9XUxjTP8Fpr0qYgSZZKxGY++svQ==
 
 "@types/range-parser@*":
   version "1.2.7"
@@ -4032,9 +4032,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.41:
-  version "1.5.51"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.51.tgz#bb99216fed4892d131a8585a8593b00739310163"
-  integrity sha512-kKeWV57KSS8jH4alKt/jKnvHPmJgBxXzGUSbMd4eQF+iOsVPl7bz2KUmu6eo80eMP8wVioTfTyTzdMgM15WXNg==
+  version "1.5.52"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.52.tgz#2bed832c95a56a195504f918150e548474687da8"
+  integrity sha512-xtoijJTZ+qeucLBDNztDOuQBE1ksqjvNjvqFoST3nGC7fSpqJ+X6BdTBaY5BHG+IhWWmpc6b/KfpeuEDupEPOQ==
 
 emoji-regex@^10.3.0:
   version "10.4.0"
