@@ -4032,9 +4032,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.41:
-  version "1.5.56"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.56.tgz#3213f369efc3a41091c3b2c05bc0f406108ac1df"
-  integrity sha512-7lXb9dAvimCFdvUMTyucD4mnIndt/xhRKFAlky0CyFogdnNmdPQNoHI23msF/2V4mpTxMzgMdjK4+YRlFlRQZw==
+  version "1.5.57"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.57.tgz#cb43af8784166bca24565b3418bf5f775a6b1c86"
+  integrity sha512-xS65H/tqgOwUBa5UmOuNSLuslDo7zho0y/lgQw35pnrqiZh7UOWHCeL/Bt6noJATbA6tpQJGCifsFsIRZj1Fqg==
 
 emoji-regex@^10.3.0:
   version "10.4.0"
@@ -6552,9 +6552,9 @@ node-gyp-build-optional-packages@5.2.2:
     detect-libc "^2.0.1"
 
 node-gyp-build@^4.2.2:
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.8.2.tgz#4f802b71c1ab2ca16af830e6c1ea7dd1ad9496fa"
-  integrity sha512-IRUxE4BVsHWXkV/SFOut4qTlagw2aM8T5/vnTsmrHJvVoKueJHRc/JaFND7QDDc61kLYUJ6qlZM3sqTSyx2dTw==
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.8.3.tgz#9187216d24dbee29e44eb20d2ebf62a296bbea1a"
+  integrity sha512-EMS95CMJzdoSKoIiXo8pxKoL8DYxwIZXYlLmgPb8KUv794abpnLK6ynsCAWNliOjREKruYKdzbh76HHYUHX7nw==
 
 node-gyp@^10.0.0:
   version "10.2.0"
