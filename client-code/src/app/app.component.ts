@@ -10,6 +10,7 @@ import { HasWarnings } from './warning-interface';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.less'],
+    standalone: false
 })
 export class AppComponent {
     title = 'sa-scheduler-client';

@@ -6,6 +6,7 @@ import { ScheduleConstraints, ScheduleConstraintsService } from '../schedule-con
     selector: 'app-save',
     templateUrl: './save.component.html',
     styleUrls: ['./save.component.less'],
+    standalone: false
 })
 export class SaveComponent implements OnInit {
     result$: Observable<any>;

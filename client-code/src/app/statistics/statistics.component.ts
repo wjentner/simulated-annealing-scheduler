@@ -7,6 +7,7 @@ import { TasksService } from '../tasks.service';
     selector: 'app-statistics',
     templateUrl: './statistics.component.html',
     styleUrls: ['./statistics.component.less'],
+    standalone: false
 })
 export class StatisticsComponent implements OnInit {
     tasks$: Observable<string[]>;

@@ -10,6 +10,7 @@ import { DateTime } from 'luxon';
     selector: 'app-solutions',
     templateUrl: './solutions.component.html',
     styleUrls: ['./solutions.component.less'],
+    standalone: false
 })
 export class SolutionsComponent implements OnInit {
     solutions$: Observable<SolutionStatus[]>;

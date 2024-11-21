@@ -14,6 +14,7 @@ import { TasksService } from '../tasks.service';
     selector: 'app-time-constraints',
     templateUrl: './time-constraints.component.html',
     styleUrls: ['./time-constraints.component.less'],
+    standalone: false
 })
 export class TimeConstraintsComponent implements OnInit {
     constraints$: Observable<ScheduleConstraints>;

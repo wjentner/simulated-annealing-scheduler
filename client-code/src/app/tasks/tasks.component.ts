@@ -5,6 +5,7 @@ import { TasksService } from '../tasks.service';
     selector: 'app-tasks',
     templateUrl: './tasks.component.html',
     styleUrls: ['./tasks.component.less'],
+    standalone: false
 })
 export class TasksComponent implements OnInit {
     tasks: string[];

@@ -7,6 +7,7 @@ import { SolutionsService, SolutionStatus } from '../solutions.service';
     selector: 'app-run-algorithm',
     templateUrl: './run-algorithm.component.html',
     styleUrls: ['./run-algorithm.component.less'],
+    standalone: false
 })
 export class RunAlgorithmComponent implements OnInit {
     expertMode = false;

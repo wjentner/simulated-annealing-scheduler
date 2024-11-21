@@ -15,6 +15,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
         </div>
     `,
     styleUrls: ['./really-delete.component.less'],
+    standalone: false
 })
 export class ReallyDeleteComponent {
     really = false;

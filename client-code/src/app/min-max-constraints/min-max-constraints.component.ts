@@ -13,6 +13,7 @@ import { TasksService } from '../tasks.service';
     selector: 'app-min-max-constraints',
     templateUrl: './min-max-constraints.component.html',
     styleUrls: ['./min-max-constraints.component.less'],
+    standalone: false
 })
 export class MinMaxConstraintsComponent implements OnInit {
     editmode = false;

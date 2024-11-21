@@ -17,6 +17,7 @@ export interface DateItem {
     selector: 'app-dates',
     templateUrl: './dates.component.html',
     styleUrls: ['./dates.component.less'],
+    standalone: false
 })
 export class DatesComponent implements OnInit {
     constraints$: Observable<ScheduleConstraints>;
