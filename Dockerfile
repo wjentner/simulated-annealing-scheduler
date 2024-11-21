@@ -15,7 +15,7 @@ WORKDIR /app
 
 ADD ./server-code /app
 
-COPY --from=0 /tmp/code/server-code/static /app/static
+COPY --from=0 /tmp/code/server-code/static/browser /app/static
 
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
