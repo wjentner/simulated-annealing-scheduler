@@ -207,9 +207,9 @@
     lmdb "3.1.5"
 
 "@angular/cdk@^19.0.0":
-  version "19.0.0"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-19.0.0.tgz#ef1d0baa821d1f56d2f36bb69a76550338197341"
-  integrity sha512-KcOYhCwN4Bw3L4+W4ymTfPGqRjrkwD8M5jX8GM7YsZ5DsX9OEd/gNrwRvjn+8JItzimXLXdGrcqXrMTxkq7QPA==
+  version "19.0.1"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-19.0.1.tgz#5bc889f97c70dc9a81944eafe710e1f18b48d4c7"
+  integrity sha512-dIqYBQISvxlpXIU10625rURPjniQV1emXbFF6wAEE48iqx9mm9WZ11KZU4heqA3qp/betZYcVY2Hwc7fLKp4Uw==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -286,16 +286,16 @@
   integrity sha512-1gpC3oYaD3kcOg7lElZId70wz9SSD/mYDDq6UFn0XGX7HXcmxdFQFxEmYil/7aUHU7mhju0Bse7cAsSdm1vL+w==
 
 "@angular/material-luxon-adapter@^19.0.0":
-  version "19.0.0"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-19.0.0.tgz#46c21a1746fad0eb9ddb467ab581106fec653515"
-  integrity sha512-sEdw+rfid7XXhVk+4FHMONobvr4OlzGof6PohzGVIp34Nh295pwK7HcgSafq1w8jeJwNPW2obaGa6Zz+uLbW3g==
+  version "19.0.1"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-19.0.1.tgz#1fbd0b27edf3759494dac5aed52ef4a3b8ecf558"
+  integrity sha512-5K3kwq5kdnQKfNMoyP+fiP7poXVr31lPqQWkhtprY7tf0w3PEk56ST96HHVUarqlk/o3NpMBcyZ4MUOwp7QmKQ==
   dependencies:
     tslib "^2.3.0"
 
 "@angular/material@^19.0.0":
-  version "19.0.0"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-19.0.0.tgz#c6e8a58e2f09f0267bc095da1defe38aebcc0c8b"
-  integrity sha512-j7dDFUh8dqiysuWu32biukDTHScajUYHFR9Srhn98kBwnXMob5y1paMoOx5RQO5DU4KCxKaKx8HcHJBJeTKHjw==
+  version "19.0.1"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-19.0.1.tgz#393422013abd6759a29871b3b8566881d905da54"
+  integrity sha512-pAZ+cgBUAJjXmwAY4u1NXuxcxJKHts0s7ZNpf6JGUu+yWArLOc/BwFTDO9Htzz2E82eMH417d1ny4fpYwdgIZg==
   dependencies:
     tslib "^2.3.0"
 
