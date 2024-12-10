@@ -73,7 +73,7 @@ variables:
   HELM_IMAGE: alpine/helm:3.16.3
   #
   # Kubectl image
-  KUBECTL_IMAGE: bitnami/kubectl:1.31.3
+  KUBECTL_IMAGE: bitnami/kubectl:1.31.4
   #
   # 
   REPLICA_COUNT_PRODUCTION: 1
