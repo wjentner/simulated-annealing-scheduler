@@ -10,20 +10,12 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@angular-devkit/architect@0.1901.1":
+"@angular-devkit/architect@0.1901.1", "@angular-devkit/architect@>= 0.1900.0 < 0.2000.0":
   version "0.1901.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.1901.1.tgz#4338593000c8d616aa296502863035c6d121a587"
   integrity sha512-fhRID3z4Va1nvP4QS7iraMP+J0zpvsqax0MtoaHXiaSvruwcPbcYSvWj9aO/oo9cq2XTd1zVigrKUwfhabXRVw==
   dependencies:
     "@angular-devkit/core" "19.1.1"
-    rxjs "7.8.1"
-
-"@angular-devkit/architect@>= 0.1900.0 < 0.2000.0":
-  version "0.1901.0"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.1901.0.tgz#bdad4b69473ac7a414693dfb20805ebd126929c8"
-  integrity sha512-Qly2Rd6Vw/didh1d7KKBtH+BQCrtGbhQtkfn+Tframrl+B7t0uf7EKYnAvFxug2K6eHBcFJY34sQ5tr+SCwb5A==
-  dependencies:
-    "@angular-devkit/core" "19.1.0"
     rxjs "7.8.1"
 
 "@angular-devkit/build-angular@19.1.1":
@@ -97,19 +89,7 @@
     "@angular-devkit/architect" "0.1901.1"
     rxjs "7.8.1"
 
-"@angular-devkit/core@19.1.0", "@angular-devkit/core@>= 19.0.0 < 20.0.0":
-  version "19.1.0"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-19.1.0.tgz#e4d7d3a440707b8ab1ef791c0c66aa48bf05e9ec"
-  integrity sha512-DAHd1TX4aiWTqW0eUDIXuntE/nd//SGnjJzIaqKGtj1/bngoY76S/DS7uStgxcZRD4VmprM0cJ0w68w3CMtzrA==
-  dependencies:
-    ajv "8.17.1"
-    ajv-formats "3.0.1"
-    jsonc-parser "3.3.1"
-    picomatch "4.0.2"
-    rxjs "7.8.1"
-    source-map "0.7.4"
-
-"@angular-devkit/core@19.1.1":
+"@angular-devkit/core@19.1.1", "@angular-devkit/core@>= 19.0.0 < 20.0.0":
   version "19.1.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-19.1.1.tgz#597853e70647c9bd9a7bbb7e43a3a066da0971ed"
   integrity sha512-CAqst7WEasPHR4OFdbxxX3+NVqNTvYk3vtPbXT/jZ0L2EZRICQta2EClkdhSIiMkiMf0/2LNT05rYD7k4NHIQA==
@@ -121,23 +101,12 @@
     rxjs "7.8.1"
     source-map "0.7.4"
 
-"@angular-devkit/schematics@19.1.1":
+"@angular-devkit/schematics@19.1.1", "@angular-devkit/schematics@>= 19.0.0 < 20.0.0":
   version "19.1.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-19.1.1.tgz#ee794e8f419a0eb3b0f6a16574622842368d1ec1"
   integrity sha512-4xodirv/kErn7L5N6NhIDfuVuNgNDmGX1+Pdu3yG2c1moOTyRBV684lv2qQJClNctOpELDM55IuX3MXud2qQaw==
   dependencies:
     "@angular-devkit/core" "19.1.1"
-    jsonc-parser "3.3.1"
-    magic-string "0.30.17"
-    ora "5.4.1"
-    rxjs "7.8.1"
-
-"@angular-devkit/schematics@>= 19.0.0 < 20.0.0":
-  version "19.1.0"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-19.1.0.tgz#f557aca2a0562dee8f3efbf27c8d488ce6c7d42a"
-  integrity sha512-S+MUDHiK+51I9KdYcNbeSfChmPXnLaQWy9lCjxYktzj0dP6Jvcp9vvdmgc83kVaPBcHepBCZhqqaPVvUzoBihQ==
-  dependencies:
-    "@angular-devkit/core" "19.1.0"
     jsonc-parser "3.3.1"
     magic-string "0.30.17"
     ora "5.4.1"
@@ -243,9 +212,9 @@
     lmdb "3.2.2"
 
 "@angular/cdk@^19.0.0":
-  version "19.0.5"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-19.0.5.tgz#30ff622f0a0f4bb7ecb467d7261db58c6eb2cb3f"
-  integrity sha512-+D++QUrJlDuwk5RhQBDTejQseb0ZP6c6S4r8wBBab7UPtrwigySudSb0PxhiAzp2YHr5Ch3klhkTf/NSWeUXUQ==
+  version "19.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-19.1.0.tgz#9c316d83aee26092644ecc82037bf4b526c3d7a7"
+  integrity sha512-h7VSaMA/vFHb7u1bwoHKl3L3mZLIcXNZw6v7Nei9ITfEo1PfSKbrYhleeqpNikzE+LxNDKJrbZtpAckSYHblmA==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -329,9 +298,9 @@
     tslib "^2.3.0"
 
 "@angular/material@^19.0.0":
-  version "19.0.5"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-19.0.5.tgz#c4c1e0d3346815c11e273213b562a60ffda634f1"
-  integrity sha512-yiW/ZJNkOPlQdqgj5U8DHTu3r7OHMI5R1cAbCpOmHlsVHEoc/Vw4V3RFUgpWLqCGgdRIkayoilMAooT52gG2Dg==
+  version "19.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-19.1.0.tgz#3af382acfc8d94f53cfc841dbcdd65ec89e3a9c8"
+  integrity sha512-LTQBWtuRGjNpA7ceQu9PyiUUq0KLfBP8LvL04hLFbEsZ0fIPQ/OO/Otn67/7TMtnHRFnPeezYPHcAHBhiNlR4A==
   dependencies:
     tslib "^2.3.0"
 
