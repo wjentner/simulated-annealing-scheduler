@@ -213,9 +213,9 @@
     lmdb "3.2.2"
 
 "@angular/cdk@^19.0.0":
-  version "19.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-19.1.1.tgz#4088b8495611a1c5c7f06b5cabbfaa00d96eb261"
-  integrity sha512-MmfNB9iANuDN1TS+HL8uKqA3/7pdVeCRN+HdAcfqFrcqZmSUUSlYWy8PXqymmyeXxoSwt9p4I/6R0By03VoCMw==
+  version "19.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-19.1.2.tgz#07642b96ce5b3e0507fb3376071384baabd1c9ee"
+  integrity sha512-rzrZ4BkGNIZWSdw0OsuSB/H9UB5ppPvmBq+uRHdYmZoYjo5wu1pmePxAIZDIBR8xdaNy9rZ4ecS6IebDkgYPrg==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -292,16 +292,16 @@
   integrity sha512-4W6dlBvukL3b7BnGiMM5cPGx3rAAVhBNicfNHX6hXCkz26AV0VFIbfrt/8GRSFmsDYZEOhXvhAy8dxHQCtyCqA==
 
 "@angular/material-luxon-adapter@^19.0.0":
-  version "19.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-19.1.1.tgz#7971c1b26db1ccbd1b8d4678c07ac8c7b17fdd79"
-  integrity sha512-iD6TMUQZBvOUvdtENmVN65SA2yiircmw/OlUtChWtJLc3KN83bD/YEmeFlzMhnhKaNZKzjRVa9Ve+jzqQ+I8iA==
+  version "19.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-19.1.2.tgz#b0677c8a3aa1e23302afbaa6f8c3ae5abfa4ee2f"
+  integrity sha512-Y3pGhrWLg5C0CR1R23+6EQkDSSnnWfGOIOOpRSKeaOEvmPYOYpPyD2JpKN8DBPFPCnWZkqXG4c8JmN6hEye74w==
   dependencies:
     tslib "^2.3.0"
 
 "@angular/material@^19.0.0":
-  version "19.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-19.1.1.tgz#f1829eb09bedbfdf2181f7ff033e358fe6a584be"
-  integrity sha512-x/EwyBx3yCIYyu/hve19eecmufJzwltRWOO/3Y74jY4jSNNFrR9046t0ptw4fyEXjN8UQZI6Fp/melcZxl3IiA==
+  version "19.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-19.1.2.tgz#db8018d5e79d8c050760a7e6f068e821ec8ab2c7"
+  integrity sha512-MdczdTmvsXLtEFV9nTgFs9mPM1FSAz4L1kByJCdIgHtOu62e9t2XcSUqOPJTlDrA5wWafZvPWh2woJfJr4iwjw==
   dependencies:
     tslib "^2.3.0"
 
@@ -3990,9 +3990,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.73:
-  version "1.5.89"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.89.tgz#d9d60baa576e0ab3ea721592f3345a83a37251ec"
-  integrity sha512-okLMJSmbI+XHr8aG+wCK+VPH+d38sHMED6/q1CTsCNkqfdOZL3k2ThWnh44HL6bJKj9cabPCSVLDv9ynsIm8qg==
+  version "1.5.90"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.90.tgz#4717e5a5413f95bbb12d0af14c35057e9c65e0b6"
+  integrity sha512-C3PN4aydfW91Natdyd449Kw+BzhLmof6tzy5W1pFC5SpQxVXT+oyiyOG9AgYYSN9OdA/ik3YkCrpwqI8ug5Tug==
 
 emoji-regex@^10.3.0:
   version "10.4.0"
