@@ -1165,9 +1165,9 @@
     tslib "^2.3.0"
 
 "@canvasjs/charts@^3.7.39":
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.11.0.tgz#39f214d6477b5337b9ac886ecdbc4c0e3a4966fa"
-  integrity sha512-RkP78q77wInAq0SN7xSFGLaeeWCKVWm4B3or9B50c+hIOM+2XpevM7+ZlYHNDup14mnsPTAC7hBrKCvsMfTIRg==
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.12.0.tgz#a800751774490e5284102925151bba6a9c7595ce"
+  integrity sha512-92ga2WIxJR0PVMYoyHRzxouf9ip7iWjTt5udmUFzWT2bAyZm7SsQyFtEG7told5+yRa1EATfqocgh/w/0fPsjA==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
@@ -2473,9 +2473,9 @@
     "@types/node" "*"
 
 "@types/node@*", "@types/node@>=10.0.0":
-  version "22.13.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.13.0.tgz#d376dd9a0ee2f9382d86c2d5d7beb4d198b4ea8c"
-  integrity sha512-ClIbNe36lawluuvq3+YYhnIN2CELi+6q8NpnM7PYp4hBn/TatfboPgVSm2rwKRfnV2M+Ty9GWDFI64KEe+kysA==
+  version "22.13.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.13.1.tgz#a2a3fefbdeb7ba6b89f40371842162fac0934f33"
+  integrity sha512-jK8uzQlrvXqEU91UxiK5J7pKHyzgnI1Qnl0QDHIgVGuolJhRb9EEl28Cj9b3rGR8B2lhFCtvIm5os8lFnO/1Ew==
   dependencies:
     undici-types "~6.20.0"
 
