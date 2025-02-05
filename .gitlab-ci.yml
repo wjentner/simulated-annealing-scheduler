@@ -70,7 +70,7 @@ variables:
   HELM_TIMEOUT: 10m0s
   #
   # Helm image
-  HELM_IMAGE: alpine/helm:3.16.4
+  HELM_IMAGE: alpine/helm:3.17.0
   #
   # Kubectl image
   KUBECTL_IMAGE: bitnami/kubectl:1.32.1
