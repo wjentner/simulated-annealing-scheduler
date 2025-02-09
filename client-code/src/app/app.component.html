@@ -46,6 +46,25 @@
         <mat-icon *ngIf="(getStatus('timeconstraints') | async) === 'warning'">warning</mat-icon>
         <mat-icon *ngIf="(getStatus('timeconstraints') | async) === 'error'">error</mat-icon>
     </a>
+
+    <a
+        mat-button
+        [routerLink]="'adjacent-task-constraints'"
+        [disabled]="
+            haveErrors(['tasks', 'selectable-persons', 'dates', 'min-max-constraints']) | async
+        "
+        >Task Combination Constraints
+        <mat-icon *ngIf="(getStatus('adjacent-task-constraints') | async) === 'ok'"
+            >checkmark</mat-icon
+        >
+        <mat-icon *ngIf="(getStatus('adjacent-task-constraints') | async) === 'warning'"
+            >warning</mat-icon
+        >
+        <mat-icon *ngIf="(getStatus('adjacent-task-constraints') | async) === 'error'"
+            >error</mat-icon
+        >
+    </a>
+
     <a mat-button [routerLink]="'statistics'"
         >Statistics
         <mat-icon *ngIf="(getStatus('statistics') | async) === 'ok'">checkmark</mat-icon>

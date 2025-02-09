@@ -1,0 +1,88 @@
+<div>
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
+</div>
+
+<table class="mat-table">
+    <tr class="mat-header-row">
+        <th class="mat-header-cell">Person</th>
+        <th class="mat-header-cell">Own Task (optional)</th>
+        <th class="mat-header-cell">Negated</th>
+        <th class="mat-header-cell">Other Person (optional)</th>
+        <th class="mat-header-cell">Other Task (optional)</th>
+        <th class="mat-header-cell">Penalty</th>
+        <th class="mat-header-cell">Remove</th>
+    </tr>
+
+    <span *ngFor="let t of (constraints$ | async)?.adjacent_task_constraints; let i = index">
+        <tr class="mat-row">
+            <td class="mat-cell">
+                <mat-form-field>
+                    <mat-label>Person</mat-label>
+                    <mat-select [(value)]="t.person">
+                        <mat-option *ngFor="let person of persons$ | async" [value]="person.name">
+                            {{ person.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+
+            <td class="mat-cell">
+                <mat-form-field>
+                    <mat-label>Own Task</mat-label>
+                    <mat-select [(value)]="t.own_task">
+                        <mat-option [value]="null">Allgemein</mat-option>
+                        <mat-option *ngFor="let task of tasks$ | async" [value]="task">
+                            {{ task }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+
+            <td class="mat-cell">
+                <mat-checkbox type="checkbox" [(ngModel)]="t.negated"></mat-checkbox>
+            </td>
+
+            <td class="mat-cell">
+                <mat-form-field>
+                    <mat-label>Other Person</mat-label>
+                    <mat-select [(value)]="t.adjacent_person">
+                        <mat-option [value]="null">Anyone</mat-option>
+                        <mat-option *ngFor="let person of persons$ | async" [value]="person.name">
+                            {{ person.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+
+            <td class="mat-cell">
+                <mat-form-field>
+                    <mat-label>Other Task</mat-label>
+                    <mat-select [(value)]="t.adjacent_task">
+                        <mat-option [value]="null">Any Task</mat-option>
+                        <mat-option *ngFor="let task of tasks$ | async" [value]="task">
+                            {{ task }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+
+            <td class="mat-cell">
+                <mat-form-field>
+                    <mat-label>Penalty</mat-label>
+                    <input matInput type="number" [(ngModel)]="t.penalty" placeholder="penalty" />
+                </mat-form-field>
+            </td>
+
+            <td class="mat-cell">
+                <app-really-delete (delete)="removeAdjacentTaskConstraint(t)"
+                    >Remove</app-really-delete
+                >
+            </td>
+        </tr>
+        <tr class="mat-row">
+            <td colspan="7" [innerHTML]="getConstraintExplanation(t)"></td>
+        </tr>
+    </span>
+</table>
+
+<button mat-raised-button color="primary" (click)="addAdjacentTaskConstrint()">Add</button>

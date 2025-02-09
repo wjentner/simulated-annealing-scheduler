@@ -31,8 +31,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { AdjacentTaskConstraintsComponent } from './adjacent-task-constraints/adjacent-task-constraints.component';
 
-@NgModule({ declarations: [
+@NgModule({
+    declarations: [
         AppComponent,
         DatesComponent,
         MinMaxConstraintsComponent,
@@ -44,8 +46,11 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
         TasksComponent,
         SelectablePersonsComponent,
         ReallyDeleteComponent,
+        AdjacentTaskConstraintsComponent,
     ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         FormsModule,
@@ -64,5 +69,8 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
         MatTooltipModule,
         MatProgressBarModule,
         MatCardModule,
-        CanvasJSAngularChartsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        CanvasJSAngularChartsModule,
+    ],
+    providers: [provideHttpClient(withInterceptorsFromDi())],
+})
 export class AppModule {}

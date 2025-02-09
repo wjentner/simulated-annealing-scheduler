@@ -10,7 +10,7 @@ import { HasWarnings } from './warning-interface';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.less'],
-    standalone: false
+    standalone: false,
 })
 export class AppComponent {
     title = 'sa-scheduler-client';
@@ -49,6 +49,12 @@ export class AppComponent {
 
             case 'timeconstraints':
                 return this.getStatusOfService(this.scheduleConstraintsService, 'time-constraint');
+
+            case 'adjacent-task-constraints':
+                return this.getStatusOfService(
+                    this.scheduleConstraintsService,
+                    'adjacent-task-constraint',
+                );
 
             case 'statistics':
                 return this.getStatusOfService(this.statisticsService);

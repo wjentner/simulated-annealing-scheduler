@@ -9,6 +9,7 @@ import { SolutionsComponent } from './solutions/solutions.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TimeConstraintsComponent } from './time-constraints/time-constraints.component';
+import { AdjacentTaskConstraintsComponent } from './adjacent-task-constraints/adjacent-task-constraints.component';
 
 const routes: Routes = [
     {
@@ -30,6 +31,10 @@ const routes: Routes = [
     {
         path: 'time-constraints',
         component: TimeConstraintsComponent,
+    },
+    {
+        path: 'adjacent-task-constraints',
+        component: AdjacentTaskConstraintsComponent,
     },
     {
         path: 'statistics',

@@ -13,7 +13,7 @@ import { TasksService } from '../tasks.service';
     selector: 'app-min-max-constraints',
     templateUrl: './min-max-constraints.component.html',
     styleUrls: ['./min-max-constraints.component.less'],
-    standalone: false
+    standalone: false,
 })
 export class MinMaxConstraintsComponent implements OnInit {
     editmode = false;
@@ -92,6 +92,17 @@ export class MinMaxConstraintsComponent implements OnInit {
         this.scheduleConstraintsService.constraints$.next(d);
     }
 
+    addMinMaxConstraintGeneral(person: string) {
+        const d = this.scheduleConstraintsService.constraints$.value;
+        d.min_max_constraints_general[person] = {
+            min: 1,
+            max: 5,
+            min_penalty: 100000,
+            max_penalty: 100000,
+        };
+        this.scheduleConstraintsService.constraints$.next(d);
+    }
+
     removeParticipant(person: string) {
         const d = this.scheduleConstraintsService.constraints$.value;
         delete d.min_max_constraints[person];
@@ -102,6 +113,13 @@ export class MinMaxConstraintsComponent implements OnInit {
     removeMinMaxConstraint(person: string, task: string) {
         const d = this.scheduleConstraintsService.constraints$.value;
         delete d.min_max_constraints[person][task];
+        this.scheduleConstraintsService.constraints$.next(d);
+        this.save();
+    }
+
+    removeMinMaxConstraintGeneral(person: string) {
+        const d = this.scheduleConstraintsService.constraints$.value;
+        delete d.min_max_constraints_general[person];
         this.scheduleConstraintsService.constraints$.next(d);
         this.save();
     }
