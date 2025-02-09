@@ -18,7 +18,9 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
 
         partial_penalties.extend(self._empty_tasks(state, constraints))
         partial_penalties.extend(self._min_max_constraints(state, constraints))
+        partial_penalties.extend(self._min_max_constraints_general(state, constraints))
         partial_penalties.extend(self._time_constraints(state, constraints))
+        partial_penalties.extend(self._adjacent_task_constraints(state, constraints))
         partial_penalties.extend(self._buddy_constraints(state, constraints))
         partial_penalties.extend(self._task_variance_penalties(state, constraints))
         partial_penalties.extend(self._saturday_sunday_inequality_penalty(state, constraints))
@@ -113,6 +115,44 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
         return violations
 
     @staticmethod
+    def _min_max_constraints_general(schedule: Schedule, constraints: ScheduleConstraints) -> List[Violation]:
+        """
+        :param schedule: the schedule to check
+        :param constraints: the constraints
+        :return:
+        """
+        person_task_counts = schedule.get_counts()
+        tasks = constraints.get_tasks()
+        violations: List[Violation] = []
+
+        for person in constraints.min_max_constraints.keys():
+            for task in tasks:
+                actual_count = person_task_counts[person][task] if person in person_task_counts and task in \
+                                                                   person_task_counts[person] else 0
+
+                penalty = constraints.get_min_max_penalty(person, task, actual_count)
+
+                if penalty > 0:
+                    violations.append(Violation(
+                        desc=f'{person} has {actual_count} schedules for task {task}, '
+                             f'which violates {constraints.get_min_max_constraint_as_str(person, task)}',
+                        penalty=penalty))
+
+        # check all counts, if they do not occur in min-max-constraint assume a 0(100000)-0(1000000) constraint
+        for person, task_counts in person_task_counts.items():
+            for task, actual_count in task_counts.items():
+                if task == 'total':
+                    continue
+
+                if person not in constraints.min_max_constraints or task not in constraints.min_max_constraints[person]:
+                    violations.append(Violation(
+                        desc=f'{person} has {actual_count} schedules for task {task}, '
+                             f'which violates 0(100000.0)-0(100000.0)',
+                        penalty=actual_count * constraints.default_min_max_constraint_penalty))
+
+        return violations
+
+    @staticmethod
     def _time_constraints(schedule: Schedule, constraints: ScheduleConstraints) -> List[Violation]:
 
         violations: List[Violation] = []
@@ -154,6 +194,85 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
                     violations.append(Violation(desc=f'{tc["person"]} wants to be scheduled for task {tc["task"]} '
                                                 f'between {tc["min_date"]} - {tc["max_date"]} but no date was found',
                                                 penalty=tc["penalty"]))
+        return violations
+
+    @staticmethod
+    def _adjacent_task_constraints(schedule: Schedule, constraints: ScheduleConstraints) -> List[Violation]:
+
+        violations: List[Violation] = []
+
+        person_date_task = schedule.get_schedule_per_person()
+
+        for atc in constraints.adjacent_task_constraints:
+            if atc['negated']:
+                # since we only look at negative associations we can skip if the person is not scheduled
+                if atc['person'] not in person_date_task:
+                    continue
+
+                # looking through the schedule of that person
+                for date, task in person_date_task[atc['person']].items():
+                    # if the constraint has a specific task set and the schedule is not for this task
+                    # we can skip it
+                    if atc['own_task'] is not None and atc['own_task'] != task:
+                        continue
+
+                    # here, either the own task is None or the schedule matches the task
+                    # now check whether we violate the rule
+                    for other_task, other_person in schedule.get_schedule_for_date(date).items():
+                        # we can skip our own schedule
+                        if task == other_task and atc['person'] == other_person:
+                            continue
+
+                        if atc['adjacent_task'] == other_task and atc['adjacent_person'] is None:
+                            violations.append(Violation(desc=f'{atc["person"]} is scheduled for {task} on {date} '
+                                                             f'but does not want to be schedule with task {atc["adjacent_task"]}',
+                                                        penalty=atc["penalty"]))
+
+                        if atc['adjacent_task'] == other_task and atc['adjacent_person'] == other_person:
+                            violations.append(Violation(desc=f'{atc["person"]} is scheduled for {task} on {date} '
+                                                             f'but does not want to be schedule with task {atc["adjacent_task"]} and person {atc["adjacent_person"]}',
+                                                        penalty=atc["penalty"]))
+
+                        if atc['adjacent_task'] is None and atc['adjacent_person'] == other_person:
+                            violations.append(Violation(desc=f'{atc["person"]} is scheduled for {task} on {date} '
+                                                             f'but does not want to be schedule with person {atc["adjacent_person"]}',
+                                                        penalty=atc["penalty"]))
+
+            else:  # person wants to be scheduled with specific task or person
+                # find all schedules for that person
+                for date, task in person_date_task[atc['person']].items():
+                    # we don't need to consider that schedule if the own task doesn't match the specified task
+                    if atc['own_task'] is not None and atc['own_task'] != task:
+                        continue
+
+                    found = False
+
+                    # check for all other schedules at the same date
+                    for other_task, other_person in schedule.get_schedule_for_date(date):
+                        # if other_person is us skip
+                        if other_person == atc['person']:
+                            continue
+
+                        # only task but not person
+                        if atc['adjacent_task'] is not None and atc['adjacent_person'] is None:
+                            if atc['adjacent_task'] == other_task:
+                                found = True
+                        elif atc['adjacent_task'] is None and atc['adjacent_person'] is not None:
+                            if atc['adjacent_person'] == other_person:
+                                found = True
+                        elif atc['adjacent_task'] is None and atc['adjacent_person'] is not None:
+                            if atc['adjacent_person'] == other_person and atc['adjacent_task'] == other_task:
+                                found = True
+                        else:
+                            raise Exception('Invalid constraint other_task and other_person are null')
+
+
+                    # for that schedule we couldn't find anything
+                    if found is False:
+                        violations.append(Violation(desc=f'{atc["person"]} is scheduled on {date} with {task}'
+                                                         f'and wants to be scheduled with {atc["adjacent_task"]} and/or {atc["adjacent_person"]} but could not be found.',
+                                                    penalty=atc["penalty"]))
+
         return violations
 
     @staticmethod

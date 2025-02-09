@@ -42,6 +42,15 @@ class MinMaxConstraint(TypedDict):
     max_penalty: float
 
 
+class AdjacentTaskConstraint(TypedDict):
+    negated: bool
+    person: str
+    own_task: Optional[str]
+    adjacent_task: Optional[str]
+    adjacent_person: Optional[str]
+    penalty: float
+
+
 class ScheduleConstraints(Constraints, BaseModel):
     empty_task_penalty: float = 1000000
     """
@@ -87,6 +96,16 @@ class ScheduleConstraints(Constraints, BaseModel):
                 max_penalty: 100000
     """
 
+    min_max_constraints_general: Dict[str, MinMaxConstraint] = {}
+    """
+    Example:
+        28:
+            min: 1
+            min_penalty: 100000
+            max: 5
+            max_penalty: 100000
+    """
+
     dates_and_tasks: Dict[str, Dict[str, bool]] = {}
     """
     Example:
@@ -100,6 +119,8 @@ class ScheduleConstraints(Constraints, BaseModel):
 
     buddy_constraints: List[BuddyConstraint] = []
 
+    adjacent_task_constraints: List[AdjacentTaskConstraint] = []
+
     @staticmethod
     def load_constraints_from_file(json_file: str) -> 'ScheduleConstraints':
         with open(json_file, mode='r') as json_data:
@@ -110,9 +131,11 @@ class ScheduleConstraints(Constraints, BaseModel):
         data = json.loads(json_data)
         sc = ScheduleConstraints()
         sc.min_max_constraints = data['min_max_constraints'] if 'min_max_constraints' in data else {}
+        sc.min_max_constraints_general = data['min_max_constraints_general'] if 'min_max_constraints_general' in data else {}
         sc.dates_and_tasks = data['dates_and_tasks'] if 'dates_and_tasks' in data else {}
         sc.time_constraints = data['time_constraints'] if 'time_constraints' in data else []
         sc.buddy_constraints = data['buddy_constraints'] if 'buddy_constraints' in data else []
+        sc.adjacent_task_constraints = data['adjacent_task_constraints'] if 'adjacent_task_constraints' in data else []
 
         return sc
 
@@ -151,6 +174,23 @@ class ScheduleConstraints(Constraints, BaseModel):
 
         return 0
 
+    def get_min_max_general_penalty(self, person: str, actual_count: int) -> float:
+        if person not in self.min_max_constraints_general:
+            return 0
+
+        lower_bound = self.min_max_constraints_general[person]['min']
+        lower_bound_penalty = self.min_max_constraints_general[person]['min_penalty']
+        upper_bound = self.min_max_constraints_general[person]['max']
+        upper_bound_penalty = self.min_max_constraints_general[person]['max_penalty']
+
+        if actual_count < lower_bound:
+            return abs(actual_count - lower_bound) * lower_bound_penalty
+
+        if actual_count > upper_bound:
+            return abs(actual_count - upper_bound) * upper_bound_penalty
+
+        return 0
+
     def get_min_max_constraint_as_str(self, person: str, task: str) -> Optional[str]:
         if person not in self.min_max_constraints or task not in self.min_max_constraints[person]:
             return None
@@ -159,6 +199,17 @@ class ScheduleConstraints(Constraints, BaseModel):
         lower_bound_penalty = self.min_max_constraints[person][task]['min_penalty']
         upper_bound = self.min_max_constraints[person][task]['max']
         upper_bound_penalty = self.min_max_constraints[person][task]['max_penalty']
+
+        return f'{lower_bound}({lower_bound_penalty})-{upper_bound}({upper_bound_penalty})'
+
+    def get_min_max_general_constraint_as_str(self, person: str) -> Optional[str]:
+        if person not in self.min_max_constraints_general:
+            return None
+
+        lower_bound = self.min_max_constraints_general[person]['min']
+        lower_bound_penalty = self.min_max_constraints_general[person]['min_penalty']
+        upper_bound = self.min_max_constraints_general[person]['max']
+        upper_bound_penalty = self.min_max_constraints_general[person]['max_penalty']
 
         return f'{lower_bound}({lower_bound_penalty})-{upper_bound}({upper_bound_penalty})'
 

@@ -42,6 +42,9 @@ class Schedule(LocalSearchState, ABC, BaseModel):
         return l
 
     def get_schedule_for_date(self, date: str) -> Dict[str, str]:
+        """
+        :return: task -> person
+        """
         return self.schedule[date]
 
     def get_schedule_per_person(self) -> Dict[str, Dict[str, str]]:

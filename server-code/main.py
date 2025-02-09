@@ -277,7 +277,8 @@ def constraints_write(constraints: ScheduleConstraints):
 def constraints_get() -> ScheduleConstraints:
     if not os.path.exists('./data/constraints.json'):
         return ScheduleConstraints()
-    return ScheduleConstraints.parse_file('./data/constraints.json')
+    with open('./data/constraints.json', 'r') as f:
+        return ScheduleConstraints.model_validate_json(f.read())
 
 
 @app.get('/api/solutions')

@@ -32,14 +32,27 @@ export interface MinMaxConstraint {
     max_penalty: number;
 }
 
+export interface AdjacentTaskConstraint {
+    negated: boolean;
+    person: string;
+    own_task?: string;
+    adjacent_task?: string;
+    adjacent_person?: string;
+    penalty: number;
+}
+
 export interface ScheduleConstraints {
     min_max_constraints: { [key: string]: { [key: string]: MinMaxConstraint } };
+
+    min_max_constraints_general?: { [key: string]: MinMaxConstraint };
 
     dates_and_tasks: { [key: string]: { [key: string]: boolean } };
 
     time_constraints: TimeConstraint[];
 
     buddy_constraints: BuddyConstraint[];
+
+    adjacent_task_constraints?: AdjacentTaskConstraint[];
 
     empty_task_penalty: number;
 

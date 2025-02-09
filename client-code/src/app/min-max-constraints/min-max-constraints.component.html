@@ -4,8 +4,8 @@
 
 <button mat-raised-button color="primary" (click)="save()">Save</button>
 
-<div style="margin-top: 20px" *ngIf="constraints$ | async as c">
-    <mat-form-field>
+<div style="margin-top: 20px; width: 300px" *ngIf="constraints$ | async as c">
+    <mat-form-field style="width: 100%">
         <mat-label>Default Min Max Penalty</mat-label>
         <input matInput type="number" [(ngModel)]="c.default_min_max_constraint_penalty" />
         <mat-hint
@@ -22,16 +22,15 @@
             <th *ngFor="let t of tasks$ | async" class="mat-header-cell" role="columnheader">
                 {{ t }}
             </th>
-            <th class="mat-header-cell" role="columnheader">Statistics</th>
+            <th *ngIf="!editmode" class="mat-header-cell" role="columnheader">Statistics</th>
+            <th class="mat-header-cell" role="columnheader">General Min/Max</th>
+            <th *ngIf="editmode" class="mat-header-cell" role="columnheader">Remove Person</th>
         </tr>
     </thead>
 
-    <tbody *ngIf="!editmode" role="rowgroup">
+    <tbody *ngIf="!editmode && constraints$ | async as constraints" role="rowgroup">
         <tr
-            *ngFor="
-                let personitem of (constraints$ | async).min_max_constraints | keyvalue;
-                let i = index
-            "
+            *ngFor="let personitem of constraints.min_max_constraints | keyvalue; let i = index"
             role="row"
             class="mat-row cdk-row"
         >
@@ -50,6 +49,11 @@
             </td>
             <td role="cell" class="mat-cell cdk-cell">
                 {{ getMinMax(personitem.value) }}
+            </td>
+            <td role="cell" class="mat-cell cdk-cell">
+                <span *ngIf="constraints?.min_max_constraints_general[personitem.key] as g">
+                    {{ g.min + ' (' + g.min_penalty + ') - ' + g.max + ' (' + g.max_penalty + ')' }}
+                </span>
             </td>
         </tr>
     </tbody>
@@ -95,6 +99,41 @@
                         (click)="addMinMaxConstraint(personitem.key, t)"
                     >
                         Add constraints for task {{ t }}
+                    </button>
+                </div>
+            </td>
+
+            <td *ngIf="constraints$ | async as constraints" role="cell" class="mat-cell cdk-cell">
+                <div *ngIf="constraints?.min_max_constraints_general[personitem.key] as g">
+                    <mat-form-field>
+                        <mat-label>Min</mat-label>
+                        <input type="number" matInput [(ngModel)]="g.min" />
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Penalty under Min</mat-label>
+                        <input type="number" matInput [(ngModel)]="g.min_penalty" />
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Max</mat-label>
+                        <input type="number" matInput [(ngModel)]="g.max" />
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Penalty over Max</mat-label>
+                        <input type="number" matInput [(ngModel)]="g.max_penalty" />
+                    </mat-form-field>
+
+                    <app-really-delete (delete)="removeMinMaxConstraintGeneral(personitem.key)"
+                        >Remove General Constraint
+                    </app-really-delete>
+                </div>
+                <div *ngIf="!constraints?.min_max_constraints_general[personitem.key]">
+                    <button
+                        mat-raised-button
+                        color="accent"
+                        (click)="addMinMaxConstraintGeneral(personitem.key)"
+                    >
+                        Add general constraint
                     </button>
                 </div>
             </td>
