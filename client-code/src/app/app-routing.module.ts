@@ -10,6 +10,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TimeConstraintsComponent } from './time-constraints/time-constraints.component';
 import { AdjacentTaskConstraintsComponent } from './adjacent-task-constraints/adjacent-task-constraints.component';
+import { InternImportComponent } from './intern-import/intern-import.component';
 
 const routes: Routes = [
     {
@@ -51,6 +52,10 @@ const routes: Routes = [
     {
         path: 'solutions',
         component: SolutionsComponent,
+    },
+    {
+        path: 'internimport',
+        component: InternImportComponent,
     },
 ];
 

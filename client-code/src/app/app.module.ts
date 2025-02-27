@@ -32,6 +32,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { AdjacentTaskConstraintsComponent } from './adjacent-task-constraints/adjacent-task-constraints.component';
+import { InternImportComponent } from './intern-import/intern-import.component';
 
 @NgModule({
     declarations: [
@@ -47,6 +48,7 @@ import { AdjacentTaskConstraintsComponent } from './adjacent-task-constraints/ad
         SelectablePersonsComponent,
         ReallyDeleteComponent,
         AdjacentTaskConstraintsComponent,
+        InternImportComponent,
     ],
     bootstrap: [AppComponent],
     imports: [

@@ -1,0 +1,24 @@
+<div class="outer">
+    <div class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Year</mat-label>
+            <input type="number" matInput placeholder="2025" [(ngModel)]="dataSend.year" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Intern User Name</mat-label>
+            <input type="text" matInput [(ngModel)]="dataSend.user" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Intern Password</mat-label>
+            <input type="password" matInput [(ngModel)]="dataSend.password" />
+        </mat-form-field>
+
+        <mat-checkbox [(ngModel)]="removeUserTC"
+            >Remove existing user-defined time constraints</mat-checkbox
+        >
+        <br /><br />
+        <button mat-raised-button color="primary" (click)="merge()">Import Intern Data</button>
+    </div>
+</div>

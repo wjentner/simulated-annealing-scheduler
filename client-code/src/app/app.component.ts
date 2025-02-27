@@ -5,6 +5,7 @@ import { SelectablePersonsService } from './selectable-persons.service';
 import { StatisticsService } from './statistics.service';
 import { TasksService } from './tasks.service';
 import { HasWarnings } from './warning-interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-root',
@@ -14,13 +15,16 @@ import { HasWarnings } from './warning-interface';
 })
 export class AppComponent {
     title = 'sa-scheduler-client';
+    internEndpoint: string;
 
     public constructor(
         private tasksService: TasksService,
         private selectablePersonsService: SelectablePersonsService,
         private scheduleConstraintsService: ScheduleConstraintsService,
         private statisticsService: StatisticsService,
-    ) {}
+    ) {
+        this.internEndpoint = environment.internEndpoint;
+    }
 
     tasksValid(): Observable<boolean> {
         return this.tasksService.isValid();

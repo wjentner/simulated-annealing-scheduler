@@ -5,6 +5,7 @@
 export const environment = {
     production: false,
     api: 'http://localhost:8000/api',
+    internEndpoint: 'https://intern.sfg-singen.de/schedulingconstraints_export.php',
 };
 
 /*

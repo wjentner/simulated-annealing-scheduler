@@ -23,6 +23,15 @@
         <mat-icon *ngIf="(getStatus('dates') | async) === 'error'">error</mat-icon>
     </a>
 
+    @if (internEndpoint) {
+        <a
+            mat-button
+            [routerLink]="'internimport'"
+            [disabled]="haveErrors(['tasks', 'selectable-persons', 'dates']) | async"
+            >Import from Intern
+        </a>
+    }
+
     <a
         mat-button
         [routerLink]="'min-max-constraints'"
