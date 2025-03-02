@@ -240,6 +240,8 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
 
             else:  # person wants to be scheduled with specific task or person
                 # find all schedules for that person
+                if atc['person'] not in person_date_task:
+                    return violations
                 for date, task in person_date_task[atc['person']].items():
                     # we don't need to consider that schedule if the own task doesn't match the specified task
                     if atc['own_task'] is not None and atc['own_task'] != task:
@@ -248,7 +250,7 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
                     found = False
 
                     # check for all other schedules at the same date
-                    for other_task, other_person in schedule.get_schedule_for_date(date):
+                    for other_task, other_person in schedule.get_schedule_for_date(date).items():
                         # if other_person is us skip
                         if other_person == atc['person']:
                             continue
@@ -260,7 +262,7 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
                         elif atc['adjacent_task'] is None and atc['adjacent_person'] is not None:
                             if atc['adjacent_person'] == other_person:
                                 found = True
-                        elif atc['adjacent_task'] is None and atc['adjacent_person'] is not None:
+                        elif atc['adjacent_task'] is not None and atc['adjacent_person'] is not None:
                             if atc['adjacent_person'] == other_person and atc['adjacent_task'] == other_task:
                                 found = True
                         else:
