@@ -122,33 +122,22 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
         :return:
         """
         person_task_counts = schedule.get_counts()
-        tasks = constraints.get_tasks()
         violations: List[Violation] = []
 
-        for person in constraints.min_max_constraints.keys():
-            for task in tasks:
-                actual_count = person_task_counts[person][task] if person in person_task_counts and task in \
-                                                                   person_task_counts[person] else 0
+        if constraints.min_max_constraints_general is None:
+            return violations
 
-                penalty = constraints.get_min_max_penalty(person, task, actual_count)
+        for person in constraints.min_max_constraints_general.keys():
+            actual_count = person_task_counts[person]['total'] if person in person_task_counts and 'total' in \
+                                                               person_task_counts[person] else 0
 
-                if penalty > 0:
-                    violations.append(Violation(
-                        desc=f'{person} has {actual_count} schedules for task {task}, '
-                             f'which violates {constraints.get_min_max_constraint_as_str(person, task)}',
-                        penalty=penalty))
+            penalty = constraints.get_min_max_general_penalty(person, actual_count)
 
-        # check all counts, if they do not occur in min-max-constraint assume a 0(100000)-0(1000000) constraint
-        for person, task_counts in person_task_counts.items():
-            for task, actual_count in task_counts.items():
-                if task == 'total':
-                    continue
-
-                if person not in constraints.min_max_constraints or task not in constraints.min_max_constraints[person]:
-                    violations.append(Violation(
-                        desc=f'{person} has {actual_count} schedules for task {task}, '
-                             f'which violates 0(100000.0)-0(100000.0)',
-                        penalty=actual_count * constraints.default_min_max_constraint_penalty))
+            if penalty > 0:
+                violations.append(Violation(
+                    desc=f'{person} has {actual_count} schedules in total, '
+                         f'which violates {constraints.get_min_max_general_constraint_as_str(person)}',
+                    penalty=penalty))
 
         return violations
 
@@ -271,7 +260,7 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
 
                     # for that schedule we couldn't find anything
                     if found is False:
-                        violations.append(Violation(desc=f'{atc["person"]} is scheduled on {date} with {task}'
+                        violations.append(Violation(desc=f'{atc["person"]} is scheduled on {date} with {task} '
                                                          f'and wants to be scheduled with {atc["adjacent_task"]} and/or {atc["adjacent_person"]} but could not be found.',
                                                     penalty=atc["penalty"]))
 
