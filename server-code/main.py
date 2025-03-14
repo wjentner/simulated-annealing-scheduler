@@ -10,7 +10,7 @@ from datetime import datetime
 from os import path
 from typing import Dict, List, Optional
 
-from fastapi import BackgroundTasks, FastAPI, File, UploadFile
+from fastapi import BackgroundTasks, FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -287,7 +287,10 @@ def solutions_get() -> List[SolutionStatus]:
     sols = list(map(lambda d: path.basename(d).replace('.json', ''), sol_paths))
 
     sol_paths2 = glob.glob('./data/solutions/tmp/*')
-    sols.extend(list(map(lambda d: path.basename(d), sol_paths2)))
+    sol_paths2 = list(map(lambda d: path.basename(d), sol_paths2))
+    if 'old' in sol_paths2:
+        sol_paths2.remove('old')
+    sols.extend(sol_paths2)
     sols = list(set(sols))
     sols.sort()
     sols_status = list(map(lambda d: solution_get(d), sols))
@@ -315,6 +318,29 @@ def solution_get(sol: str) -> SolutionStatus:
     s.fitness_history = __get_fitness_history_of_solution(sol)
 
     return s
+
+
+@app.delete('/api/solutions/{sol}')
+def solution_delete(sol: str) -> None:
+    root = './data/solutions/'
+    sol_file = f'{root}{sol}.json'
+    tmp_sol = f'{root}tmp/{sol}'
+    if not os.path.exists(sol_file) and not os.path.isdir(tmp_sol):
+        raise HTTPException(status_code=404, detail='Solution not found')
+
+    if os.path.exists(sol_file):
+        if not os.path.isdir(f'{root}old'):
+            os.mkdir(f'{root}old')
+
+        os.rename(sol_file, f'{root}old/{sol}.json')
+
+    if os.path.isdir(tmp_sol):
+        if not os.path.isdir(f'{root}tmp/old'):
+            os.mkdir(f'{root}tmp/old')
+
+        os.rename(tmp_sol, f'{root}tmp/old/{sol}')
+
+    return None
 
 
 @app.get('/api/solutions/{sol}/csv-vereinsflieger')

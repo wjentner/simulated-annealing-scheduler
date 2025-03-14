@@ -33,6 +33,10 @@
                 [href]="downloadUrlPrefix + selectedSolution.name + '/csv-vereinsflieger'"
                 >Download Vereinsflieger CSV</a
             >
+
+            <app-really-delete style="margin-left: 10px" (delete)="deleteSolution()"
+                >Delete Solution</app-really-delete
+            >
         </div>
     </div>
 

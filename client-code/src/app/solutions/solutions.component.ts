@@ -5,12 +5,13 @@ import { SolutionsService, SolutionStatus, Statistics } from '../solutions.servi
 import { TasksService } from '../tasks.service';
 import { FulfilledTimeConstraint } from '../schedule-constraints.service';
 import { DateTime } from 'luxon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-solutions',
     templateUrl: './solutions.component.html',
     styleUrls: ['./solutions.component.less'],
-    standalone: false
+    standalone: false,
 })
 export class SolutionsComponent implements OnInit {
     solutions$: Observable<SolutionStatus[]>;
@@ -56,6 +57,7 @@ export class SolutionsComponent implements OnInit {
     constructor(
         private solutionsService: SolutionsService,
         private tasksService: TasksService,
+        private _snackBar: MatSnackBar,
     ) {}
 
     ngOnInit(): void {
@@ -83,6 +85,13 @@ export class SolutionsComponent implements OnInit {
                 this.chart.render();
             }
         }
+    }
+
+    deleteSolution() {
+        this.solutionsService.deleteSolution(this.selectedSolution.name).subscribe(() => {
+            this.solutionsService.getSolutions();
+            this._snackBar.open('Solution deleted!', 'OK', { duration: 2000 });
+        });
     }
 
     reloadSolution() {

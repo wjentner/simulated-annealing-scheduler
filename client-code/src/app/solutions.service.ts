@@ -176,6 +176,10 @@ export class SolutionsService {
         return this.http.get<SolutionStatus>(`${environment.api}/solutions/${name}`);
     }
 
+    deleteSolution(name: string): Observable<void> {
+        return this.http.delete<void>(`${environment.api}/solutions/${name}`);
+    }
+
     calcPersonStats(sol: SolutionStatus): Statistics {
         const persMap = new Map<string, Map<string, number>>();
         const totalDDs = new Map<string, number>();

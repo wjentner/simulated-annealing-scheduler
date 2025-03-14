@@ -58,7 +58,8 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
         for date in schedule.get_dates():
             for task, user in schedule.get_schedule_for_date(date).items():
                 if user is None:
-                    violations.append(Violation(desc=f'No one is scheduled for {task} on {date}', penalty=constraints.empty_task_penalty))
+                    violations.append(Violation(desc=f'No one is scheduled for {task} on {date}',
+                                                penalty=constraints.empty_task_penalty))
 
         return violations
 
@@ -90,14 +91,15 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
 
         for person in constraints.min_max_constraints.keys():
             for task in tasks:
-                actual_count = person_task_counts[person][task] if person in person_task_counts and task in person_task_counts[person] else 0
+                actual_count = person_task_counts[person][task] if person in person_task_counts and task in \
+                                                                   person_task_counts[person] else 0
 
                 penalty = constraints.get_min_max_penalty(person, task, actual_count)
 
                 if penalty > 0:
                     violations.append(Violation(
                         desc=f'{person} has {actual_count} schedules for task {task}, '
-                        f'which violates {constraints.get_min_max_constraint_as_str(person, task)}',
+                             f'which violates {constraints.get_min_max_constraint_as_str(person, task)}',
                         penalty=penalty))
 
         # check all counts, if they do not occur in min-max-constraint assume a 0(100000)-0(1000000) constraint
@@ -109,7 +111,7 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
                 if person not in constraints.min_max_constraints or task not in constraints.min_max_constraints[person]:
                     violations.append(Violation(
                         desc=f'{person} has {actual_count} schedules for task {task}, '
-                        f'which violates 0(100000.0)-0(100000.0)',
+                             f'which violates 0(100000.0)-0(100000.0)',
                         penalty=actual_count * constraints.default_min_max_constraint_penalty))
 
         return violations
@@ -129,7 +131,7 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
 
         for person in constraints.min_max_constraints_general.keys():
             actual_count = person_task_counts[person]['total'] if person in person_task_counts and 'total' in \
-                                                               person_task_counts[person] else 0
+                                                                  person_task_counts[person] else 0
 
             penalty = constraints.get_min_max_general_penalty(person, actual_count)
 
@@ -165,7 +167,7 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
                         # violation only if no task specified or tasks match
                         if tc['task'] is None or tc['task'] == task:
                             violations.append(Violation(desc=f'{tc["person"]} is scheduled for {task} on {date} '
-                                                        f'but has constraint !{tc["min_date"]} - {tc["max_date"]}',
+                                                             f'but has constraint !{tc["min_date"]} - {tc["max_date"]}',
                                                         penalty=tc["penalty"]))
 
             else:
@@ -181,7 +183,7 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
 
                 if not found:
                     violations.append(Violation(desc=f'{tc["person"]} wants to be scheduled for task {tc["task"]} '
-                                                f'between {tc["min_date"]} - {tc["max_date"]} but no date was found',
+                                                     f'between {tc["min_date"]} - {tc["max_date"]} but no date was found',
                                                 penalty=tc["penalty"]))
         return violations
 
@@ -257,7 +259,6 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
                         else:
                             raise Exception('Invalid constraint other_task and other_person are null')
 
-
                     # for that schedule we couldn't find anything
                     if found is False:
                         violations.append(Violation(desc=f'{atc["person"]} is scheduled on {date} with {task} '
@@ -280,22 +281,25 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
                     # all scheduled dates for person_a
                     if date in person_date_task[bc['person_b']]:
                         # they are scheduled together
-                        violations.append(Violation(desc=f'{bc["person_a"]} and {bc["person_b"]} do not want to be scheduled '
-                                                    f'together but are on {date}', penalty=bc['penalty']))
+                        violations.append(
+                            Violation(desc=f'{bc["person_a"]} and {bc["person_b"]} do not want to be scheduled '
+                                           f'together but are on {date}', penalty=bc['penalty']))
 
             else:
                 # want to be scheduled together. search for dates where they are not
                 for date_a in person_date_task[bc['person_a']].keys():
                     if date_a not in person_date_task[bc['person_b']]:
-                        violations.append(Violation(desc=f'{bc["person_a"]} and {bc["person_b"]} do want to be scheduled '
-                                                    f'together but are not scheduled together on {date_a}',
-                                                    penalty=bc['penalty']))
+                        violations.append(
+                            Violation(desc=f'{bc["person_a"]} and {bc["person_b"]} do want to be scheduled '
+                                           f'together but are not scheduled together on {date_a}',
+                                      penalty=bc['penalty']))
 
                 for date_b in person_date_task[bc['person_b']].keys():
                     if date_b not in person_date_task[bc['person_a']]:
-                        violations.append(Violation(desc=f'{bc["person_a"]} and {bc["person_b"]} do want to be scheduled '
-                                                    f'together but are not scheduled together on {date_b}',
-                                                    penalty=bc['penalty']))
+                        violations.append(
+                            Violation(desc=f'{bc["person_a"]} and {bc["person_b"]} do want to be scheduled '
+                                           f'together but are not scheduled together on {date_b}',
+                                      penalty=bc['penalty']))
 
         return violations
 
@@ -320,12 +324,14 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
                 variance = pow(count - avg_workload, 2)
                 summed_variance += variance
 
-            penalties.append(PartialPenalty(desc=f'Variance penalty for task {task}', penalty=constraints.task_variance_penalty_factor * summed_variance))
+            penalties.append(PartialPenalty(desc=f'Variance penalty for task {task}',
+                                            penalty=constraints.task_variance_penalty_factor * summed_variance))
 
         return penalties
 
     @staticmethod
-    def _saturday_sunday_inequality_penalty(schedule: Schedule, constraints: ScheduleConstraints) -> List[PartialPenalty]:
+    def _saturday_sunday_inequality_penalty(schedule: Schedule, constraints: ScheduleConstraints) -> List[
+        PartialPenalty]:
         person_date_task = schedule.get_schedule_per_person()
 
         inequality_sum = 0
@@ -340,7 +346,8 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
 
                 date_parsed: datetime.datetime = datetime.strptime(date, '%Y-%m-%d')
                 day = date_parsed.strftime('%a').lower()
-                if 'holiday' in constraints.dates_and_tasks[date] and constraints.dates_and_tasks[date]['holiday'] is True:
+                if 'holiday' in constraints.dates_and_tasks[date] and constraints.dates_and_tasks[date][
+                    'holiday'] is True:
                     day = 'sun'
 
                 if day not in counts:
@@ -354,7 +361,8 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
             inequality_sum += pow(sa - su, 2)
 
         return [PartialPenalty(desc=f'Penalty for Sa/Su inequality',
-                               penalty=constraints.sat_sun_inequality_factor * (inequality_sum / float(len(person_date_task))))]
+                               penalty=constraints.sat_sun_inequality_factor * (
+                                           inequality_sum / float(len(person_date_task))))]
 
     @staticmethod
     def _not_uniform_penalty(schedule: Schedule, constraints: ScheduleConstraints) -> List[PartialPenalty]:
@@ -368,12 +376,13 @@ class SchedulingFitnessCalculator(FitnessCalculator, ABC):
             dates.sort()
 
             for i in range(1, len(dates)):
-                last_date = datetime.strptime(dates[i-1], '%Y-%m-%d')
+                last_date = datetime.strptime(dates[i - 1], '%Y-%m-%d')
                 this_date = datetime.strptime(dates[i], '%Y-%m-%d')
 
                 delta = this_date - last_date
                 penalty_sum += constraints.not_uniform_penalty_min_days / float(delta.days)
 
         return [PartialPenalty(desc=f'Not-uniform-penalty',
-                               penalty=constraints.not_uniform_penalty_factor * (penalty_sum / float(len(person_date_task)))
+                               penalty=constraints.not_uniform_penalty_factor * (
+                                           penalty_sum / float(len(person_date_task)))
                                )]
