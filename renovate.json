@@ -1,55 +1,75 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-      "config:base",
-      "local>kubernetes/renovate-bot"
-    ],  
-    "assignees": ["@sisu4u"],
-    "assigneesSampleSize": 1,
-    "gitLabAutomerge": true,
-    "packageRules": [
-      {
-        "packageNames": [
-          "@angular/core",
-          "@angular/cli",
-          "@angular/material",
-          "@angular/cdk"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "local>kubernetes/renovate-bot"
+  ],
+  "assignees": [
+    "@sisu4u"
+  ],
+  "assigneesSampleSize": 1,
+  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "@angular/core",
+        "@angular/cli",
+        "@angular/material",
+        "@angular/cdk"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "install-tool yarn 1.22.19 && yarn global add @angular/cli && cd client-code && yarn install && ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force"
         ],
-        "postUpgradeTasks": {
-          "commands": [
-            "install-tool yarn 1.22.19 && yarn global add @angular/cli && cd client-code && yarn install && ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force"
-          ],
-          "fileFilters": [
-            "**/**"
-          ]
-        },
-        "updateTypes": ["major", "minor", "patch"]
+        "fileFilters": [
+          "**/**"
+        ]
       },
-      {
-        "matchPackagePatterns": ["eslint"],
-        "groupName": "eslint packages"
-      },
-      {
-        "updateTypes": ["lockFileMaintenance"],
-        "automerge": true
-      },
-      {
-        "depTypeList": ["devDependencies"],
-        "automerge": true,
-        "updateTypes": ["minor", "patch", "pin", "digest"]
-      }
-    ],
-    "vulnerabilityAlerts": {
-      "labels": ["security"],
-      "assignees": ["@sisu4u"]
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ]
     },
-    "dependencyDashboard": true,
-    "commitMessagePrefix": "[renovate-bot] ",
-    "lockFileMaintenance": {
-      "enabled": true,
-      "schedule": [
-        "before 5:00am"
+    {
+      "groupName": "eslint packages",
+      "matchPackageNames": [
+        "/eslint/"
+      ]
+    },
+    {
+      "matchUpdateTypes": [
+        "lockFileMaintenance"
+      ],
+      "automerge": true
+    },
+    {
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "automerge": true,
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
       ]
     }
+  ],
+  "vulnerabilityAlerts": {
+    "labels": [
+      "security"
+    ],
+    "assignees": [
+      "@sisu4u"
+    ]
+  },
+  "dependencyDashboard": true,
+  "commitMessagePrefix": "[renovate-bot] ",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 5:00am"
+    ]
   }
-  
+}
