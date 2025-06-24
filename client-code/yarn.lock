@@ -1230,9 +1230,9 @@
     tslib "^2.3.0"
 
 "@canvasjs/charts@^3.7.39":
-  version "3.12.19"
-  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.12.19.tgz#cfed086209770900e3f1bdcd237ba3d5388bc03f"
-  integrity sha512-JVHOsdK5LfaQMv22LnPir8cPTJjkOiaxGyKUP/vvn+QgUXwFWFLlu/3ohdKoarjOzjTGQLw++6E8aNGh9j1UDQ==
+  version "3.12.20"
+  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.12.20.tgz#eea012fdbd368e0e01b6c6caa2eefa89bdb21e6c"
+  integrity sha512-4RNg8Cmtr/kYlOuzBQwENOy2D/C5NhrtFYdUDKUbAGfC4RH/P71k6AizReoyb+k6FD2YGvAfatudC7XPvcfAYw==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
@@ -2814,15 +2814,10 @@
     debug "^4.3.4"
     ts-api-utils "^2.1.0"
 
-"@typescript-eslint/types@8.35.0", "@typescript-eslint/types@^8.35.0":
+"@typescript-eslint/types@8.35.0", "@typescript-eslint/types@^8.11.0", "@typescript-eslint/types@^8.35.0":
   version "8.35.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.35.0.tgz#e60d062907930e30008d796de5c4170f02618a93"
   integrity sha512-0mYH3emanku0vHw2aRLNGqe7EXh9WHEhi7kZzscrMDf6IIRUQ5Jk4wp1QrledE/36KtdZrVfKnE32eZCf/vaVQ==
-
-"@typescript-eslint/types@^8.11.0":
-  version "8.34.1"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.34.1.tgz#565a46a251580dae674dac5aafa8eb14b8322a35"
-  integrity sha512-rjLVbmE7HR18kDsjNIZQHxmv9RZwlgzavryL5Lnj2ujIRTeXlKtILHgRNmQ3j4daw7zd+mQgy+uyt6Zo6I0IGA==
 
 "@typescript-eslint/typescript-estree@8.35.0":
   version "8.35.0"
@@ -4216,9 +4211,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.160:
-  version "1.5.171"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.171.tgz#e552b4fd73d4dd941ee4c70ae288a8a39f818726"
-  integrity sha512-scWpzXEJEMrGJa4Y6m/tVotb0WuvNmasv3wWVzUAeCgKU0ToFOhUW6Z+xWnRQANMYGxN4ngJXIThgBJOqzVPCQ==
+  version "1.5.172"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.172.tgz#fe1d99028d8d6321668d0f1fed61d99ac896259c"
+  integrity sha512-fnKW9dGgmBfsebbYognQSv0CGGLFH1a5iV9EDYTBwmAQn+whbzHbLFlC+3XbHc8xaNtpO0etm8LOcRXs1qMRkQ==
 
 emoji-regex@^10.3.0:
   version "10.4.0"
