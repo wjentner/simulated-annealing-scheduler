@@ -10,14 +10,6 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@angular-devkit/architect@0.1902.14":
-  version "0.1902.14"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.1902.14.tgz#acd1d5816564973e8d65e629acf72c2a358bc9db"
-  integrity sha512-rgMkqOrxedzqLZ8w59T/0YrpWt7LDmGwt+ZhNHE7cn27jZ876yGC2Bhcn58YZh2+R03WEJ9q0ePblaBYz03SMw==
-  dependencies:
-    "@angular-devkit/core" "19.2.14"
-    rxjs "7.8.1"
-
 "@angular-devkit/architect@0.1902.15", "@angular-devkit/architect@>= 0.1900.0 < 0.2000.0":
   version "0.1902.15"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.1902.15.tgz#c9154e520dd287972cb7d5942513b2ac6a8597e0"
@@ -26,16 +18,16 @@
     "@angular-devkit/core" "19.2.15"
     rxjs "7.8.1"
 
-"@angular-devkit/build-angular@19.2.14":
-  version "19.2.14"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-19.2.14.tgz#4f945181c306026cb9928266b1b14b83dee9ef67"
-  integrity sha512-0K8vZxXdkME31fd6/+WACug8j4eLlU7mxR2/XJvS+VQ+a7bqdEsVddZDkwdWE+Y3ccZXvD/aNLZSEuSKmVFsnA==
+"@angular-devkit/build-angular@19.2.15":
+  version "19.2.15"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-19.2.15.tgz#586949cf03e579470cb9713294f205ce6f274898"
+  integrity sha512-mqudAcyrSp/E7ZQdQoHfys0/nvQuwyJDaAzj3qL3HUStuUzb5ULNOj2f6sFBo+xYo+/WT8IzmzDN9DCqDgvFaA==
   dependencies:
     "@ampproject/remapping" "2.3.0"
-    "@angular-devkit/architect" "0.1902.14"
-    "@angular-devkit/build-webpack" "0.1902.14"
-    "@angular-devkit/core" "19.2.14"
-    "@angular/build" "19.2.14"
+    "@angular-devkit/architect" "0.1902.15"
+    "@angular-devkit/build-webpack" "0.1902.15"
+    "@angular-devkit/core" "19.2.15"
+    "@angular/build" "19.2.15"
     "@babel/core" "7.26.10"
     "@babel/generator" "7.26.10"
     "@babel/helper-annotate-as-pure" "7.25.9"
@@ -46,7 +38,7 @@
     "@babel/preset-env" "7.26.9"
     "@babel/runtime" "7.26.10"
     "@discoveryjs/json-ext" "0.6.3"
-    "@ngtools/webpack" "19.2.14"
+    "@ngtools/webpack" "19.2.15"
     "@vitejs/plugin-basic-ssl" "1.2.0"
     ansi-colors "4.1.3"
     autoprefixer "10.4.20"
@@ -83,31 +75,19 @@
     tslib "2.8.1"
     webpack "5.98.0"
     webpack-dev-middleware "7.4.2"
-    webpack-dev-server "5.2.0"
+    webpack-dev-server "5.2.2"
     webpack-merge "6.0.1"
     webpack-subresource-integrity "5.1.0"
   optionalDependencies:
     esbuild "0.25.4"
 
-"@angular-devkit/build-webpack@0.1902.14":
-  version "0.1902.14"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-webpack/-/build-webpack-0.1902.14.tgz#4bc4f0d95fd679f5965efc9ddf2fbcec5592b807"
-  integrity sha512-XDNB8Nlau/v59Ukd6UgBRBRnTnUmC244832SECmMxXHs1ljJMWGlI1img2xPErGd8426rUA9Iws4RkQiqbsybQ==
+"@angular-devkit/build-webpack@0.1902.15":
+  version "0.1902.15"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-webpack/-/build-webpack-0.1902.15.tgz#40c23ccd9e2e3c9488ebe2eba46ea46aba8f8caa"
+  integrity sha512-pIfZeizWsViXx8bsMoBLZw7Tl7uFf7bM7hAfmNwk0bb0QGzx5k1BiW6IKWyaG+Dg6U4UCrlNpIiut2b78HwQZw==
   dependencies:
-    "@angular-devkit/architect" "0.1902.14"
+    "@angular-devkit/architect" "0.1902.15"
     rxjs "7.8.1"
-
-"@angular-devkit/core@19.2.14":
-  version "19.2.14"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-19.2.14.tgz#29c17dd6b1113b23bd668cfef4dc45d363ccab0e"
-  integrity sha512-aaPEnRNIBoYT4XrrYcZlHadX8vFDTUR+4wUgcmr0cNDLeWzWtoPFeVq8TQD6kFDeqovSx/UVEblGgg/28WvHyg==
-  dependencies:
-    ajv "8.17.1"
-    ajv-formats "3.0.1"
-    jsonc-parser "3.3.1"
-    picomatch "4.0.2"
-    rxjs "7.8.1"
-    source-map "0.7.4"
 
 "@angular-devkit/core@19.2.15", "@angular-devkit/core@>= 19.0.0 < 20.0.0":
   version "19.2.15"
@@ -198,13 +178,13 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/build@19.2.14":
-  version "19.2.14"
-  resolved "https://registry.yarnpkg.com/@angular/build/-/build-19.2.14.tgz#97c80553dc7d756e628f7c5836555c5361cfacb4"
-  integrity sha512-PAUR8vZpGKXy0Vc5gpJkigOthoj5YeGDpeykl/yLi6sx6yAIlXcE0MD+LGehKeqFSBL56rEpn9n710lI7eTJwg==
+"@angular/build@19.2.15":
+  version "19.2.15"
+  resolved "https://registry.yarnpkg.com/@angular/build/-/build-19.2.15.tgz#c1931f5a77041ec8f575083fffd1f0b207f8fd4c"
+  integrity sha512-iE4fp4d5ALu702uoL6/YkjM2JlGEXZ5G+RVzq3W2jg/Ft6ISAQnRKB6mymtetDD6oD7i87e8uSu9kFVNBauX2w==
   dependencies:
     "@ampproject/remapping" "2.3.0"
-    "@angular-devkit/architect" "0.1902.14"
+    "@angular-devkit/architect" "0.1902.15"
     "@babel/core" "7.26.10"
     "@babel/helper-annotate-as-pure" "7.25.9"
     "@babel/helper-split-export-declaration" "7.24.7"
@@ -2026,10 +2006,10 @@
     "@napi-rs/nice-win32-ia32-msvc" "1.0.1"
     "@napi-rs/nice-win32-x64-msvc" "1.0.1"
 
-"@ngtools/webpack@19.2.14":
-  version "19.2.14"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-19.2.14.tgz#841a468d405396de84059de0cdb93875793185b4"
-  integrity sha512-PqrY+eeSUoF6JC6NCEQRPE/0Y2umSllD/fsDE6pnQrvGfztBpj0Jt1WMhgEI8BBcl4S7QW0LhPynkBmnCvTUmw==
+"@ngtools/webpack@19.2.15":
+  version "19.2.15"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-19.2.15.tgz#ce63057269adccb8321165d9ddd86a1986a1d55a"
+  integrity sha512-H37nop/wWMkSgoU2VvrMzanHePdLRRrX52nC5tT2ZhH3qP25+PrnMyw11PoLDLv3iWXC68uB1AiKNIT+jiQbuQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -2599,7 +2579,7 @@
     "@types/range-parser" "*"
     "@types/send" "*"
 
-"@types/express-serve-static-core@^4.17.33":
+"@types/express-serve-static-core@^4.17.21", "@types/express-serve-static-core@^4.17.33":
   version "4.19.6"
   resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.19.6.tgz#e01324c2a024ff367d92c66f48553ced0ab50267"
   integrity sha512-N4LZ2xG7DatVqhCZzOGb1Yi5lMbXSZcmdLDe9EzSndPV2HpWYWzRbaerl2n27irrm94EPpprqa8KpskPT085+A==
@@ -5387,7 +5367,7 @@ http-proxy-middleware@3.0.5:
     is-plain-object "^5.0.0"
     micromatch "^4.0.8"
 
-http-proxy-middleware@^2.0.7:
+http-proxy-middleware@^2.0.9:
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/http-proxy-middleware/-/http-proxy-middleware-2.0.9.tgz#e9e63d68afaa4eee3d147f39149ab84c0c2815ef"
   integrity sha512-c1IyJYLYppU574+YI7R4QyX2ystMtVXZwIdzazUIPIJsHuWNd+mho2j+bKoHftndicGj9yh+xjd+l0yj7VeT1Q==
@@ -9123,14 +9103,15 @@ webpack-dev-middleware@7.4.2, webpack-dev-middleware@^7.4.2:
     range-parser "^1.2.1"
     schema-utils "^4.0.0"
 
-webpack-dev-server@5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-5.2.0.tgz#68043886edaa3fd875ad20e01589990a79612f9c"
-  integrity sha512-90SqqYXA2SK36KcT6o1bvwvZfJFcmoamqeJY7+boioffX9g9C0wjjJRGUrQIuh43pb0ttX7+ssavmj/WN2RHtA==
+webpack-dev-server@5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-5.2.2.tgz#96a143d50c58fef0c79107e61df911728d7ceb39"
+  integrity sha512-QcQ72gh8a+7JO63TAx/6XZf/CWhgMzu5m0QirvPfGvptOusAxG12w2+aua1Jkjr7hzaWDnJ2n6JFeexMHI+Zjg==
   dependencies:
     "@types/bonjour" "^3.5.13"
     "@types/connect-history-api-fallback" "^1.5.4"
     "@types/express" "^4.17.21"
+    "@types/express-serve-static-core" "^4.17.21"
     "@types/serve-index" "^1.9.4"
     "@types/serve-static" "^1.15.5"
     "@types/sockjs" "^0.3.36"
@@ -9143,7 +9124,7 @@ webpack-dev-server@5.2.0:
     connect-history-api-fallback "^2.0.0"
     express "^4.21.2"
     graceful-fs "^4.2.6"
-    http-proxy-middleware "^2.0.7"
+    http-proxy-middleware "^2.0.9"
     ipaddr.js "^2.1.0"
     launch-editor "^2.6.1"
     open "^10.0.3"
