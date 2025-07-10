@@ -1,87 +1,129 @@
 <mat-toolbar>
-    <a mat-button [routerLink]="'tasks'"
-        >Tasks
-        <mat-icon *ngIf="(getStatus('tasks') | async) === 'ok'">checkmark</mat-icon>
-        <mat-icon *ngIf="(getStatus('tasks') | async) === 'warning'">warning</mat-icon>
-        <mat-icon *ngIf="(getStatus('tasks') | async) === 'error'">error</mat-icon>
-    </a>
-
-    <a mat-button [routerLink]="'selectable-persons'" [disabled]="haveErrors(['tasks']) | async"
-        >Person Pool
-        <mat-icon *ngIf="(getStatus('selectable-persons') | async) === 'ok'">checkmark</mat-icon>
-        <mat-icon *ngIf="(getStatus('selectable-persons') | async) === 'warning'">warning</mat-icon>
-        <mat-icon *ngIf="(getStatus('selectable-persons') | async) === 'error'">error</mat-icon>
-    </a>
-
-    <a
-        mat-button
-        [routerLink]="'dates'"
-        [disabled]="haveErrors(['tasks', 'selectable-persons']) | async"
-        >Dates
-        <mat-icon *ngIf="(getStatus('dates') | async) === 'ok'">checkmark</mat-icon>
-        <mat-icon *ngIf="(getStatus('dates') | async) === 'warning'">warning</mat-icon>
-        <mat-icon *ngIf="(getStatus('dates') | async) === 'error'">error</mat-icon>
-    </a>
-
-    @if (internEndpoint) {
-        <a
-            mat-button
-            [routerLink]="'internimport'"
-            [disabled]="haveErrors(['tasks', 'selectable-persons', 'dates']) | async"
-            >Import from Intern
-        </a>
+  <a mat-button [routerLink]="'tasks'"
+    >Tasks
+    @if ((getStatus('tasks') | async) === 'ok') {
+      <mat-icon>checkmark</mat-icon>
     }
+    @if ((getStatus('tasks') | async) === 'warning') {
+      <mat-icon>warning</mat-icon>
+    }
+    @if ((getStatus('tasks') | async) === 'error') {
+      <mat-icon>error</mat-icon>
+    }
+  </a>
 
+  <a mat-button [routerLink]="'selectable-persons'" [disabled]="haveErrors(['tasks']) | async"
+    >Person Pool
+    @if ((getStatus('selectable-persons') | async) === 'ok') {
+      <mat-icon>checkmark</mat-icon>
+    }
+    @if ((getStatus('selectable-persons') | async) === 'warning') {
+      <mat-icon>warning</mat-icon>
+    }
+    @if ((getStatus('selectable-persons') | async) === 'error') {
+      <mat-icon>error</mat-icon>
+    }
+  </a>
+
+  <a
+    mat-button
+    [routerLink]="'dates'"
+    [disabled]="haveErrors(['tasks', 'selectable-persons']) | async"
+    >Dates
+    @if ((getStatus('dates') | async) === 'ok') {
+      <mat-icon>checkmark</mat-icon>
+    }
+    @if ((getStatus('dates') | async) === 'warning') {
+      <mat-icon>warning</mat-icon>
+    }
+    @if ((getStatus('dates') | async) === 'error') {
+      <mat-icon>error</mat-icon>
+    }
+  </a>
+
+  @if (internEndpoint) {
     <a
-        mat-button
-        [routerLink]="'min-max-constraints'"
-        [disabled]="haveErrors(['tasks', 'selectable-persons', 'dates']) | async"
-        >Min-Max Constraints
-        <mat-icon *ngIf="(getStatus('min-max-constraints') | async) === 'ok'">checkmark</mat-icon>
-        <mat-icon *ngIf="(getStatus('min-max-constraints') | async) === 'warning'"
-            >warning</mat-icon
+      mat-button
+      [routerLink]="'internimport'"
+      [disabled]="haveErrors(['tasks', 'selectable-persons', 'dates']) | async"
+      >Import from Intern
+    </a>
+  }
+
+  <a
+    mat-button
+    [routerLink]="'min-max-constraints'"
+    [disabled]="haveErrors(['tasks', 'selectable-persons', 'dates']) | async"
+    >Min-Max Constraints
+    @if ((getStatus('min-max-constraints') | async) === 'ok') {
+      <mat-icon>checkmark</mat-icon>
+    }
+    @if ((getStatus('min-max-constraints') | async) === 'warning') {
+      <mat-icon
+        >warning</mat-icon
         >
-        <mat-icon *ngIf="(getStatus('min-max-constraints') | async) === 'error'">error</mat-icon>
+      }
+      @if ((getStatus('min-max-constraints') | async) === 'error') {
+        <mat-icon>error</mat-icon>
+      }
     </a>
 
     <a
-        mat-button
-        [routerLink]="'time-constraints'"
+      mat-button
+      [routerLink]="'time-constraints'"
         [disabled]="
             haveErrors(['tasks', 'selectable-persons', 'dates', 'min-max-constraints']) | async
         "
-        >Time Constraints
-        <mat-icon *ngIf="(getStatus('timeconstraints') | async) === 'ok'">checkmark</mat-icon>
-        <mat-icon *ngIf="(getStatus('timeconstraints') | async) === 'warning'">warning</mat-icon>
-        <mat-icon *ngIf="(getStatus('timeconstraints') | async) === 'error'">error</mat-icon>
+      >Time Constraints
+      @if ((getStatus('timeconstraints') | async) === 'ok') {
+        <mat-icon>checkmark</mat-icon>
+      }
+      @if ((getStatus('timeconstraints') | async) === 'warning') {
+        <mat-icon>warning</mat-icon>
+      }
+      @if ((getStatus('timeconstraints') | async) === 'error') {
+        <mat-icon>error</mat-icon>
+      }
     </a>
 
     <a
-        mat-button
-        [routerLink]="'adjacent-task-constraints'"
+      mat-button
+      [routerLink]="'adjacent-task-constraints'"
         [disabled]="
             haveErrors(['tasks', 'selectable-persons', 'dates', 'min-max-constraints']) | async
         "
-        >Task Combination Constraints
-        <mat-icon *ngIf="(getStatus('adjacent-task-constraints') | async) === 'ok'"
-            >checkmark</mat-icon
-        >
-        <mat-icon *ngIf="(getStatus('adjacent-task-constraints') | async) === 'warning'"
+      >Task Combination Constraints
+      @if ((getStatus('adjacent-task-constraints') | async) === 'ok') {
+        <mat-icon
+          >checkmark</mat-icon
+          >
+        }
+        @if ((getStatus('adjacent-task-constraints') | async) === 'warning') {
+          <mat-icon
             >warning</mat-icon
-        >
-        <mat-icon *ngIf="(getStatus('adjacent-task-constraints') | async) === 'error'"
-            >error</mat-icon
-        >
-    </a>
+            >
+          }
+          @if ((getStatus('adjacent-task-constraints') | async) === 'error') {
+            <mat-icon
+              >error</mat-icon
+              >
+            }
+          </a>
 
-    <a mat-button [routerLink]="'statistics'"
-        >Statistics
-        <mat-icon *ngIf="(getStatus('statistics') | async) === 'ok'">checkmark</mat-icon>
-        <mat-icon *ngIf="(getStatus('statistics') | async) === 'warning'">warning</mat-icon>
-        <mat-icon *ngIf="(getStatus('statistics') | async) === 'error'">error</mat-icon>
-    </a>
-    <a mat-button [routerLink]="'run-algorithm'">Run Optimization</a>
-    <a mat-button [routerLink]="'solutions'">Solutions</a>
-</mat-toolbar>
+          <a mat-button [routerLink]="'statistics'"
+            >Statistics
+            @if ((getStatus('statistics') | async) === 'ok') {
+              <mat-icon>checkmark</mat-icon>
+            }
+            @if ((getStatus('statistics') | async) === 'warning') {
+              <mat-icon>warning</mat-icon>
+            }
+            @if ((getStatus('statistics') | async) === 'error') {
+              <mat-icon>error</mat-icon>
+            }
+          </a>
+          <a mat-button [routerLink]="'run-algorithm'">Run Optimization</a>
+          <a mat-button [routerLink]="'solutions'">Solutions</a>
+        </mat-toolbar>
 
-<router-outlet></router-outlet>
+        <router-outlet></router-outlet>

@@ -1,14 +1,16 @@
 <mat-list role="list">
-    <mat-list-item role="listitem" *ngFor="let t of tasks">
-        {{ t }} &nbsp;<app-really-delete (delete)="remove(t)">Remove</app-really-delete>
+  @for (t of tasks; track t) {
+    <mat-list-item role="listitem">
+      {{ t }} &nbsp;<app-really-delete (delete)="remove(t)">Remove</app-really-delete>
     </mat-list-item>
+  }
 </mat-list>
 
 <div>
-    <mat-form-field>
-        <mat-label>New Task</mat-label>
-        <input type="text" matInput [(ngModel)]="newTask" />
-    </mat-form-field>
+  <mat-form-field>
+    <mat-label>New Task</mat-label>
+    <input type="text" matInput [(ngModel)]="newTask" />
+  </mat-form-field>
 
-    <button mat-raised-button (click)="add()">Add Task</button>
+  <button mat-raised-button (click)="add()">Add Task</button>
 </div>

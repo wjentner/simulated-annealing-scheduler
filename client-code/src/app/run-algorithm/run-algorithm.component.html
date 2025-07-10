@@ -1,43 +1,46 @@
 <div>
-    <mat-form-field>
-        <mat-label>Optimize existing solution</mat-label>
-        <mat-select [(value)]="settings.initial_state">
-            <mat-option [value]="null"></mat-option>
-            <mat-option *ngFor="let sol of solutions$ | async" [value]="sol.name">
-                {{ sol.name }} - {{ sol.fitness }}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+  <mat-form-field>
+    <mat-label>Optimize existing solution</mat-label>
+    <mat-select [(value)]="settings.initial_state">
+      <mat-option [value]="null"></mat-option>
+      @for (sol of solutions$ | async; track sol) {
+        <mat-option [value]="sol.name">
+          {{ sol.name }} - {{ sol.fitness }}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
 
-    <button mat-raised-button color="warn" (click)="expertMode = !expertMode">Expert Mode</button>
+  <button mat-raised-button color="warn" (click)="expertMode = !expertMode">Expert Mode</button>
 </div>
 
-<div *ngIf="expertMode">
+@if (expertMode) {
+  <div>
     <mat-form-field>
-        <mat-label>Number of offsprings</mat-label>
-        <input type="number" matInput [(ngModel)]="settings.num_offsprings" />
+      <mat-label>Number of offsprings</mat-label>
+      <input type="number" matInput [(ngModel)]="settings.num_offsprings" />
     </mat-form-field>
-
     <mat-form-field>
-        <mat-label>K</mat-label>
-        <input type="number" matInput [(ngModel)]="settings.k" />
+      <mat-label>K</mat-label>
+      <input type="number" matInput [(ngModel)]="settings.k" />
     </mat-form-field>
-
     <mat-form-field>
-        <mat-label>Starting Temperature</mat-label>
-        <input type="number" matInput [(ngModel)]="settings.start_temp" />
+      <mat-label>Starting Temperature</mat-label>
+      <input type="number" matInput [(ngModel)]="settings.start_temp" />
     </mat-form-field>
-
     <mat-form-field>
-        <mat-label>Alpha</mat-label>
-        <input type="number" matInput [(ngModel)]="settings.alpha" />
+      <mat-label>Alpha</mat-label>
+      <input type="number" matInput [(ngModel)]="settings.alpha" />
     </mat-form-field>
-</div>
+  </div>
+}
 
 <div>
-    <button mat-raised-button color="primary" (click)="run()">Run Optimization</button>
+  <button mat-raised-button color="primary" (click)="run()">Run Optimization</button>
 </div>
 
-<div *ngIf="status">
+@if (status) {
+  <div>
     <pre>{{ status | json }}</pre>
-</div>
+  </div>
+}

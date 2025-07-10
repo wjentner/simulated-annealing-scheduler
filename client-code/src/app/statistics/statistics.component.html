@@ -1,21 +1,27 @@
 <table class="mat-table">
-    <tr class="mat-header-row">
-        <th class="mat-header-cell">Task</th>
-        <th class="mat-header-cell">Needed</th>
-        <th class="mat-header-cell">Min</th>
-        <th class="mat-header-cell">Max</th>
-        <th class="mat-header-cell">Avg</th>
-        <th class="mat-header-cell">State</th>
-    </tr>
+  <tr class="mat-header-row">
+    <th class="mat-header-cell">Task</th>
+    <th class="mat-header-cell">Needed</th>
+    <th class="mat-header-cell">Min</th>
+    <th class="mat-header-cell">Max</th>
+    <th class="mat-header-cell">Avg</th>
+    <th class="mat-header-cell">State</th>
+  </tr>
 
-    <tr *ngFor="let task of tasks$ | async" class="mat-row">
-        <td class="mat-cell">{{ task }}</td>
-        <td class="mat-cell">{{ statisticsService.numDate(task) | async }}</td>
-        <td class="mat-cell">{{ statisticsService.minPeople(task) | async }}</td>
-        <td class="mat-cell">{{ statisticsService.maxPeople(task) | async }}</td>
-        <td class="mat-cell">{{ statisticsService.avgPeople(task) | async }}</td>
-        <td class="mat-cell" *ngIf="statisticsService.warnings(task) | async as warnings">
-            <span *ngFor="let w of warnings"> <mat-icon>warning</mat-icon> {{ w.msg }} </span>
+  @for (task of tasks$ | async; track task) {
+    <tr class="mat-row">
+      <td class="mat-cell">{{ task }}</td>
+      <td class="mat-cell">{{ statisticsService.numDate(task) | async }}</td>
+      <td class="mat-cell">{{ statisticsService.minPeople(task) | async }}</td>
+      <td class="mat-cell">{{ statisticsService.maxPeople(task) | async }}</td>
+      <td class="mat-cell">{{ statisticsService.avgPeople(task) | async }}</td>
+      @if (statisticsService.warnings(task) | async; as warnings) {
+        <td class="mat-cell">
+          @for (w of warnings; track w) {
+            <span> <mat-icon>warning</mat-icon> {{ w.msg }} </span>
+          }
         </td>
+      }
     </tr>
+  }
 </table>

@@ -4,166 +4,191 @@
 
 <button mat-raised-button color="primary" (click)="save()">Save</button>
 
-<div style="margin-top: 20px; width: 300px" *ngIf="constraints$ | async as c">
+@if (constraints$ | async; as c) {
+  <div style="margin-top: 20px; width: 300px">
     <mat-form-field style="width: 100%">
-        <mat-label>Default Min Max Penalty</mat-label>
-        <input matInput type="number" [(ngModel)]="c.default_min_max_constraint_penalty" />
-        <mat-hint
-            >The default penalty if a person is scheduled but not defined as a min max
-            constraint.</mat-hint
+      <mat-label>Default Min Max Penalty</mat-label>
+      <input matInput type="number" [(ngModel)]="c.default_min_max_constraint_penalty" />
+      <mat-hint
+        >The default penalty if a person is scheduled but not defined as a min max
+        constraint.</mat-hint
         >
-    </mat-form-field>
-</div>
+      </mat-form-field>
+    </div>
+  }
 
-<table style="margin-top: 30px" class="mat-table cdk-table mat-elevation-z8" role="table">
+  <table style="margin-top: 30px" class="mat-table cdk-table mat-elevation-z8" role="table">
     <thead role="rowgroup">
-        <tr class="mat-header-row cdk-header-row" role="row">
-            <th class="mat-header-cell" role="columnheader">Person</th>
-            <th *ngFor="let t of tasks$ | async" class="mat-header-cell" role="columnheader">
-                {{ t }}
-            </th>
-            <th *ngIf="!editmode" class="mat-header-cell" role="columnheader">Statistics</th>
-            <th class="mat-header-cell" role="columnheader">General Min/Max</th>
-            <th *ngIf="editmode" class="mat-header-cell" role="columnheader">Remove Person</th>
-        </tr>
+      <tr class="mat-header-row cdk-header-row" role="row">
+        <th class="mat-header-cell" role="columnheader">Person</th>
+        @for (t of tasks$ | async; track t) {
+          <th class="mat-header-cell" role="columnheader">
+            {{ t }}
+          </th>
+        }
+        @if (!editmode) {
+          <th class="mat-header-cell" role="columnheader">Statistics</th>
+        }
+        <th class="mat-header-cell" role="columnheader">General Min/Max</th>
+        @if (editmode) {
+          <th class="mat-header-cell" role="columnheader">Remove Person</th>
+        }
+      </tr>
     </thead>
 
-    <tbody *ngIf="!editmode && constraints$ | async as constraints" role="rowgroup">
-        <tr
-            *ngFor="let personitem of constraints.min_max_constraints | keyvalue; let i = index"
+    @if (!editmode && constraints$ | async; as constraints) {
+      <tbody role="rowgroup">
+        @for (personitem of constraints.min_max_constraints | keyvalue; track personitem; let i = $index) {
+          <tr
             role="row"
             class="mat-row cdk-row"
-        >
+            >
             <td role="cell" class="mat-cell cdk-cell">{{ personitem.key }}</td>
-            <td *ngFor="let t of tasks$ | async" role="cell" class="mat-cell cdk-cell">
-                <span *ngIf="personitem.value[t]">{{
+            @for (t of tasks$ | async; track t) {
+              <td role="cell" class="mat-cell cdk-cell">
+                @if (personitem.value[t]) {
+                  <span>{{
                     personitem.value[t].min +
-                        ' (' +
-                        personitem.value[t].min_penalty +
-                        ') - ' +
-                        personitem.value[t].max +
-                        ' (' +
-                        personitem.value[t].max_penalty +
-                        ')'
-                }}</span>
+                    ' (' +
+                    personitem.value[t].min_penalty +
+                    ') - ' +
+                    personitem.value[t].max +
+                    ' (' +
+                    personitem.value[t].max_penalty +
+                    ')'
+                  }}</span>
+                }
+              </td>
+            }
+            <td role="cell" class="mat-cell cdk-cell">
+              {{ getMinMax(personitem.value) }}
             </td>
             <td role="cell" class="mat-cell cdk-cell">
-                {{ getMinMax(personitem.value) }}
-            </td>
-            <td role="cell" class="mat-cell cdk-cell">
-                <span *ngIf="constraints?.min_max_constraints_general[personitem.key] as g">
-                    {{ g.min + ' (' + g.min_penalty + ') - ' + g.max + ' (' + g.max_penalty + ')' }}
+              @if (constraints?.min_max_constraints_general[personitem.key]; as g) {
+                <span>
+                  {{ g.min + ' (' + g.min_penalty + ') - ' + g.max + ' (' + g.max_penalty + ')' }}
                 </span>
+              }
             </td>
-        </tr>
-    </tbody>
+          </tr>
+        }
+      </tbody>
+    }
 
-    <tbody *ngIf="editmode">
-        <tr
+    @if (editmode) {
+      <tbody>
+        @for (
+          personitem of (constraints$ | async).min_max_constraints | keyvalue; track
+          personitem; let i = $index) {
+          <tr
             class="mat-row cdk-row"
-            *ngFor="
-                let personitem of (constraints$ | async).min_max_constraints | keyvalue;
-                let i = index
-            "
-        >
+            >
             <td role="cell" class="mat-cell cdk-cell">{{ personitem.key }}</td>
-
-            <td *ngFor="let t of tasks$ | async" role="cell" class="mat-cell cdk-cell">
-                <div *ngIf="personitem.value[t] as mm">
+            @for (t of tasks$ | async; track t) {
+              <td role="cell" class="mat-cell cdk-cell">
+                @if (personitem.value[t]; as mm) {
+                  <div>
                     <mat-form-field>
-                        <mat-label>Min</mat-label>
-                        <input type="number" matInput [(ngModel)]="mm.min" />
+                      <mat-label>Min</mat-label>
+                      <input type="number" matInput [(ngModel)]="mm.min" />
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-label>Penalty under Min</mat-label>
-                        <input type="number" matInput [(ngModel)]="mm.min_penalty" />
-                    </mat-form-field>
-
-                    <mat-form-field>
-                        <mat-label>Max</mat-label>
-                        <input type="number" matInput [(ngModel)]="mm.max" />
+                      <mat-label>Penalty under Min</mat-label>
+                      <input type="number" matInput [(ngModel)]="mm.min_penalty" />
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-label>Penalty over Max</mat-label>
-                        <input type="number" matInput [(ngModel)]="mm.max_penalty" />
+                      <mat-label>Max</mat-label>
+                      <input type="number" matInput [(ngModel)]="mm.max" />
                     </mat-form-field>
-
+                    <mat-form-field>
+                      <mat-label>Penalty over Max</mat-label>
+                      <input type="number" matInput [(ngModel)]="mm.max_penalty" />
+                    </mat-form-field>
                     <app-really-delete (delete)="removeMinMaxConstraint(personitem.key, t)"
-                        >Remove Constraint
+                      >Remove Constraint
                     </app-really-delete>
-                </div>
-                <div *ngIf="!personitem.value[t]">
+                  </div>
+                }
+                @if (!personitem.value[t]) {
+                  <div>
                     <button
-                        mat-raised-button
-                        color="accent"
-                        (click)="addMinMaxConstraint(personitem.key, t)"
-                    >
-                        Add constraints for task {{ t }}
+                      mat-raised-button
+                      color="accent"
+                      (click)="addMinMaxConstraint(personitem.key, t)"
+                      >
+                      Add constraints for task {{ t }}
                     </button>
-                </div>
-            </td>
-
-            <td *ngIf="constraints$ | async as constraints" role="cell" class="mat-cell cdk-cell">
-                <div *ngIf="constraints?.min_max_constraints_general[personitem.key] as g">
+                  </div>
+                }
+              </td>
+            }
+            @if (constraints$ | async; as constraints) {
+              <td role="cell" class="mat-cell cdk-cell">
+                @if (constraints?.min_max_constraints_general[personitem.key]; as g) {
+                  <div>
                     <mat-form-field>
-                        <mat-label>Min</mat-label>
-                        <input type="number" matInput [(ngModel)]="g.min" />
+                      <mat-label>Min</mat-label>
+                      <input type="number" matInput [(ngModel)]="g.min" />
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-label>Penalty under Min</mat-label>
-                        <input type="number" matInput [(ngModel)]="g.min_penalty" />
-                    </mat-form-field>
-
-                    <mat-form-field>
-                        <mat-label>Max</mat-label>
-                        <input type="number" matInput [(ngModel)]="g.max" />
+                      <mat-label>Penalty under Min</mat-label>
+                      <input type="number" matInput [(ngModel)]="g.min_penalty" />
                     </mat-form-field>
                     <mat-form-field>
-                        <mat-label>Penalty over Max</mat-label>
-                        <input type="number" matInput [(ngModel)]="g.max_penalty" />
+                      <mat-label>Max</mat-label>
+                      <input type="number" matInput [(ngModel)]="g.max" />
                     </mat-form-field>
-
+                    <mat-form-field>
+                      <mat-label>Penalty over Max</mat-label>
+                      <input type="number" matInput [(ngModel)]="g.max_penalty" />
+                    </mat-form-field>
                     <app-really-delete (delete)="removeMinMaxConstraintGeneral(personitem.key)"
-                        >Remove General Constraint
+                      >Remove General Constraint
                     </app-really-delete>
-                </div>
-                <div *ngIf="!constraints?.min_max_constraints_general[personitem.key]">
+                  </div>
+                }
+                @if (!constraints?.min_max_constraints_general[personitem.key]) {
+                  <div>
                     <button
-                        mat-raised-button
-                        color="accent"
-                        (click)="addMinMaxConstraintGeneral(personitem.key)"
-                    >
-                        Add general constraint
+                      mat-raised-button
+                      color="accent"
+                      (click)="addMinMaxConstraintGeneral(personitem.key)"
+                      >
+                      Add general constraint
                     </button>
-                </div>
-            </td>
-
+                  </div>
+                }
+              </td>
+            }
             <td>
-                <app-really-delete (delete)="removeParticipant(personitem.key)"
-                    >Remove Person</app-really-delete
+              <app-really-delete (delete)="removeParticipant(personitem.key)"
+                >Remove Person</app-really-delete
                 >
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="6" *ngIf="(getRemainingPersons() | async)?.length > 0">
+              </td>
+            </tr>
+          }
+          <tr>
+            @if ((getRemainingPersons() | async)?.length > 0) {
+              <td colspan="6">
                 <mat-form-field>
-                    <mat-label>Person</mat-label>
-                    <mat-select [(value)]="personAdd">
-                        <mat-option
+                  <mat-label>Person</mat-label>
+                  <mat-select [(value)]="personAdd">
+                    <mat-option
                             *ngFor="
                                 let person of getRemainingPersons() | async as selectablePersons
                             "
-                            [value]="person"
-                        >
-                            {{ person.name }}
-                        </mat-option>
-                    </mat-select>
+                      [value]="person"
+                      >
+                      {{ person.name }}
+                    </mat-option>
+                  </mat-select>
                 </mat-form-field>
                 <button mat-raised-button color="primary" (click)="addParticipant(personAdd)">
-                    Add
+                  Add
                 </button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+              </td>
+            }
+          </tr>
+        </tbody>
+      }
+    </table>

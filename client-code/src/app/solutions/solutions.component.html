@@ -1,136 +1,145 @@
 <mat-card class="mycard">
-    <div>
-        <mat-form-field style="width: 50%">
-            <mat-label>Solutions</mat-label>
-            <mat-select [(value)]="selectedSolution" (valueChange)="updateSol($event)">
-                <mat-option *ngFor="let sol of solutions$ | async" [value]="sol">
-                    <span style="font-weight: bold">{{ sol.name }}</span> |
-                    <span [ngClass]="['solution', sol.status]">{{ sol.status }}</span> |
-                    {{ sol.fitness }}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+  <div>
+    <mat-form-field style="width: 50%">
+      <mat-label>Solutions</mat-label>
+      <mat-select [(value)]="selectedSolution" (valueChange)="updateSol($event)">
+        @for (sol of solutions$ | async; track sol) {
+          <mat-option [value]="sol">
+            <span style="font-weight: bold">{{ sol.name }}</span> |
+            <span [ngClass]="['solution', sol.status]">{{ sol.status }}</span> |
+            {{ sol.fitness }}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
 
-        <button mat-raised-button (click)="reloadSolution()">Reload</button>
-    </div>
+    <button mat-raised-button (click)="reloadSolution()">Reload</button>
+  </div>
 
-    <div class="overview" *ngIf="selectedSolution">
-        <div>
-            <p>Name: {{ selectedSolution.name }}</p>
-            <p>
-                Status:
-                <span [ngClass]="['solution', selectedSolution.status]">{{
-                    selectedSolution.status
-                }}</span>
-            </p>
-            <p *ngIf="selectedSolution.error_msg">Error: {{ selectedSolution.error_msg }}</p>
-            <p *ngIf="selectedSolution.fitness">Fitness: {{ selectedSolution.fitness }}</p>
-        </div>
-
-        <div>
-            <a
-                mat-raised-button
-                [href]="downloadUrlPrefix + selectedSolution.name + '/csv-vereinsflieger'"
-                >Download Vereinsflieger CSV</a
+  @if (selectedSolution) {
+    <div class="overview">
+      <div>
+        <p>Name: {{ selectedSolution.name }}</p>
+        <p>
+          Status:
+          <span [ngClass]="['solution', selectedSolution.status]">{{
+            selectedSolution.status
+          }}</span>
+        </p>
+        @if (selectedSolution.error_msg) {
+          <p>Error: {{ selectedSolution.error_msg }}</p>
+        }
+        @if (selectedSolution.fitness) {
+          <p>Fitness: {{ selectedSolution.fitness }}</p>
+        }
+      </div>
+      <div>
+        <a
+          mat-raised-button
+          [href]="downloadUrlPrefix + selectedSolution.name + '/csv-vereinsflieger'"
+          >Download Vereinsflieger CSV</a
+          >
+          <app-really-delete style="margin-left: 10px" (delete)="deleteSolution()"
+            >Delete Solution</app-really-delete
             >
-
-            <app-really-delete style="margin-left: 10px" (delete)="deleteSolution()"
-                >Delete Solution</app-really-delete
-            >
+          </div>
         </div>
-    </div>
+      }
 
-    <div
-        *ngIf="
-            selectedSolution &&
-            selectedSolution.fitness_history &&
-            selectedSolution.fitness_history.length > 0
-        "
-    >
-        <canvasjs-chart
+      @if (
+        selectedSolution &&
+        selectedSolution.fitness_history &&
+        selectedSolution.fitness_history.length > 0
+        ) {
+        <div
+          >
+          <canvasjs-chart
             [options]="chartOptions"
             [styles]="{ width: '100%', height: '200px' }"
             (chartInstance)="getChartInstance($event)"
-        ></canvasjs-chart>
-    </div>
-</mat-card>
+          ></canvasjs-chart>
+        </div>
+      }
+    </mat-card>
 
-<mat-card class="mycard">
-    <div *ngIf="selectedSolution && selectedSolution.schedule">
-        <h3>Solution</h3>
-        <p>
+    <mat-card class="mycard">
+      @if (selectedSolution && selectedSolution.schedule) {
+        <div>
+          <h3>Solution</h3>
+          <p>
             Legend:
             <mat-icon fontIcon="star"></mat-icon>
             <span style="color: green">{{ getFulfilledDesiredDateCount(selectedSolution) }}</span>
             Desired Date (fulfilled) <mat-icon fontIcon="star_outline"></mat-icon>
             <span style="color: orange">{{
-                getUnfulfilledDesiredDateCount(selectedSolution)
+              getUnfulfilledDesiredDateCount(selectedSolution)
             }}</span>
             Desired Date (not fulfilled)
             <mat-icon fontIcon="sentiment_very_dissatisfied"></mat-icon>
             <span style="color: red">{{ getUnfulfilledUndesiredDateCount(selectedSolution) }}</span>
             Does not want to be scheduled that day
-        </p>
-        <table class="mat-table cdk-table" role="grid">
+          </p>
+          <table class="mat-table cdk-table" role="grid">
             <thead role="rowgroup">
-                <tr class="mat-header-row cdk-header-row">
-                    <th
-                        class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
+              <tr class="mat-header-row cdk-header-row">
+                <th
+                  class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
+                  >
+                  Date
+                </th>
+                @for (t of tasks$ | async; track t) {
+                  <th
+                    class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
                     >
-                        Date
-                    </th>
-                    <th
-                        *ngFor="let t of tasks$ | async"
-                        class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
-                    >
-                        {{ t }}
-                    </th>
-                </tr>
+                    {{ t }}
+                  </th>
+                }
+              </tr>
             </thead>
-
             <tbody role="rowgroup">
+              @for (sItem of selectedSolution.schedule | keyvalue; track sItem) {
                 <tr
-                    *ngFor="let sItem of selectedSolution.schedule | keyvalue"
-                    class="mat-row cdk-row"
-                >
-                    <td
-                        class="mat-cell cdk-cell cdk-column-position mat-column-position"
-                        role="gridcell"
+                  class="mat-row cdk-row"
+                  >
+                  <td
+                    class="mat-cell cdk-cell cdk-column-position mat-column-position"
+                    role="gridcell"
                     >
-                        {{ sItem.key | date: 'fullDate' }}<br />
-                        <span *ngFor="let dd of selectedSolution?.desiredDatesOfDay[sItem.key]">
-                            <mat-icon
-                                [fontIcon]="dd.is_fulfilled ? 'star' : 'star_outline'"
+                    {{ sItem.key | date: 'fullDate' }}<br />
+                    @for (dd of selectedSolution?.desiredDatesOfDay[sItem.key]; track dd) {
+                      <span>
+                        <mat-icon
+                          [fontIcon]="dd.is_fulfilled ? 'star' : 'star_outline'"
                                 [matTooltip]="
                                     'Desired Date: ' +
                                     dd.person +
                                     '' +
                                     (dd.task ? ' (' + dd.task + ')' : '')
                                 "
-                            ></mat-icon>
-                        </span>
-                    </td>
-
-                    <td
-                        *ngFor="let t of tasks$ | async"
-                        class="mat-cell cdk-cell cdk-column-position mat-column-position"
-                        role="gridcell"
-                    >
-                        <mat-icon
-                            fontIcon="star"
-                            *ngIf="selectedSolution?.dd[sItem.key][t] === true"
-                            matTooltip="Desired Date"
                         ></mat-icon>
-
+                      </span>
+                    }
+                  </td>
+                  @for (t of tasks$ | async; track t) {
+                    <td
+                      class="mat-cell cdk-cell cdk-column-position mat-column-position"
+                      role="gridcell"
+                      >
+                      @if (selectedSolution?.dd[sItem.key][t] === true) {
                         <mat-icon
-                            fontIcon="sentiment_very_dissatisfied"
-                            *ngIf="
-                                getUndesired(
-                                    selectedSolution.undesiredDatesOfDay[sItem.key],
-                                    sItem.value[t],
-                                    t
-                                )
-                            "
+                          fontIcon="star"
+                          matTooltip="Desired Date"
+                        ></mat-icon>
+                      }
+                      @if (
+                        getUndesired(
+                        selectedSolution.undesiredDatesOfDay[sItem.key],
+                        sItem.value[t],
+                        t
+                        )
+                        ) {
+                        <mat-icon
+                          fontIcon="sentiment_very_dissatisfied"
                             [matTooltip]="
                                 getUndesiredText(
                                     selectedSolution.undesiredDatesOfDay[sItem.key],
@@ -139,115 +148,130 @@
                                 )
                             "
                         ></mat-icon>
-                        {{ sItem.value[t] }}
+                      }
+                      {{ sItem.value[t] }}
                     </td>
+                  }
                 </tr>
+              }
             </tbody>
-        </table>
-    </div>
-</mat-card>
+          </table>
+        </div>
+      }
+    </mat-card>
 
-<mat-card class="mycard">
-    <div style="margin-top: 2em" *ngIf="selectedSolution && selectedSolution.schedule">
-        <h3>Violations / Penalties</h3>
-        <table class="mat-table">
+    <mat-card class="mycard">
+      @if (selectedSolution && selectedSolution.schedule) {
+        <div style="margin-top: 2em">
+          <h3>Violations / Penalties</h3>
+          <table class="mat-table">
             <thead>
-                <tr class="mat-header-row">
-                    <td class="mat-header-cell">Description</td>
-                    <td class="mat-header-cell">Penalty</td>
-                </tr>
+              <tr class="mat-header-row">
+                <td class="mat-header-cell">Description</td>
+                <td class="mat-header-cell">Penalty</td>
+              </tr>
             </thead>
-
             <tbody>
-                <tr class="mat-row" *ngFor="let v of selectedSolution.penalties">
-                    <td class="mat-cell">{{ v.desc }}</td>
-                    <td class="mat-cell">{{ v.penalty }}</td>
+              @for (v of selectedSolution.penalties; track v) {
+                <tr class="mat-row">
+                  <td class="mat-cell">{{ v.desc }}</td>
+                  <td class="mat-cell">{{ v.penalty }}</td>
                 </tr>
+              }
             </tbody>
-        </table>
-    </div>
-</mat-card>
+          </table>
+        </div>
+      }
+    </mat-card>
 
-<mat-card class="mycard">
-    <div *ngIf="personStats" style="margin-top: 2em">
-        <h3>Statistics</h3>
-        <table class="mat-table cdk-table" role="grid">
+    <mat-card class="mycard">
+      @if (personStats) {
+        <div style="margin-top: 2em">
+          <h3>Statistics</h3>
+          <table class="mat-table cdk-table" role="grid">
             <thead role="rowgroup">
-                <tr class="mat-header-row cdk-header-row">
-                    <th
-                        class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
+              <tr class="mat-header-row cdk-header-row">
+                <th
+                  class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
+                  >
+                  Person
+                </th>
+                @for (t of tasks$ | async; track t) {
+                  <th
+                    class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
                     >
-                        Person
-                    </th>
-                    <th
-                        *ngFor="let t of tasks$ | async"
-                        class="mat-header-cell cdk-header-cell cdk-column-position mat-column-position"
-                    >
-                        {{ t }}
-                    </th>
-                    <th class="mat-header-cell">Total</th>
-                    <th class="mat-header-cell">Desired Dates</th>
-                </tr>
+                    {{ t }}
+                  </th>
+                }
+                <th class="mat-header-cell">Total</th>
+                <th class="mat-header-cell">Desired Dates</th>
+              </tr>
             </thead>
-
             <tbody role="rowgroup">
-                <tr *ngFor="let e of personStats.persMap | keyvalue" class="mat-row cdk-row">
-                    <td
-                        class="mat-cell cdk-cell cdk-column-position mat-column-position"
-                        role="gridcell"
+              @for (e of personStats.persMap | keyvalue; track e) {
+                <tr class="mat-row cdk-row">
+                  <td
+                    class="mat-cell cdk-cell cdk-column-position mat-column-position"
+                    role="gridcell"
                     >
-                        {{ e.key }}
-
-                        <div *ngIf="personStats.persDesiredDatesMap.has(e.key)">
-                            <mat-icon
-                                *ngFor="let ftc of personStats.persDesiredDatesMap.get(e.key)"
-                                [fontIcon]="ftc.is_fulfilled ? 'star' : 'star_outline'"
+                    {{ e.key }}
+                    @if (personStats.persDesiredDatesMap.has(e.key)) {
+                      <div>
+                        @for (ftc of personStats.persDesiredDatesMap.get(e.key); track ftc) {
+                          <mat-icon
+                            [fontIcon]="ftc.is_fulfilled ? 'star' : 'star_outline'"
                             >
-                            </mat-icon>
-                        </div>
-
-                        <div *ngIf="personStats.persUnDesiredDatesMap.has(e.key)">
-                            <mat-icon
-                                *ngFor="let ftc of personStats.persUnDesiredDatesMap.get(e.key)"
-                                [fontIcon]="'sentiment_very_dissatisfied'"
+                          </mat-icon>
+                        }
+                      </div>
+                    }
+                    @if (personStats.persUnDesiredDatesMap.has(e.key)) {
+                      <div>
+                        @for (ftc of personStats.persUnDesiredDatesMap.get(e.key); track ftc) {
+                          <mat-icon
+                            [fontIcon]="'sentiment_very_dissatisfied'"
                             >
-                            </mat-icon>
-                        </div>
-                    </td>
-
+                          </mat-icon>
+                        }
+                      </div>
+                    }
+                  </td>
+                  @for (t of tasks$ | async; track t) {
                     <td
-                        *ngFor="let t of tasks$ | async"
-                        class="mat-cell cdk-cell cdk-column-position mat-column-position"
-                        role="gridcell"
-                    >
-                        <div *ngIf="e.value.get(t) > 0">
-                            <mat-progress-bar
-                                [value]="(e.value.get(t) / getMaxForTask(t)) * 100"
-                            ></mat-progress-bar>
-                            {{ e.value.get(t) }} / {{ getMaxForTask(t) }}
+                      class="mat-cell cdk-cell cdk-column-position mat-column-position"
+                      role="gridcell"
+                      >
+                      @if (e.value.get(t) > 0) {
+                        <div>
+                          <mat-progress-bar
+                            [value]="(e.value.get(t) / getMaxForTask(t)) * 100"
+                          ></mat-progress-bar>
+                          {{ e.value.get(t) }} / {{ getMaxForTask(t) }}
                         </div>
+                      }
                     </td>
-
-                    <td class="mat-cell">
-                        <mat-progress-bar
-                            [value]="(e.value.get('total') / getMaxForTask('total')) * 100"
-                        ></mat-progress-bar>
-                        {{ e.value.get('total') }} / {{ getMaxForTask('total') }}
-                    </td>
-
-                    <td class="mat-cell">
-                        <mat-progress-bar
+                  }
+                  <td class="mat-cell">
+                    <mat-progress-bar
+                      [value]="(e.value.get('total') / getMaxForTask('total')) * 100"
+                    ></mat-progress-bar>
+                    {{ e.value.get('total') }} / {{ getMaxForTask('total') }}
+                  </td>
+                  <td class="mat-cell">
+                    <mat-progress-bar
                             [value]="
                                 ((personStats.hitDDs.get(e.key) || 0) /
                                     personStats.totalDDs.get(e.key)) *
                                 100
                             "
-                            color="accent"
-                        ></mat-progress-bar>
-                        {{ personStats.hitDDs.get(e.key) }} / {{ personStats.totalDDs.get(e.key) }}
-                    </td>
+                      color="accent"
+                    ></mat-progress-bar>
+                    {{ personStats.hitDDs.get(e.key) }} / {{ personStats.totalDDs.get(e.key) }}
+                  </td>
                 </tr>
+              }
             </tbody>
-        </table>
-    </div>
-</mat-card>
+          </table>
+        </div>
+      }
+    </mat-card>
