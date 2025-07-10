@@ -212,10 +212,10 @@
   optionalDependencies:
     lmdb "3.4.1"
 
-"@angular/cdk@^19.0.0":
-  version "19.2.19"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-19.2.19.tgz#25ba3b8f565e6bcd9cd59159c0d9a4244cf3c7ee"
-  integrity sha512-PCpJagurPBqciqcq4Z8+3OtKLb7rSl4w/qBJoIMua8CgnrjvA1i+SWawhdtfI1zlY8FSwhzLwXV0CmWWfFzQPg==
+"@angular/cdk@^20.1.0":
+  version "20.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-20.1.0.tgz#a26af0c9c9fd8dc34a4272a4df446ce26c2f9227"
+  integrity sha512-JhgbSOv7xZqWNZjuCh8A3A7pGv0mhtmGjHo36157LrxRO6R7x2yJJjxC5nQeroKZWhgN+X/jG/EJlzEvl9PxTw==
   dependencies:
     parse5 "^7.1.2"
     tslib "^2.3.0"
@@ -291,17 +291,17 @@
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-20.1.0.tgz#59a832b5e4d7570ce444e636bc14c34ed7f66512"
   integrity sha512-qHZk5LI2uaDRk0QOIdg2AZqyij00XOgZb3yiP7C3fjv3YkyRjXvobTRCLieTq10vdMt9TuCwdOISFK7g1/1eEg==
 
-"@angular/material-luxon-adapter@^19.0.0":
-  version "19.2.19"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-19.2.19.tgz#887cc8876214c278712e667ccbcec75df7e17bdb"
-  integrity sha512-j/HkfXQLTM3vdk3hI6NPrqhaayN4fIMP7MYKwEKQzldvCoKQ1PfV96UFIwvfsBmE+2KwW+BOTjLFt7A85sKqdg==
+"@angular/material-luxon-adapter@^20.1.0":
+  version "20.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-20.1.0.tgz#e50f67aa3f9cd37d204e63b81db9d3419b932076"
+  integrity sha512-WBPnEw8WCUTBUsZFBy6snUF+N3P7thkVLqLxo9P9dp/yKNVYTfGOBN41vFwvdXysKi3qXU1d4UpLdHa2yCFQnA==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/material@^19.0.0":
-  version "19.2.19"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-19.2.19.tgz#dd10669e260109c4f944303dcff3d92fed2e5566"
-  integrity sha512-auIE6JUzTIA3LyYklh9J/T7u64crmphxUBgAa0zcOMDog6SYfwbNe9YeLQqua5ek4OUAOdK/BHHfVl5W5iaUoQ==
+"@angular/material@^20.1.0":
+  version "20.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-20.1.0.tgz#0052963f7ffe4eba8d9725632d582ea6fe3b3220"
+  integrity sha512-LfGz/V/kZwRIhzIZBiurM4Wc5CQiiJkiOChUfoEOvQLN2hckPFZbbvtg6JwxxA6nhzsDhuGHbj7Xj5dNsLfZLw==
   dependencies:
     tslib "^2.3.0"
 
