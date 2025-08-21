@@ -65,7 +65,7 @@
     "prettier": "3.6.2",
     "protractor": "~7.0.0",
     "ts-node": "~10.9.0",
-    "typescript": "~5.8.3"
+    "typescript": "~5.9.0"
   },
   "lint-staged": {
     "**/*": [
