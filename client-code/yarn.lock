@@ -2829,15 +2829,10 @@
     debug "^4.3.4"
     ts-api-utils "^2.1.0"
 
-"@typescript-eslint/types@8.42.0", "@typescript-eslint/types@^8.42.0":
+"@typescript-eslint/types@8.42.0", "@typescript-eslint/types@^8.39.1", "@typescript-eslint/types@^8.42.0":
   version "8.42.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.42.0.tgz#ae15c09cebda20473772902033328e87372db008"
   integrity sha512-LdtAWMiFmbRLNP7JNeY0SqEtJvGMYSzfiWBSmx+VSZ1CH+1zyl8Mmw1TT39OrtsRvIYShjJWzTDMPWZJCpwBlw==
-
-"@typescript-eslint/types@^8.39.1":
-  version "8.41.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.41.0.tgz#9935afeaae65e535abcbcee95383fa649c64d16d"
-  integrity sha512-9EwxsWdVqh42afLbHP90n2VdHaWU/oWgbH2P0CfcNfdKL7CuKpwMQGjwev56vWu9cSKU7FWSu6r9zck6CVfnag==
 
 "@typescript-eslint/typescript-estree@8.42.0":
   version "8.42.0"
@@ -4248,9 +4243,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.211:
-  version "1.5.211"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.211.tgz#749317bf9cf894c06f67980940cf8074e5eb08ca"
-  integrity sha512-IGBvimJkotaLzFnwIVgW9/UD/AOJ2tByUmeOrtqBfACSbAw5b1G0XpvdaieKyc7ULmbwXVx+4e4Be8pOPBrYkw==
+  version "1.5.212"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.212.tgz#9b541f90d7d8415ccea94d4be4bb86e73e3f9547"
+  integrity sha512-gE7ErIzSW+d8jALWMcOIgf+IB6lpfsg6NwOhPVwKzDtN2qcBix47vlin4yzSregYDxTCXOUqAZjVY/Z3naS7ww==
 
 emoji-regex@^10.3.0:
   version "10.5.0"
@@ -7282,9 +7277,9 @@ path-to-regexp@0.1.12:
   integrity sha512-RA1GjUVMnvYFxuqovrEqZoxxW5NUZqbwKtYz/Tt7nXerk0LbLblQmrsgdeOxV5SFHf0UDggjS/bSeOZwt1pmEQ==
 
 path-to-regexp@^8.0.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-8.2.0.tgz#73990cc29e57a3ff2a0d914095156df5db79e8b4"
-  integrity sha512-TdrF7fW9Rphjq4RjrW0Kp2AW0Ahwu9sRGTkS6bvDi0SCwZlEZYmcfDbEsTz8RVk0EHIS/Vd1bv3JhG+1xZuAyQ==
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-8.3.0.tgz#aa818a6981f99321003a08987d3cec9c3474cd1f"
+  integrity sha512-7jdwVIRtsP8MYpdXSwOS0YdD0Du+qOoF/AEPIt88PcCFrZCzx41oxku1jD88hZBwbNUIEfpqvuhjFaMAqMTWnA==
 
 performance-now@^2.1.0:
   version "2.1.0"
@@ -8621,13 +8616,23 @@ terser-webpack-plugin@^5.3.11:
     serialize-javascript "^6.0.2"
     terser "^5.31.1"
 
-terser@5.43.1, terser@^5.31.1:
+terser@5.43.1:
   version "5.43.1"
   resolved "https://registry.yarnpkg.com/terser/-/terser-5.43.1.tgz#88387f4f9794ff1a29e7ad61fb2932e25b4fdb6d"
   integrity sha512-+6erLbBm0+LROX2sPXlUYx/ux5PyE9K/a92Wrt6oA+WDAoFTdpHE5tCYCI5PNzq2y8df4rA+QgHLJuR4jNymsg==
   dependencies:
     "@jridgewell/source-map" "^0.3.3"
     acorn "^8.14.0"
+    commander "^2.20.0"
+    source-map-support "~0.5.20"
+
+terser@^5.31.1:
+  version "5.44.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-5.44.0.tgz#ebefb8e5b8579d93111bfdfc39d2cf63879f4a82"
+  integrity sha512-nIVck8DK+GM/0Frwd+nIhZ84pR/BX7rmXMfYwyg+Sri5oGVE99/E3KvXqpC2xHFxyqXyGHTKBSioxxplrO4I4w==
+  dependencies:
+    "@jridgewell/source-map" "^0.3.3"
+    acorn "^8.15.0"
     commander "^2.20.0"
     source-map-support "~0.5.20"
 
