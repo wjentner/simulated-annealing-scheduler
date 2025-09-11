@@ -136,20 +136,12 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@angular-devkit/architect@0.2003.0":
+"@angular-devkit/architect@0.2003.0", "@angular-devkit/architect@>= 0.2000.0 < 0.2100.0":
   version "0.2003.0"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2003.0.tgz#405ffe528b9970b690ee3cf631365a8ac790f05c"
   integrity sha512-4poZyD6YXvjfHvu4fr/r+2d/BUYcGB5gj+zJiGalJY5oTSHFuDkfJMzo3kaUAhDMFjb6cNgh/64SiLyQOETNJA==
   dependencies:
     "@angular-devkit/core" "20.3.0"
-    rxjs "7.8.2"
-
-"@angular-devkit/architect@>= 0.2000.0 < 0.2100.0":
-  version "0.2002.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2002.2.tgz#2d44109edf3e325a093536ac2a30f29a7906a0ea"
-  integrity sha512-amppp/UqKyj+B8hYFU16j4t6SVN+SS0AEnHivDjKy41NNJgXv+5Sm2Q2jaMHviCT3rclyT0wqwNAi0RDjyLx5Q==
-  dependencies:
-    "@angular-devkit/core" "20.2.2"
     rxjs "7.8.2"
 
 "@angular-devkit/build-angular@20.3.0":
@@ -222,19 +214,7 @@
     "@angular-devkit/architect" "0.2003.0"
     rxjs "7.8.2"
 
-"@angular-devkit/core@20.2.2", "@angular-devkit/core@>= 20.0.0 < 21.0.0":
-  version "20.2.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-20.2.2.tgz#f7eb3be70a33dfb7853b9093c4bf8e44764fd4b3"
-  integrity sha512-SC+f5isSWJBpEgR+R7jP++2Z14WExNWLAdKpIickLWjuL8FlGkj+kaF3dWXhh0KcXo+r6kKb4pWUptSaqer5gA==
-  dependencies:
-    ajv "8.17.1"
-    ajv-formats "3.0.1"
-    jsonc-parser "3.3.1"
-    picomatch "4.0.3"
-    rxjs "7.8.2"
-    source-map "0.7.6"
-
-"@angular-devkit/core@20.3.0":
+"@angular-devkit/core@20.3.0", "@angular-devkit/core@>= 20.0.0 < 21.0.0":
   version "20.3.0"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-20.3.0.tgz#5daca9ef3bf4612eb5ac271a0e4aac5ccbfe3705"
   integrity sha512-HRsrM/xeZ90uLkDiBcjk5+qMQf8o6f/KMAZ3DHUp6BB5CT1DwFsCKxVMaqW6tRFr/feNQOqo7zSxNkLUMj4/EQ==
@@ -246,23 +226,12 @@
     rxjs "7.8.2"
     source-map "0.7.6"
 
-"@angular-devkit/schematics@20.3.0":
+"@angular-devkit/schematics@20.3.0", "@angular-devkit/schematics@>= 20.0.0 < 21.0.0":
   version "20.3.0"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-20.3.0.tgz#2356f8803be4a8268bb64f1c604a7d9ad44ecef9"
   integrity sha512-JSMPgForh04u1XDm703ivaA6xXoS6WXuKFSHLE22neVCadrpJ7wfmTnall/1kNIjkrf3S71yjEpwsmscxw1qjA==
   dependencies:
     "@angular-devkit/core" "20.3.0"
-    jsonc-parser "3.3.1"
-    magic-string "0.30.17"
-    ora "8.2.0"
-    rxjs "7.8.2"
-
-"@angular-devkit/schematics@>= 20.0.0 < 21.0.0":
-  version "20.2.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-20.2.2.tgz#d045faba372b66c836aa0fda230a960b7fbc2091"
-  integrity sha512-rtL7slZjzdChQoiADKZv/Ra8D3C3tIw/WcVxd2stiLHdK/Oaf9ejx5m/X9o0QMEbNsy2Fy/RKodNqmz1CjzpCg==
-  dependencies:
-    "@angular-devkit/core" "20.2.2"
     jsonc-parser "3.3.1"
     magic-string "0.30.17"
     ora "8.2.0"
@@ -1818,9 +1787,9 @@
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
 "@jridgewell/trace-mapping@^0.3.24", "@jridgewell/trace-mapping@^0.3.25", "@jridgewell/trace-mapping@^0.3.28":
-  version "0.3.30"
-  resolved "https://registry.yarnpkg.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.30.tgz#4a76c4daeee5df09f5d3940e087442fb36ce2b99"
-  integrity sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q==
+  version "0.3.31"
+  resolved "https://registry.yarnpkg.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.31.tgz#db15d6781c931f3a251a3dac39501c98a6082fd0"
+  integrity sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==
   dependencies:
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
@@ -4278,9 +4247,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.211:
-  version "1.5.215"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.215.tgz#200c8d69b1270af6126837b6b1f95077c3a347b1"
-  integrity sha512-TIvGp57UpeNetj/wV/xpFNpWGb0b/ROw372lHPx5Aafx02gjTBtWnEEcaSX3W2dLM3OSdGGyHX/cHl01JQsLaQ==
+  version "1.5.216"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.216.tgz#c49da93cae9c8b0548755b136423be6982e21a7e"
+  integrity sha512-uVgsufJ+qIiOsZBmqkM2AGPn3gbqPySHl/SLKXJ70nowhI0VsRX4aog+R9EUL2bOjqPPhfR9pG8j8s4Zk4xq+A==
 
 emoji-regex@^10.3.0:
   version "10.5.0"
@@ -6545,9 +6514,9 @@ media-typer@^1.1.0:
   integrity sha512-aisnrDP4GNe06UcKFnV5bfMNPBUw4jsLGaWwWfnH3v02GnBuXX2MCVn5RbrWo0j3pczUilYblq7fQ7Nw2t5XKw==
 
 memfs@^4.6.0:
-  version "4.38.3"
-  resolved "https://registry.yarnpkg.com/memfs/-/memfs-4.38.3.tgz#d5eaced44c746a81ca2f3f59f031cb0f5bdb3fcf"
-  integrity sha512-2s0E1tj016MQL6Eo6en0rNJnEWppbTAytbK7P0VPLtB9zA0xU7B522A1A0Tyz9usEkkWrSEDxIa/N7SdJWWAYg==
+  version "4.39.0"
+  resolved "https://registry.yarnpkg.com/memfs/-/memfs-4.39.0.tgz#fa3bea08ba4eb736bbb024eced25859cb1d0e13a"
+  integrity sha512-tFRr2IkSXl2B6IAJsxjHIMTOsfLt9W+8+t2uNxCeQcz4tFqgQR8DYk8hlLH2HsucTctLuoHq3U0G08atyBE3yw==
   dependencies:
     "@jsonjoy.com/json-pack" "^1.11.0"
     "@jsonjoy.com/util" "^1.9.0"
@@ -7662,7 +7631,7 @@ reflect.getprototypeof@^1.0.6, reflect.getprototypeof@^1.0.9:
     get-proto "^1.0.1"
     which-builtin-type "^1.2.1"
 
-regenerate-unicode-properties@^10.2.0:
+regenerate-unicode-properties@^10.2.2:
   version "10.2.2"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-10.2.2.tgz#aa113812ba899b630658c7623466be71e1f86f66"
   integrity sha512-m03P+zhBeQd1RGnYxrGyDAPpWX/epKirLrp8e3qevZdVkKtnCrjjWczIbYc8+xd6vcTStVlqfycTx1KR4LOr0g==
@@ -7692,16 +7661,16 @@ regexp.prototype.flags@^1.5.4:
     set-function-name "^2.0.2"
 
 regexpu-core@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/regexpu-core/-/regexpu-core-6.2.0.tgz#0e5190d79e542bf294955dccabae04d3c7d53826"
-  integrity sha512-H66BPQMrv+V16t8xtmq+UC0CBpiTBA60V8ibS1QVReIp8T1z8hwFxqcGzm9K6lgsN7sB5edVH8a+ze6Fqm4weA==
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/regexpu-core/-/regexpu-core-6.3.1.tgz#fb8b707d0efe18e9464d3ae76ae1e3c96c8467ae"
+  integrity sha512-DzcswPr252wEr7Qz8AyAVbfyBDKLoYp6eRA1We2Fa9qirRFSdtkP5sHr3yglDKy2BbA0fd2T+j/CUSKes3FeVQ==
   dependencies:
     regenerate "^1.4.2"
-    regenerate-unicode-properties "^10.2.0"
+    regenerate-unicode-properties "^10.2.2"
     regjsgen "^0.8.0"
     regjsparser "^0.12.0"
     unicode-match-property-ecmascript "^2.0.0"
-    unicode-match-property-value-ecmascript "^2.1.0"
+    unicode-match-property-value-ecmascript "^2.2.1"
 
 regjsgen@^0.8.0:
   version "0.8.0"
@@ -8941,7 +8910,7 @@ unicode-match-property-ecmascript@^2.0.0:
     unicode-canonical-property-names-ecmascript "^2.0.0"
     unicode-property-aliases-ecmascript "^2.0.0"
 
-unicode-match-property-value-ecmascript@^2.1.0:
+unicode-match-property-value-ecmascript@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/unicode-match-property-value-ecmascript/-/unicode-match-property-value-ecmascript-2.2.1.tgz#65a7adfad8574c219890e219285ce4c64ed67eaa"
   integrity sha512-JQ84qTuMg4nVkx8ga4A16a1epI9H6uTXAknqxkGF/aFfRLw1xC/Bp24HNLaZhHSkWd3+84t8iXnp1J0kYcZHhg==
