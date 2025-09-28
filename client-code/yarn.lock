@@ -1350,16 +1350,16 @@
   dependencies:
     tslib "^2.4.0"
 
-"@es-joy/jsdoccomment@~0.61.0":
-  version "0.61.0"
-  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.61.0.tgz#36f66ef663273a78fd2b9a862d7840ed93e9cd30"
-  integrity sha512-8DBk2LXau86fQBj7f9zx3MKqoAYgomxeoLgvHFa+OMhGYz6L9n/jbqa52wLHnbU6JzcSXu2OGuuTFOOMD4NpRg==
+"@es-joy/jsdoccomment@~0.62.0":
+  version "0.62.0"
+  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.62.0.tgz#c8a991fef9f24616cfced305adf39548f299e6a0"
+  integrity sha512-yWi6sm7INEwnfS7IJvE0dU+RTrwzLPFcY7e7eGpu/l5Q9lWfQ2ROwZ0qVnc242jw2TUPsfHX3XMIISkGBv57RQ==
   dependencies:
     "@types/estree" "^1.0.8"
     "@typescript-eslint/types" "^8.44.1"
     comment-parser "1.4.1"
     esquery "^1.6.0"
-    jsdoc-type-pratt-parser "~5.8.0"
+    jsdoc-type-pratt-parser "~5.9.0"
 
 "@esbuild/aix-ppc64@0.25.10":
   version "0.25.10"
@@ -4797,12 +4797,12 @@ eslint-plugin-import@2.32.0:
     string.prototype.trimend "^1.0.9"
     tsconfig-paths "^3.15.0"
 
-eslint-plugin-jsdoc@60.4.0:
-  version "60.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-60.4.0.tgz#b57650d86a6ba5b08bfc3147900a1bff8d6f67c8"
-  integrity sha512-W1YQm6kBjl1Hg2jccx2hmUh85N/Oqix/WGei2sLxQuYCBgFsOoftHCTt1cY6M6Oq2es3Nb6+StPm0b6e7Ez/VQ==
+eslint-plugin-jsdoc@60.5.0:
+  version "60.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-60.5.0.tgz#a17d0f29ce2918c6e4ddc06b301a22a9d8ba2330"
+  integrity sha512-3ivSigRDi/04GFRRYqvv4PgLD/+ZBLfHEk/0WKNpDBcmucnEAhqFjmJhLo4W4SIpXKZ/WVQNVPEsFXVPz9fRjA==
   dependencies:
-    "@es-joy/jsdoccomment" "~0.61.0"
+    "@es-joy/jsdoccomment" "~0.62.0"
     are-docs-informative "^0.0.2"
     comment-parser "1.4.1"
     debug "^4.4.3"
@@ -6265,10 +6265,10 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha512-UVU9dibq2JcFWxQPA6KCqj5O42VOmAY3zQUfEKxU0KpTGXwNoCjkX1e13eHNvw/xPynt6pU0rZ1htjWTNTSXsg==
 
-jsdoc-type-pratt-parser@~5.8.0:
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-5.8.0.tgz#bf476a04404a9890df2d9487ba53bb540c4198e3"
-  integrity sha512-YLmlPdkn1G34K/8NgSFL3D1D/HqQ9WgQOW816Q+6uMLvAO5QohdmG4qkuiseqnRXVAAN9RYtbCKyMSfwcU8wRw==
+jsdoc-type-pratt-parser@~5.9.0:
+  version "5.9.2"
+  resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-5.9.2.tgz#f07577e05f76e10e07fbb2e28c694315c7c18550"
+  integrity sha512-TYzkACp/wPvDJLRY7qpHXtrhgwoAaojIOnLaaVNi+AbPU2u1kkjfKd9hXXTq0qSAGsyYXvwUXt99h9I5iCmjjw==
 
 jsesc@^3.0.2, jsesc@~3.1.0:
   version "3.1.0"
