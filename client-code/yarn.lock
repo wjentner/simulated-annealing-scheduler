@@ -1351,15 +1351,15 @@
     tslib "^2.4.0"
 
 "@es-joy/jsdoccomment@~0.67.2":
-  version "0.67.2"
-  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.67.2.tgz#15add2330479318dcca25723f3b0a4d405e066fe"
-  integrity sha512-roH+w/W97L5+gXv9c9n2RrAS/KwIn/10fi7SG+gB9ZOs3pDhhpnnq8lObKCEUTWABL4JTpDXeThU3Q64VqT9UQ==
+  version "0.67.3"
+  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.67.3.tgz#0710e5c48e940e466a233a4757a1c7519f25c789"
+  integrity sha512-EJJt2TyxPYP92TKxnka3XIgPC17KKhj7EME5QVa8ySOseueh3cBUcII7jYaawl5io4tEpKnZIPmFr1wK2jqYmw==
   dependencies:
     "@types/estree" "^1.0.8"
     "@typescript-eslint/types" "^8.45.0"
     comment-parser "1.4.1"
     esquery "^1.6.0"
-    jsdoc-type-pratt-parser "6.3.2"
+    jsdoc-type-pratt-parser "6.3.3"
 
 "@esbuild/aix-ppc64@0.25.10":
   version "0.25.10"
@@ -3581,9 +3581,9 @@ base64id@2.0.0, base64id@~2.0.0:
   integrity sha512-lGe34o6EHj9y3Kts9R4ZYs/Gr+6N7MCaMlIFA3F1R2O5/m7K06AxfSeO5530PEERE6/WyEg3lsuyw4GHlPZHog==
 
 baseline-browser-mapping@^2.8.9:
-  version "2.8.11"
-  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.8.11.tgz#70f8d63a5dbcfd82f055be51e2ebe2d477908704"
-  integrity sha512-i+sRXGhz4+QW8aACZ3+r1GAKMt0wlFpeA8M5rOQd0HEYw9zhDrlx9Wc8uQ0IdXakjJRthzglEwfB/yqIjO6iDg==
+  version "2.8.12"
+  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.8.12.tgz#7cb875f4c5b5ab4528109df277b2f0e1971ba27e"
+  integrity sha512-vAPMQdnyKCBtkmQA6FMCBvU9qFIppS3nzyXnEM+Lo2IAhG4Mpjv9cCxMudhgV3YdNNJv6TNqXy97dfRVL2LmaQ==
 
 batch@0.6.1:
   version "0.6.1"
@@ -6270,10 +6270,10 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha512-UVU9dibq2JcFWxQPA6KCqj5O42VOmAY3zQUfEKxU0KpTGXwNoCjkX1e13eHNvw/xPynt6pU0rZ1htjWTNTSXsg==
 
-jsdoc-type-pratt-parser@6.3.2:
-  version "6.3.2"
-  resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-6.3.2.tgz#259046d6e70b388909da36fff894894ad95fba2c"
-  integrity sha512-u5bv2XxJjwoSL4jyQ+QIrFmo7tFollOnE+BDQbxWJv/m7/kSiZ/P2+E2Y2TmYmST8EeavzFzrGoG4VstTLP5bA==
+jsdoc-type-pratt-parser@6.3.3:
+  version "6.3.3"
+  resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-6.3.3.tgz#0cb3b14511ef1baf96ce0dfb149667c96d6aba7c"
+  integrity sha512-N1HQK15ZXdwgmXsALjUWW9Cwyg1BQS5hfP8KzDkbR4mjb+Ep8Uxcfwz+OU1tsNCRg99rk62d8GMNdG8Qz4k+Gg==
 
 jsesc@^3.0.2, jsesc@~3.1.0:
   version "3.1.0"
