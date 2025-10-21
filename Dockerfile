@@ -9,7 +9,7 @@ RUN yarn
 RUN yarn build -c production --no-progress
 
 
-FROM python:3.14.0-slim@sha256:c3db4ea35c09aea6893324d7a89f79ac3dca6a21855487a141f5f5bdc4d0ab51
+FROM python:3.14.0-slim@sha256:85c9a39ea0c4d940720080b9c233ff794e6bf461af0661cbc5a7ba7f77af996b
 
 WORKDIR /app
 
