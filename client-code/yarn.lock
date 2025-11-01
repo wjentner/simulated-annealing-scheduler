@@ -359,9 +359,9 @@
     lmdb "3.4.2"
 
 "@angular/cdk@^20.1.0":
-  version "20.2.10"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-20.2.10.tgz#56cf4cf1ec0175f07c19ddd1c2d3addda1a914f3"
-  integrity sha512-d95C2r3JP11KCahouWmPaxswz/EE7Zn1k8ocoGt70jl33x42Sg96vAHeOpnQ4yfrdA4W7Q+eWB/NqqvAGCzOPQ==
+  version "20.2.11"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-20.2.11.tgz#3420ad4250e67f464a4831bb6f8415fe2fa0451a"
+  integrity sha512-+zcP6eq9+h6f09rZWHNIj2nap9P6S38mm75/WjdGZbl1BJy7vaASDnr4fwXKi2JvTyap/vj6mMuadFXEivavPw==
   dependencies:
     parse5 "^8.0.0"
     tslib "^2.3.0"
@@ -438,16 +438,16 @@
   integrity sha512-aCsuzlFx8a/VMBNgXMfwai97j2QHZ8PhQwzwodDNb2X3eQsaUO+nCgs5kNIZmQ/rJESH+fY9ZdlZcrYbVp+nBA==
 
 "@angular/material-luxon-adapter@^20.1.0":
-  version "20.2.10"
-  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-20.2.10.tgz#85069a88a08b68b93914e56a7aa18ea34b06b854"
-  integrity sha512-zFQQAhJC9h3rYAmdrCF8EbM/I/mx+Jgn+t5eedoxRNOUnMw8+AWnUjjQUkxgTWGjr3DmnWD0cFh/VEf9hlrJwA==
+  version "20.2.11"
+  resolved "https://registry.yarnpkg.com/@angular/material-luxon-adapter/-/material-luxon-adapter-20.2.11.tgz#c08046192ad226bad7567445995b294d2fb7e526"
+  integrity sha512-00VwQWZ2eXDidoMGazm/GtEVsXQ785uVninOIfCRjWsEi7i/501gaJld6nXad91y/Dq47pr0TqHtWJQVkoKn6Q==
   dependencies:
     tslib "^2.3.0"
 
 "@angular/material@^20.1.0":
-  version "20.2.10"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-20.2.10.tgz#49109a8a7bf1beb37c55df9b75c097c139b224a6"
-  integrity sha512-WkJfUu7KiQY2lqHjMZtEKBG653sPmky0nytTMASsfQ/xUs56W3CAAEOuKhSyCNKsNeFJZS/NgJnvlpRzcE5k6g==
+  version "20.2.11"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-20.2.11.tgz#1f2c8605f1779f19605285341b2e14ff28ac3de0"
+  integrity sha512-lrmudo8n06o6UBVKx/slAfUIjJghwub5JZfIOmQd2js0Vz+eBJYcDJsgBB8lG/LSXKLlPkNwe6o6nJBMVBZg1g==
   dependencies:
     tslib "^2.3.0"
 
@@ -3588,9 +3588,9 @@ base64id@2.0.0, base64id@~2.0.0:
   integrity sha512-lGe34o6EHj9y3Kts9R4ZYs/Gr+6N7MCaMlIFA3F1R2O5/m7K06AxfSeO5530PEERE6/WyEg3lsuyw4GHlPZHog==
 
 baseline-browser-mapping@^2.8.19:
-  version "2.8.21"
-  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.8.21.tgz#2f9cccde871bfa4aec9dbf92d0ee746e4f1892e4"
-  integrity sha512-JU0h5APyQNsHOlAM7HnQnPToSDQoEBZqzu/YBlqDnEeymPnZDREeXJA3KBMQee+dKteAxZ2AtvQEvVYdZf241Q==
+  version "2.8.22"
+  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.8.22.tgz#9d98661721ebe0812def25858f4cb2561820d2e6"
+  integrity sha512-/tk9kky/d8T8CTXIQYASLyhAxR5VwL3zct1oAoVTaOUHwrmsGnfbRwNdEq+vOl2BN8i3PcDdP0o4Q+jjKQoFbQ==
 
 batch@0.6.1:
   version "0.6.1"
@@ -3793,9 +3793,9 @@ camelcase@^5.0.0:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30001702, caniuse-lite@^1.0.30001751:
-  version "1.0.30001751"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001751.tgz#dacd5d9f4baeea841641640139d2b2a4df4226ad"
-  integrity sha512-A0QJhug0Ly64Ii3eIqHu5X51ebln3k4yTUkY1j8drqpWHVreg/VLijN48cZ1bYPiqOQuqpkIKnzr/Ul8V+p6Cw==
+  version "1.0.30001752"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001752.tgz#afa28d0830709507162bc6ed3f7cb23b00926a99"
+  integrity sha512-vKUk7beoukxE47P5gcVNKkDRzXdVofotshHwfR9vmpeFKxmI5PBpgOMC18LUJUA/DvJ70Y7RveasIBraqsyO/g==
 
 caseless@~0.12.0:
   version "0.12.0"
