@@ -1318,9 +1318,9 @@
     tslib "^2.3.0"
 
 "@canvasjs/charts@^3.7.39":
-  version "3.14.5"
-  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.14.5.tgz#449c878528aa685040ee577561e396631548ac38"
-  integrity sha512-OtQuBWpP0RoK6IK0nNK84xJ+gPcHXvvp2ifoFhL9E9olz5WesXwso2t14XkcIof6WhB0DILKQ6oP2LNXMCE+ng==
+  version "3.14.6"
+  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.14.6.tgz#9d487a4a4ee03b17b1b94d2b97a617f80198e575"
+  integrity sha512-HKXIEjwiHXtZoafnqPq5npiool2CNw35Kc0XjMai42ucT4qGzC6mGjZarW7WvZVPRGxw+mwoQTAOYwjNVEtf4w==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
@@ -3009,12 +3009,12 @@
     debug "^4.3.4"
     ts-api-utils "^2.1.0"
 
-"@typescript-eslint/types@8.46.2", "@typescript-eslint/types@^8.46.0":
+"@typescript-eslint/types@8.46.2":
   version "8.46.2"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.46.2.tgz#2bad7348511b31e6e42579820e62b73145635763"
   integrity sha512-lNCWCbq7rpg7qDsQrd3D6NyWYu+gkTENkG5IKYhUIcxSb59SQC/hEQ+MrG4sTgBVghTonNWq42bA/d4yYumldQ==
 
-"@typescript-eslint/types@^8.46.2":
+"@typescript-eslint/types@^8.46.0", "@typescript-eslint/types@^8.46.2":
   version "8.46.3"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.46.3.tgz#da05ea40e91359b4275dbb3a489f2f7907a02245"
   integrity sha512-G7Ok9WN/ggW7e/tOf8TQYMaxgID3Iujn231hfi0Pc7ZheztIJVpO44ekY00b7akqc6nZcvregk0Jpah3kep6hA==
@@ -8185,9 +8185,9 @@ saucelabs@^1.5.0:
     https-proxy-agent "^2.2.1"
 
 sax@>=0.6.0, sax@^1.2.4:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/sax/-/sax-1.4.1.tgz#44cc8988377f126304d3b3fc1010c733b929ef0f"
-  integrity sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/sax/-/sax-1.4.2.tgz#c5e2f69e013e58bbdb4d8a97de319e236d6c68c6"
+  integrity sha512-FySGAa0RGcFiN6zfrO9JvK1r7TB59xuzCcTHOBXBNoKgDejlOQCR2KL/FGk3/iDlsqyYg1ELZpOmlg09B01Czw==
 
 schema-utils@^4.0.0, schema-utils@^4.2.0, schema-utils@^4.3.0, schema-utils@^4.3.2:
   version "4.3.3"
