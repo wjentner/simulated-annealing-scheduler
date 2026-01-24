@@ -136,14 +136,6 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@angular-devkit/architect@0.2101.0":
-  version "0.2101.0"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2101.0.tgz#4c4fe5932bce289537ca64ca8f6f48c090a983db"
-  integrity sha512-vnNAzWXwSRGTHk2K7woIQsj7WDYZp69Z3DBdlxkK0H08ymkJ/ELbhN0/AnIJNNtYCqEb57AH7Ro98n422beDuw==
-  dependencies:
-    "@angular-devkit/core" "21.1.0"
-    rxjs "7.8.2"
-
 "@angular-devkit/architect@0.2101.1", "@angular-devkit/architect@>= 0.2100.0 < 0.2200.0":
   version "0.2101.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2101.1.tgz#d36db61c0b7e3b2fe3e925900f2acf65be37f653"
@@ -152,16 +144,16 @@
     "@angular-devkit/core" "21.1.1"
     rxjs "7.8.2"
 
-"@angular-devkit/build-angular@21.1.0":
-  version "21.1.0"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-21.1.0.tgz#fc43bac5620e3418683f0303fd0b2ada4d7be586"
-  integrity sha512-LOXMvIxOXpdYcudkGONSyXt4a0cErOxbrA50B5v6QnjcJ1H2XgzHPNP0Ni6LCaIiTfmxYpi1H/rpm5SAcKPWUg==
+"@angular-devkit/build-angular@21.1.1":
+  version "21.1.1"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-21.1.1.tgz#5d60d298727fad6f4c391098e14e291ca313ae0a"
+  integrity sha512-h882zE4NpfXQIzCKq6cXq4FBTd43rLCLX5RZL/sa38cFVNDp51HNn+rU9l4PeXQOKllq4CVmj9ePgVecyMpr2Q==
   dependencies:
     "@ampproject/remapping" "2.3.0"
-    "@angular-devkit/architect" "0.2101.0"
-    "@angular-devkit/build-webpack" "0.2101.0"
-    "@angular-devkit/core" "21.1.0"
-    "@angular/build" "21.1.0"
+    "@angular-devkit/architect" "0.2101.1"
+    "@angular-devkit/build-webpack" "0.2101.1"
+    "@angular-devkit/core" "21.1.1"
+    "@angular/build" "21.1.1"
     "@babel/core" "7.28.5"
     "@babel/generator" "7.28.5"
     "@babel/helper-annotate-as-pure" "7.27.3"
@@ -172,7 +164,7 @@
     "@babel/preset-env" "7.28.5"
     "@babel/runtime" "7.28.4"
     "@discoveryjs/json-ext" "0.6.3"
-    "@ngtools/webpack" "21.1.0"
+    "@ngtools/webpack" "21.1.1"
     ansi-colors "4.1.3"
     autoprefixer "10.4.23"
     babel-loader "10.0.0"
@@ -214,25 +206,13 @@
   optionalDependencies:
     esbuild "0.27.2"
 
-"@angular-devkit/build-webpack@0.2101.0":
-  version "0.2101.0"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-webpack/-/build-webpack-0.2101.0.tgz#fd19f7929ad7d7f8ef3f562b45af9a6bdda2794a"
-  integrity sha512-UhR57f3IhTwFYqfNCm52czsRy6kjtgNLgVX52K+9p6fN66HmiHdxSambeh7hP7RqhwLvSzIoR7VSnNgkVCzhww==
+"@angular-devkit/build-webpack@0.2101.1":
+  version "0.2101.1"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-webpack/-/build-webpack-0.2101.1.tgz#052ce7bcd9db6067c1f6ef4d4308b4ca3ce6fe31"
+  integrity sha512-gX5/4RT/1ZO6kyo6bEi8uSxZ5oqdolsi87PchKRJfFir2m8u101qs3H07o4KFgG4YlnPUwyHET3ae5YVhS/0xg==
   dependencies:
-    "@angular-devkit/architect" "0.2101.0"
+    "@angular-devkit/architect" "0.2101.1"
     rxjs "7.8.2"
-
-"@angular-devkit/core@21.1.0":
-  version "21.1.0"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-21.1.0.tgz#723376f112be0e5e0b6a954e3e4918645f23312b"
-  integrity sha512-dPfVy0CictDjWffRv4pGTPOFjdlJL3ZkGUqxzaosUjMbJW+Ai9cNn1VNr7zxYZ4kem3BxLBh1thzDsCPrkXlZA==
-  dependencies:
-    ajv "8.17.1"
-    ajv-formats "3.0.1"
-    jsonc-parser "3.3.1"
-    picomatch "4.0.3"
-    rxjs "7.8.2"
-    source-map "0.7.6"
 
 "@angular-devkit/core@21.1.1", "@angular-devkit/core@>= 21.0.0 < 22.0.0":
   version "21.1.1"
@@ -324,13 +304,13 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/build@21.1.0":
-  version "21.1.0"
-  resolved "https://registry.yarnpkg.com/@angular/build/-/build-21.1.0.tgz#53f1e1b5357e0850caa20df2d4aa47f61da908ff"
-  integrity sha512-ftms4F/TlkRNhf/4ykFO12zTG0f9sIRZ4fGFnaOVGmnKYkPKZklWvMCPoaoIligHS2pqKye1a5JSiTgTeUDp9w==
+"@angular/build@21.1.1":
+  version "21.1.1"
+  resolved "https://registry.yarnpkg.com/@angular/build/-/build-21.1.1.tgz#4625669c40c56138f22de33e515473d5d4722866"
+  integrity sha512-OqlfH7tkahw/lFT6ACU6mqt3AGgTxxT27JTqpzZOeGo1ferR9dq1O6/CT4GiNyr/Z1AMfs7rBWlQH68y1QZb2g==
   dependencies:
     "@ampproject/remapping" "2.3.0"
-    "@angular-devkit/architect" "0.2101.0"
+    "@angular-devkit/architect" "0.2101.1"
     "@babel/core" "7.28.5"
     "@babel/helper-annotate-as-pure" "7.27.3"
     "@babel/helper-split-export-declaration" "7.24.7"
@@ -353,7 +333,7 @@
     semver "7.7.3"
     source-map-support "0.5.21"
     tinyglobby "0.2.15"
-    undici "7.18.0"
+    undici "7.18.2"
     vite "7.3.0"
     watchpack "2.5.0"
   optionalDependencies:
@@ -2219,10 +2199,10 @@
     "@emnapi/runtime" "^1.7.1"
     "@tybys/wasm-util" "^0.10.1"
 
-"@ngtools/webpack@21.1.0":
-  version "21.1.0"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-21.1.0.tgz#e5352d73d0ac2a03812cdc3e66a6d01f378a04a2"
-  integrity sha512-u5a/xYQw8jka/YLwUg+AU1jeh0vJ/InPSt4ggNYSBFHqurtj9FgZPHbicamwb0uZ3viabF25UiHGui0lVgPosw==
+"@ngtools/webpack@21.1.1":
+  version "21.1.1"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-21.1.1.tgz#58751d88128f55bbda9c2322242dc49ae227a67a"
+  integrity sha512-8ySRsb1xgr+7XQmZ2LJ+AhFe1IZKW93wfL6OMpZtcWU4FzxWa/NhlfSNBQI5kuyPEVDDAxJ4RI5IoQyvcOmNLg==
 
 "@npmcli/agent@^4.0.0":
   version "4.0.0"
@@ -8910,10 +8890,10 @@ undici-types@~7.16.0:
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-7.16.0.tgz#ffccdff36aea4884cbfce9a750a0580224f58a46"
   integrity sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==
 
-undici@7.18.0:
-  version "7.18.0"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-7.18.0.tgz#93056910e5228d79d2b98f625ecefb2c45adf80f"
-  integrity sha512-CfPufgPFHCYu0W4h1NiKW9+tNJ39o3kWm7Cm29ET1enSJx+AERfz7A2wAr26aY0SZbYzZlTBQtcHy15o60VZfQ==
+undici@7.18.2:
+  version "7.18.2"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-7.18.2.tgz#6cf724ef799a67d94fd55adf66b1e184176efcdf"
+  integrity sha512-y+8YjDFzWdQlSE9N5nzKMT3g4a5UBX1HKowfdXh0uvAnTaqqwqB92Jt4UXBAeKekDs5IaDKyJFR4X1gYVCgXcw==
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.1"
