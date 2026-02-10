@@ -1319,9 +1319,9 @@
     tslib "^2.3.0"
 
 "@canvasjs/charts@^3.7.39":
-  version "3.15.7"
-  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.15.7.tgz#c000ba5a3975d0cc34e15a98d15e87858a2c0f3f"
-  integrity sha512-OtB7hRqJ4uDj0307HoEOLf/5sRJzIR2oiM4So+ufhyqglH6YXkT9v0G5+1nxcbPe5PR/K9EX5/v/BOeKFQY1gw==
+  version "3.15.8"
+  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.15.8.tgz#2888b381e033aaa5d961dee6a789615d96c71b35"
+  integrity sha512-NHv7yD/fWRq9i1EcRG4rz7Vznix1LnBfj9ojBQ7hj/k8LVjo9o8Ch4ys52ZoeZpx2ESi45WGOc8Jsp+esL5ONw==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
@@ -3110,10 +3110,15 @@
     "@typescript-eslint/types" "8.54.0"
     "@typescript-eslint/visitor-keys" "8.54.0"
 
-"@typescript-eslint/tsconfig-utils@8.54.0", "@typescript-eslint/tsconfig-utils@^8.54.0":
+"@typescript-eslint/tsconfig-utils@8.54.0":
   version "8.54.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.54.0.tgz#71dd7ba1674bd48b172fc4c85b2f734b0eae3dbc"
   integrity sha512-dRgOyT2hPk/JwxNMZDsIXDgyl9axdJI3ogZ2XWhBPsnZUv+hPesa5iuhdYt2gzwA9t8RE5ytOJ6xB0moV0Ujvw==
+
+"@typescript-eslint/tsconfig-utils@^8.54.0":
+  version "8.55.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.55.0.tgz#62f1d005419985e09d37a040b2f1450e4e805afa"
+  integrity sha512-1R9cXqY7RQd7WuqSN47PK9EDpgFUK3VqdmbYrvWJZYDd0cavROGn+74ktWBlmJ13NXUQKlZ/iAEQHI/V0kKe0Q==
 
 "@typescript-eslint/type-utils@8.54.0":
   version "8.54.0"
@@ -3126,10 +3131,15 @@
     debug "^4.4.3"
     ts-api-utils "^2.4.0"
 
-"@typescript-eslint/types@8.54.0", "@typescript-eslint/types@^8.54.0":
+"@typescript-eslint/types@8.54.0":
   version "8.54.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.54.0.tgz#c12d41f67a2e15a8a96fbc5f2d07b17331130889"
   integrity sha512-PDUI9R1BVjqu7AUDsRBbKMtwmjWcn4J3le+5LpcFgWULN3LvHC5rkc9gCVxbrsrGmO1jfPybN5s6h4Jy+OnkAA==
+
+"@typescript-eslint/types@^8.54.0":
+  version "8.55.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.55.0.tgz#8449c5a7adac61184cac92dbf6315733569708c2"
+  integrity sha512-ujT0Je8GI5BJWi+/mMoR0wxwVEQaxM+pi30xuMiJETlX80OPovb2p9E8ss87gnSVtYXtJoU9U1Cowcr6w2FE0w==
 
 "@typescript-eslint/typescript-estree@8.54.0":
   version "8.54.0"
@@ -6198,9 +6208,9 @@ isexe@^2.0.0:
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
 isexe@^3.1.1:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/isexe/-/isexe-3.1.4.tgz#75ba4af061c058f633bde8cd5df903f1cdbbe751"
-  integrity sha512-jCErc4h4RnTPjFq53G4whhjAMbUAqinGrCrTT4dmMNyi4zTthK+wphqbRLJtL4BN/Mq7Zzltr0m/b1X0m7PGFQ==
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/isexe/-/isexe-3.1.5.tgz#42e368f68d5e10dadfee4fda7b550bc2d8892dc9"
+  integrity sha512-6B3tLtFqtQS4ekarvLVMZ+X+VlvQekbe4taUkf/rhVO3d/h0M2rfARm/pXLcPEsjjMsFgrFgSrhQIxcSVrBz8w==
 
 isobject@^3.0.1:
   version "3.0.1"
@@ -8616,9 +8626,9 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 ssri@^13.0.0:
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-13.0.0.tgz#4226b303dc474003d88905f9098cb03361106c74"
-  integrity sha512-yizwGBpbCn4YomB2lzhZqrHLJoqFGXihNbib3ozhqF/cIp5ue+xSmOQrjNasEE62hFxsCcg/V/z23t4n8jMEng==
+  version "13.0.1"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-13.0.1.tgz#2d8946614d33f4d0c84946bb370dce7a9379fd18"
+  integrity sha512-QUiRf1+u9wPTL/76GTYlKttDEBWV1ga9ZXW8BG6kfdeyyM8LGPix9gROyg9V2+P0xNyF3X2Go526xKFdMZrHSQ==
   dependencies:
     minipass "^7.0.3"
 
