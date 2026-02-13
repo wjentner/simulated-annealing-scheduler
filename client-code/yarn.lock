@@ -7798,9 +7798,9 @@ qs@^6.14.0, qs@^6.14.1, qs@~6.14.0:
     side-channel "^1.1.0"
 
 qs@~6.5.2:
-  version "6.5.4"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.4.tgz#8796b01abc51ebc3e8c9fa870dc1705ee990533b"
-  integrity sha512-0BeLMIVqP5aQ+8izCO5KjIAuwHx4FwA4MtZzA+Q6TqS4Bu+E/TzHArugK5XqzaFmoBugtLH5S/w7pGPxnJfhtQ==
+  version "6.5.5"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.5.tgz#7c9442fc3f1c58bb52ac57ad09db63ba68916395"
+  integrity sha512-mzR4sElr1bfCaPJe7m8ilJ6ZXdDaGoObcYR0ZHSsktM/Lt21MVHj5De30GQH2eiZ1qGRTO7LCAzQsUeXTNexWQ==
 
 randombytes@^2.1.0:
   version "2.1.0"
