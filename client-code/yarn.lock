@@ -1319,9 +1319,9 @@
     tslib "^2.3.0"
 
 "@canvasjs/charts@^3.7.39":
-  version "3.15.8"
-  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.15.8.tgz#2888b381e033aaa5d961dee6a789615d96c71b35"
-  integrity sha512-NHv7yD/fWRq9i1EcRG4rz7Vznix1LnBfj9ojBQ7hj/k8LVjo9o8Ch4ys52ZoeZpx2ESi45WGOc8Jsp+esL5ONw==
+  version "3.15.9"
+  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.15.9.tgz#46b2e87151f8d5ceac8f4db3a70ed82f5afd1262"
+  integrity sha512-KEWYjaaDQrQy/0jfR9PF4uyHs/08YVt9d3lQVfahDylb5wRUWUdBQeWGlEafKWy7BhRutC9LbOexOnfJLaunLQ==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
@@ -3083,10 +3083,15 @@
     "@typescript-eslint/types" "8.55.0"
     "@typescript-eslint/visitor-keys" "8.55.0"
 
-"@typescript-eslint/tsconfig-utils@8.55.0", "@typescript-eslint/tsconfig-utils@^8.55.0":
+"@typescript-eslint/tsconfig-utils@8.55.0":
   version "8.55.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.55.0.tgz#62f1d005419985e09d37a040b2f1450e4e805afa"
   integrity sha512-1R9cXqY7RQd7WuqSN47PK9EDpgFUK3VqdmbYrvWJZYDd0cavROGn+74ktWBlmJ13NXUQKlZ/iAEQHI/V0kKe0Q==
+
+"@typescript-eslint/tsconfig-utils@^8.55.0":
+  version "8.56.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.56.0.tgz#2538ce83cbc376e685487960cbb24b65fe2abc4e"
+  integrity sha512-bSJoIIt4o3lKXD3xmDh9chZcjCz5Lk8xS7Rxn+6l5/pKrDpkCwtQNQQwZ2qRPk7TkUYhrq3WPIHXOXlbXP0itg==
 
 "@typescript-eslint/type-utils@8.55.0":
   version "8.55.0"
@@ -3099,10 +3104,15 @@
     debug "^4.4.3"
     ts-api-utils "^2.4.0"
 
-"@typescript-eslint/types@8.55.0", "@typescript-eslint/types@^8.54.0", "@typescript-eslint/types@^8.55.0":
+"@typescript-eslint/types@8.55.0":
   version "8.55.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.55.0.tgz#8449c5a7adac61184cac92dbf6315733569708c2"
   integrity sha512-ujT0Je8GI5BJWi+/mMoR0wxwVEQaxM+pi30xuMiJETlX80OPovb2p9E8ss87gnSVtYXtJoU9U1Cowcr6w2FE0w==
+
+"@typescript-eslint/types@^8.54.0", "@typescript-eslint/types@^8.55.0":
+  version "8.56.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.56.0.tgz#a2444011b9a98ca13d70411d2cbfed5443b3526a"
+  integrity sha512-DBsLPs3GsWhX5HylbP9HNG15U0bnwut55Lx12bHB9MpXxQ+R5GC8MwQe+N1UFXxAeQDvEsEDY6ZYwX03K7Z6HQ==
 
 "@typescript-eslint/typescript-estree@8.55.0":
   version "8.55.0"
