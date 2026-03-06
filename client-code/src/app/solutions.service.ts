@@ -103,6 +103,54 @@ export class SolutionsService {
         return filtered;
     }
 
+    prepareSolution(
+        sol: SolutionStatus,
+        desiredDates: TimeConstraint[],
+        unDesiredDates: TimeConstraint[],
+    ): SolutionStatus {
+        sol.desiredDates = desiredDates;
+        sol.dd = {};
+        if (!sol?.schedule) {
+            return sol;
+        }
+        sol.desiredDatesOfDay = {};
+        sol.undesiredDatesOfDay = {};
+        for (const date of Object.keys(sol.schedule)) {
+            const dateTime = DateTime.fromISO(date);
+            sol.undesiredDatesOfDay[date] = unDesiredDates
+                .filter(tc => {
+                    const from = DateTime.fromISO(tc.min_date);
+                    const to = DateTime.fromISO(tc.max_date);
+                    return tc.negated === true && from <= dateTime && dateTime <= to;
+                })
+                .map(tc => {
+                    let fulfilled = true;
+
+                    for (const task of Object.keys(sol.schedule[date])) {
+                        const person = sol.schedule[date][task];
+
+                        if (
+                            tc.person === person &&
+                            (tc.task === null || tc.task === undefined || tc.task === task)
+                        ) {
+                            fulfilled = false;
+                            break;
+                        }
+                    }
+
+                    return { ...tc, is_fulfilled: fulfilled };
+                });
+
+            sol.desiredDatesOfDay[date] = this.getDesiredDateConstraints(desiredDates, date, sol);
+            sol.dd[date] = {};
+            for (const task of Object.keys(sol.schedule[date])) {
+                const person = sol.schedule[date][task];
+                sol.dd[date][task] = this.isDesiredDate(desiredDates, date, person);
+            }
+        }
+        return sol;
+    }
+
     getSolutions() {
         combineLatest([
             this.http.get<SolutionStatus[]>(`${environment.api}/solutions`),
@@ -113,55 +161,7 @@ export class SolutionsService {
                 map(d1 => {
                     console.log('test', d1);
                     for (const d of d1[0]) {
-                        d.desiredDates = d1[1];
-                        d.dd = {};
-                        if (d.schedule) {
-                            d.desiredDatesOfDay = {};
-                            d.undesiredDatesOfDay = {};
-                            for (const date of Object.keys(d.schedule)) {
-                                const dateTime = DateTime.fromISO(date);
-                                d.undesiredDatesOfDay[date] = d1[2]
-                                    .filter(tc => {
-                                        const from = DateTime.fromISO(tc.min_date);
-                                        const to = DateTime.fromISO(tc.max_date);
-                                        return (
-                                            tc.negated === true &&
-                                            from <= dateTime &&
-                                            dateTime <= to
-                                        );
-                                    })
-                                    .map(tc => {
-                                        let fulfilled = true;
-
-                                        for (const task of Object.keys(d.schedule[date])) {
-                                            const person = d.schedule[date][task];
-
-                                            if (
-                                                tc.person === person &&
-                                                (tc.task === null ||
-                                                    tc.task === undefined ||
-                                                    tc.task === task)
-                                            ) {
-                                                fulfilled = false;
-                                                break;
-                                            }
-                                        }
-
-                                        return { ...tc, is_fulfilled: fulfilled };
-                                    });
-
-                                d.desiredDatesOfDay[date] = this.getDesiredDateConstraints(
-                                    d1[1],
-                                    date,
-                                    d,
-                                );
-                                d.dd[date] = {};
-                                for (const task of Object.keys(d.schedule[date])) {
-                                    const person = d.schedule[date][task];
-                                    d.dd[date][task] = this.isDesiredDate(d1[1], date, person);
-                                }
-                            }
-                        }
+                        this.prepareSolution(d, d1[1], d1[2]);
                     }
                     return d1[0];
                 }),
@@ -173,7 +173,16 @@ export class SolutionsService {
     }
 
     getSolution(name: string): Observable<SolutionStatus> {
-        return this.http.get<SolutionStatus>(`${environment.api}/solutions/${name}`);
+        return combineLatest([
+            this.http.get<SolutionStatus>(`${environment.api}/solutions/${name}`),
+            this.scheduleConstraintsService.getDesiredDates(),
+            this.scheduleConstraintsService.getUnDesiredDates(),
+        ]).pipe(
+            map(d1 => {
+                this.prepareSolution(d1[0], d1[1], d1[2]);
+                return d1[0];
+            }),
+        );
     }
 
     deleteSolution(name: string): Observable<void> {
