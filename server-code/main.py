@@ -378,13 +378,13 @@ app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 
 @app.get("/", response_class=FileResponse)
 def read_index():
-    static_path = './static/index.html'
+    static_path = './static/browser/index.html'
     return FileResponse(static_path)
 
 
 @app.get("/{catchall:path}", response_class=FileResponse)
 def read_index(request: Request):
-    folder = './static/'
+    folder = './static/browser/'
     # check first if requested file exists
     catch_all_path = request.path_params["catchall"]
     file = folder + catch_all_path
@@ -393,5 +393,5 @@ def read_index(request: Request):
         return FileResponse(file)
 
     # otherwise return index files
-    index = './static/index.html'
+    index = './static/browser/index.html'
     return FileResponse(index)

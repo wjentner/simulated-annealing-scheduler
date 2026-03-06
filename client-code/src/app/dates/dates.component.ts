@@ -17,11 +17,11 @@ export interface DateItem {
     selector: 'app-dates',
     templateUrl: './dates.component.html',
     styleUrls: ['./dates.component.less'],
-    standalone: false
+    standalone: false,
 })
 export class DatesComponent implements OnInit {
     constraints$: Observable<ScheduleConstraints>;
-    dates$: Observable<DateItem[]>;
+    // dates$: Observable<DateItem[]>;
     tasks$: Observable<string[]>;
 
     createFromDate: DateTime = DateTime.now();
@@ -39,25 +39,46 @@ export class DatesComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.constraints$ = this.scheduleConstraintsService.constraints$;
-        this.tasks$ = this.tasksService.tasks$;
-        this.dates$ = this.scheduleConstraintsService.constraints$.pipe(
-            map(d => d.dates_and_tasks),
+        this.constraints$ = this.scheduleConstraintsService.constraints$.pipe(
             map(d => {
-                const dates: DateItem[] = [];
-                for (const [date, taskMap] of Object.entries(d)) {
-                    const d1: DateItem = { date, holiday: taskMap.holiday || false };
+                if (!d?.dates_and_tasks) {
+                    return null;
+                }
+                const allTasks = new Set(this.tasksService.tasks$.value);
+                for (const [date, taskMap] of Object.entries(d.dates_and_tasks)) {
                     for (const [task, bool] of Object.entries(taskMap)) {
-                        if (task === 'holiday') {
-                            continue;
+                        if (!allTasks.has(task)) {
+                            delete d.dates_and_tasks[date][task];
                         }
-
-                        d1[task] = bool;
                     }
                 }
-                return dates;
+
+                // console.log('constraints', d);
+                return d;
             }),
         );
+        this.tasks$ = this.tasksService.tasks$;
+        // this.dates$ = this.scheduleConstraintsService.constraints$.pipe(
+        //     map(d => d.dates_and_tasks),
+        //     map(d => {
+        //         const allTasks = new Set(this.tasksService.tasks$.value);
+
+        //         const dates: DateItem[] = [];
+        //         for (const [date, taskMap] of Object.entries(d)) {
+        //             const d1: DateItem = { date, holiday: taskMap.holiday || false };
+        //             for (const [task, bool] of Object.entries(taskMap)) {
+        //                 if (task === 'holiday' || !allTasks.has(task)) {
+        //                     continue;
+        //                 }
+
+        //                 d1[task] = bool;
+        //             }
+        //         }
+
+        //         console.log('dates', dates);
+        //         return dates;
+        //     }),
+        // );
     }
 
     addDate(date: DateTime) {
