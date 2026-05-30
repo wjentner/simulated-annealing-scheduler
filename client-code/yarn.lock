@@ -1683,9 +1683,9 @@
   integrity sha512-vqTaUEgxzm+YDSdElad6PiRoX4t8VGDjCtt05zn4nU810UIx/uNEV7/lZJ6KwFThKZOzOxzXy48da+No7HZaMw==
 
 "@eslint/plugin-kit@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@eslint/plugin-kit/-/plugin-kit-0.7.1.tgz#c4125fd015eceeb09b793109fdbcd4dd0a02d346"
-  integrity sha512-rZAP3aVgB9ds9KOeUSL+zZ21hPmo8dh6fnIFwRQj5EAZl9gzR7wxYbYXYysAM8CTqGmUGyp2S4kUdV17MnGuWQ==
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@eslint/plugin-kit/-/plugin-kit-0.7.2.tgz#4b0962f3f2c7ce8bc98b3ecfe34525c09d2cb729"
+  integrity sha512-+CNAzxglkrpNf/kKywqQfk74QjtceuOE7Qm+AF8miRvPF/wmmK5+OJOgVh3AVTT3RP2mH3+FOaxlE5v72owk0A==
   dependencies:
     "@eslint/core" "^1.2.1"
     levn "^0.4.1"
@@ -6629,12 +6629,12 @@ kind-of@^6.0.2:
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
 launch-editor@^2.6.1:
-  version "2.13.2"
-  resolved "https://registry.yarnpkg.com/launch-editor/-/launch-editor-2.13.2.tgz#41d51baaf8afb393224b89bd2bcb4e02f2306405"
-  integrity sha512-4VVDnbOpLXy/s8rdRCSXb+zfMeFR0WlJWpET1iA9CQdlZDfwyLjUuGQzXU4VeOoey6AicSAluWan7Etga6Kcmg==
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/launch-editor/-/launch-editor-2.14.0.tgz#acef0cfda90ead4e0ab7fecb8ad0e1453bc7d3a6"
+  integrity sha512-Pj3ZOx9dD1BClS7YcSQx0An1PCF9wz4JpvbEmKvDxQtm0jxlkk5NhW8x0SBAKA/acHBKZaqdd5FFOWlXo500JA==
   dependencies:
     picocolors "^1.1.1"
-    shell-quote "^1.8.3"
+    shell-quote "^1.8.4"
 
 less-loader@12.3.1:
   version "12.3.1"
@@ -8528,7 +8528,7 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shell-quote@^1.8.3:
+shell-quote@^1.8.4:
   version "1.8.4"
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.8.4.tgz#2edd9a4dcefc96649e2e2cb12f637b1f1d92a190"
   integrity sha512-VsC6n6vz1ihYYyZZwX7YZSF5l5x36ca17OC+a69h94YqB7X6XLwf+5MOgynYir2SLFUbl8gIYvBo8K8RoNQ6bQ==
@@ -8993,9 +8993,9 @@ thunky@^1.0.2:
   integrity sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==
 
 tinyexec@^1.1.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/tinyexec/-/tinyexec-1.2.2.tgz#b66edf362dcad61174bc9ce4f3ee279e2448a721"
-  integrity sha512-M/Q0B2cp4K7kynaT/vnED1j8TlLY+Pp7C6Wl2bl/7u/F0mUVwdyOpwomQb8JpYLitHUssAJRmLZdMCGsrx7i+g==
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/tinyexec/-/tinyexec-1.2.3.tgz#50fe1729360c889597a2c6520a19ce36b0b47ce9"
+  integrity sha512-g62dB+w1/OEFnPvmX0yd/HnetYITOL+1nJW7kitOycOeAvmbWC/nu0fwmmQ/kupNojqExzyC/T++pST/jRJ2mQ==
 
 tinyglobby@0.2.15:
   version "0.2.15"
