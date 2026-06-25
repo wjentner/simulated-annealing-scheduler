@@ -1,4 +1,4 @@
-FROM node:24@sha256:59f3d64aea90b362459f6e161aecd67319c5bb619e5dd2512c0c5f7b7c070dee
+FROM node:24@sha256:fdddfb3e688158251943d52eba361de991548f6814007acba4917ae6b512d6be
 
 ADD . /tmp/code
 
