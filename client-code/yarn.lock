@@ -145,11 +145,11 @@
     rxjs "7.8.2"
 
 "@angular-devkit/architect@>= 0.2200.0 < 0.2300.0":
-  version "0.2200.6"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2200.6.tgz#ac39f55d6516314b7a7ffd2ba55cbfed9c43732a"
-  integrity sha512-wTjUfiT5iEMc9+9z2zo1QGtzLpXk5Xx0bV6/zTO4n6+BCC0qReuYnIYt0iJCh649Q0vHq5++0zmZZK0KyXVMZQ==
+  version "0.2200.7"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2200.7.tgz#fcabfa87a0171704935f7d63db0b4cdf1c9beefb"
+  integrity sha512-t03YYe5amlcpsX5gpMGi96kpBNTMKY7/rJsRDNO3v98mSy7kzNXlgzy/jyfdFev7AJusuwVM5TKVsUAgQxCgCw==
   dependencies:
-    "@angular-devkit/core" "22.0.6"
+    "@angular-devkit/core" "22.0.7"
     rxjs "7.8.2"
 
 "@angular-devkit/build-angular@21.2.19":
@@ -234,10 +234,10 @@
     rxjs "7.8.2"
     source-map "0.7.6"
 
-"@angular-devkit/core@22.0.6", "@angular-devkit/core@>= 22.0.0 < 23.0.0":
-  version "22.0.6"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-22.0.6.tgz#be081565515868de3fb8b9784f8b97e84c797a0d"
-  integrity sha512-uAZ7TPn+8sDZcFtiM5nQpmqaR9lspLAf7RY7t7TXYP794001khRf+F/AhmONxmgFPWY01+eeJSvBx+FEnHCb0A==
+"@angular-devkit/core@22.0.7", "@angular-devkit/core@>= 22.0.0 < 23.0.0":
+  version "22.0.7"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-22.0.7.tgz#60e712a50db9f74ee4bba4e5c39939582353a1db"
+  integrity sha512-r8XiflsVYcsvWp+zVvaNv5GsDoihaZ2OwWfn++N6YqTUZLcqDzqhsxeNk60sJ5V+Jn4ck1aKF4A9flmvSY+tpQ==
   dependencies:
     ajv "8.20.0"
     ajv-formats "3.0.1"
@@ -258,11 +258,11 @@
     rxjs "7.8.2"
 
 "@angular-devkit/schematics@>= 22.0.0 < 23.0.0":
-  version "22.0.6"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-22.0.6.tgz#dc17663ed27989cb05fd6c8a5f0aa2d319ebd12e"
-  integrity sha512-7bSiye4UrxvhYvYp1YIpVSVOFQZ75EXP3EE5/ShM3cPNtUTdXJiwHkD8SiLHNhPTB6Mzrq5tp1YlAXXRg/WgLw==
+  version "22.0.7"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-22.0.7.tgz#09e4f23940888df6f9277ec4c23295c5819b8e82"
+  integrity sha512-bKgnBB0LPAj44uVXfW0UO1rQBb3HGXDZxa1bLtESr/KCK4j5iiaXlHqvJjc/z0em1Ds9WNQOfNXjV3IdJo9sSw==
   dependencies:
-    "@angular-devkit/core" "22.0.6"
+    "@angular-devkit/core" "22.0.7"
     jsonc-parser "3.3.1"
     magic-string "0.30.21"
     ora "9.4.0"
@@ -4524,9 +4524,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.389:
-  version "1.5.391"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.391.tgz#a210ae1e913357bb61d7d1c9f9a7986f80e247a9"
-  integrity sha512-YmCu4856jkgKT1Nh6fwRdeVrM6Ydf/fBnq51tpmSfX+jOcUMTxh31yH6hjKScRenhB2oDSvA9oooxcpjogPeig==
+  version "1.5.392"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.392.tgz#31e9f9af0d8df3d1489468a4242b173605617482"
+  integrity sha512-1yQq3VQCZRwsnYc67Oc+1fge6Lwtn0hzi6zmEVkB61Zx21kTbwJAW4dFLadl5Rc1tKhG/kSpYXnfiAhu0f0a1g==
 
 emoji-regex@^10.3.0:
   version "10.6.0"
@@ -8489,9 +8489,9 @@ socket.io-adapter@~2.5.2:
     ws "~8.21.0"
 
 socket.io-parser@~4.2.4:
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/socket.io-parser/-/socket.io-parser-4.2.6.tgz#19156bf179af3931abd05260cfb1491822578a6f"
-  integrity sha512-asJqbVBDsBCJx0pTqw3WfesSY0iRX+2xzWEWzrpcH7L6fLzrhyF8WPI8UaeM4YCuDfpwA/cgsdugMsmtz8EJeg==
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/socket.io-parser/-/socket.io-parser-4.2.7.tgz#679e51fe24d1c81df90fc5f7efe4a5f432fe99c0"
+  integrity sha512-IH/iSeO9T6gz1KkFleGDWkG9N3dl4jXVYUtMhIqH10Md0ttMer8nUNWiP1DKuNrybD2xBrixLJdCC9J6ECoYkg==
   dependencies:
     "@socket.io/component-emitter" "~3.1.0"
     debug "~4.4.1"
