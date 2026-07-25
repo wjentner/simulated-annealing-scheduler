@@ -5813,9 +5813,9 @@ internal-slot@^1.1.0:
     side-channel "^1.1.0"
 
 ip-address@^10.1.1, ip-address@^10.2.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-10.2.0.tgz#805fc178b20c518bd4c8548b24fe30892d7f3206"
-  integrity sha512-/+S6j4E9AHvW9SWMSEY9Xfy66O5PWvVEJ08O0y5JGyEKQpojb0K0GKpz/v5HJ/G0vi3D2sjGK78119oXZeE0qA==
+  version "10.2.2"
+  resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-10.2.2.tgz#52ca28ae978e483fce9ef5d2691b1a83dcbef2b9"
+  integrity sha512-aNJVEVdXTr/g5+N2VCLo+CTrFLo/Y+9rx9RC5BpxPtf7NEknmzY+UQvMO8Fjni5KFmDaHJieL8HCMJKjJXsTgg==
 
 ipaddr.js@1.9.1:
   version "1.9.1"
