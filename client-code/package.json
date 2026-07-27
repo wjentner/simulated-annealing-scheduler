@@ -51,7 +51,7 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-jsdoc": "63.2.2",
-    "eslint-plugin-json": "4.0.1",
+    "eslint-plugin-json": "5.0.0",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "husky": "^8.0.0",
     "jasmine-core": "~6.3.0",
