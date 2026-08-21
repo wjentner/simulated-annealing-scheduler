@@ -1356,7 +1356,7 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.6.3.tgz#f13c7c205915eb91ae54c557f5e92bddd8be0e83"
   integrity sha512-4B4OijXeVNOPZlYA2oEwWOTkzyltLao+xbotHQeqN++Rv27Y6s818+n2Qkp8q+Fxhn0t/5lA5X1Mxktud8eayQ==
 
-"@es-joy/jsdoccomment@~0.95.0":
+"@es-joy/jsdoccomment@~0.95.1":
   version "0.95.1"
   resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.95.1.tgz#1afb434ae17844b43203d0b8de477476b9aeefeb"
   integrity sha512-LO/RI08Fo9bhXwB7Od9G+1j3eSNq63+ZS5CQO8YLXHbDg6kx6S/DhTeY0+Fc9uZrjK1zZSyTx8Sg5gv5DIoCnA==
@@ -5028,12 +5028,12 @@ eslint-plugin-import@2.32.0:
     string.prototype.trimend "^1.0.9"
     tsconfig-paths "^3.15.0"
 
-eslint-plugin-jsdoc@64.2.0:
-  version "64.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-64.2.0.tgz#90b4ef3d444f8dbfaa7d43f20570c2da08edf81f"
-  integrity sha512-z3zGmJoPhOdKnxzQ3R+8MZeJjW8vrRW8r7sYp/ErBp8K9+05RIa6vWXtbEGr7D1obBHk64LdKyLHoMLSzHFINA==
+eslint-plugin-jsdoc@64.2.1:
+  version "64.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-64.2.1.tgz#05755c3cdf55d0ce901c67cd3f86220dcb55192e"
+  integrity sha512-6GpSYxLPcbMw38S94Cngrgs1Zv8yLinQS1O17OxJVZ6deLbrMRCERUYQKceweSqEuG2kx5Amn4l3aKPkCp4geQ==
   dependencies:
-    "@es-joy/jsdoccomment" "~0.95.0"
+    "@es-joy/jsdoccomment" "~0.95.1"
     "@es-joy/resolve.exports" "1.2.0"
     are-docs-informative "^0.1.1"
     comment-parser "1.4.8"
