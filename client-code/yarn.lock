@@ -144,12 +144,20 @@
     "@angular-devkit/core" "21.2.22"
     rxjs "7.8.2"
 
-"@angular-devkit/architect@>= 0.2200.0 < 0.2300.0":
-  version "0.2201.6"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2201.6.tgz#5eb90f3a16acb0f2f6b738174ba8d49ce9f05ea7"
-  integrity sha512-oGQEdof2/1bZk58PN9dvpGi8pvtbgE5vkP1xRtCqN8dSVxwre1l0pKynOj/Uge1KxjCvs4c1QrQu0vsAnY0vpg==
+"@angular-devkit/architect@0.2102.23":
+  version "0.2102.23"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2102.23.tgz#98bf7d61ebdcb05f954e446ec4611fd477127087"
+  integrity sha512-ipRoLCsfI7NiAKKl8EpDYXLFn09df1Cyz2Qy+VOOvoWO1D4VZo9GeW76U2CnrJm7VuBANfMKwhN5FitZr0HPxQ==
   dependencies:
-    "@angular-devkit/core" "22.1.6"
+    "@angular-devkit/core" "21.2.23"
+    rxjs "7.8.2"
+
+"@angular-devkit/architect@>= 0.2200.0 < 0.2300.0":
+  version "0.2201.7"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2201.7.tgz#be1c6a7a7830a9e560c18b043d47219afad3e58f"
+  integrity sha512-qffChB0+3WuLcwDk9gx3p/Vl3zYJDomweui5zsLESDMzvJ8zsbKRkgohTieOngajx+XBsklp0gKcxjiVn4NvWQ==
+  dependencies:
+    "@angular-devkit/core" "22.1.7"
     rxjs "7.8.2"
 
 "@angular-devkit/build-angular@21.2.22":
@@ -234,10 +242,22 @@
     rxjs "7.8.2"
     source-map "0.7.6"
 
-"@angular-devkit/core@22.1.6", "@angular-devkit/core@>= 22.0.0 < 23.0.0":
-  version "22.1.6"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-22.1.6.tgz#599244803509e060d7d28a8ce966f5f5fb79ccc1"
-  integrity sha512-KLBsZoc2RhOy0xSdeYcLoSOqV/fBP3feBmhY9o12ry2IuyW/17sCmWr6XbIfTIYQN6M98Y1ewmwVNFsvV5b0gA==
+"@angular-devkit/core@21.2.23":
+  version "21.2.23"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-21.2.23.tgz#9ab1c2c37d459c512e068c04283e5ff8fe0547be"
+  integrity sha512-CUFy9nUzuLwH4GIIe4nqHPKM8OOnW1T0aYBr64yYoz75v3xN4239Pz3fdvF3JvRPR4S1hmWORZsiSQLfWhdlOw==
+  dependencies:
+    ajv "8.18.0"
+    ajv-formats "3.0.1"
+    jsonc-parser "3.3.1"
+    picomatch "4.0.4"
+    rxjs "7.8.2"
+    source-map "0.7.6"
+
+"@angular-devkit/core@22.1.7", "@angular-devkit/core@>= 22.0.0 < 23.0.0":
+  version "22.1.7"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-22.1.7.tgz#852c4aeca3a336098c2ccea610dc810a693a383e"
+  integrity sha512-RKayeOOjhcIe/iBOM1fmtI5pjXwBEJh+u55VnSeIwYvFNXyxI0/jdRw4T6uhwusQ+1bzyya4d8q1mT9oaOQ/5A==
   dependencies:
     ajv "8.20.0"
     ajv-formats "3.0.1"
@@ -246,23 +266,23 @@
     rxjs "7.8.2"
     source-map "0.7.6"
 
-"@angular-devkit/schematics@21.2.22":
-  version "21.2.22"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-21.2.22.tgz#f9d74ea896a6ed3442767262028f253ec576b205"
-  integrity sha512-qhpaXOV4R4Db35bIcgCrJoBMdgTIqipsvG55BVEYtNbVjFxmMWam1nh/OIDTNR54fmpB9/y1LBK1Hm4gVEnAAQ==
+"@angular-devkit/schematics@21.2.23":
+  version "21.2.23"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-21.2.23.tgz#98ea6e1134e5096265beec90c6640a575ba92116"
+  integrity sha512-SHrhkO0fdHRl01lxL5SnPGBjnL2o6KiTfD0r9132KbNGe7HjWp0BgwGmUVKROMkPWGAdVpgNmuirPgT6wdISLA==
   dependencies:
-    "@angular-devkit/core" "21.2.22"
+    "@angular-devkit/core" "21.2.23"
     jsonc-parser "3.3.1"
     magic-string "0.30.21"
     ora "9.3.0"
     rxjs "7.8.2"
 
 "@angular-devkit/schematics@>= 22.0.0 < 23.0.0":
-  version "22.1.6"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-22.1.6.tgz#d986d201efa9943a276253b4b52918ada3c2238c"
-  integrity sha512-IbDO9KbQyQm20uinsfT8d9ZtQw41/WVutI/65mAw39WZfN8Ky+MOgOUJCGLiSccMprvZ9YdodBTnN9bLH149Ag==
+  version "22.1.7"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-22.1.7.tgz#42b9e582faa6a7b1d9664e196c90a829f60cf34b"
+  integrity sha512-KOcVeT4MCsoPt6AMnXH7AbWZnzlKXhMyua2ITWij4UbLaNWCDwfIug/xrZssYLHUFwebCIqsR8iuG/BPH8Cz2w==
   dependencies:
-    "@angular-devkit/core" "22.1.6"
+    "@angular-devkit/core" "22.1.7"
     jsonc-parser "3.3.1"
     magic-string "1.0.0"
     ora "9.4.1"
@@ -379,17 +399,17 @@
     tslib "^2.3.0"
 
 "@angular/cli@^21.0.0":
-  version "21.2.22"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-21.2.22.tgz#b81e685a3dead4b244795e547e5479e813e8dda4"
-  integrity sha512-LWIcjBSzER15ssr8hWW6fECl7uNdE2RrvqRHkfKXen1BW2oKa0DGH+Mj7D0ywKdDwBQU1lafmYgVThjxxmstXw==
+  version "21.2.23"
+  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-21.2.23.tgz#de72f07b2b19d9ae0e85cf770dd57b58059f960a"
+  integrity sha512-8FLVNm+HnSS7LPNoWv0tIWbEIy09YAaRj3HCRrCNKpfAksn6LHUXNT+EGsY3UvWEnymhQYWXf7y28p9yoOVY4Q==
   dependencies:
-    "@angular-devkit/architect" "0.2102.22"
-    "@angular-devkit/core" "21.2.22"
-    "@angular-devkit/schematics" "21.2.22"
+    "@angular-devkit/architect" "0.2102.23"
+    "@angular-devkit/core" "21.2.23"
+    "@angular-devkit/schematics" "21.2.23"
     "@inquirer/prompts" "7.10.1"
     "@listr2/prompt-adapter-inquirer" "3.0.5"
     "@modelcontextprotocol/sdk" "1.30.0"
-    "@schematics/angular" "21.2.22"
+    "@schematics/angular" "21.2.23"
     "@yarnpkg/lockfile" "1.1.0"
     algoliasearch "5.48.1"
     ini "6.0.0"
@@ -1963,75 +1983,75 @@
   resolved "https://registry.yarnpkg.com/@jsonjoy.com/codegen/-/codegen-1.0.0.tgz#5c23f796c47675f166d23b948cdb889184b93207"
   integrity sha512-E8Oy+08cmCf0EK/NMxpaJZmOxPqM+6iSe2S4nlSBrPZOORoDJILxtbSUEDKQyTamm/BVAhIGllOBNU79/dwf0g==
 
-"@jsonjoy.com/fs-core@4.68.2":
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-core/-/fs-core-4.68.2.tgz#ea3e3e3e07e0d808844ba7ee908dd47ad121eddf"
-  integrity sha512-PoBeUNEbjyLKKwCap2z8LkkqdhdfttS4rTHCALVuP65BdF+sAoyBqHo1m+uGTRBiQWv3H7MGfr8f7lY4pDwanw==
+"@jsonjoy.com/fs-core@4.69.1":
+  version "4.69.1"
+  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-core/-/fs-core-4.69.1.tgz#22fb69ca7a1013e35281d61c98135d5f97ade4d6"
+  integrity sha512-ohxv/4KZSG03UmjDo//eIjedRRQEcIc0w4IjbyBcMS4mdkvTVMQwfNm1Ivxj4z35xIwpQbJ+1sGKq3l4vTaFiA==
   dependencies:
-    "@jsonjoy.com/fs-node-builtins" "4.68.2"
-    "@jsonjoy.com/fs-node-utils" "4.68.2"
+    "@jsonjoy.com/fs-node-builtins" "4.69.1"
+    "@jsonjoy.com/fs-node-utils" "4.69.1"
     thingies "^2.5.0"
 
-"@jsonjoy.com/fs-fsa@4.68.2":
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-fsa/-/fs-fsa-4.68.2.tgz#01d59e3bedb3cfe4b32334abbb1004a75b481a76"
-  integrity sha512-h6eGXlLGGMyPfNliDQrbuHKTB9Z29ksCLjreAmdBqrDOBdfrTrHssi+b9WLfrF+J2KzAbIt9OMjJu6AEpTnYkg==
+"@jsonjoy.com/fs-fsa@4.69.1":
+  version "4.69.1"
+  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-fsa/-/fs-fsa-4.69.1.tgz#b9f46ea55ef01b47e653aa51886f63e2017986e2"
+  integrity sha512-z9IfdQyZGXL9GB9gv+dXRuMjOjY8s2EmFQ8DhdxxjFJGfPITDDW1j/W84jlBr2SmCc+yv47yYiNQ3powkqWGVQ==
   dependencies:
-    "@jsonjoy.com/fs-core" "4.68.2"
-    "@jsonjoy.com/fs-node-builtins" "4.68.2"
-    "@jsonjoy.com/fs-node-utils" "4.68.2"
+    "@jsonjoy.com/fs-core" "4.69.1"
+    "@jsonjoy.com/fs-node-builtins" "4.69.1"
+    "@jsonjoy.com/fs-node-utils" "4.69.1"
     thingies "^2.5.0"
 
-"@jsonjoy.com/fs-node-builtins@4.68.2":
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-node-builtins/-/fs-node-builtins-4.68.2.tgz#ef82d558a6894b54537857ba153daa38a5326a05"
-  integrity sha512-V8WzQsW2YIrH3RxBGY6HZisxn+dDUltHgksVRuCdPEOXEkAfXuhL/01eHFrabNu84Dn13XuLqvcQUKOYVKAUOA==
+"@jsonjoy.com/fs-node-builtins@4.69.1":
+  version "4.69.1"
+  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-node-builtins/-/fs-node-builtins-4.69.1.tgz#193385f84e35818559e2d31d18d7ffc056cce96e"
+  integrity sha512-nJddTKNx2FrH+fNRHcHJpCD8bwZlQmYaT8SPEG86kKUae5XzWU5hXdk9T4vKU9yBoXfT2po1A3K/twf8ujBd0g==
 
-"@jsonjoy.com/fs-node-to-fsa@4.68.2":
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-node-to-fsa/-/fs-node-to-fsa-4.68.2.tgz#faf01a277752868d90681f6dcb86d3e01f05a296"
-  integrity sha512-4O1K4w5G4oJIpKpoa3WSLG83AsQYVnGv+aUSBGOvIUph9Axm6bB1mPlvldkNg2tBx/4dkiTlZnqNrK5SQ21Wtg==
+"@jsonjoy.com/fs-node-to-fsa@4.69.1":
+  version "4.69.1"
+  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-node-to-fsa/-/fs-node-to-fsa-4.69.1.tgz#9feafef3f1d1792c2cea7a210edd17c181bebd0d"
+  integrity sha512-1GTORTbZ2GcshGyaGNgqJAm/INOWyTdHMbeuj2CsBWKYEQYHW4ZvkKHaR+46SO762skZcNVja3dLIfk3s1AdcQ==
   dependencies:
-    "@jsonjoy.com/fs-fsa" "4.68.2"
-    "@jsonjoy.com/fs-node-builtins" "4.68.2"
-    "@jsonjoy.com/fs-node-utils" "4.68.2"
+    "@jsonjoy.com/fs-fsa" "4.69.1"
+    "@jsonjoy.com/fs-node-builtins" "4.69.1"
+    "@jsonjoy.com/fs-node-utils" "4.69.1"
 
-"@jsonjoy.com/fs-node-utils@4.68.2":
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-node-utils/-/fs-node-utils-4.68.2.tgz#78311a84df4e4edc51f8e41fc042d3eed21cb0d4"
-  integrity sha512-CxFwyG9fJr7dAKAd1uanNRNrRMtDDqbYJA8do53+M4LY7SxcBEEmMjC1zi9MOsBlVLHTXvA7OP9+n639UqtIcw==
+"@jsonjoy.com/fs-node-utils@4.69.1":
+  version "4.69.1"
+  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-node-utils/-/fs-node-utils-4.69.1.tgz#ae16705f2ced9bcaba6780d7c4109a8511ce9510"
+  integrity sha512-45kAGpkTUKBNRguS34fdBkXbkBuZM75oU+snf3kRjfQGWHmp93aNKHdtbqrVqxpOdOvWAFnMx+UN6rRSLN2p9g==
   dependencies:
-    "@jsonjoy.com/fs-node-builtins" "4.68.2"
+    "@jsonjoy.com/fs-node-builtins" "4.69.1"
     glob-to-regex.js "^1.0.1"
 
-"@jsonjoy.com/fs-node@4.68.2":
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-node/-/fs-node-4.68.2.tgz#166b641f7c810e12cbf92c483e9c7084123ed669"
-  integrity sha512-Kpj519Qk4OXG4+mZ8vTf9BEflliJrPueIDEVcbx8tAOufMJJ8IxR0WwdbcEvJol2KQog3PJjtALXVclorE+xbQ==
+"@jsonjoy.com/fs-node@4.69.1":
+  version "4.69.1"
+  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-node/-/fs-node-4.69.1.tgz#ddebaed4eaf7b9dab6039791abd4e2bb76126661"
+  integrity sha512-oIIXv5EfAqj2Wsck9dDa5njbTyCpef4OV+W1h7cYrlph0rRIay91DIhNk+OdiwLgKHoqyBmUWRy3GXAHGiXQZw==
   dependencies:
-    "@jsonjoy.com/fs-core" "4.68.2"
-    "@jsonjoy.com/fs-node-builtins" "4.68.2"
-    "@jsonjoy.com/fs-node-utils" "4.68.2"
-    "@jsonjoy.com/fs-print" "4.68.2"
-    "@jsonjoy.com/fs-snapshot" "4.68.2"
+    "@jsonjoy.com/fs-core" "4.69.1"
+    "@jsonjoy.com/fs-node-builtins" "4.69.1"
+    "@jsonjoy.com/fs-node-utils" "4.69.1"
+    "@jsonjoy.com/fs-print" "4.69.1"
+    "@jsonjoy.com/fs-snapshot" "4.69.1"
     glob-to-regex.js "^1.0.0"
     thingies "^2.5.0"
 
-"@jsonjoy.com/fs-print@4.68.2":
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-print/-/fs-print-4.68.2.tgz#1562c2481393359644e2840c25a5082274378f39"
-  integrity sha512-cBABQmZJXig6bahwNka3+yPNGUF1GeMWbR76ZM1N2ajgCd+S+twZigCoe9+0ueZmkhM9xd2a7688Gy/ch7T+2w==
+"@jsonjoy.com/fs-print@4.69.1":
+  version "4.69.1"
+  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-print/-/fs-print-4.69.1.tgz#4181630e3c2f56114d8a3fdf2c8b85f3bdd58eaf"
+  integrity sha512-As9V7Ra/mHsjHQicor5PTTymcqPb2QRTonedIsMuqMz2JEAZIFdRy+qvi5O15lIe88fASxHQXLIU6H5G01kfxg==
   dependencies:
-    "@jsonjoy.com/fs-node-utils" "4.68.2"
+    "@jsonjoy.com/fs-node-utils" "4.69.1"
     tree-dump "^1.1.0"
 
-"@jsonjoy.com/fs-snapshot@4.68.2":
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-snapshot/-/fs-snapshot-4.68.2.tgz#6f1b2e5aa6827a1075f82162055ca8bedee0fe58"
-  integrity sha512-Aix7+NM38LzvewM0T3PICSgFdF5BVCtVgsjNsrlDPGc9hiMgJzReTDDl2/elgl0A9USMl3QP27x5WwxZSOtrfw==
+"@jsonjoy.com/fs-snapshot@4.69.1":
+  version "4.69.1"
+  resolved "https://registry.yarnpkg.com/@jsonjoy.com/fs-snapshot/-/fs-snapshot-4.69.1.tgz#2973aad8b80124440b2156e8b4061ba9c774445f"
+  integrity sha512-wUffyQdpDSh5RVA+oubKLMcorJfpxUia+ETYPnK6LK+myJ4YVDKWX4UMSjUCapvbhjZRxr6tvwYh4zE3aBpAuA==
   dependencies:
     "@jsonjoy.com/buffers" "^17.65.0"
-    "@jsonjoy.com/fs-node-utils" "4.68.2"
+    "@jsonjoy.com/fs-node-utils" "4.69.1"
     "@jsonjoy.com/json-pack" "^17.65.0"
     "@jsonjoy.com/util" "^17.65.0"
 
@@ -2825,13 +2845,13 @@
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
   integrity sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==
 
-"@schematics/angular@21.2.22":
-  version "21.2.22"
-  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-21.2.22.tgz#ab4ae2107ce90e696e262de92aa8cec59db15cd9"
-  integrity sha512-8UqPRQNUcVx1crCwmY8ji7+nKuRwGVlAwtpgI88nCAixGgGOBNfp4a77zguvJ+w9ZQVl2Xw8yKrzcrkJFk2xBg==
+"@schematics/angular@21.2.23":
+  version "21.2.23"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-21.2.23.tgz#0a924f0f8b2f61f691d50afcab52f7a623303ed3"
+  integrity sha512-bsQm5NbmaOhYzplQbanMp/PTTnZkxcK8ZlWTIrEO2kb5GzOUyl8RGddG4uM35mNyDcQHFEwNLbYkNK9WZM3x1g==
   dependencies:
-    "@angular-devkit/core" "21.2.22"
-    "@angular-devkit/schematics" "21.2.22"
+    "@angular-devkit/core" "21.2.23"
+    "@angular-devkit/schematics" "21.2.23"
     jsonc-parser "3.3.1"
 
 "@sigstore/bundle@^4.0.0":
@@ -5376,9 +5396,9 @@ fast-levenshtein@^2.0.6:
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
 
 fast-uri@^3.0.1:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/fast-uri/-/fast-uri-3.1.6.tgz#bfdd308ef763f835fed059f3c6c925f708e33e3a"
-  integrity sha512-7Ical1vFEMr0onbVzEDIreM22I4khW+fzyQPwvAFWBp1iwdshSZRsL4jjRvPG9JP1uiqMHRto+YU6R2/CzDz5Q==
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/fast-uri/-/fast-uri-3.1.7.tgz#743157d957f3cbb4c65310e033dc2ad4ad7dc60a"
+  integrity sha512-dOvZVzjdZdz7phd9v6jCbwxrBW3fK6n8Rc0CtdmM4bumzMnxywBYhuph6J819RRw/ku+rLbelwfMunktuzVVHg==
 
 faye-websocket@^0.11.3:
   version "0.11.4"
@@ -6963,18 +6983,18 @@ media-typer@^1.1.0:
   integrity sha512-yz3xRaG20c6/BOzvYoDaGtPmGscs7YivItZEEqe6GbwNfHuxu9YNmvnEkMzKldAGY4/80pRcQRZSEnhquk9XuQ==
 
 memfs@^4.43.1:
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/memfs/-/memfs-4.68.2.tgz#26aeb07f3774ccf79bf9d79483ea3241e1383254"
-  integrity sha512-Un1ElEBoIdPI9kg0sm3LebVEuEViodfIvlaG8Z1MFXa7ZnR9vWuPKUo3dt/vuWY2ivc05l76B5QOjdgCzAzmGw==
+  version "4.69.1"
+  resolved "https://registry.yarnpkg.com/memfs/-/memfs-4.69.1.tgz#e139c593ec8fb05ffb83543acfba9ba809a2dd2a"
+  integrity sha512-x4Ion23tLmo/6CTNYrKriwACRWlsw5hg+ZDYr4sRriYiZEu04UmK+7ZE/jXjAeDfe2DlL4UIFAVKllqZlWCJ+g==
   dependencies:
-    "@jsonjoy.com/fs-core" "4.68.2"
-    "@jsonjoy.com/fs-fsa" "4.68.2"
-    "@jsonjoy.com/fs-node" "4.68.2"
-    "@jsonjoy.com/fs-node-builtins" "4.68.2"
-    "@jsonjoy.com/fs-node-to-fsa" "4.68.2"
-    "@jsonjoy.com/fs-node-utils" "4.68.2"
-    "@jsonjoy.com/fs-print" "4.68.2"
-    "@jsonjoy.com/fs-snapshot" "4.68.2"
+    "@jsonjoy.com/fs-core" "4.69.1"
+    "@jsonjoy.com/fs-fsa" "4.69.1"
+    "@jsonjoy.com/fs-node" "4.69.1"
+    "@jsonjoy.com/fs-node-builtins" "4.69.1"
+    "@jsonjoy.com/fs-node-to-fsa" "4.69.1"
+    "@jsonjoy.com/fs-node-utils" "4.69.1"
+    "@jsonjoy.com/fs-print" "4.69.1"
+    "@jsonjoy.com/fs-snapshot" "4.69.1"
     "@jsonjoy.com/json-pack" "^1.11.0"
     "@jsonjoy.com/util" "^1.9.0"
     glob-to-regex.js "^1.0.1"
@@ -8760,9 +8780,9 @@ socks-proxy-agent@^8.0.3:
     socks "^2.8.3"
 
 socks@^2.8.3:
-  version "2.8.9"
-  resolved "https://registry.yarnpkg.com/socks/-/socks-2.8.9.tgz#aa5f130ca0f88a43fa44faf4869c50d22aa27752"
-  integrity sha512-LJhUYUvItdQ0LkJTmPeaEObWXAqFyfmP85x0tch/ez9cahmhlBBLbIqDFnvBnUJGagb0JbIQrkBs1wJ+yRYpEw==
+  version "2.8.10"
+  resolved "https://registry.yarnpkg.com/socks/-/socks-2.8.10.tgz#23aab4dccc1fdae110aaf4fa51cd190552432dc5"
+  integrity sha512-e0VyvkVTwVYViNovRkZ9aodhxVlyoMn7eJhVUPxZ+eK9P/7CBkxvvsBOHqFPEH416726W8tLXXXjKwqgTErrCQ==
   dependencies:
     ip-address "^10.1.1"
     smart-buffer "^4.2.0"
@@ -9957,6 +9977,6 @@ zod@4.3.6:
   integrity sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA==
 
 zone.js@~0.16.0:
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.16.2.tgz#5fc22335bc3e4082ba26985c23ff262a0c4c49a4"
-  integrity sha512-Eky7p2Z1Ig3NnbfodSPoARCjKBSTFMnE/ACsP1L/XJEfY4SdOFce19BsUCWVwL6K5ABZFy5J3bjcMWffX+YM3Q==
+  version "0.16.3"
+  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.16.3.tgz#1c7b8b063376e14cb1e90e53d2f3d02186025c4c"
+  integrity sha512-ihXL9+vhYyEhXz4TDNpHeAOZN9FVrbog0Il64OIEI28UP/n5AaI6gsccRuOHBfx+206agzyoK527bYIO0Foy6A==
