@@ -499,9 +499,9 @@
     tslib "^2.3.0"
 
 "@angular/router@^21.0.0":
-  version "21.2.22"
-  resolved "https://registry.yarnpkg.com/@angular/router/-/router-21.2.22.tgz#5e83cf35ca46c662e497332e7b71774d48b2fd23"
-  integrity sha512-S3Fl6jWjm4DfkaY6ikDDcd7d8J0BiDNjB3+rFarqD0t58UP/ER6Jv4kamPIAKAV2DfQvCnYE8ks1dY1xFlf7Hg==
+  version "21.2.25"
+  resolved "https://registry.yarnpkg.com/@angular/router/-/router-21.2.25.tgz#fd712cc3a3d3a19b7e53108f5de67ce8271781ca"
+  integrity sha512-85ZwJCBEpaXBmezusZLlgW2JzEEByzerlWT34I6IK/ZN4AKG8m2B/vlbTkKmHuzCOGWx1L7xFtPg/URkGGKwSA==
   dependencies:
     tslib "^2.3.0"
 
