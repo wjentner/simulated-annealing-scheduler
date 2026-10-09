@@ -30,10 +30,12 @@
                 </tr>
             </thead>
 
-            @if ((constraints$ | async)?.dates_and_tasks !== undefined) {
+            @if ($safeNavigationMigration((constraints$ | async)?.dates_and_tasks) !== undefined) {
                 <tbody>
                     @for (
-                        dateItem of (constraints$ | async)?.dates_and_tasks | keyvalue;
+                        dateItem of $safeNavigationMigration(
+                            (constraints$ | async)?.dates_and_tasks
+                        ) | keyvalue;
                         track dateItem;
                         let i = $index
                     ) {
