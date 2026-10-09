@@ -1,4 +1,4 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatLuxonDateModule } from '@angular/material-luxon-adapter';
@@ -73,6 +73,6 @@ import { InternImportComponent } from './intern-import/intern-import.component';
         MatCardModule,
         CanvasJSAngularChartsModule,
     ],
-    providers: [provideHttpClient(withInterceptorsFromDi())],
+    providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())],
 })
 export class AppModule {}
