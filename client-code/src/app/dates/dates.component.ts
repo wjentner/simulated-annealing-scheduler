@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { getHolidays, Holiday, isHoliday } from 'feiertagejs';
 import { DateTime } from 'luxon';
@@ -17,6 +17,7 @@ export interface DateItem {
     selector: 'app-dates',
     templateUrl: './dates.component.html',
     styleUrls: ['./dates.component.less'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class DatesComponent implements OnInit {

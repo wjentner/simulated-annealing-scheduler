@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StatisticsService } from '../statistics.service';
 import { TasksService } from '../tasks.service';
@@ -7,12 +7,16 @@ import { TasksService } from '../tasks.service';
     selector: 'app-statistics',
     templateUrl: './statistics.component.html',
     styleUrls: ['./statistics.component.less'],
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false,
 })
 export class StatisticsComponent implements OnInit {
     tasks$: Observable<string[]>;
 
-    constructor(private tasksService: TasksService, public statisticsService: StatisticsService) {}
+    constructor(
+        private tasksService: TasksService,
+        public statisticsService: StatisticsService,
+    ) {}
 
     ngOnInit(): void {
         this.tasks$ = this.tasksService.tasks$.asObservable();

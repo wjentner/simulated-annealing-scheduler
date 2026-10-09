@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ScheduleConstraints, ScheduleConstraintsService } from '../schedule-constraints.service';
 
@@ -6,7 +6,8 @@ import { ScheduleConstraints, ScheduleConstraintsService } from '../schedule-con
     selector: 'app-save',
     templateUrl: './save.component.html',
     styleUrls: ['./save.component.less'],
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false,
 })
 export class SaveComponent implements OnInit {
     result$: Observable<any>;

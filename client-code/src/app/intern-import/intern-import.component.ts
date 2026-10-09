@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DateTime } from 'luxon';
 import { InternImportRequest, InternImportService } from '../intern-import.service';
 import { ScheduleConstraints, ScheduleConstraintsService } from '../schedule-constraints.service';
@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     selector: 'app-intern-import',
     templateUrl: './intern-import.component.html',
     styleUrl: './intern-import.component.less',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class InternImportComponent {

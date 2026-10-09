@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SelectablePerson, SelectablePersonsService } from '../selectable-persons.service';
 
@@ -6,7 +6,8 @@ import { SelectablePerson, SelectablePersonsService } from '../selectable-person
     selector: 'app-selectable-persons',
     templateUrl: './selectable-persons.component.html',
     styleUrls: ['./selectable-persons.component.less'],
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false,
 })
 export class SelectablePersonsComponent implements OnInit {
     selectablePersons$: Observable<SelectablePerson[]>;

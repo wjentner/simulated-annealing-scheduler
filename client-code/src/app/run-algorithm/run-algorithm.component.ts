@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AlgorithmSettings, AlgorithmStatus, RunAlgorithmService } from '../run-algorithm.service';
 import { SolutionsService, SolutionStatus } from '../solutions.service';
@@ -7,7 +7,8 @@ import { SolutionsService, SolutionStatus } from '../solutions.service';
     selector: 'app-run-algorithm',
     templateUrl: './run-algorithm.component.html',
     styleUrls: ['./run-algorithm.component.less'],
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false,
 })
 export class RunAlgorithmComponent implements OnInit {
     expertMode = false;

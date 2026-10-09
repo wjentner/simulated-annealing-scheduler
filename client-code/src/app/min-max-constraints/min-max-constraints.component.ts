@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { filter, map, mergeMap, Observable, toArray } from 'rxjs';
 import {
@@ -13,6 +13,7 @@ import { TasksService } from '../tasks.service';
     selector: 'app-min-max-constraints',
     templateUrl: './min-max-constraints.component.html',
     styleUrls: ['./min-max-constraints.component.less'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class MinMaxConstraintsComponent implements OnInit {

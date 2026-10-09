@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { SolutionsService, SolutionStatus, Statistics } from '../solutions.service';
@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     selector: 'app-solutions',
     templateUrl: './solutions.component.html',
     styleUrls: ['./solutions.component.less'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class SolutionsComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DateTime } from 'luxon';
 import { Observable } from 'rxjs';
@@ -14,7 +14,8 @@ import { TasksService } from '../tasks.service';
     selector: 'app-time-constraints',
     templateUrl: './time-constraints.component.html',
     styleUrls: ['./time-constraints.component.less'],
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false,
 })
 export class TimeConstraintsComponent implements OnInit {
     constraints$: Observable<ScheduleConstraints>;

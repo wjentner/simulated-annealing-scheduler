@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DateTime } from 'luxon';
 import { Observable } from 'rxjs';
@@ -16,6 +16,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
     selector: 'app-adjacent-task-constraints',
     templateUrl: './adjacent-task-constraints.component.html',
     styleUrls: ['./adjacent-task-constraints.component.less'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class AdjacentTaskConstraintsComponent implements OnInit {
