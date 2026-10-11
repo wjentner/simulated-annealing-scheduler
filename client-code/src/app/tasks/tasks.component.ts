@@ -9,8 +9,8 @@ import { TasksService } from '../tasks.service';
     standalone: false,
 })
 export class TasksComponent implements OnInit {
-    tasks: string[];
-    newTask: string;
+    tasks: string[] = [];
+    newTask: string = '';
 
     constructor(private tasksService: TasksService) {}
 
@@ -27,7 +27,7 @@ export class TasksComponent implements OnInit {
 
     add() {
         this.tasks.push(this.newTask);
-        this.newTask = null;
+        this.newTask = '';
         this.tasksService.tasks$.next(this.tasks);
         this.tasksService.save();
     }

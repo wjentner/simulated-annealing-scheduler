@@ -11,7 +11,7 @@ import { TasksService } from '../tasks.service';
     standalone: false,
 })
 export class StatisticsComponent implements OnInit {
-    tasks$: Observable<string[]>;
+    tasks$?: Observable<string[]>;
 
     constructor(
         private tasksService: TasksService,

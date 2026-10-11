@@ -18,9 +18,9 @@ import { TasksService } from '../tasks.service';
     standalone: false,
 })
 export class TimeConstraintsComponent implements OnInit {
-    constraints$: Observable<ScheduleConstraints>;
-    persons$: Observable<SelectablePerson[]>;
-    tasks$: Observable<string[]>;
+    constraints$?: Observable<ScheduleConstraints>;
+    persons$?: Observable<SelectablePerson[]>;
+    tasks$?: Observable<string[]>;
 
     constructor(
         private scheduleConstraintsService: ScheduleConstraintsService,
@@ -40,11 +40,11 @@ export class TimeConstraintsComponent implements OnInit {
     addTimeConstraint() {
         const d = this.scheduleConstraintsService.constraints$.value;
         d.time_constraints.push({
-            person: null,
+            person: '',
             negated: false,
             min_date: DateTime.now().toISODate(),
             max_date: DateTime.now().toISODate(),
-            task: null,
+            task: undefined,
             penalty: 100000,
         });
         this.scheduleConstraintsService.constraints$.next(d);

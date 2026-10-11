@@ -10,8 +10,8 @@ import { ScheduleConstraints, ScheduleConstraintsService } from '../schedule-con
     standalone: false,
 })
 export class SaveComponent implements OnInit {
-    result$: Observable<any>;
-    constraints$: Observable<ScheduleConstraints>;
+    result$?: Observable<any>;
+    constraints$?: Observable<ScheduleConstraints>;
 
     constructor(private scheduleConstraintsService: ScheduleConstraintsService) {}
 

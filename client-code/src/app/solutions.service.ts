@@ -49,7 +49,9 @@ export interface Statistics {
     providedIn: 'root',
 })
 export class SolutionsService {
-    public readonly solutions$: BehaviorSubject<SolutionStatus[]> = new BehaviorSubject([]);
+    public readonly solutions$: BehaviorSubject<SolutionStatus[]> = new BehaviorSubject<
+        SolutionStatus[]
+    >([]);
 
     constructor(
         private http: HttpClient,
@@ -59,7 +61,15 @@ export class SolutionsService {
         this.getSolutions();
     }
 
-    isDesiredDate(dds: TimeConstraint[], date: string, person: string, task?: string): boolean {
+    isDesiredDate(
+        dds: TimeConstraint[] | undefined,
+        date: string,
+        person: string,
+        task?: string,
+    ): boolean {
+        if (!dds) {
+            return false;
+        }
         for (const dd of dds) {
             if (dd.min_date === date && dd.person === person) {
                 if (task && task === dd.task) {
@@ -83,7 +93,7 @@ export class SolutionsService {
         for (const dd of dds) {
             if (dd.min_date === date && dd.max_date === date && dd.negated === false) {
                 let fulfilled = false;
-                for (const v of Object.values(sol.schedule[date])) {
+                for (const v of Object.values(sol?.schedule?.[date] ?? {})) {
                     if (v === dd.person) {
                         fulfilled = true;
                         break;
@@ -126,7 +136,11 @@ export class SolutionsService {
                 .map(tc => {
                     let fulfilled = true;
 
-                    for (const task of Object.keys(sol.schedule[date])) {
+                    if (!sol.schedule) {
+                        sol.schedule = {};
+                    }
+
+                    for (const task of Object.keys(sol?.schedule?.[date] ?? {})) {
                         const person = sol.schedule[date][task];
 
                         if (
@@ -189,7 +203,7 @@ export class SolutionsService {
         return this.http.delete<void>(`${environment.api}/solutions/${name}`);
     }
 
-    calcPersonStats(sol: SolutionStatus): Statistics {
+    calcPersonStats(sol: SolutionStatus): Statistics | null {
         const persMap = new Map<string, Map<string, number>>();
         const totalDDs = new Map<string, number>();
         const hitDDs = new Map<string, number>();
@@ -212,8 +226,8 @@ export class SolutionsService {
                     persMap.set(person, new Map<string, number>());
                 }
 
-                persMap.get(person).set(task, (persMap.get(person).get(task) || 0) + 1);
-                persMap.get(person).set('total', (persMap.get(person).get('total') || 0) + 1);
+                persMap.get(person)?.set(task, (persMap.get(person)?.get(task) || 0) + 1);
+                persMap.get(person)?.set('total', (persMap.get(person)?.get('total') || 0) + 1);
 
                 if (this.isDesiredDate(sol.desiredDates, date, person)) {
                     hitDDs.set(person, (hitDDs.get(person) || 0) + 1);
@@ -221,12 +235,12 @@ export class SolutionsService {
             }
         }
 
-        for (const byDay of Object.values(sol.desiredDatesOfDay)) {
+        for (const byDay of Object.values(sol.desiredDatesOfDay ?? {})) {
             for (const ftc of byDay) {
                 if (!persDesiredDatesMap.has(ftc.person)) {
                     persDesiredDatesMap.set(ftc.person, []);
                 }
-                persDesiredDatesMap.get(ftc.person).push(ftc);
+                persDesiredDatesMap.get(ftc.person)?.push(ftc);
             }
         }
 
@@ -238,13 +252,13 @@ export class SolutionsService {
             });
         }
 
-        for (const byDay of Object.values(sol.undesiredDatesOfDay)) {
+        for (const byDay of Object.values(sol.undesiredDatesOfDay ?? {})) {
             for (const ftc of byDay) {
                 if (!ftc.is_fulfilled) {
                     if (!persUnDesiredDatesMap.has(ftc.person)) {
                         persUnDesiredDatesMap.set(ftc.person, []);
                     }
-                    persUnDesiredDatesMap.get(ftc.person).push(ftc);
+                    persUnDesiredDatesMap.get(ftc.person)?.push(ftc);
                 }
             }
         }
@@ -260,8 +274,8 @@ export class SolutionsService {
         let max = 0;
 
         for (const taskMap of persMap.values()) {
-            if (taskMap.get(task) > max) {
-                max = taskMap.get(task);
+            if ((taskMap?.get(task) ?? 0) > max) {
+                max = taskMap.get(task) ?? 0;
             }
         }
 

@@ -10,7 +10,7 @@ import { SelectablePerson, SelectablePersonsService } from '../selectable-person
     standalone: false,
 })
 export class SelectablePersonsComponent implements OnInit {
-    selectablePersons$: Observable<SelectablePerson[]>;
+    selectablePersons$?: Observable<SelectablePerson[]>;
 
     newPerson: SelectablePerson = {
         id: '',
@@ -48,8 +48,10 @@ export class SelectablePersonsComponent implements OnInit {
         this.selectablePersonService.save();
     }
 
-    onFileSelected(event) {
-        const file: File = event.target.files[0];
+    onFileSelected(event: Event) {
+        // Cast target to HTMLInputElement to access .files
+        const input = event.target as HTMLInputElement;
+        const file: File | undefined = input.files?.[0];
 
         if (file) {
             this.selectablePersonService.vereinsfliegerImport(file);

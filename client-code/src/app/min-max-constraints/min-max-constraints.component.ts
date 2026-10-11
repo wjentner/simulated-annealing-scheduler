@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { filter, map, mergeMap, Observable, toArray } from 'rxjs';
+import { filter, map, mergeMap, Observable, of, toArray } from 'rxjs';
 import {
     MinMaxConstraint,
     ScheduleConstraints,
@@ -19,11 +19,11 @@ import { TasksService } from '../tasks.service';
 export class MinMaxConstraintsComponent implements OnInit {
     editmode = false;
 
-    constraints$: Observable<ScheduleConstraints>;
-    persons$: Observable<SelectablePerson[]>;
-    selectablePersons$: Observable<SelectablePerson[]>;
-    tasks$: Observable<string[]>;
-    personAdd: SelectablePerson;
+    constraints$?: Observable<ScheduleConstraints>;
+    persons$?: Observable<SelectablePerson[]>;
+    selectablePersons$?: Observable<SelectablePerson[]>;
+    tasks$?: Observable<string[]>;
+    personAdd?: SelectablePerson;
 
     constructor(
         private scheduleConstraintsService: ScheduleConstraintsService,
@@ -73,7 +73,10 @@ export class MinMaxConstraintsComponent implements OnInit {
         return min + ' / ' + max;
     }
 
-    addParticipant(person: SelectablePerson) {
+    addParticipant(person: SelectablePerson | undefined) {
+        if (!person) {
+            return;
+        }
         const p = this.scheduleConstraintsService.constraints$.value;
 
         // todo: add another min max constraint
@@ -95,6 +98,9 @@ export class MinMaxConstraintsComponent implements OnInit {
 
     addMinMaxConstraintGeneral(person: string) {
         const d = this.scheduleConstraintsService.constraints$.value;
+        if (!d.min_max_constraints_general) {
+            d.min_max_constraints_general = {};
+        }
         d.min_max_constraints_general[person] = {
             min: 1,
             max: 5,
@@ -120,12 +126,15 @@ export class MinMaxConstraintsComponent implements OnInit {
 
     removeMinMaxConstraintGeneral(person: string) {
         const d = this.scheduleConstraintsService.constraints$.value;
-        delete d.min_max_constraints_general[person];
+        delete d.min_max_constraints_general?.[person];
         this.scheduleConstraintsService.constraints$.next(d);
         this.save();
     }
 
     getRemainingPersons(): Observable<SelectablePerson[]> {
+        if (!this.constraints$) {
+            return of();
+        }
         return this.constraints$.pipe(
             map(d =>
                 this.personsService.selectablePersons$.value.filter(

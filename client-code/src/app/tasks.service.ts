@@ -8,7 +8,7 @@ import { HasWarnings, Warnings } from './warning-interface';
     providedIn: 'root',
 })
 export class TasksService implements HasWarnings {
-    public readonly tasks$: BehaviorSubject<string[]> = new BehaviorSubject([]);
+    public readonly tasks$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
 
     constructor(private http: HttpClient) {
         this.getTasks().subscribe(t => this.tasks$.next(t));

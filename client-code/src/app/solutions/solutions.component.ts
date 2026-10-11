@@ -15,12 +15,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     standalone: false,
 })
 export class SolutionsComponent implements OnInit {
-    solutions$: Observable<SolutionStatus[]>;
-    tasks$: Observable<string[]>;
+    solutions$?: Observable<SolutionStatus[]>;
+    tasks$?: Observable<string[]>;
 
-    selectedSolution: SolutionStatus;
+    selectedSolution?: SolutionStatus;
 
-    personStats: Statistics;
+    personStats: Statistics | null = null;
 
     downloadUrlPrefix = `${environment.api}/solutions/`;
 
@@ -89,6 +89,9 @@ export class SolutionsComponent implements OnInit {
     }
 
     deleteSolution() {
+        if (!this.selectedSolution) {
+            return;
+        }
         this.solutionsService.deleteSolution(this.selectedSolution.name).subscribe(() => {
             this.solutionsService.getSolutions();
             this._snackBar.open('Solution deleted!', 'OK', { duration: 2000 });
@@ -96,20 +99,29 @@ export class SolutionsComponent implements OnInit {
     }
 
     reloadSolution() {
+        if (!this.selectedSolution) {
+            return;
+        }
         this.solutionsService
             .getSolution(this.selectedSolution.name)
             .subscribe(d => this.updateSol(d));
     }
 
-    getMaxForTask(task: string): number {
+    getMaxForTask(task: string): number | null {
+        if (!this.personStats) {
+            return null;
+        }
         return this.solutionsService.getMax(this.personStats.persMap, task);
     }
 
     getUndesired(
-        tcs: FulfilledTimeConstraint[],
-        person: string,
+        tcs?: FulfilledTimeConstraint[],
+        person?: string,
         task?: string,
-    ): FulfilledTimeConstraint {
+    ): FulfilledTimeConstraint | undefined {
+        if (!tcs || !person) {
+            return undefined;
+        }
         return tcs.find(
             tc =>
                 tc.is_fulfilled === false &&
@@ -118,7 +130,10 @@ export class SolutionsComponent implements OnInit {
         );
     }
 
-    getUndesiredText(tcs: FulfilledTimeConstraint[], person: string, task?: string): string {
+    getUndesiredText(tcs?: FulfilledTimeConstraint[], person?: string, task?: string): string {
+        if (!tcs || !person) {
+            return '';
+        }
         const tc = this.getUndesired(tcs, person, task);
         if (!tc) {
             return '';
@@ -128,6 +143,9 @@ export class SolutionsComponent implements OnInit {
 
     getFulfilledDesiredDateCount(sol: SolutionStatus): number {
         let sum = 0;
+        if (!sol.desiredDatesOfDay) {
+            return 0;
+        }
         for (const perDay of Object.values(sol.desiredDatesOfDay)) {
             for (const tc of perDay) {
                 if (tc.is_fulfilled) {
@@ -140,6 +158,9 @@ export class SolutionsComponent implements OnInit {
 
     getUnfulfilledDesiredDateCount(sol: SolutionStatus): number {
         let sum = 0;
+        if (!sol.desiredDatesOfDay) {
+            return 0;
+        }
         for (const perDay of Object.values(sol.desiredDatesOfDay)) {
             for (const tc of perDay) {
                 if (!tc.is_fulfilled) {
@@ -152,6 +173,9 @@ export class SolutionsComponent implements OnInit {
 
     getUnfulfilledUndesiredDateCount(sol: SolutionStatus): number {
         let sum = 0;
+        if (!sol.undesiredDatesOfDay) {
+            return 0;
+        }
         for (const perDay of Object.values(sol.undesiredDatesOfDay)) {
             for (const tc of perDay) {
                 if (!tc.is_fulfilled) {

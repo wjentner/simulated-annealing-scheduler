@@ -20,9 +20,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
     standalone: false,
 })
 export class AdjacentTaskConstraintsComponent implements OnInit {
-    constraints$: Observable<ScheduleConstraints>;
-    persons$: Observable<SelectablePerson[]>;
-    tasks$: Observable<string[]>;
+    constraints$?: Observable<ScheduleConstraints>;
+    persons$?: Observable<SelectablePerson[]>;
+    tasks$?: Observable<string[]>;
 
     constructor(
         private scheduleConstraintsService: ScheduleConstraintsService,
@@ -42,12 +42,15 @@ export class AdjacentTaskConstraintsComponent implements OnInit {
 
     addAdjacentTaskConstrint() {
         const d = this.scheduleConstraintsService.constraints$.value;
+        if (!d.adjacent_task_constraints) {
+            d.adjacent_task_constraints = [];
+        }
         d.adjacent_task_constraints.push({
-            person: null,
+            person: '',
             negated: false,
-            own_task: null,
-            adjacent_task: null,
-            adjacent_person: null,
+            own_task: undefined,
+            adjacent_task: undefined,
+            adjacent_person: undefined,
             penalty: 100000,
         });
         this.scheduleConstraintsService.constraints$.next(d);
@@ -55,9 +58,11 @@ export class AdjacentTaskConstraintsComponent implements OnInit {
 
     removeAdjacentTaskConstraint(t: AdjacentTaskConstraint) {
         const d = this.scheduleConstraintsService.constraints$.value;
-        const i = d.adjacent_task_constraints.indexOf(t);
-        if (i > -1) {
-            d.adjacent_task_constraints.splice(i, 1);
+        if (d.adjacent_task_constraints) {
+            const i = d.adjacent_task_constraints.indexOf(t);
+            if (i > -1) {
+                d.adjacent_task_constraints.splice(i, 1);
+            }
         }
         this.scheduleConstraintsService.constraints$.next(d);
         this.save();

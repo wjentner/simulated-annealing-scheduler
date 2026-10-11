@@ -14,9 +14,9 @@ export interface SelectablePerson {
     providedIn: 'root',
 })
 export class SelectablePersonsService implements HasWarnings {
-    public readonly selectablePersons$: BehaviorSubject<SelectablePerson[]> = new BehaviorSubject(
-        [],
-    );
+    public readonly selectablePersons$: BehaviorSubject<SelectablePerson[]> = new BehaviorSubject<
+        SelectablePerson[]
+    >([]);
 
     constructor(private http: HttpClient) {
         this.http

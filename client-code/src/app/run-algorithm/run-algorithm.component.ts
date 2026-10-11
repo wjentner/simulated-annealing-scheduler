@@ -13,16 +13,16 @@ import { SolutionsService, SolutionStatus } from '../solutions.service';
 export class RunAlgorithmComponent implements OnInit {
     expertMode = false;
 
-    solutions$: Observable<SolutionStatus[]>;
+    solutions$?: Observable<SolutionStatus[]>;
 
-    status: AlgorithmStatus;
+    status?: AlgorithmStatus;
 
     settings: AlgorithmSettings = {
         alpha: 0.999,
         start_temp: 10000,
         k: 1000,
         num_offsprings: 1000,
-        initial_state: null,
+        initial_state: undefined,
     };
 
     constructor(

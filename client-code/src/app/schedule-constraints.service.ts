@@ -71,7 +71,19 @@ export interface ScheduleConstraints {
     providedIn: 'root',
 })
 export class ScheduleConstraintsService implements HasWarnings {
-    public readonly constraints$: BehaviorSubject<ScheduleConstraints> = new BehaviorSubject(null);
+    public readonly constraints$: BehaviorSubject<ScheduleConstraints> =
+        new BehaviorSubject<ScheduleConstraints>({
+            buddy_constraints: [],
+            min_max_constraints: {},
+            dates_and_tasks: {},
+            time_constraints: [],
+            default_min_max_constraint_penalty: 0,
+            empty_task_penalty: 0,
+            not_uniform_penalty_factor: 0,
+            not_uniform_penalty_min_days: 0,
+            sat_sun_inequality_factor: 0,
+            task_variance_penalty_factor: 0,
+        });
 
     constructor(private http: HttpClient) {
         this.http.get<ScheduleConstraints>(`${environment.api}/constraints`).subscribe(d => {
@@ -169,15 +181,19 @@ export class ScheduleConstraintsService implements HasWarnings {
                 map(d => {
                     for (const tc of d.time_constraints) {
                         if ((tc.min_date as unknown) instanceof DateTime) {
-                            tc.min_date = (tc.min_date as unknown as DateTime).toISODate();
+                            tc.min_date = (
+                                tc.min_date as unknown as DateTime
+                            ).toISODate() as string;
                         } else {
-                            tc.min_date = DateTime.fromISO(tc.min_date).toISODate();
+                            tc.min_date = DateTime.fromISO(tc.min_date).toISODate() as string;
                         }
 
                         if ((tc.max_date as unknown) instanceof DateTime) {
-                            tc.max_date = (tc.max_date as unknown as DateTime).toISODate();
+                            tc.max_date = (
+                                tc.max_date as unknown as DateTime
+                            ).toISODate() as string;
                         } else {
-                            tc.max_date = DateTime.fromISO(tc.max_date).toISODate();
+                            tc.max_date = DateTime.fromISO(tc.max_date).toISODate() as string;
                         }
                     }
                     return d;

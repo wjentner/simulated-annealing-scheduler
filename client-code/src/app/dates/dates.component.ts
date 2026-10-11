@@ -21,9 +21,9 @@ export interface DateItem {
     standalone: false,
 })
 export class DatesComponent implements OnInit {
-    constraints$: Observable<ScheduleConstraints>;
+    constraints$?: Observable<ScheduleConstraints | null>;
     // dates$: Observable<DateItem[]>;
-    tasks$: Observable<string[]>;
+    tasks$?: Observable<string[]>;
 
     createFromDate: DateTime = DateTime.now();
     createToDate: DateTime = DateTime.now();
@@ -84,7 +84,7 @@ export class DatesComponent implements OnInit {
 
     addDate(date: DateTime) {
         const d = this.scheduleConstraintsService.constraints$.value;
-        d.dates_and_tasks[date.toISODate()] = {};
+        d.dates_and_tasks[date.toISODate() as string] = {};
         this.scheduleConstraintsService.constraints$.next(d);
         this.save();
     }
@@ -98,7 +98,7 @@ export class DatesComponent implements OnInit {
                 //saturday
                 const isAHoliday = isHoliday(mCur.toJSDate(), 'BW');
                 // const isSunday = mCur.weekday === 7;
-                const iso = mCur.toISODate();
+                const iso = mCur.toISODate() as string;
                 d.dates_and_tasks[iso] = {};
                 d.dates_and_tasks[iso].holiday = isAHoliday;
                 for (const t of this.tasksService.tasks$.value) {
@@ -124,7 +124,7 @@ export class DatesComponent implements OnInit {
         return this.statisticsService.numDate(task);
     }
 
-    showHoliday(isoDate: string): string {
+    showHoliday(isoDate: string): string | undefined {
         const d = DateTime.fromISO(isoDate);
         if (!isHoliday(d.toJSDate(), 'BW')) {
             return '';
@@ -133,7 +133,7 @@ export class DatesComponent implements OnInit {
                 const year = d.year + '';
                 this.getHolidays(year);
             }
-            return this.holidaysMap.get(isoDate).translate(undefined);
+            return this.holidaysMap.get(isoDate)?.translate(undefined);
         }
     }
 
@@ -141,7 +141,7 @@ export class DatesComponent implements OnInit {
         const holidays = getHolidays(year, 'BW');
 
         for (const h of holidays) {
-            const key = DateTime.fromJSDate(h.date).toISODate();
+            const key = DateTime.fromJSDate(h.date).toISODate() as string;
             this.holidaysMap.set(key, h);
         }
     }

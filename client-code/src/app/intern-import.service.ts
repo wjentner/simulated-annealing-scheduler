@@ -51,8 +51,14 @@ export class InternImportService {
 
                 sc.time_constraints = [...sc.time_constraints, ...ic.time_constraints];
 
-                for (const [person, c] of Object.entries(ic.min_max_constraints_general)) {
-                    sc.min_max_constraints_general[person] = c;
+                if (!sc.min_max_constraints_general) {
+                    sc.min_max_constraints_general = {};
+                }
+
+                if (ic.min_max_constraints_general) {
+                    for (const [person, c] of Object.entries(ic.min_max_constraints_general)) {
+                        sc.min_max_constraints_general[person] = c;
+                    }
                 }
 
                 return sc;
