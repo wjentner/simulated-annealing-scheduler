@@ -10,14 +10,6 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@angular-devkit/architect@0.2202.2":
-  version "0.2202.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2202.2.tgz#e79d2938186f42711efac81a4300a9bb5e507b97"
-  integrity sha512-7ScBo47haHyRGG5M5ZEpbhwHgO2LEDbCLwNCjpjwhtRFDIEmAFbULM1OQjIybN3x+wOyY1kWRK7KvihCbs371g==
-  dependencies:
-    "@angular-devkit/core" "22.2.2"
-    rxjs "7.8.2"
-
 "@angular-devkit/architect@0.2202.3", "@angular-devkit/architect@>= 0.2200.0 < 0.2300.0":
   version "0.2202.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2202.3.tgz#ed263805072ccab035db32873fa7f2dede56a2d1"
@@ -26,16 +18,16 @@
     "@angular-devkit/core" "22.2.3"
     rxjs "7.8.2"
 
-"@angular-devkit/build-angular@22.2.2":
-  version "22.2.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-22.2.2.tgz#5a1fe13b6d1f83fd4b43f7ef369c52e158010459"
-  integrity sha512-7cMwmQXxwjRJ3ZaH3s3PO7Jt0+fsO41QRIZiuQgIRtw0bdiNDeVKyzoIErIt4x0ZHvnmEJTwkYE89t2FozlQfQ==
+"@angular-devkit/build-angular@22.2.3":
+  version "22.2.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-22.2.3.tgz#3a855addf247b64ed091b60fc77137b20fd86fed"
+  integrity sha512-tRYpLvaXtujTA8LGMDYKC7dOm8DZDD/YeIcrVmSbaQu2vKhOgvIO85DE11/Xcn3meb6aOD7kjTgEIK4dUcelpQ==
   dependencies:
     "@ampproject/remapping" "2.3.0"
-    "@angular-devkit/architect" "0.2202.2"
-    "@angular-devkit/build-webpack" "0.2202.2"
-    "@angular-devkit/core" "22.2.2"
-    "@angular/build" "22.2.2"
+    "@angular-devkit/architect" "0.2202.3"
+    "@angular-devkit/build-webpack" "0.2202.3"
+    "@angular-devkit/core" "22.2.3"
+    "@angular/build" "22.2.3"
     "@babel/core" "8.0.5"
     "@babel/generator" "8.0.5"
     "@babel/helper-annotate-as-pure" "8.0.0"
@@ -46,7 +38,7 @@
     "@babel/preset-env" "8.0.5"
     "@babel/runtime" "8.0.5"
     "@discoveryjs/json-ext" "1.1.0"
-    "@ngtools/webpack" "22.2.2"
+    "@ngtools/webpack" "22.2.3"
     ansi-colors "4.1.3"
     autoprefixer "10.6.0"
     babel-loader "10.1.1"
@@ -87,25 +79,13 @@
   optionalDependencies:
     esbuild "0.28.2"
 
-"@angular-devkit/build-webpack@0.2202.2":
-  version "0.2202.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-webpack/-/build-webpack-0.2202.2.tgz#94988b6cc128b8060a3f8bf81ec448e41f194717"
-  integrity sha512-X3CeAGmdWGmc/fu2vPkVMkJ4Y9pP2ZJBuMVhJvsv6Ff8odWjhbGJeB8Q6C/L4K6d/12tU1n0+A/6eQja+jrTCg==
+"@angular-devkit/build-webpack@0.2202.3":
+  version "0.2202.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-webpack/-/build-webpack-0.2202.3.tgz#dab4d332d739351d8f0ca2d5c82a57953d91e0fb"
+  integrity sha512-6SJrycw6pofQ5hvKWpMAA5at3N9BU+Z10tavye6eb0bzAwQjo8PupkjVrWBzgPYCpVpAinWYJ3h1RmvUOMChQw==
   dependencies:
-    "@angular-devkit/architect" "0.2202.2"
+    "@angular-devkit/architect" "0.2202.3"
     rxjs "7.8.2"
-
-"@angular-devkit/core@22.2.2":
-  version "22.2.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-22.2.2.tgz#ee8c3c23ebde4bb6cac6719c07bcbaaa5dd803ba"
-  integrity sha512-iQexb5xUON9AkTzvBiMftrHWLguIlYv6M/BOH/sj7U5L8eOPMu8N269WF74xPo4n/X5tusFLqniGI0zolT2Sjg==
-  dependencies:
-    ajv "8.20.0"
-    ajv-formats "3.0.1"
-    jsonc-parser "3.3.1"
-    picomatch "4.0.7"
-    rxjs "7.8.2"
-    source-map "0.8.0"
 
 "@angular-devkit/core@22.2.3", "@angular-devkit/core@>= 22.0.0 < 23.0.0":
   version "22.2.3"
@@ -197,13 +177,13 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/build@22.2.2":
-  version "22.2.2"
-  resolved "https://registry.yarnpkg.com/@angular/build/-/build-22.2.2.tgz#81399fe7f9e69c55b3eaa45ba2b0071063b66e3f"
-  integrity sha512-QHJWkZdEWTqqb3+HiSp8lnuS4iQJCa7yTK9gg5TaMIjCoZzP9mD9L417stiVDZGj2J3Y9mrml044nEVvSbW0ig==
+"@angular/build@22.2.3":
+  version "22.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/build/-/build-22.2.3.tgz#26d03a32691d0382e127234a2e8ee463dd0db495"
+  integrity sha512-EtNEuPBUCyIuzdXrQ/nINvgFzW8bUI5AkAZtJiSn7nsFOlvaygaKN0kENNTO3zRl3T9B4GDog+Ks5Nec3FBkhg==
   dependencies:
     "@ampproject/remapping" "2.3.0"
-    "@angular-devkit/architect" "0.2202.2"
+    "@angular-devkit/architect" "0.2202.3"
     "@babel/core" "8.0.5"
     "@inquirer/confirm" "6.3.2"
     "@parcel/watcher" "2.6.0"
@@ -2169,10 +2149,10 @@
     "@napi-rs/nice-win32-ia32-msvc" "1.1.1"
     "@napi-rs/nice-win32-x64-msvc" "1.1.1"
 
-"@ngtools/webpack@22.2.2":
-  version "22.2.2"
-  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-22.2.2.tgz#26cceb238ba60b25cbe60c5c134abf7d10673862"
-  integrity sha512-kdjnLlTvndSYh/ffih8cXXWQJ5E39X5slIyv6At4O+MD7FcBD8jTIVmtUn1rjQYSQuNbiUDT3I7sdQD/GA4uKg==
+"@ngtools/webpack@22.2.3":
+  version "22.2.3"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-22.2.3.tgz#b40a139960859e4f8655eb00e6b397598ad240d2"
+  integrity sha512-N7wSyXM2HIGxSkeCc5Na+N3SCsMIS+GTfQAmoUpLfWfY3dijfOTdLYdfmewTuyzkh+3oRvxqSbpIavfyuyI5/g==
 
 "@noble/hashes@1.8.0":
   version "1.8.0"
