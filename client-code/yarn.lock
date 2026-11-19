@@ -18,12 +18,12 @@
     "@angular-devkit/core" "22.2.7"
     rxjs "7.8.2"
 
-"@angular-devkit/architect@0.2202.8", "@angular-devkit/architect@>= 0.2200.0 < 0.2300.0":
-  version "0.2202.8"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2202.8.tgz#c947f26c4db3b84ed4cb8700c1a9fff29638b032"
-  integrity sha512-xIbzhzuHsZEsI8gMl/Yv90YVavVm7KlGlB2aCXgapElXTi7oqA8DCgcn3rCnbQvOFV2YhPsMi9tKi2q23PSzmw==
+"@angular-devkit/architect@0.2203.0", "@angular-devkit/architect@>= 0.2200.0 < 0.2300.0":
+  version "0.2203.0"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2203.0.tgz#34df6a9827abf431264800687fb4a6c7fe2faa31"
+  integrity sha512-pnLupy97/gcfxjSanEDSmK6W+SUlGxdpehbR/kl6PWsHyIOQI9gDwMDNv79jHw1JRyF0QGd+oYrg55l16BKDuw==
   dependencies:
-    "@angular-devkit/core" "22.2.8"
+    "@angular-devkit/core" "22.3.0"
     rxjs "7.8.2"
 
 "@angular-devkit/build-angular@22.2.7":
@@ -107,10 +107,10 @@
     rxjs "7.8.2"
     source-map "0.8.0"
 
-"@angular-devkit/core@22.2.8", "@angular-devkit/core@>= 22.0.0 < 23.0.0":
-  version "22.2.8"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-22.2.8.tgz#bd955cc934df06aaf3c8645fc6dd8caa2c608bc9"
-  integrity sha512-9DKJfCpyCru+mvSLkaLKXMWdTJHGMqm8oYpNDdg3Or4E/FT8YEBBSNu22xgzCrHX/L4+v4a004OWchCunROAfw==
+"@angular-devkit/core@22.3.0", "@angular-devkit/core@>= 22.0.0 < 23.0.0":
+  version "22.3.0"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-22.3.0.tgz#15fb6c95cccf37e945829414b31418c4d980b34d"
+  integrity sha512-6/qXIYkzxO7KXxSD6FSuD8rfCKsMvXPhB9hpWFTtLvacuFtyWMazqnEqUZuFz2oK1qanvcvNkmbZO+6WVzqLJA==
   dependencies:
     ajv "8.20.0"
     ajv-formats "3.0.1"
@@ -119,15 +119,15 @@
     rxjs "7.8.2"
     source-map "0.8.0"
 
-"@angular-devkit/schematics@22.2.8", "@angular-devkit/schematics@>= 22.0.0 < 23.0.0":
-  version "22.2.8"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-22.2.8.tgz#d8b289f748ae5544d57acca62565a24183df3292"
-  integrity sha512-BeY9OrHZk1NLcZ0ms8oVEqhvDHzZFdMT28QF4ftur8Yaocey32a46ZgPuC9pydTAI6AAOigRKDdAePWdF+iVkQ==
+"@angular-devkit/schematics@22.3.0", "@angular-devkit/schematics@>= 22.0.0 < 23.0.0":
+  version "22.3.0"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-22.3.0.tgz#aafda06ec4aa7b5fd82f3723d7f7458589e68bfb"
+  integrity sha512-+g8v7Kh6GMirUslVz1cumWkVMJ22Zr0Id1SkE6DOK3fsvqi8WeyTXe+Lh/m365lrBsPjBES+FAjjroZFvpmz+A==
   dependencies:
-    "@angular-devkit/core" "22.2.8"
+    "@angular-devkit/core" "22.3.0"
     jsonc-parser "3.3.1"
-    magic-string "1.4.1"
-    ora "9.4.1"
+    magic-string "1.4.5"
+    ora "10.0.0"
     rxjs "7.8.2"
 
 "@angular-eslint/builder@22.7.0":
@@ -242,24 +242,24 @@
     tslib "^2.3.0"
 
 "@angular/cli@^22.2.2":
-  version "22.2.8"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-22.2.8.tgz#a6deac25f187c6364e541cee570573867701f112"
-  integrity sha512-/UQI2Xd2SAlOEr3aJNcB8Uv6rIQxM5MGxouNx7aKrqommEkeccoJYIjF041mvkUmgB7D257yaqbxmAHFC0TA1g==
+  version "22.3.0"
+  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-22.3.0.tgz#8971fb1bbe2a92dec04f0392db6009eb7d89f9a0"
+  integrity sha512-3nKo+5JvcMTJTI472WGV66x+rAgU5pTdbjJYgGT8CWi+7QCwhu5DCqNP8aWpfW4PcJeaRVul+P9yyLZfynT/ag==
   dependencies:
-    "@angular-devkit/architect" "0.2202.8"
-    "@angular-devkit/core" "22.2.8"
-    "@angular-devkit/schematics" "22.2.8"
-    "@inquirer/prompts" "8.7.2"
-    "@listr2/prompt-adapter-inquirer" "4.2.7"
-    "@modelcontextprotocol/server" "2.3.1"
-    "@schematics/angular" "22.2.8"
+    "@angular-devkit/architect" "0.2203.0"
+    "@angular-devkit/core" "22.3.0"
+    "@angular-devkit/schematics" "22.3.0"
+    "@inquirer/prompts" "8.8.0"
+    "@listr2/prompt-adapter-inquirer" "4.3.4"
+    "@modelcontextprotocol/server" "2.4.0"
+    "@schematics/angular" "22.3.0"
     jsonc-parser "3.3.1"
-    listr2 "11.1.0"
+    listr2 "11.4.1"
     npm-package-arg "14.0.0"
-    parse5-html-rewriting-stream "8.0.1"
-    semver "7.8.5"
-    yargs "18.1.0"
-    zod "4.6.6"
+    parse5-html-rewriting-stream "8.1.1"
+    semver "7.8.6"
+    yargs "18.2.0"
+    zod "4.6.7"
 
 "@angular/common@^22.2.2":
   version "22.3.0"
@@ -1652,7 +1652,7 @@
   resolved "https://registry.yarnpkg.com/@inquirer/ansi/-/ansi-2.1.0.tgz#5bc0bb4cb986c52f325141e1964de5fa7b21d1ce"
   integrity sha512-63GU5AD9KhNbWM0jlhHoMJTEFck2upFOPxHlnCKf3xYTV3rjTUUQfodihmTnfYQzMLS29oy8lK/gA1eJgu4bhA==
 
-"@inquirer/checkbox@^5.2.5":
+"@inquirer/checkbox@^5.3.0":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@inquirer/checkbox/-/checkbox-5.3.0.tgz#fab107c89138d93b220381f9bb49d4850ac20e38"
   integrity sha512-3QQSO87A+JoRtOtjtsgX2enwTL+3+VBVrkUpdqrIxMOgn5+W5sE57PcCPAiNUIESHxV4Q6mNEGxq2xLmRa0/yw==
@@ -1670,7 +1670,7 @@
     "@inquirer/core" "^12.0.3"
     "@inquirer/type" "4.1.1"
 
-"@inquirer/confirm@^6.3.2":
+"@inquirer/confirm@^6.4.0":
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/@inquirer/confirm/-/confirm-6.4.0.tgz#aef6e3ed14e8da1acd05a1983635b2576b85631e"
   integrity sha512-+DCZxrOF01Q/1SzTQkgycAQPS/Jf+Yol0h1P/MVmopukTsxGOu1h/LKqf30y0eHKFZYYrgUMVhGDhEbPmSPi9A==
@@ -1691,7 +1691,7 @@
     mute-stream "^4.0.0"
     signal-exit "^4.1.0"
 
-"@inquirer/editor@^5.3.3":
+"@inquirer/editor@^5.4.0":
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/@inquirer/editor/-/editor-5.4.0.tgz#f9e91d18a0d604f73e992efa78ef3558576c309f"
   integrity sha512-L7vdCe4jnMpzhDisu1tAnr4WGvfPOVz+vNFXyIIL7O2Ycn/n90sn1ARvg+4cwzLf+us51BE/cX7uhnrLcal3+g==
@@ -1700,7 +1700,7 @@
     "@inquirer/external-editor" "^3.1.0"
     "@inquirer/type" "4.3.0"
 
-"@inquirer/expand@^5.1.5":
+"@inquirer/expand@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@inquirer/expand/-/expand-5.2.0.tgz#e4c67d9b2eae66ba3ddbb5edaee601f60d281a00"
   integrity sha512-AOp2KQk7QojUyWOP7VkqdBWmxLRaVH58wQMx3N4//P530EDtpVp1EWIjAJubx9ZohWS/UCEpIkA1TuiNki0iOA==
@@ -1721,7 +1721,7 @@
   resolved "https://registry.yarnpkg.com/@inquirer/figures/-/figures-2.1.0.tgz#d31ea8b21e5223102239f5e38b6c52e5dffe5106"
   integrity sha512-CR9u2PME23jxy2SOyTb117efwAAPm98Zr+LoWI+PiQ55D6U8Yeu/HyFTxwytKhPa6oxAGzdsm2Kg7oLS6B9z8w==
 
-"@inquirer/input@^5.1.6":
+"@inquirer/input@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@inquirer/input/-/input-5.2.0.tgz#b4e0e6050fb322f38c1d3da0303c3b49b0c5b5b2"
   integrity sha512-sIUPnN2X7M+7dq3RUd+e9QRacYnM+6B+kSucwQgj5VC5Eo/f+CIr2NyPBumxsViI+wzfokkgop/3x3KfHxNyJw==
@@ -1729,7 +1729,7 @@
     "@inquirer/core" "^12.1.0"
     "@inquirer/type" "4.3.0"
 
-"@inquirer/number@^4.2.3":
+"@inquirer/number@^4.3.0":
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@inquirer/number/-/number-4.3.0.tgz#a73ed13724251eb8dbe63981771ef9f87ade54ac"
   integrity sha512-xYkX4sPVgox0F7yQwpz/MByWjOGdLEf1pdjH+Lji2gAzSs2xezz5bN5YgS1n0tx9wo0mRhGvq1KJGtvDZ9XXcQ==
@@ -1737,7 +1737,7 @@
     "@inquirer/core" "^12.1.0"
     "@inquirer/type" "4.3.0"
 
-"@inquirer/password@^5.2.2":
+"@inquirer/password@^5.3.0":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@inquirer/password/-/password-5.3.0.tgz#3f43a9719dfe554d97bf9e87650914404e22ac6b"
   integrity sha512-KVqW4G/UbMK06uBN76xF89JKYC9YBWU7v+Kc2tUwMCO8pg3ASBr0HVabl1KaSqF94O2KiRu8aKx4EicN78PK+A==
@@ -1746,23 +1746,23 @@
     "@inquirer/core" "^12.1.0"
     "@inquirer/type" "4.3.0"
 
-"@inquirer/prompts@8.7.2":
-  version "8.7.2"
-  resolved "https://registry.yarnpkg.com/@inquirer/prompts/-/prompts-8.7.2.tgz#fbbfd7e552e53608c740944908c1a0fc0cf3369c"
-  integrity sha512-QoRB4wFIjgH5iOhSjoIKMkTvSHDuV+O3OITlIqAYO0oK5x364GJILXiMBvlPiE+klg7Xx9tq5XVqQHcGUDYYPA==
+"@inquirer/prompts@8.8.0":
+  version "8.8.0"
+  resolved "https://registry.yarnpkg.com/@inquirer/prompts/-/prompts-8.8.0.tgz#5e5900c3a0817ee4b6b393c748c1f4697d17bc1a"
+  integrity sha512-yYVT2Eo3mafb9tnU2Mr3+wh5wLCWyspExqVoPSMCIfBIn3ZUTE4IDfbCMbMgXaOH0tH+JZEhOtfczQhDzOjIGg==
   dependencies:
-    "@inquirer/checkbox" "^5.2.5"
-    "@inquirer/confirm" "^6.3.2"
-    "@inquirer/editor" "^5.3.3"
-    "@inquirer/expand" "^5.1.5"
-    "@inquirer/input" "^5.1.6"
-    "@inquirer/number" "^4.2.3"
-    "@inquirer/password" "^5.2.2"
-    "@inquirer/rawlist" "^5.3.5"
-    "@inquirer/search" "^4.3.3"
-    "@inquirer/select" "^5.2.5"
+    "@inquirer/checkbox" "^5.3.0"
+    "@inquirer/confirm" "^6.4.0"
+    "@inquirer/editor" "^5.4.0"
+    "@inquirer/expand" "^5.2.0"
+    "@inquirer/input" "^5.2.0"
+    "@inquirer/number" "^4.3.0"
+    "@inquirer/password" "^5.3.0"
+    "@inquirer/rawlist" "^5.4.0"
+    "@inquirer/search" "^4.4.0"
+    "@inquirer/select" "^5.3.0"
 
-"@inquirer/rawlist@^5.3.5":
+"@inquirer/rawlist@^5.4.0":
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/@inquirer/rawlist/-/rawlist-5.4.0.tgz#d27b4e3b502898186734893d6f66cffa1755f53c"
   integrity sha512-x42wcy465GM5/mHNKBFdAJbLlLyzmYqr/DEa6F49nHpI+03EFwRCRKeLGQakx5XqZ4unc2yFuS78qAD4Rb0iFA==
@@ -1770,7 +1770,7 @@
     "@inquirer/core" "^12.1.0"
     "@inquirer/type" "4.3.0"
 
-"@inquirer/search@^4.3.3":
+"@inquirer/search@^4.4.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@inquirer/search/-/search-4.4.0.tgz#dd7cbf54114a1166e4dec04ece30fae542e23c17"
   integrity sha512-UJ+9tkzPT1AjnvjuPFYcOdO3BVeN28bfSXajYRFZTRgA9OiNl4k2Nn2cHHPwiIDyPHlvOnmE9ZOHyXhPHtvb+A==
@@ -1779,7 +1779,7 @@
     "@inquirer/figures" "^2.1.0"
     "@inquirer/type" "4.3.0"
 
-"@inquirer/select@^5.2.5":
+"@inquirer/select@^5.3.0":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@inquirer/select/-/select-5.3.0.tgz#fc893a8db77577aeb0066cabe6c911aaf5d899d8"
   integrity sha512-Fmgfl0qjqCQo+/tjQpgnRXKh5N7/VpYcJh+AlYU2eHmHZLMGUBDzo+Gwc2ODzWJfXNRZmgaMhz4qULcO/C/rXg==
@@ -1794,7 +1794,7 @@
   resolved "https://registry.yarnpkg.com/@inquirer/type/-/type-4.1.1.tgz#f865ee99f39e0951a0279f9c45ad1d260c0ce0dd"
   integrity sha512-yJoHYrMnxIsJZCY+0Vb66Dy3he3kL3e2wOBKhoSwWWAzZAY82emlxwgprCtp6yRixvNRNq9ztfRWQYPNr3Go7A==
 
-"@inquirer/type@4.3.0", "@inquirer/type@^4.0.7":
+"@inquirer/type@4.3.0", "@inquirer/type@^4.2.1":
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@inquirer/type/-/type-4.3.0.tgz#223be58dd538eed1c03f09fa236d7e85fb184c19"
   integrity sha512-/IA8q2nyjgyl0NGSjqiRXB8gh3We7Pzx9C0c+6Zoolu905jFc79anerrUG7+n65+qs310DRK43yi2WDI8nY59A==
@@ -2046,12 +2046,12 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.5.tgz#4fc56c15c580b9adb7dc3c333a134e540b44bfb1"
   integrity sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==
 
-"@listr2/prompt-adapter-inquirer@4.2.7":
-  version "4.2.7"
-  resolved "https://registry.yarnpkg.com/@listr2/prompt-adapter-inquirer/-/prompt-adapter-inquirer-4.2.7.tgz#d3181be7f06af459e89aeed4b57208e92e9368ff"
-  integrity sha512-k180vxSv2KqmnDxoato6pCqEJsov4U5C0EVmldZkAdNeVBxY48A/LM6TCNPGIzDK/iZSfsZP0Mw+gbWc5hXLyA==
+"@listr2/prompt-adapter-inquirer@4.3.4":
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@listr2/prompt-adapter-inquirer/-/prompt-adapter-inquirer-4.3.4.tgz#2bb0033c57f8e499b155b748fe02a7318883a906"
+  integrity sha512-YUVWxHCRhhWkViokqbhCZDNrQ8aZ9q5Rh7XfZXWJGb60AtNvE17zceQl3f8MnGZyLonQdxo4vyWlQn/LVZuNRg==
   dependencies:
-    "@inquirer/type" "^4.0.7"
+    "@inquirer/type" "^4.2.1"
 
 "@lmdb/lmdb-darwin-arm64@3.5.6":
   version "3.5.6"
@@ -2088,19 +2088,19 @@
   resolved "https://registry.yarnpkg.com/@lmdb/lmdb-win32-x64/-/lmdb-win32-x64-3.5.6.tgz#8e26cbb62abb1454130fe73bd475df3b24a97567"
   integrity sha512-1g7G0knRX2iV/voDu54yxrGqw5Dk0w2oIYb7dgJq8IkOi+m7wbD8Q3QpPFjh0C01G58S88dqGn03len6UPCXsg==
 
-"@modelcontextprotocol/core@2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@modelcontextprotocol/core/-/core-2.3.1.tgz#14e177b68558bb47b584dc1457617a2155c83e73"
-  integrity sha512-laVmIhPGpWi7rG9q+0UigblRN0Hws/Yjlb6qLFtVqryXVLkc4h+yN8z731POD2LnAGQlFe7/tXhUm7Bi0YB91g==
+"@modelcontextprotocol/core@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@modelcontextprotocol/core/-/core-2.4.0.tgz#c7f1a505452c3a0ad666d9a6e78a5804d8d8d0d9"
+  integrity sha512-z8QBKqdfXLPzkLQuG4xp8hrVEMm1PZ1IgxMN2sMbJiFiAKOWXnAzogXn2W4aqIBlP1ea6U5yiqVquvUNM1Cj6Q==
   dependencies:
     zod "^4.2.0"
 
-"@modelcontextprotocol/server@2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@modelcontextprotocol/server/-/server-2.3.1.tgz#a15440d5c06f3bad67360952fe58e6965b4a4ac7"
-  integrity sha512-e59MfWuSssj6DoQ96JCTqdW1AXT5/XtnTl0WWd6MU1Ka434fFUGGosCLJbGNySDhHGvxQWoRWK137FXYFkYNWw==
+"@modelcontextprotocol/server@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@modelcontextprotocol/server/-/server-2.4.0.tgz#282a61ccbdc531361f03525a33e33283534d6fc7"
+  integrity sha512-rgR9yxSaAJ+bcsi/XroT/S2AfPiIWloXAnrdfYSCms9ivVju0ishu/wW0J21Ho6+ZOR1r7RyeRbjiRuF87ix5Q==
   dependencies:
-    "@modelcontextprotocol/core" "2.3.1"
+    "@modelcontextprotocol/core" "2.4.0"
     zod "^4.2.0"
 
 "@msgpackr-extract/msgpackr-extract-darwin-arm64@3.0.7":
@@ -2270,80 +2270,160 @@
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-android-arm-eabi/-/binding-android-arm-eabi-0.156.0.tgz#16c69d14b48d8ad290e5113e609796b373a567e3"
   integrity sha512-RMq7DKNzEp1T51QKNLTn0NryNEt2IYfh7mZBlIdi2Ju52ltOEDMeIXv0XBpA6dL7j7ChjlcovtGcc1Jv4qMipg==
 
+"@oxc-parser/binding-android-arm-eabi@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-android-arm-eabi/-/binding-android-arm-eabi-0.158.0.tgz#322bafc467fb6676c065d04a6f7e336d755aa6e4"
+  integrity sha512-eZ4sHtg/u9mzPaRPWXZ7MmJ3tSFYPDCoDrnAJEXBOIQfdAy0TnzlaJx7nq0HZwE8DkYLQg6GqGZlcjaJrnijKg==
+
 "@oxc-parser/binding-android-arm64@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-android-arm64/-/binding-android-arm64-0.156.0.tgz#fdd31b010d635b4bc106fedfba51dce4d02b71d1"
   integrity sha512-mwkWKhOBpmh8fWc3m4MiLsmEAtx0YuHmvyo9ff557cnb3QZ2kt2eauSz75wCGIpiZG3gUsJ4WwzEjm4R4/BHig==
+
+"@oxc-parser/binding-android-arm64@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-android-arm64/-/binding-android-arm64-0.158.0.tgz#75f34e4c5380488df60094249f339de6fcede15c"
+  integrity sha512-Jqfn2GRXFkEukYBke/d1Hc9a3gB/qA3YRZ1u0D6HecjoOc3d9QvB7YFWyaLDWc139pfH+fIMIeOQ2SNOe1mnvQ==
 
 "@oxc-parser/binding-darwin-arm64@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-darwin-arm64/-/binding-darwin-arm64-0.156.0.tgz#7d3130fa1d4e795c3b74cf8579b6f77d46bd2a3d"
   integrity sha512-6pGR5fUszM9M4eBBapqpGjCRJolFwuCldx8bRQjqXyM09cQysBTWVF2Ttg4UNJVxYSaw5RRINbveCOOCrsuGvA==
 
+"@oxc-parser/binding-darwin-arm64@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-darwin-arm64/-/binding-darwin-arm64-0.158.0.tgz#e09c602d91466d607693726c50edef52e593a5e1"
+  integrity sha512-C3/Sl4HE0DE5r64UWBljMTua5aFh14/Urc6o45gK7J8HWjEttJJP26M0bK2eSWcas2zpJZrJlcvwyIxR7YqSZA==
+
 "@oxc-parser/binding-darwin-x64@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-darwin-x64/-/binding-darwin-x64-0.156.0.tgz#2e0a7687f94e6d38d5e4754c5a261d1406fad52b"
   integrity sha512-M9QghL7uCAqMKjYJv1rDGblfEvkeQu3QzTPd7Uwo16gG3uO7m9ikVQ9OL8FZTnKzU4vbCEby6kTlEkqN+JeEMA==
+
+"@oxc-parser/binding-darwin-x64@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-darwin-x64/-/binding-darwin-x64-0.158.0.tgz#afa1300cec1748d4d3f3e20b03820d786ffc2b04"
+  integrity sha512-IlU6PMqlk2pbqiidJ1dU5moOeVtzQf4x1n8fXixupLUixA6Sdd3a5WHclvGEZhJom4SjSan0EIpPQkXl9TnjeA==
 
 "@oxc-parser/binding-freebsd-x64@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-freebsd-x64/-/binding-freebsd-x64-0.156.0.tgz#02c085b4483c4022046e0008e3fdbcd2b2d355e6"
   integrity sha512-lX0ANxSwAOrpOT7NHB+YsrBqDJ8sOVon5m7GS9eQtkuUeNzQMMGpFsJLsStawTbrdwOF5KDVxgPWcKmt/DIZUQ==
 
+"@oxc-parser/binding-freebsd-x64@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-freebsd-x64/-/binding-freebsd-x64-0.158.0.tgz#71b6303c7c81765338dc4522a2c767c379adfc26"
+  integrity sha512-0uQD/66qKMzcz99yudx7yPWdPziXXl4S4bMxyOwXFPQ6F53Vr2DYM8Tfl9gd/32R2FXlAIqK9g8aNfwJEa0/Kg==
+
 "@oxc-parser/binding-linux-arm-gnueabihf@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-arm-gnueabihf/-/binding-linux-arm-gnueabihf-0.156.0.tgz#ebe594e197c8825c82176979a4d2fb06a04d85cc"
   integrity sha512-iPgYpasRcqk7X3TGncQg7B+6RotDvG8weug0UrgF+FXLf4KmaNDyT91BKONlqbHcNgK9Nryp7AEZGuQn32fP6g==
+
+"@oxc-parser/binding-linux-arm-gnueabihf@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-arm-gnueabihf/-/binding-linux-arm-gnueabihf-0.158.0.tgz#0ec1206e278a9f7d25590021669807446efc9e3b"
+  integrity sha512-B5ZAgT/cwKVtGa14Z3PEgim8hBTAK//uX/QpwdO2ZKGMqLFDq8myV3jDU1FAGJ0aPZ24SC8X362kKrpFOYmbHg==
 
 "@oxc-parser/binding-linux-arm-musleabihf@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-arm-musleabihf/-/binding-linux-arm-musleabihf-0.156.0.tgz#754bd631cf24058e60fbfb33e86b6f8010d00d55"
   integrity sha512-sJqJDEZevtkEfoxrXfaRTkSt6Itckr549cIfBbs11UgXv8bFyqQsXTQa6iKm8mTiWYmCDDFJf7TLnqxcbqzPOw==
 
+"@oxc-parser/binding-linux-arm-musleabihf@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-arm-musleabihf/-/binding-linux-arm-musleabihf-0.158.0.tgz#039560e02f11ddf98a7e536af8792a83e08eb74a"
+  integrity sha512-ZLuYVsBUejzfdFmOlY9yW+g/iCInw+pirfTu+eMk27wFcpyCG6yfTmS/qzzvKARI/VmoUdaXmEcDNUm9hdq5Cg==
+
 "@oxc-parser/binding-linux-arm64-gnu@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-arm64-gnu/-/binding-linux-arm64-gnu-0.156.0.tgz#08dd20982cbd09b786b9a155ca507d0c353e5976"
   integrity sha512-mrQs5OdRiqKskRuWEORPKT6YGIFhrpVvCvL9hqVaIh60EzgR4qjPvSsV6hWZcOfyWHBTbdEvfnDJPh/eQlxPRQ==
+
+"@oxc-parser/binding-linux-arm64-gnu@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-arm64-gnu/-/binding-linux-arm64-gnu-0.158.0.tgz#63a9babe0ffbd048d970218dad75d276c600293a"
+  integrity sha512-QHKIX2SW3pnUFfhAKU8P9t36QlkGGfxgodwoKkp+pQNZmA/PF3DbkA8OgUHoeCIE0aFL1t9Sse+2wr6+zohdRA==
 
 "@oxc-parser/binding-linux-arm64-musl@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-arm64-musl/-/binding-linux-arm64-musl-0.156.0.tgz#67304813ca392d7512f3fe90263882a04e33623a"
   integrity sha512-ZtPqgCU3+wpU7dvX7YbaEiw71r0UdguzuPhcx4PIEZSs4XFqc6F5wXCtNdb6M7m3DMErlxrwosryoXrzYOY/Gg==
 
+"@oxc-parser/binding-linux-arm64-musl@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-arm64-musl/-/binding-linux-arm64-musl-0.158.0.tgz#06e65f247b71ffe648640a2221ab2ac880d4c980"
+  integrity sha512-Z57mkQZMjUHh0KxxjmZLNUpqJUT5lPYYpihAOudh4PnQC79Kq7Ujy8KJsmsbla3rU0xV4aCpUKDCfVx0wnYn+Q==
+
 "@oxc-parser/binding-linux-ppc64-gnu@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-ppc64-gnu/-/binding-linux-ppc64-gnu-0.156.0.tgz#a52324e1bed6ba444cfbb6e14aa7c19044b83483"
   integrity sha512-ZuGRT/adReZZJn3PYNneb1HQIOH0iIZ2fzFgC1/XJYpMQ5KsRKmWIEzy3wEFsUwIOTomCmnmTZ/zbFYo9z9VeA==
+
+"@oxc-parser/binding-linux-ppc64-gnu@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-ppc64-gnu/-/binding-linux-ppc64-gnu-0.158.0.tgz#9abd8cfd3bc4b853cfe749e2083fd49246769179"
+  integrity sha512-jl6537qMp3Tb2D0J1oYzU/xzvYOM7ZDBf4Dhg8WvgkV+wgept/r2rX30PdWTE5gNo6QdHkOTz7le+9yldU1VwQ==
 
 "@oxc-parser/binding-linux-riscv64-gnu@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-riscv64-gnu/-/binding-linux-riscv64-gnu-0.156.0.tgz#76664d5caa16df482ec4f2521b2a90731ab98055"
   integrity sha512-T+iWCeAOoEAJpHqr6/pogHIv98g9p8Ctccysm/h962hG4ayX5OL2c0Ih4oYe+JuFndLXy/OASvwMlTPe76sIiw==
 
+"@oxc-parser/binding-linux-riscv64-gnu@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-riscv64-gnu/-/binding-linux-riscv64-gnu-0.158.0.tgz#1e17187b00b8d3d308107b3e3b35440dd66959b7"
+  integrity sha512-BFwDkCZ2K6VuSfBlKLItXkTYMN/8SAcFpZgBohU6qjlq4HrRKBqOXW/J0ViwZ4BHZuNFxgrhUXcM3hcalZnQaA==
+
 "@oxc-parser/binding-linux-riscv64-musl@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-riscv64-musl/-/binding-linux-riscv64-musl-0.156.0.tgz#3fb127d6742f045c336a7cf6f1044c7f19104b5a"
   integrity sha512-wL55bI2kVKfwdxScbw60zVgzAqbQbmE5zpSPWPZoZ9RSG8egm6ITE/UWE5mDWlglxz1QElJCcUbpaJCtHD11BQ==
+
+"@oxc-parser/binding-linux-riscv64-musl@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-riscv64-musl/-/binding-linux-riscv64-musl-0.158.0.tgz#f78cfd010b602bf4a691f4a4a9e516e146a6f5ac"
+  integrity sha512-3YcZPBhpDhD9BUWQct+70To5wJhY36pvn+gA04ArMCdREd76EIXB14IgYsDsRqIgOXSXT1okMpHA6UEamM/QQg==
 
 "@oxc-parser/binding-linux-s390x-gnu@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-s390x-gnu/-/binding-linux-s390x-gnu-0.156.0.tgz#5599543de8e232c2c6e39b1eb1ab4459392e7214"
   integrity sha512-+D+JilhLqwrDLODYEl4qtovVwgxKALb23FkAWBiPvgmUWYgjCV83KKuwwxZJM8GCdKlNA1vt3iKtow8HUFjXtg==
 
+"@oxc-parser/binding-linux-s390x-gnu@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-s390x-gnu/-/binding-linux-s390x-gnu-0.158.0.tgz#9f7837a86d307058894c76a2173143cf1c0b64c5"
+  integrity sha512-C+HBtM/aauGsp1sRuKHnB6yqrFCfGzGgS/3b/Alwz+bGIgOCm6DiNnFEnA14MOQ1YA63ikjpmTN7LPb505pkCQ==
+
 "@oxc-parser/binding-linux-x64-gnu@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.156.0.tgz#8125af6b776b64e968fd2e3fe5a0d1729cba87d8"
   integrity sha512-jRfwpN4xKrsEpC+SgrUPY5k0mINYZn7aLrt22I3uQFoumiSgHgsLYgS9f84ntbkvSydH4HiwGuDa2b1XCHaJzw==
+
+"@oxc-parser/binding-linux-x64-gnu@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.158.0.tgz#dd412f38fdd27a0cb5168f8f50e7e14d4bb559c0"
+  integrity sha512-COR5cFRE6DqmxZGE9QCJG1X7uUYxNdSYkMR7J9igRLnZqZ8ki6kJIa5S4czYHeIjdNyYn4vo1CsK3rQsK5sjrA==
 
 "@oxc-parser/binding-linux-x64-musl@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.156.0.tgz#72b1c9c7d9268caab3c49b7a3308264fc4462660"
   integrity sha512-P/ajnypgLmxmuRRyCIZcp2o4lOwmCaXYH5+eqDTcCW+MCTI+csKSw/Zc6GB67jZoVa4ey3q1jXEt7S60adBEMQ==
 
+"@oxc-parser/binding-linux-x64-musl@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.158.0.tgz#3418d03a59340772c339f1c1a296b2149aae978c"
+  integrity sha512-lF8YZdySxTjYnHfitZpbFWpyyxDchZj+TIyvDnzH3AGZlUvyrsu7BeORPdf05cLFwiyb+RPqAae4EJ7uu5xAhg==
+
 "@oxc-parser/binding-openharmony-arm64@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-openharmony-arm64/-/binding-openharmony-arm64-0.156.0.tgz#8e3ebeed0775841cb4f5572a91f52a586e592342"
   integrity sha512-WSN6rQZZc9KqgZ4lMfjVDvqKhVOCjey/YEZIPisGXmwBqwgWOzru207dyiH50LHcf1n9LO2oceGk/id6RL9v0g==
+
+"@oxc-parser/binding-openharmony-arm64@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-openharmony-arm64/-/binding-openharmony-arm64-0.158.0.tgz#06fabf1ac151064cccaf3b738baf2e4835190beb"
+  integrity sha512-m2HMKQgNNatcwOeCDCewrW5gvmHE61WFKl2J4KHiCGNpJb6ZI8n3T/JzwxFkt8kY3E27fJwvHM6t3WIEgtPiAA==
 
 "@oxc-parser/binding-wasm32-wasi@0.156.0":
   version "0.156.0"
@@ -2359,20 +2439,40 @@
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-win32-arm64-msvc/-/binding-win32-arm64-msvc-0.156.0.tgz#0ec97c146c762e3f81bb10d53fea4586c891f144"
   integrity sha512-l21Tz6tjraGBC3JefVeJZ9pojD0fCiB62PydAv+i9nrqJX7z/pDmyDNYLamDr/PRcQ4UQbFwkSnz7NKBB9UMLw==
 
+"@oxc-parser/binding-win32-arm64-msvc@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-win32-arm64-msvc/-/binding-win32-arm64-msvc-0.158.0.tgz#0e84114ea33ef60f25f1d289b0e49af8d9f49d67"
+  integrity sha512-Kksc5jIB7cE9vgoePyIQ8sRkXA4kAfO5oDEI6X+JJMGGTRnvtGafQniLXAHur9XU+5hUgMOGoZcyA8L+JvBu6g==
+
 "@oxc-parser/binding-win32-ia32-msvc@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-win32-ia32-msvc/-/binding-win32-ia32-msvc-0.156.0.tgz#3476a56ff18cf46594eb1d7384b47cca152f3dff"
   integrity sha512-CUq0ZFl/RODqPiIgfNNSamkpTj5x8AjBTkR/y1DNVIQiTGnmWqjHcn3o08ZW3q/LgkI4g9G9g6UirmmQFvuOZw==
+
+"@oxc-parser/binding-win32-ia32-msvc@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-win32-ia32-msvc/-/binding-win32-ia32-msvc-0.158.0.tgz#1602a1539ba3b7cc077f4184aaa6371944fe5dc2"
+  integrity sha512-HhxU9z7t6gqSh7UslTwD/wha5U2uD44Ss7GKtrBSJfG061iDrJ1Qk63N0Dzh3clax9pjJgYFnMpQRt72Q1bP8w==
 
 "@oxc-parser/binding-win32-x64-msvc@0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-parser/binding-win32-x64-msvc/-/binding-win32-x64-msvc-0.156.0.tgz#2203888668f128a66f4c7234a3e21b8ed2de2f9f"
   integrity sha512-dcpx5Y1x2v/cs7U/q3SZMvmxfyXjVvqC86jMuw2ZZUbHDd7W2cW7uSMQfg3GLVaE68Su3H9xd/Pc4v6QNyeSRg==
 
+"@oxc-parser/binding-win32-x64-msvc@0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-parser/binding-win32-x64-msvc/-/binding-win32-x64-msvc-0.158.0.tgz#75bce27deef7c1803c5fe91331b9e896e66ad94c"
+  integrity sha512-/SLN0ot62iL6XhmsWyLdU+37vjVCgDP96sOqeCPIFov63odr4DPv9vgq+lIkZMBMOxpWsSMcwDfpERsRAyCl8A==
+
 "@oxc-project/types@=0.156.0", "@oxc-project/types@^0.156.0":
   version "0.156.0"
   resolved "https://registry.yarnpkg.com/@oxc-project/types/-/types-0.156.0.tgz#00e35b1ead490d81b4c7fe1dbfe35fc55e89c5e6"
   integrity sha512-1Duyg48TdJNdyhEB8Xn1L36bT9Pv6GUtlKjHxOys8xkaF/rQq3XJE+bAurSK/AgIz5mGFsb77cn9Pb20+WCScw==
+
+"@oxc-project/types@^0.158.0":
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/@oxc-project/types/-/types-0.158.0.tgz#b679b3726682a92c3a6c95d0d90d46654c0eaeb8"
+  integrity sha512-xZ66qA4WmLbTLlxH3mqMd8f9UKbaOzOT0ATwFf4DH/14pMgpUrtqtjyYzOQmgfl2a0iRAAMbQ9G1th/67jRzGw==
 
 "@parcel/watcher-android-arm64@2.6.0":
   version "2.6.0"
@@ -2756,15 +2856,15 @@
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
   integrity sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==
 
-"@schematics/angular@22.2.8":
-  version "22.2.8"
-  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-22.2.8.tgz#50bd17d4d9edaab04312fae89fb9cdb53d008a2b"
-  integrity sha512-lxFSFZFpPwBi1Ajwaq9nm5/m7KuhKeOoEPPYcWb/2BOw1aILHUv8bz9ccwCdCTXpglh9nh1nsvLOQyWX+3OU9g==
+"@schematics/angular@22.3.0":
+  version "22.3.0"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-22.3.0.tgz#9f84529e7df0a1579229b9c65837ae38ec0c339b"
+  integrity sha512-SqnAJfBfDHuoUMDrhMIpkIYQiDI8mgJuQC8YcEzynbWG+eIsmuS17CgYKj69J7o/9ndEQU9lIi9nAEOYDlLVKQ==
   dependencies:
-    "@angular-devkit/core" "22.2.8"
-    "@angular-devkit/schematics" "22.2.8"
+    "@angular-devkit/core" "22.3.0"
+    "@angular-devkit/schematics" "22.3.0"
     jsonc-parser "3.3.1"
-    oxc-parser "0.156.0"
+    oxc-parser "0.158.0"
     typescript "6.0.3"
 
 "@sindresorhus/base62@^1.0.0":
@@ -3855,6 +3955,11 @@ chalk@^5.6.2:
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.6.2.tgz#b1238b6e23ea337af71c7f8a295db5af0c158aea"
   integrity sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA==
 
+chalk@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-6.0.1.tgz#077d4667ad6e608c9687782caed3d534d7f9abc3"
+  integrity sha512-/Ce6KNm3vIbWdMlNna6RVIZ/ICQxnJxCicet5LBKK9ZffBkqzDw0xh9EiKSljdRtiIQ1S1z4YgcscUUGzNCWrA==
+
 chardet@^2.1.1:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-2.2.0.tgz#005d664f2cbd4961888d2e2c32c5a69e59d8eec4"
@@ -3901,12 +4006,12 @@ cli-cursor@^5.0.0:
   dependencies:
     restore-cursor "^5.0.0"
 
-cli-spinners@^3.2.0:
+cli-spinners@^3.2.0, cli-spinners@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/cli-spinners/-/cli-spinners-3.4.0.tgz#1f11f6d48c4e5bc6849fcb4efa0dc98f9e7299ea"
   integrity sha512-bXfOC4QcT1tKXGorxL3wbJm6XJPDqEnij2gQ2m7ESQuE+/z9YFIWnl/5RpTiKWbMq3EVKR4fRLJGn6DVfu0mpw==
 
-cli-truncate@^6.1.1:
+cli-truncate@^6.1.1, cli-truncate@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/cli-truncate/-/cli-truncate-6.2.0.tgz#d82f0601a62cd11c4fea53c67fd0b02b541f9d5b"
   integrity sha512-5uyZew3nYoDgyltqSI8OER6DuyecorYOSVDAXl9wQ9Y8Re/HaQ/5qP0HmTUOUQqmvtpB+mlsf1gG/FUS3U1gLQ==
@@ -6356,6 +6461,15 @@ listr2@11.1.0:
     log-update "^8.0.0"
     wrap-ansi "^10.0.1"
 
+listr2@11.4.1:
+  version "11.4.1"
+  resolved "https://registry.yarnpkg.com/listr2/-/listr2-11.4.1.tgz#32a99b9a9d09ea929be5ceb26cb37da915a7fdfb"
+  integrity sha512-Mc8GEdPxl6b7bxFNwUJPOuGlrLSbnudPqF6F2EkgNr9dZQWezIrCfwywoGhy4eIdQvfJgbT7/rITN9S7uX89gQ==
+  dependencies:
+    cli-truncate "^6.2.0"
+    log-update "^8.0.0"
+    wrap-ansi "^10.0.2"
+
 lmdb@3.5.6:
   version "3.5.6"
   resolved "https://registry.yarnpkg.com/lmdb/-/lmdb-3.5.6.tgz#c45d2d40f65f91770d45dccbba8dba7f422a5388"
@@ -6471,6 +6585,13 @@ magic-string@1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-1.4.1.tgz#d0f91b82cd286a8a8de14f4254ccbf1d7e07f55e"
   integrity sha512-8lyCu36ErXR0J9uaGKlKQoiLZKmtI63YGLE8G2o9jyRPdr4X47LusSOwgOJOzcVtp81fTAAjxR7BwKz682Jhow==
+  dependencies:
+    "@jridgewell/sourcemap-codec" "^1.6.0"
+
+magic-string@1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-1.4.5.tgz#201c852d51eb0664d6f66cf7ab93b20b416e48d9"
+  integrity sha512-oLLC2+YvQUfAa+vxoufE/yc1icb87M9iXIRqAoR/2EhE/8cb3SF/+Gi0c2By1B+5Vz2e2vQtUvHiu1+63Znh+w==
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.6.0"
 
@@ -6932,6 +7053,20 @@ optionator@^0.9.3, optionator@^0.9.4:
     type-check "^0.4.0"
     word-wrap "^1.2.5"
 
+ora@10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/ora/-/ora-10.0.0.tgz#eb3d13e363b4855972f1dd9e95bb553dbce5260e"
+  integrity sha512-jlxvSlLi1aKgPUnRf8NMjwyor1CM4K+faxuycHYTvygjjtkM596tQBXGEp/PQAVqzftrCBMRJlw6+RAJS5nOtQ==
+  dependencies:
+    chalk "^6.0.1"
+    cli-cursor "^5.0.0"
+    cli-spinners "^3.4.0"
+    is-interactive "^2.0.0"
+    is-unicode-supported "^2.1.0"
+    log-symbols "^7.0.1"
+    stdin-discarder "^0.3.2"
+    string-width "^8.3.0"
+
 ora@9.4.1:
   version "9.4.1"
   resolved "https://registry.yarnpkg.com/ora/-/ora-9.4.1.tgz#ba7644f3c7c92a8f830fbc48ca770b9eaf4bc55c"
@@ -6992,6 +7127,33 @@ oxc-parser@0.156.0:
     "@oxc-parser/binding-win32-arm64-msvc" "0.156.0"
     "@oxc-parser/binding-win32-ia32-msvc" "0.156.0"
     "@oxc-parser/binding-win32-x64-msvc" "0.156.0"
+
+oxc-parser@0.158.0:
+  version "0.158.0"
+  resolved "https://registry.yarnpkg.com/oxc-parser/-/oxc-parser-0.158.0.tgz#7ce129b2e32ed0ffa775cfd2d989d2576fa82d72"
+  integrity sha512-BKmaZZXp667kLC8Od/ivIkbw6yaxTSqw8ViI1Tvl21E6r+6NLdwDmo43LpL2Ebt/PDMu1d4tcdBucMSor+cL1g==
+  dependencies:
+    "@oxc-project/types" "^0.158.0"
+  optionalDependencies:
+    "@oxc-parser/binding-android-arm-eabi" "0.158.0"
+    "@oxc-parser/binding-android-arm64" "0.158.0"
+    "@oxc-parser/binding-darwin-arm64" "0.158.0"
+    "@oxc-parser/binding-darwin-x64" "0.158.0"
+    "@oxc-parser/binding-freebsd-x64" "0.158.0"
+    "@oxc-parser/binding-linux-arm-gnueabihf" "0.158.0"
+    "@oxc-parser/binding-linux-arm-musleabihf" "0.158.0"
+    "@oxc-parser/binding-linux-arm64-gnu" "0.158.0"
+    "@oxc-parser/binding-linux-arm64-musl" "0.158.0"
+    "@oxc-parser/binding-linux-ppc64-gnu" "0.158.0"
+    "@oxc-parser/binding-linux-riscv64-gnu" "0.158.0"
+    "@oxc-parser/binding-linux-riscv64-musl" "0.158.0"
+    "@oxc-parser/binding-linux-s390x-gnu" "0.158.0"
+    "@oxc-parser/binding-linux-x64-gnu" "0.158.0"
+    "@oxc-parser/binding-linux-x64-musl" "0.158.0"
+    "@oxc-parser/binding-openharmony-arm64" "0.158.0"
+    "@oxc-parser/binding-win32-arm64-msvc" "0.158.0"
+    "@oxc-parser/binding-win32-ia32-msvc" "0.158.0"
+    "@oxc-parser/binding-win32-x64-msvc" "0.158.0"
 
 p-limit@^2.2.0:
   version "2.3.0"
@@ -7081,7 +7243,16 @@ parse5-html-rewriting-stream@8.0.1:
     parse5 "^8.0.0"
     parse5-sax-parser "^8.0.0"
 
-parse5-sax-parser@^8.0.0:
+parse5-html-rewriting-stream@8.1.1:
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/parse5-html-rewriting-stream/-/parse5-html-rewriting-stream-8.1.1.tgz#96d56ce1a506a517c56ee50e6e6bbee09e8c1b36"
+  integrity sha512-Vkd95znJKyvcUB8I9/XlUVgLsC18RQyZERtIaaLu8Dy1/FJejDBOgRBqHN3/H/loUFwkEG6gam0eqnpNsLjcfQ==
+  dependencies:
+    entities "^9.0.0"
+    parse5 "^8.1.1"
+    parse5-sax-parser "^8.0.1"
+
+parse5-sax-parser@^8.0.0, parse5-sax-parser@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/parse5-sax-parser/-/parse5-sax-parser-8.0.1.tgz#9072f7809e2bcae6e21c45986bcf03ccb0da77e5"
   integrity sha512-6eHc4FeWwv8uBX1yMZ8Vl5zcT61k8EpK/rgRwNl/BLY4pOkUqXI1RIwGSIvxyBXzl5TGj4TvIQBJGwTU4P+ddg==
@@ -9035,7 +9206,7 @@ word-wrap@^1.2.5:
   resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.5.tgz#d2c45c6dd4fbce621a66f136cbe328afd0410b34"
   integrity sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==
 
-wrap-ansi@^10.0.0, wrap-ansi@^10.0.1:
+wrap-ansi@^10.0.0, wrap-ansi@^10.0.1, wrap-ansi@^10.0.2:
   version "10.0.2"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-10.0.2.tgz#92f8f14b014136d034389a8700d6ce3df79c65d5"
   integrity sha512-6OLRNZqRntVGBm26ghZ5eZhCuWWyOkRCSn8XsOIuq5stpCE/tjLbdozd93naILZig0lmD8ANfRwnhn0DLeXGlg==
@@ -9149,10 +9320,10 @@ yargs-parser@^22.0.0:
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-22.0.0.tgz#87b82094051b0567717346ecd00fd14804b357c8"
   integrity sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw==
 
-yargs@18.1.0:
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-18.1.0.tgz#cd7e98c703ef51695bbbf062ed58f28e94291b56"
-  integrity sha512-2rAgRKu54VsHkqI0/tYkmluGXHD4KW7yZoycuqDQ15QOTnc2VVfy0nN/1eMhnQLO00A+dwtK20xuCnc1YGeUyg==
+yargs@18.2.0, yargs@^18.0.0:
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-18.2.0.tgz#c258276baa935fe8fb911d986067f6d0733e8608"
+  integrity sha512-9OpKOLeaoNFecEp7P6iYbzze/5CqWoH7N3SMs/6y1XF4nMvFMspEGZzJ6uFi9MmQwXhyzqYoSEKO3tvA3Z/o2w==
   dependencies:
     cliui "^9.0.1"
     escalade "^3.1.1"
@@ -9191,18 +9362,6 @@ yargs@^16.1.1:
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
 
-yargs@^18.0.0:
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-18.2.0.tgz#c258276baa935fe8fb911d986067f6d0733e8608"
-  integrity sha512-9OpKOLeaoNFecEp7P6iYbzze/5CqWoH7N3SMs/6y1XF4nMvFMspEGZzJ6uFi9MmQwXhyzqYoSEKO3tvA3Z/o2w==
-  dependencies:
-    cliui "^9.0.1"
-    escalade "^3.1.1"
-    get-caller-file "^2.0.5"
-    string-width "^8.2.1"
-    y18n "^5.0.5"
-    yargs-parser "^22.0.0"
-
 yn@3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
@@ -9218,12 +9377,7 @@ yoctocolors@^2.1.1:
   resolved "https://registry.yarnpkg.com/yoctocolors/-/yoctocolors-2.2.0.tgz#c4b68ee477f3982c33e4de24a5aa4a354be506d3"
   integrity sha512-xYqdZFUK/VYazNl/oCDYN+3WloWQwMfZxBoiNt6qNyk+xfOdi598muWE42rNZFp1kNOiqW936q5RhUdnpqElSg==
 
-zod@4.6.6:
-  version "4.6.6"
-  resolved "https://registry.yarnpkg.com/zod/-/zod-4.6.6.tgz#0bb0cf57b87011a71ec28ed2e1b51f6455563f9a"
-  integrity sha512-4UmzQUF5fxvfcYHlbjBmejU+w+hbDnWFx4aS8kBx7nPBHcO2SqPbpAG8snbdg+Xse4pRefR98hgjFgIMCI/UhA==
-
-zod@^4.0.10, zod@^4.2.0:
+zod@4.6.7, zod@^4.0.10, zod@^4.2.0:
   version "4.6.7"
   resolved "https://registry.yarnpkg.com/zod/-/zod-4.6.7.tgz#e806cf64a7f4e37635ce9f2f52c04c3766f75e5b"
   integrity sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==
