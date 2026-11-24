@@ -3426,9 +3426,9 @@ anymatch@~3.1.2:
     picomatch "^2.0.4"
 
 are-docs-informative@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/are-docs-informative/-/are-docs-informative-0.1.1.tgz#34fa1d621e6b8ab2bd33e219333c135b6655a2d0"
-  integrity sha512-sqRsNQBwbKLRX0jV5Cu5uzmtflf892n4Vukz7T659ebL4pz3mpOqCMU7lxMoBTFwnp10E3YB5ZcyHM41W5bcDA==
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/are-docs-informative/-/are-docs-informative-0.1.2.tgz#16e4e1a69d82cc910ee7fec7ee0850b76f3368c9"
+  integrity sha512-ivIO3M7NYwWxOmC0uU9wBGF/c6b8VdKmYuIbH6cwpvfw8W5MttFaecUmMqOl77D/rZU9ipN/eB1E17ry+SEI4Q==
 
 arg@^4.1.0:
   version "4.1.3"
